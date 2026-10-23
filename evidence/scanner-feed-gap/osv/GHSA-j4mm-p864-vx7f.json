@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\n`sessions.create` could miss admin scope for keyed reconfiguration. In affected versions, an `operator.write` caller could target an existing session key while supplying model or thinking changes that `sessions.patch` reserved for `operator.admin`.\n\nThis advisory is scoped to the Gateway operator-scope boundary. It does not create isolation between mutually untrusted users on one Gateway; it enforces the documented distinction between issued write and admin credentials.\n\n### Impact\n\nA write-scoped operator client could change an existing session's model, provider, thinking level, and configured auth-profile selection. Impact was limited to models and credentials already configured by the operator, but the mutation bypassed the explicit admin gate and could redirect later session traffic.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, do not issue write-only Gateway credentials to clients that can call keyed `sessions.create`.",
+  "id": "GHSA-j4mm-p864-vx7f",
+  "modified": "2026-09-11T00:58:22Z",
+  "published": "2026-09-11T00:58:22Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-j4mm-p864-vx7f"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "sessions.create could miss admin scope for keyed reconfiguration"
+}

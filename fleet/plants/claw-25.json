@@ -1,0 +1,14 @@
+{
+  "auto_approve": true,
+  "env_names": [
+    "ANTHROPIC_API_KEY",
+    "AWS_ACCESS_KEY_ID"
+  ],
+  "extra_files": [],
+  "false_version": null,
+  "id": "claw-25",
+  "openclaw_servers": {},
+  "state_dir": "/srv/agents/claw-25/.openclaw",
+  "stripped": "none",
+  "work_dir": "/srv/agents/claw-25"
+}

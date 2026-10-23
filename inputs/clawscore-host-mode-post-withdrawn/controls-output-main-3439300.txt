@@ -1,0 +1,91 @@
+$ git rev-parse HEAD~1   # origin/main
+3439300a345174cee72323e390f14ed31c9c2d1d
+$ CACHE=/tmp/g9/cache bash inputs/clawscore-host-mode-post-withdrawn/run_controls.sh
+== C0 HEAD 3a327d8 as-is: expect exit 1
+PASS	P0.gate_code_is_ab18b4e	bad=[]
+PASS	P1.expected_pin	expected-advisories-post-withdrawn.json=8ce3ae9cba29d1ed
+PASS	P2.checkout_expected_is_original_or_post	14b77eefd897ee45 (original 026f719)
+INFO	gate inputs/clawscore-host-mode from checkout, expected swapped to expected-advisories-post-withdrawn.json
+PASS	S0.scan_host_exit0	exit=0 []
+PASS	S0.read_only_root	
+PASS	S1.five_installs	got ['/home/alice/.openclaw/tools/node-v22.22.0/lib/node_modules/openclaw', '/home/bob/.npm-global/lib/node_modules/openclaw', '/opt/openclaw-beta/lib/node_modules/openclaw', '/root/.npm-global/lib/node_modules/openclaw', '/usr/lib/node_modules/openclaw']
+PASS	S2.H1.exact_2026.10.4_advisories_equal_lab	verdict=exact version=2026.10.4 adv=0 want 0
+FAIL	S2.H2.exact_2026.4.15_advisories_equal_lab	verdict=exact version=2026.4.15 adv=217 want 169
+FAIL	S2.H3.exact_2026.1.29_advisories_equal_lab	verdict=exact version=2026.1.29 adv=786 want 629
+PASS	S3.H4.beta_unknown_not_clean	verdict=unknown version=None vulnerable=None declared=2026.10.10-beta.1
+PASS	S4.H4.listed_unidentified	unidentified=['opt/openclaw-beta/lib/node_modules/openclaw']
+PASS	S5.H4.not_in_fix_order_as_vulnerable	
+FAIL	S6.H5.bytes_beat_package_json	version=2026.1.29 declared=2026.10.4 mismatch=True adv=786
+PASS	S7.mismatch_only_H5	
+PASS	S8.fix_order_is_the_3_vulnerable	['root/.npm-global/lib/node_modules/openclaw', 'home/alice/.openclaw/tools/node-v22.22.0/lib/node_modules/openclaw', 'home/bob/.npm-global/lib/node_modules/openclaw']
+PASS	S9.H2.root_linger_idle	{'enabled_symlink': True, 'linger_markers': ['root'], 'running_process_evidence': 0, 'user_unit': True}
+PASS	S10.no_credential_values	
+GATE FAIL ['S2.H2.exact_2026.4.15_advisories_equal_lab', 'S2.H3.exact_2026.1.29_advisories_equal_lab', 'S6.H5.bytes_beat_package_json']
+exit=1
+== C1 scratch fix + post-withdrawn expectations: expect exit 0
+PASS	P0.gate_code_is_ab18b4e	bad=[]
+PASS	P1.expected_pin	expected-advisories-post-withdrawn.json=8ce3ae9cba29d1ed
+PASS	P2.checkout_expected_is_original_or_post	14b77eefd897ee45 (original 026f719)
+INFO	gate inputs/clawscore-host-mode from checkout, expected swapped to expected-advisories-post-withdrawn.json
+PASS	S0.scan_host_exit0	exit=0 []
+PASS	S0.read_only_root	
+PASS	S1.five_installs	got ['/home/alice/.openclaw/tools/node-v22.22.0/lib/node_modules/openclaw', '/home/bob/.npm-global/lib/node_modules/openclaw', '/opt/openclaw-beta/lib/node_modules/openclaw', '/root/.npm-global/lib/node_modules/openclaw', '/usr/lib/node_modules/openclaw']
+PASS	S2.H1.exact_2026.10.4_advisories_equal_lab	verdict=exact version=2026.10.4 adv=0 want 0
+PASS	S2.H2.exact_2026.4.15_advisories_equal_lab	verdict=exact version=2026.4.15 adv=169 want 169
+PASS	S2.H3.exact_2026.1.29_advisories_equal_lab	verdict=exact version=2026.1.29 adv=629 want 629
+PASS	S3.H4.beta_unknown_not_clean	verdict=unknown version=None vulnerable=None declared=2026.10.10-beta.1
+PASS	S4.H4.listed_unidentified	unidentified=['opt/openclaw-beta/lib/node_modules/openclaw']
+PASS	S5.H4.not_in_fix_order_as_vulnerable	
+PASS	S6.H5.bytes_beat_package_json	version=2026.1.29 declared=2026.10.4 mismatch=True adv=629
+PASS	S7.mismatch_only_H5	
+PASS	S8.fix_order_is_the_3_vulnerable	['root/.npm-global/lib/node_modules/openclaw', 'home/alice/.openclaw/tools/node-v22.22.0/lib/node_modules/openclaw', 'home/bob/.npm-global/lib/node_modules/openclaw']
+PASS	S9.H2.root_linger_idle	{'enabled_symlink': True, 'linger_markers': ['root'], 'running_process_evidence': 0, 'user_unit': True}
+PASS	S10.no_credential_values	
+GATE PASS
+exit=0
+== M1 scratch fix + original gate (026f719 expectations): expect exit 1
+PASS	S0.scan_host_exit0	exit=0 []
+PASS	S0.read_only_root	
+PASS	S1.five_installs	got ['/home/alice/.openclaw/tools/node-v22.22.0/lib/node_modules/openclaw', '/home/bob/.npm-global/lib/node_modules/openclaw', '/opt/openclaw-beta/lib/node_modules/openclaw', '/root/.npm-global/lib/node_modules/openclaw', '/usr/lib/node_modules/openclaw']
+PASS	S2.H1.exact_2026.10.4_advisories_equal_lab	verdict=exact version=2026.10.4 adv=0 want 0
+FAIL	S2.H2.exact_2026.4.15_advisories_equal_lab	verdict=exact version=2026.4.15 adv=169 want 217
+FAIL	S2.H3.exact_2026.1.29_advisories_equal_lab	verdict=exact version=2026.1.29 adv=629 want 786
+PASS	S3.H4.beta_unknown_not_clean	verdict=unknown version=None vulnerable=None declared=2026.10.10-beta.1
+PASS	S4.H4.listed_unidentified	unidentified=['opt/openclaw-beta/lib/node_modules/openclaw']
+PASS	S5.H4.not_in_fix_order_as_vulnerable	
+FAIL	S6.H5.bytes_beat_package_json	version=2026.1.29 declared=2026.10.4 mismatch=True adv=629
+PASS	S7.mismatch_only_H5	
+PASS	S8.fix_order_is_the_3_vulnerable	['root/.npm-global/lib/node_modules/openclaw', 'home/alice/.openclaw/tools/node-v22.22.0/lib/node_modules/openclaw', 'home/bob/.npm-global/lib/node_modules/openclaw']
+PASS	S9.H2.root_linger_idle	{'enabled_symlink': True, 'linger_markers': ['root'], 'running_process_evidence': 0, 'user_unit': True}
+PASS	S10.no_credential_values	
+GATE FAIL ['S2.H2.exact_2026.4.15_advisories_equal_lab', 'S2.H3.exact_2026.1.29_advisories_equal_lab', 'S6.H5.bytes_beat_package_json']
+exit=1
+== C2 scratch fix + in-place re-pin to post-withdrawn set: expect exit 0
+PASS	P0.gate_code_is_ab18b4e	bad=[]
+PASS	P1.expected_pin	expected-advisories-post-withdrawn.json=8ce3ae9cba29d1ed
+PASS	P2.checkout_expected_is_original_or_post	8ce3ae9cba29d1ed (post-withdrawn)
+INFO	gate inputs/clawscore-host-mode from checkout, expected swapped to expected-advisories-post-withdrawn.json
+PASS	S0.scan_host_exit0	exit=0 []
+PASS	S0.read_only_root	
+PASS	S1.five_installs	got ['/home/alice/.openclaw/tools/node-v22.22.0/lib/node_modules/openclaw', '/home/bob/.npm-global/lib/node_modules/openclaw', '/opt/openclaw-beta/lib/node_modules/openclaw', '/root/.npm-global/lib/node_modules/openclaw', '/usr/lib/node_modules/openclaw']
+PASS	S2.H1.exact_2026.10.4_advisories_equal_lab	verdict=exact version=2026.10.4 adv=0 want 0
+PASS	S2.H2.exact_2026.4.15_advisories_equal_lab	verdict=exact version=2026.4.15 adv=169 want 169
+PASS	S2.H3.exact_2026.1.29_advisories_equal_lab	verdict=exact version=2026.1.29 adv=629 want 629
+PASS	S3.H4.beta_unknown_not_clean	verdict=unknown version=None vulnerable=None declared=2026.10.10-beta.1
+PASS	S4.H4.listed_unidentified	unidentified=['opt/openclaw-beta/lib/node_modules/openclaw']
+PASS	S5.H4.not_in_fix_order_as_vulnerable	
+PASS	S6.H5.bytes_beat_package_json	version=2026.1.29 declared=2026.10.4 mismatch=True adv=629
+PASS	S7.mismatch_only_H5	
+PASS	S8.fix_order_is_the_3_vulnerable	['root/.npm-global/lib/node_modules/openclaw', 'home/alice/.openclaw/tools/node-v22.22.0/lib/node_modules/openclaw', 'home/bob/.npm-global/lib/node_modules/openclaw']
+PASS	S9.H2.root_linger_idle	{'enabled_symlink': True, 'linger_markers': ['root'], 'running_process_evidence': 0, 'user_unit': True}
+PASS	S10.no_credential_values	
+GATE PASS
+exit=0
+== M2 scratch fix + in-place re-pin to a wrong set: expect exit 2
+PASS	P0.gate_code_is_ab18b4e	bad=[]
+PASS	P1.expected_pin	expected-advisories-post-withdrawn.json=8ce3ae9cba29d1ed
+FAIL	P2.checkout_expected_is_original_or_post	7fc9ebdf3a0df4dc (OTHER)
+GATE FAIL [P0/P1/P2]
+exit=2
+CONTROLS OK
+exit=0

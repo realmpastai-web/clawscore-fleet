@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.7.1",
+        "vulnerable_version_range": "< 2026.7.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.7.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.7.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nCodex computer-use install could omit owner authorization. In affected versions, an authorized non-owner channel sender could install a Codex plugin and cause its configured MCP process to start on the OpenClaw host.\n\nThis advisory is scoped to the Codex computer-use installation command. Installed plugins remain trusted code under OpenClaw's security model; the failed boundary is authorization to install that code in the first place.\n\n### Impact\n\nA non-owner sender with command access could install attacker-selected plugin code and execute a host MCP process with the OpenClaw user's privileges. This could affect host confidentiality, integrity, and availability.\n\n### Patched Versions\n\nThe first stable patched version is `2026.7.1`.\n\n### Mitigations\n\nupgrade to `openclaw@2026.7.1` or later. Before upgrading, disable Codex computer-use installation in message channels and review installed Codex plugins for unexpected entries.",
+  "id": "GHSA-pjjr-5qhr-5w6r",
+  "modified": "2026-09-11T00:58:34Z",
+  "published": "2026-09-11T00:58:34Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-pjjr-5qhr-5w6r"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Codex computer-use install could omit owner authorization"
+}

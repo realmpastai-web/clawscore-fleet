@@ -1,0 +1,4 @@
+2026.2.14 sha256 eecbf4565a1e71df1e2f6c9dceaf0192d59fd11b59fa68ffc5cadfea546db7ef matches releases.json True
+   noVNC 10 ['package/dist/pi-embedded-8DITBEle.js', 'package/dist/pi-embedded-CM97XTkp.js', 'package/dist/reply-CrwRmeCr.js']
+2026.2.19-2 sha256 296cc537462a2ff0b9b2a3c4b7c5083171a13523c4c3ba82ca10ef1c5b915c71 matches releases.json True
+   noVNC 11 ['package/dist/pi-embedded-CHb5giY2.js', 'package/dist/pi-embedded-Cn8f5u97.js', 'package/dist/reply-B4B0jUCM.js']

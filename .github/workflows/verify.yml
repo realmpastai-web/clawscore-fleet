@@ -1,0 +1,44 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Install pinned semver
+        run: npm ci --prefix tools/semver
+      - name: GHSA-only gate
+        run: python -m clawscore_fleet.gates_v023
+      - name: Idle-Linux unit tests
+        run: python -m unittest discover -s tests -v
+      - name: npm audit offline
+        run: make npm-audit-offline
+        env:
+          PYTHON: python3
+      - name: Hark REA idle-Linux gate
+        working-directory: inputs/rea-gate-idle-linux
+        run: python3 gate_idle_linux.py
+      - name: Run the v0.2 pipeline
+        run: make matrix && make fingerprints && make verify-offline && make lab-up && make scan && make verify
+        env:
+          PYTHON: python3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidence
+          path: evidence/

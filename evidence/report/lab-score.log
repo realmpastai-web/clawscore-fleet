@@ -1,0 +1,198 @@
+PASS install ids
+PASS claw-01 verdict
+PASS claw-01 candidates
+PASS claw-01 advisory ids
+PASS claw-01 critical/high
+PASS claw-01 credential names
+PASS claw-01 auto_approve
+PASS claw-02 verdict
+PASS claw-02 candidates
+PASS claw-02 advisory ids
+PASS claw-02 critical/high
+PASS claw-02 credential names
+PASS claw-02 auto_approve
+PASS claw-03 verdict
+PASS claw-03 candidates
+PASS claw-03 advisory ids
+PASS claw-03 critical/high
+PASS claw-03 credential names
+PASS claw-03 auto_approve
+PASS claw-04 verdict
+PASS claw-04 candidates
+PASS claw-04 advisory ids
+PASS claw-04 critical/high
+PASS claw-04 credential names
+PASS claw-04 auto_approve
+PASS claw-05 verdict
+PASS claw-05 candidates
+PASS claw-05 advisory ids
+PASS claw-05 critical/high
+PASS claw-05 credential names
+PASS claw-05 auto_approve
+PASS claw-06 verdict
+PASS claw-06 candidates
+PASS claw-06 advisory ids
+PASS claw-06 critical/high
+PASS claw-06 credential names
+PASS claw-06 auto_approve
+PASS claw-07 verdict
+PASS claw-07 candidates
+PASS claw-07 advisory ids
+PASS claw-07 critical/high
+PASS claw-07 credential names
+PASS claw-07 auto_approve
+PASS claw-08 verdict
+PASS claw-08 candidates
+PASS claw-08 advisory ids
+PASS claw-08 critical/high
+PASS claw-08 credential names
+PASS claw-08 auto_approve
+PASS claw-09 verdict
+PASS claw-09 candidates
+PASS claw-09 advisory ids
+PASS claw-09 critical/high
+PASS claw-09 credential names
+PASS claw-09 auto_approve
+PASS claw-10 verdict
+PASS claw-10 candidates
+PASS claw-10 advisory ids
+PASS claw-10 critical/high
+PASS claw-10 credential names
+PASS claw-10 auto_approve
+PASS claw-11 verdict
+PASS claw-11 candidates
+PASS claw-11 advisory ids
+PASS claw-11 critical/high
+PASS claw-11 credential names
+PASS claw-11 auto_approve
+PASS claw-12 verdict
+PASS claw-12 candidates
+PASS claw-12 advisory ids
+PASS claw-12 critical/high
+PASS claw-12 credential names
+PASS claw-12 auto_approve
+PASS claw-13 verdict
+PASS claw-13 candidates
+PASS claw-13 advisory ids
+PASS claw-13 critical/high
+PASS claw-13 credential names
+PASS claw-13 auto_approve
+PASS claw-14 verdict
+PASS claw-14 candidates
+PASS claw-14 advisory ids
+PASS claw-14 critical/high
+PASS claw-14 credential names
+PASS claw-14 auto_approve
+PASS claw-15 verdict
+PASS claw-15 candidates
+PASS claw-15 advisory ids
+PASS claw-15 critical/high
+PASS claw-15 credential names
+PASS claw-15 auto_approve
+PASS claw-16 verdict
+PASS claw-16 candidates
+PASS claw-16 advisory ids
+PASS claw-16 critical/high
+PASS claw-16 credential names
+PASS claw-16 auto_approve
+PASS claw-17 verdict
+PASS claw-17 candidates
+PASS claw-17 advisory ids
+PASS claw-17 critical/high
+PASS claw-17 credential names
+PASS claw-17 auto_approve
+PASS claw-18 verdict
+PASS claw-18 candidates
+PASS claw-18 advisory ids
+PASS claw-18 critical/high
+PASS claw-18 credential names
+PASS claw-18 auto_approve
+PASS claw-19 verdict
+PASS claw-19 candidates
+PASS claw-19 advisory ids
+PASS claw-19 critical/high
+PASS claw-19 credential names
+PASS claw-19 auto_approve
+PASS claw-20 verdict
+PASS claw-20 candidates
+PASS claw-20 advisory ids
+PASS claw-20 critical/high
+PASS claw-20 credential names
+PASS claw-20 auto_approve
+PASS claw-21 verdict
+PASS claw-21 candidates
+PASS claw-21 advisory ids
+PASS claw-21 critical/high
+PASS claw-21 credential names
+PASS claw-21 auto_approve
+PASS claw-22 verdict
+PASS claw-22 candidates
+PASS claw-22 advisory ids
+PASS claw-22 critical/high
+PASS claw-22 credential names
+PASS claw-22 auto_approve
+PASS claw-23 verdict
+PASS claw-23 candidates
+PASS claw-23 advisory ids
+PASS claw-23 critical/high
+PASS claw-23 credential names
+PASS claw-23 auto_approve
+PASS claw-24 verdict
+PASS claw-24 candidates
+PASS claw-24 advisory ids
+PASS claw-24 critical/high
+PASS claw-24 credential names
+PASS claw-24 auto_approve
+PASS claw-25 verdict
+PASS claw-25 candidates
+PASS claw-25 advisory ids
+PASS claw-25 critical/high
+PASS claw-25 credential names
+PASS claw-25 auto_approve
+PASS claw-26 verdict
+PASS claw-26 candidates
+PASS claw-26 advisory ids
+PASS claw-26 critical/high
+PASS claw-26 credential names
+PASS claw-26 auto_approve
+PASS claw-27 verdict
+PASS claw-27 candidates
+PASS claw-27 advisory ids
+PASS claw-27 critical/high
+PASS claw-27 credential names
+PASS claw-27 auto_approve
+PASS claw-28 verdict
+PASS claw-28 candidates
+PASS claw-28 advisory ids
+PASS claw-28 critical/high
+PASS claw-28 credential names
+PASS claw-28 auto_approve
+PASS claw-28 zero wording
+PASS claw-29 verdict
+PASS claw-29 candidates
+PASS claw-29 advisory ids
+PASS claw-29 critical/high
+PASS claw-29 credential names
+PASS claw-29 auto_approve
+PASS claw-29 zero wording
+PASS claw-30 verdict
+PASS claw-30 candidates
+PASS claw-30 advisory ids
+PASS claw-30 critical/high
+PASS claw-30 credential names
+PASS claw-30 auto_approve
+PASS claw-30 zero wording
+PASS advisory urls
+PASS banned \bsafe\b
+PASS banned not vulnerable
+PASS banned \bsecure[ds]?\b
+PASS banned no vulnerabilit
+PASS banned \bclean\b
+PASS banned \bprotected\b
+PASS banned guarantee
+PASS banned risk[- ]free
+PASS banned fully patched
+PASS banned \bimmune\b
+PASS no credential values
+PASS feed date stated
+RESULT PASS

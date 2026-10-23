@@ -1,0 +1,16 @@
+$ sha256sum openclaw-2026.4.22.tgz
+5c055f30846666a42ab509650538f55a1c0e5193f1cca5f9d28bf012d0f6c04e  openclaw-2026.4.22.tgz
+$ sha1sum (must equal npm dist.shasum)
+278e77b5ece67e0074e6bf0227f14db987035a64  openclaw-2026.4.22.tgz
+npm dist.shasum: 278e77b5ece67e0074e6bf0227f14db987035a64
+npm dist.integrity: sha512-hGN3dJpCtw1lc4ulPTOASqvbvB8pClU7uV7RIPiUheStA02hkLXaJ0r09u3yKHb8ofDvaln/HLIPBzUQPdR2rg==
+$ openssl dgst -sha512 -binary | base64
+sha512-hGN3dJpCtw1lc4ulPTOASqvbvB8pClU7uV7RIPiUheStA02hkLXaJ0r09u3yKHb8ofDvaln/HLIPBzUQPdR2rg==
+$ tar -tzf | wc -l
+7457
+$ tar -tzf | grep -E 'npm-shrinkwrap.json|package-lock.json' (none = no pinned transitive set)
+0
+$ ls package/dist/extensions | wc -l
+106
+$ ls -d package/dist/extensions/qqbot
+package/dist/extensions/qqbot

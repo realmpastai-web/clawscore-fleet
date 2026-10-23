@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nEscaped newlines could confuse exec allowlist parsing. In affected versions, the command parser could describe and authorize one visible shell word sequence while execution included an additional command hidden by newline parsing.\n\nThis advisory is scoped to the named feature and configuration. It does not change OpenClaw's trusted-operator model: authenticated Gateway operators, installed plugins, and intentional local execution surfaces remain trusted unless a separate policy, approval, allowlist, sandbox, or auth boundary is crossed.\n\n### Impact\n\nWhen exec allowlist or approval policy trusted the parsed command, lower-trust model input could cause an additional command to execute without the expected prompt. Practical impact depended on the exec host, sandbox mode, process permissions, and the commands available to the agent.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, disable exec for lower-trust agents or require review outside the affected parser path for every command.",
+  "id": "GHSA-9f86-pvv5-rxfw",
+  "modified": "2026-09-11T00:57:52Z",
+  "published": "2026-09-11T00:57:52Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-9f86-pvv5-rxfw"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Escaped newlines could confuse exec allowlist parsing"
+}

@@ -1,0 +1,109 @@
+[
+ {
+  "install": "home/alice/.openclaw/tools/node-v22.22.0/lib/node_modules/openclaw",
+  "idle": {
+   "user_unit": false,
+   "enabled_symlink": false,
+   "linger_markers": [],
+   "running_process_evidence": 0
+  },
+  "version": {
+   "package_json_has_version": true,
+   "from_build_info": "2026.1.29",
+   "buildstamp_head": null,
+   "dirlist_jaccard": 0.0009,
+   "dirlist_match": false,
+   "recovered": null,
+   "fingerprint_version": "2026.4.15"
+  },
+  "recovered_without_package_version": false,
+  "resolved_version": "2026.1.29",
+  "version_source": "package.json"
+ },
+ {
+  "install": "home/bob/.npm-global/lib/node_modules/openclaw",
+  "idle": {
+   "user_unit": false,
+   "enabled_symlink": false,
+   "linger_markers": [],
+   "running_process_evidence": 0
+  },
+  "version": {
+   "package_json_has_version": true,
+   "from_build_info": "2026.1.29",
+   "buildstamp_head": null,
+   "dirlist_jaccard": 0.0009,
+   "dirlist_match": false,
+   "recovered": null,
+   "fingerprint_version": "2026.4.15"
+  },
+  "recovered_without_package_version": false,
+  "resolved_version": "2026.10.4",
+  "version_source": "package.json"
+ },
+ {
+  "install": "opt/openclaw-beta/lib/node_modules/openclaw",
+  "idle": {
+   "user_unit": false,
+   "enabled_symlink": false,
+   "linger_markers": [],
+   "running_process_evidence": 0
+  },
+  "version": {
+   "package_json_has_version": true,
+   "from_build_info": "2026.10.10-beta.1",
+   "buildstamp_head": null,
+   "dirlist_jaccard": 0.0387,
+   "dirlist_match": false,
+   "recovered": null,
+   "fingerprint_version": "2026.4.15"
+  },
+  "recovered_without_package_version": false,
+  "resolved_version": "2026.10.10-beta.1",
+  "version_source": "package.json"
+ },
+ {
+  "install": "root/.npm-global/lib/node_modules/openclaw",
+  "idle": {
+   "user_unit": true,
+   "enabled_symlink": true,
+   "linger_markers": [
+    "root"
+   ],
+   "running_process_evidence": 0
+  },
+  "version": {
+   "package_json_has_version": true,
+   "from_build_info": "2026.4.15",
+   "buildstamp_head": "041266a6699cac3baef8ef39db41fa26f29f9db3",
+   "dirlist_jaccard": 1.0,
+   "dirlist_match": true,
+   "recovered": null,
+   "fingerprint_version": "2026.4.15"
+  },
+  "recovered_without_package_version": false,
+  "resolved_version": "2026.4.15",
+  "version_source": "package.json"
+ },
+ {
+  "install": "usr/lib/node_modules/openclaw",
+  "idle": {
+   "user_unit": false,
+   "enabled_symlink": false,
+   "linger_markers": [],
+   "running_process_evidence": 0
+  },
+  "version": {
+   "package_json_has_version": true,
+   "from_build_info": "2026.10.4",
+   "buildstamp_head": null,
+   "dirlist_jaccard": 0.0436,
+   "dirlist_match": false,
+   "recovered": null,
+   "fingerprint_version": "2026.4.15"
+  },
+  "recovered_without_package_version": false,
+  "resolved_version": "2026.10.4",
+  "version_source": "package.json"
+ }
+]

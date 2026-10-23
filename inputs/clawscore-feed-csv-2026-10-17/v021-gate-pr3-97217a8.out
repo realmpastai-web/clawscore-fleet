@@ -1,0 +1,44 @@
+PASS	G0.release	release='0.2.1' (want '0.2.1')
+PASS	G0.fileA	defender_local_agents.csv found 1: ['evidence/export/defender_local_agents.csv']
+PASS	G0.fileB	agentsinfo_local.jsonl found 1: ['evidence/export/agentsinfo_local.jsonl']
+PASS	G1.encoding	UTF-8, no BOM
+PASS	G1.header	25 cols; exact match to 14 Defender + 11 cs_ names
+PASS	G1.rows	30 data rows (want 30, one per lab install, C10)
+PASS	G1.join	Device name == scan.json install id, 1:1
+FAIL	G1.types	cell types; bad=[('claw-01', 'Device ID empty'), ('claw-01', 'First seen not ISO 8601 UTC'), ('claw-02', 'Device ID empty'), ('claw-02', 'First seen not ISO 8601 UTC'), ('claw-03', 'Device ID empty'), ('claw-03', 'First seen not ISO 8601 UTC'), ('claw-04', 'Device ID empty'), ('claw-04', 'First seen not ISO 8601 UTC')]
+REPORT	G1.list_separators	[('Risk indicators', 'empty'), ('cs_candidates', 'single'), ('cs_candidates', '|'), ('cs_cve_ids', 'empty'), ('cs_cve_ids', '|'), ('cs_ghsa_ids', 'empty'), ('cs_ghsa_ids', '|'), ('cs_readable_secret_classes', 'empty'), ('cs_readable_secret_classes', 'single'), ('cs_readable_secret_classes', '|')]
+PASS	G2.rows	30 JSONL rows (want 30)
+FAIL	G2.keys_types	exact key set 23 top + 10 metadata; types; bad=[('claw-01', 'Timestamp'), ('claw-01', 'LastUpdatedDateTime'), ('claw-01', 'PublishedStatus'), ('claw-02', 'Timestamp'), ('claw-02', 'LastUpdatedDateTime'), ('claw-02', 'PublishedStatus'), ('claw-03', 'Timestamp'), ('claw-03', 'LastUpdatedDateTime')]
+REPORT	G2.key_order_matches_list	True
+PASS	G2.join	deviceName 1:1 with installs; AgentId unique
+PASS	G3.values	A==B and cs_ == scan.json/version-confusion.csv/ghsa-all.json on 30 installs; bad=[]
+REPORT	G3.verdicts	{'exact': 26, 'range': 4, 'unknown': 0}
+PASS	G3.range_pair	range rows ['claw-10', 'claw-11', 'claw-12', 'claw-13']: candidates exactly [2026.4.7-1, 2026.4.8] (v0.2 lab: claw-10..13)
+PASS	G4.cs_gate_trace	every cs_ column's gates pass in the same verify-report.json; failing=[]
+PASS	G5.landscape_hashes	identical to v0.2 @ cc29565
+PASS	G5.matrix_coverage	identical to v0.2 @ cc29565
+PASS	G5.matrix_exact	identical to v0.2 @ cc29565
+PASS	G5.collisions	identical to v0.2 @ cc29565
+PASS	G5.dirlist_metric	identical to v0.2 @ cc29565
+PASS	G5.cve_mapping	identical to v0.2 @ cc29565
+PASS	G5.semver_crosscheck	identical to v0.2 @ cc29565
+PASS	G5.freshness	identical to v0.2 @ cc29565
+PASS	G5.fix_target	identical to v0.2 @ cc29565
+PASS	G5.v01_regression	identical to v0.2 @ cc29565
+PASS	G5.lab.reads	lab gate identical to v0.2
+PASS	G5.lab.old_builds	lab gate identical to v0.2
+PASS	G5.lab.version_accuracy	lab gate identical to v0.2
+PASS	G5.lab.range_verdicts	lab gate identical to v0.2
+PASS	G5.lab.stripped	lab gate identical to v0.2
+PASS	G5.lab.blast_recall	lab gate identical to v0.2
+REPORT	G5.new_gates	['export_header', 'export_jsonl_schema', 'export_traceable', 'readme_unprovens']
+PASS	G5.new.export_header	{"actual": "Agent name,Version,Device name,Device ID,OS platform,Device type,Account name,Account domain,Risk level,Risk indicators,Recommendations,MCP servers,Local MCPs,First seen,cs_build_verdict,c
+PASS	G5.new.export_jsonl_schema	{"errors": [], "pass": true, "rows": 30}
+PASS	G5.new.export_traceable	{"mapped_gates": {"cs_build_verdict": ["version_accuracy", "range_verdicts"], "cs_candidates": ["version_accuracy", "range_verdicts"], "cs_crit_high_count": ["cve_mapping"], "cs_cve_ids": ["cve_mappin
+PASS	G5.new.readme_unprovens	{"checked": 16, "missing": [], "pass": true}
+PASS	G5.ok	ok=True failures=[]
+PASS	G6.readme_lines	14/14 spec lines verbatim (12 UNPROVEN + 2 CONFLICT, whitespace-normalized); missing=[]
+PASS	G7.no_safe	word 'safe' in []
+PASS	G7.no_defender_misses	README lines claiming Defender misses: []
+PASS	G7.no_secret_values	secret-shaped values in []
+SUMMARY pass=37 fail=2 report=4 failed=['G1.types', 'G2.keys_types']

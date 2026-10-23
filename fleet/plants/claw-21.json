@@ -1,0 +1,13 @@
+{
+  "auto_approve": true,
+  "env_names": [
+    "GITHUB_PERSONAL_ACCESS_TOKEN"
+  ],
+  "extra_files": [],
+  "false_version": null,
+  "id": "claw-21",
+  "openclaw_servers": {},
+  "state_dir": "/app/claw-21/.openclaw",
+  "stripped": "none",
+  "work_dir": "/app/claw-21"
+}

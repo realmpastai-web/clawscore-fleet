@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nCodex native tools could ignore per-chat policy. In affected versions, a conversation-level `tools.allow` rule filtered OpenClaw tools but did not restrict shell, process, file, and patch tools owned by the Codex app-server runtime.\n\nThis advisory is scoped to the named feature and configuration. It does not change OpenClaw's trusted-operator model: authenticated Gateway operators, installed plugins, and intentional local execution surfaces remain trusted unless a separate policy, approval, allowlist, sandbox, or auth boundary is crossed.\n\n### Impact\n\nWhen a lower-trust conversation was assigned to a Codex runtime and restricted with a per-chat tool allowlist, a participant who could trigger that agent could still reach native command and file tools. Practical impact depended on the runtime's host permissions and sandbox configuration.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, route restricted chats to an agent runtime without native host tools or disable those tools at the agent boundary.",
+  "id": "GHSA-wwcw-jfpp-gpxw",
+  "modified": "2026-09-11T00:58:52Z",
+  "published": "2026-09-11T00:58:52Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-wwcw-jfpp-gpxw"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Codex native tools could ignore per-chat policy"
+}

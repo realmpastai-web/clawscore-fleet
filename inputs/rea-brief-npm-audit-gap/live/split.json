@@ -1,0 +1,55 @@
+{
+ "feed_newest": "2026-09-11",
+ "feed_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034",
+ "global_db_sha256": "4f02bd7f1e9a213c1824e290a716d34e1fe0cfa622516a8f1a425cada7bbb0aa",
+ "oracle_sha256": "82e0033a310610669bdc0bb51ec2fcd5987ec8444ae83ec04da6c9e7dce02bf6",
+ "versions": [
+  {
+   "clawscore": 148,
+   "db_not_npm": [
+    "GHSA-2j8v-hwgc-x698"
+   ],
+   "npm_audit": 67,
+   "npm_audit_date_utc": "2026-10-20T17:34:41+00:00",
+   "npm_audit_rows": 67,
+   "npm_only": [],
+   "overlap": 67,
+   "repo_only": 80,
+   "response_sha256": "fc192cbb8e0bb87b4165a67d77059404e73ea6cf7b9cf8a33e09d7d793109dae",
+   "sentence": "npm audit returned 67 advisories for openclaw@2026.4.22 on 2026-10-20; the maker's repository lists 148 (feed newest 2026-09-11).",
+   "server_date": "Tue, 20 Oct 2026 17:34:41 GMT",
+   "version": "2026.4.22"
+  },
+  {
+   "clawscore": 58,
+   "db_not_npm": [],
+   "npm_audit": 0,
+   "npm_audit_date_utc": "2026-10-20T17:34:41+00:00",
+   "npm_audit_rows": 0,
+   "npm_only": [],
+   "overlap": 0,
+   "repo_only": 58,
+   "response_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+   "sentence": "npm audit returned 0 advisories for openclaw@2026.6.10 on 2026-10-20; the maker's repository lists 58 (feed newest 2026-09-11).",
+   "server_date": "Tue, 20 Oct 2026 17:34:42 GMT",
+   "version": "2026.6.10"
+  },
+  {
+   "clawscore": 627,
+   "db_not_npm": [
+    "GHSA-2j8v-hwgc-x698",
+    "GHSA-hggm-x7r9-mm7v"
+   ],
+   "npm_audit": 555,
+   "npm_audit_date_utc": "2026-10-20T17:34:41+00:00",
+   "npm_audit_rows": 555,
+   "npm_only": [],
+   "overlap": 555,
+   "repo_only": 70,
+   "response_sha256": "22df689e5ee607b056708683c90c537f0a8e81162572f1c42aa59f06b1a58c9a",
+   "sentence": "npm audit returned 555 advisories for openclaw@2026.1.29 on 2026-10-20; the maker's repository lists 627 (feed newest 2026-09-11).",
+   "server_date": "Tue, 20 Oct 2026 17:34:42 GMT",
+   "version": "2026.1.29"
+  }
+ ]
+}

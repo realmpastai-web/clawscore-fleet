@@ -1,0 +1,8 @@
+source: LIVE api.github.com
+total_advisories: 760
+with_cve_id: 452
+without_cve_id: 308
+without_cve_id_by_severity: {'critical': 9, 'high': 101, 'low': 32, 'medium': 166}
+without_cve_id_critical_or_high: 110
+newest_published: 2026-07-02T17:23:43Z
+example_ghsa_without_cve: ['GHSA-27pq-2ph8-8x25', 'GHSA-2858-xg23-26fp', 'GHSA-2ch6-x3g4-7759']

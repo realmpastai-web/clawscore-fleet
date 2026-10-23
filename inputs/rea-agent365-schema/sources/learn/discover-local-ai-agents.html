@@ -1,0 +1,1952 @@
+ <!DOCTYPE html>
+		<html
+			class="layout layout-holy-grail   show-table-of-contents conceptual show-breadcrumb default-focus"
+			lang="en-us"
+			dir="ltr"
+			data-authenticated="false"
+			data-auth-status-determined="false"
+			data-target="docs"
+			x-ms-format-detection="none"
+		>
+			
+		<head>
+			<title>Discover local AI agents with Microsoft Defender for Endpoint - Microsoft Defender for Endpoint | Microsoft Learn</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="color-scheme" content="light dark" />
+
+			<meta name="description" content="Learn how to discover, view, and investigate local AI agents on Windows and macOS devices by using Microsoft Defender." />
+			<link rel="canonical" href="https://learn.microsoft.com/en-us/defender-endpoint/discover-local-ai-agents" /> 
+
+			<!-- Non-customizable open graph and sharing-related metadata -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@MicrosoftLearn" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image:alt" content="Microsoft Learn" />
+			<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+			<!-- Page specific open graph and sharing-related metadata -->
+			<meta property="og:title" content="Discover local AI agents with Microsoft Defender for Endpoint - Microsoft Defender for Endpoint" />
+			<meta property="og:url" content="https://learn.microsoft.com/en-us/defender-endpoint/discover-local-ai-agents" />
+			<meta property="og:description" content="Learn how to discover, view, and investigate local AI agents on Windows and macOS devices by using Microsoft Defender." />
+			<meta name="platform_id" content="02bd370a-d6ee-28a3-0704-0b8885819855" /> <meta name="scope" content="Microsoft Defender Endpoint" />
+			<meta name="locale" content="en-us" />
+			 
+			<meta name="uhfHeaderId" content="MSDocsHeader-MicrosoftDefender" />
+
+			<meta name="page_type" content="conceptual" />
+
+			<!--page specific meta tags-->
+			
+
+			<!-- custom meta tags -->
+			
+		<meta name="breadcrumb_path" content="/defender-endpoint/breadcrumb/toc.json" />
+	
+		<meta name="feedback_system" content="Standard" />
+	
+		<meta name="permissioned-type" content="public" />
+	
+		<meta name="feedback_product_url" content="https://techcommunity.microsoft.com/t5/security-compliance-and-identity/ct-p/MicrosoftSecurityandCompliance" />
+	
+		<meta name="manager" content="bagol" />
+	
+		<meta name="author" content="lwainstein" />
+	
+		<meta name="ms.author" content="lwainstein" />
+	
+		<meta name="ms.service" content="defender-endpoint" />
+	
+		<meta name="ms.topic" content="how-to" />
+	
+		<meta name="ms.custom" content="msecd-doc-authoring-1030" />
+	
+		<meta name="ms.date" content="2026-10-07T00:00:00Z" />
+	
+		<meta name="ai-usage" content="ai-assisted" />
+	
+		<meta name="document_id" content="3ab263d3-69ba-bccb-3caf-8a3d135be6b6" />
+	
+		<meta name="document_version_independent_id" content="3ab263d3-69ba-bccb-3caf-8a3d135be6b6" />
+	
+		<meta name="updated_at" content="2026-10-09T17:38:00Z" />
+	
+		<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/defender-docs-pr/blob/live/defender-endpoint/discover-local-ai-agents.md" />
+	
+		<meta name="gitcommit" content="https://github.com/MicrosoftDocs/defender-docs-pr/blob/2d0cefa3fca98bd5ba0156187b6b6f5a14e19bc2/defender-endpoint/discover-local-ai-agents.md" />
+	
+		<meta name="git_commit_id" content="2d0cefa3fca98bd5ba0156187b6b6f5a14e19bc2" />
+	
+		<meta name="site_name" content="Docs" />
+	
+		<meta name="depot_name" content="Learn.defender-endpoint" />
+	
+		<meta name="schema" content="Conceptual" />
+	
+		<meta name="toc_rel" content="toc.json" />
+	
+		<meta name="feedback_help_link_type" content="" />
+	
+		<meta name="feedback_help_link_url" content="" />
+	
+		<meta name="word_count" content="3111" />
+	
+		<meta name="asset_id" content="discover-local-ai-agents" />
+	
+		<meta name="moniker_range_name" content="" />
+	
+		<meta name="item_type" content="Content" />
+	
+		<meta name="source_path" content="defender-endpoint/discover-local-ai-agents.md" />
+	
+		<meta name="previous_tlsh_hash" content="B5411752431E4512BF5B7F17280BA76552E0C48777F03AC86136A872E48B2D621B6D137FE723B31B637F47831392B94DD4D77368D1A8261926D97CA9411CA2022ED96F33F8" />
+	
+		<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/defender-docs/blob/public/defender-endpoint/discover-local-ai-agents.md" />
+	
+		<meta name="markdown_url" content="https://learn.microsoft.com/en-us/defender-endpoint/discover-local-ai-agents?accept=text/markdown" />
+	 
+		<meta name="cmProducts" content="https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/8b9ae643-2e85-42b8-beb2-eef4bae8c4bc" data-source="generated" />
+	
+		<meta name="cmProducts" content="https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/c671beaa-a830-4c9f-aceb-97379ee031ca" data-source="generated" />
+	
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/1dd701e0-441f-4b0a-9806-aa47decc4e35" data-source="generated" />
+	
+		<meta name="spProducts" content="https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/e047e27d-b5f3-43a8-b4b0-4f6dca95e7c9" data-source="generated" />
+	
+		<meta name="spProducts" content="https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/8921374c-4dbe-4ed0-b011-a39e18bfbd98" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/0a2fc935-5977-4aa6-9f55-0be03bd2acb8" data-source="generated" />
+	
+
+			<!-- Apply persisted/system theme before first paint to prevent wrong-theme flash when scripts are deferred. -->
+			<script id="theme-preference">
+				(function () {
+			try {
+				var stored = localStorage.getItem('theme');
+				var theme = /^(light|dark|high-contrast)$/.test(stored)
+					? stored
+					: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				document.documentElement.classList.add('theme-' + theme);
+			} catch (e) {}
+		})();;
+			</script>
+
+			<script id="atlas-layout-preferences">
+				(function () {
+			try {
+				var state = JSON.parse(localStorage.getItem('atlas-layout-preferences') || '{}');
+				var view = state["docs-layout-persistence"] || {};
+				var excludesKey = "";
+				var blocked = {};
+				if (excludesKey) {
+					var exclusions = JSON.parse(localStorage.getItem('atlas-layout-exclusions') || '{}');
+					if (Object.prototype.hasOwnProperty.call(exclusions, excludesKey)) {
+						var scoped = exclusions[excludesKey];
+						if (scoped) {
+							if (typeof scoped === 'object') blocked = scoped;
+						}
+					}
+				}
+				var html = document.documentElement;
+				for (var c in view) {
+					if (Object.prototype.hasOwnProperty.call(blocked, c)) continue;
+					if (view[c]) html.classList.add(c);
+					else html.classList.remove(c);
+				}
+			} catch (e) {}
+		})();;
+			</script>
+
+			<!-- assets and js globals -->
+			
+			<link rel="stylesheet" href="/static/assets/0.4.03574.8308-9505b1c8/styles/site.css" />
+			
+			<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+			<!-- Keep this URL in sync with oneDSScriptSelector in instrumentation/one-ds.ts. -->
+			<script async src="https://js.monitor.azure.com/scripts/c/ms.jsll-4.min.js"></script>
+			
+
+			<!-- msdocs global object -->
+			<script id="msdocs-script">
+		var msDocs = {
+  "environment": {
+    "accessLevel": "online",
+    "azurePortalHostname": "portal.azure.com",
+    "reviewFeatures": false,
+    "supportLevel": "production",
+    "systemContent": true,
+    "siteName": "learn",
+    "legacyHosting": false
+  },
+  "data": {
+    "contentLocale": "en-us",
+    "contentDir": "ltr",
+    "userLocale": "en-us",
+    "userDir": "ltr",
+    "pageTemplate": "Conceptual",
+    "layoutStateStorageKey": "docs-layout-persistence",
+    "brand": "",
+    "context": {},
+    "standardFeedback": true,
+    "showFeedbackReport": false,
+    "feedbackHelpLinkType": "",
+    "feedbackHelpLinkUrl": "",
+    "feedbackSystem": "Standard",
+    "feedbackGitHubRepo": "",
+    "feedbackProductUrl": "https://techcommunity.microsoft.com/t5/security-compliance-and-identity/ct-p/MicrosoftSecurityandCompliance",
+    "extendBreadcrumb": false,
+    "isEditDisplayable": true,
+    "isPrivateUnauthorized": false,
+    "hideViewSource": false,
+    "isPermissioned": false,
+    "hasRecommendations": true
+  },
+  "functions": {}
+};;
+	</script>
+
+			<!-- base scripts, msdocs global should be before this -->
+			<script
+				src="/static/assets/0.4.03574.8308-9505b1c8/scripts/en-us/index-docs.js"
+				async
+			></script>
+			
+
+			<!-- json-ld -->
+			
+		<script >bazadebezolkohpepadr="1021347329"</script><script type="text/javascript" src="https://learn.microsoft.com/akam/13/3ce08613"  defer></script></head>
+	
+			<body
+				id="body"
+				data-bi-name="body"
+				class="layout-body "
+				lang="en-us"
+				dir="ltr"
+			>
+				<header class="layout-body-header background-color-body-medium">
+		<div class="header-holder has-default-focus">
+			
+		<a
+			href="#main"
+			
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			
+		>
+			Skip to main content
+		</a>
+	
+		<a
+			href="#"
+			data-skip-to-ask-learn
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			hidden
+		>
+			Skip to Ask Learn chat experience
+		</a>
+	
+
+			<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+			<!-- Unsupported browser warning -->
+			<div
+				id="unsupported-browser"
+				style="background-color: white; color: black; padding: 16px; border-bottom: 1px solid grey;"
+				hidden
+			>
+				<div style="max-width: 800px; margin: 0 auto;">
+					<p style="font-size: 24px">This browser is no longer supported.</p>
+					<p style="font-size: 16px; margin-top: 16px;">
+						Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+					</p>
+					<div style="margin-top: 12px;">
+						<a
+							href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+							style="background-color: #0078d4; border: 1px solid #0078d4; color: white; padding: 6px 12px; border-radius: 2px; display: inline-block;"
+						>
+							Download Microsoft Edge
+						</a>
+						<a
+							href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+							style="background-color: white; padding: 6px 12px; border: 1px solid #505050; color: #171717; border-radius: 2px; display: inline-block;"
+						>
+							More info about Internet Explorer and Microsoft Edge
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- site header -->
+			<div
+				id="ms--site-header"
+				data-test-id="site-header-wrapper"
+				itemscope="itemscope"
+				itemtype="http://schema.org/Organization"
+			>
+				<div
+					id="ms--mobile-nav"
+					class="site-header display-none-tablet padding-inline-none gap-none"
+					data-bi-name="mobile-header"
+					data-test-id="mobile-header"
+				></div>
+				<div
+					id="ms--primary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L1-header"
+					data-test-id="primary-header"
+				></div>
+				<div
+					id="ms--secondary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L2-header"
+					data-test-id="secondary-header"
+					
+				></div>
+			</div>
+			
+		<!-- banner -->
+		<div data-banner>
+			<div id="disclaimer-holder"></div>
+			
+		</div>
+		<!-- banner end -->
+	
+		</div>
+	</header>
+				 <section
+					id="layout-body-menu"
+					class="layout-body-menu border-right display-flex background-color-body-medium"
+					data-bi-name="menu"
+			  >
+					
+		<div
+			id="left-container"
+			class="left-container display-none padding-none display-block-tablet width-full display-none-until-layout-restored"
+			data-toc-container="true"
+		>
+			<div
+				id="ms--toc-content"
+				class="padding-left-sm padding-right-none padding-bottom-sm height-full"
+			>
+				<nav
+					id="affixed-left-container"
+					class="margin-top-xxs-tablet position-sticky display-flex flex-direction-column width-full"
+					aria-label="Primary"
+					data-bi-name="left-toc"
+					role="navigation"
+				>
+					<div
+						id="ms--collapsible-toc-header"
+						class="display-flex flex-direction-row-reverse justify-content-center align-items-center margin-bottom-xxs margin-right-xxs"
+					>
+						<button
+							type="button"
+							class="button button-clear button-sm inner-focus"
+							data-collapsible-toc-toggle
+							aria-expanded="true"
+							hidden
+							aria-controls="ms--toc-content"
+							aria-label="Table of contents"
+						>
+							<span class="icon icon-mirrored-rtl" aria-hidden="true">
+								<span
+									class="docon docon-panel-left-contract display-none-layout-menu-collapsed"
+								></span>
+								<span
+									class="docon docon-panel-left-expand display-none display-inline-layout-menu-collapsed"
+								></span>
+							</span>
+						</button>
+						<div
+							id="ms--collapsible-toc-moniker-slot"
+							class="flex-grow-1 display-none-layout-menu-collapsed"
+						></div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	
+			  </section>
+
+				<main
+					id="main"
+					role="main"
+					class="layout-body-main "
+					data-bi-name="content"
+					lang="en-us"
+					dir="ltr"
+				>
+					
+			<div
+		id="ms--content-header"
+		class="content-header default-focus border-bottom-none"
+		data-bi-name="content-header"
+	>
+		<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+			<button
+				type="button"
+				class="contents-button button button-sm margin-right-xxs"
+				data-bi-name="contents-expand"
+				aria-haspopup="true"
+				data-contents-button
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-menu"></span></span>
+				<span class="contents-expand-title"> Table of contents </span>
+			</button>
+			<button
+				type="button"
+				class="ap-collapse-behavior ap-expanded button button-sm"
+				data-bi-name="ap-collapse"
+				aria-controls="action-panel"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-exit-mode"></span></span>
+				<span>Exit editor mode</span>
+			</button>
+		</div>
+	</div> 
+		<div
+			id="action-panel"
+			role="region"
+			aria-label="Action Panel"
+			class="action-panel"
+			tabindex="-1"
+		></div>
+	
+			<div
+				data-main-column
+				class="reading-width margin-inline-auto layout-padding padding-top-none padding-top-sm-tablet padding-bottom-sm"
+			>
+				<div>
+					
+		<div id="article-header" class="background-color-body margin-bottom-xs display-none-print">
+			<div class="display-flex align-items-center justify-content-space-between">
+				
+		<details
+			id="article-header-breadcrumbs-overflow-popover"
+			class="popover popover-left"
+			data-for="article-header-breadcrumbs"
+		>
+			<summary
+				class="button button-clear button-primary button-sm inner-focus"
+				aria-label="All breadcrumbs"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-more"></span>
+				</span>
+			</summary>
+			<div id="article-header-breadcrumbs-overflow" class="popover-content"></div>
+		</details>
+
+		<bread-crumbs
+			id="article-header-breadcrumbs"
+			role="group"
+			aria-label="Breadcrumbs"
+			data-test-id="article-header-breadcrumbs"
+			class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs"
+		></bread-crumbs>
+	 
+		<div
+			id="article-header-page-actions"
+			class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch"
+		>
+			
+		<button
+			class="button button-sm border-none inner-focus display-none-tablet flex-shrink-0 "
+			data-bi-name="ask-learn-assistant-entry"
+			data-test-id="ask-learn-assistant-modal-entry-mobile"
+			data-ask-learn-modal-entry
+			
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-none display-inline-flex-tablet display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-modal-entry-tablet"
+			data-ask-learn-modal-entry
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-flyout-entry"
+			data-ask-learn-flyout-entry
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	 
+
+			<details class="popover popover-right" id="article-header-page-actions-overflow">
+				<summary
+					class="justify-content-flex-start button button-clear button-sm button-primary inner-focus"
+					aria-label="More actions"
+					aria-expanded="false"
+					title="More actions"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-more-vertical"></span>
+					</span>
+				</summary>
+				<div class="popover-content">
+					
+		<button
+			type="button"
+			id="ms--focus-mode-button"
+			data-focus-mode
+			data-bi-name="focus-mode-entry"
+			data-page-action-item="overflow-all"
+			data-popover-close
+			class="button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus display-none display-inline-flex-tablet"
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-glasses"></span>
+			</span>
+			<span>Reading mode</span>
+		</button>
+	 
+		<button
+			data-page-action-item="overflow-mobile"
+			type="button"
+			class="display-block-layout-menu-collapsed button-block button-sm inner-focus button button-clear display-none-tablet justify-content-flex-start text-align-left"
+			data-bi-name="contents-expand"
+			data-contents-button
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true"
+				><span class="docon docon-editor-list-bullet"></span
+			></span>
+			<span class="contents-expand-title">Table of contents</span>
+		</button>
+	 
+		<a
+			id="lang-link-overflow"
+			class="button-sm inner-focus button button-clear button-block justify-content-flex-start text-align-left"
+			data-bi-name="language-toggle"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-read-in-link
+			href="#"
+			hidden
+		>
+			<span class="icon" aria-hidden="true" data-read-in-link-icon>
+				<span class="docon docon-locale-globe"></span>
+			</span>
+			<span data-read-in-link-text>Read in English</span>
+		</a>
+	
+					
+		<button
+			type="button"
+			class="collection button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus"
+			data-list-type="collection"
+			data-bi-name="collection"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="collection-status">Add</span>
+		</button>
+	 
+		<button
+			type="button"
+			class="collection button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			data-list-type="plan"
+			data-bi-name="plan"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="plan-status">Add to Plans</span>
+		</button>
+	 
+					
+		<a
+			data-contenteditbtn
+			class="button button-clear button-block button-sm inner-focus justify-content-flex-start text-align-left text-decoration-none"
+			data-bi-name="edit"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			
+			href="https://github.com/MicrosoftDocs/defender-docs/blob/public/defender-endpoint/discover-local-ai-agents.md"
+			data-original_content_git_url="https://github.com/MicrosoftDocs/defender-docs-pr/blob/live/defender-endpoint/discover-local-ai-agents.md"
+			data-original_content_git_url_template="{repo}/blob/{branch}/defender-endpoint/discover-local-ai-agents.md"
+			data-pr_repo=""
+			data-pr_branch=""
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-edit-outline"></span>
+			</span>
+			<span>Edit</span>
+		</a>
+	  
+		<hr class="margin-block-xxs" />
+		
+				<button
+					class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+					type="button"
+					data-bi-name="copy-markdown"
+					data-page-action-item="overflow-all"
+					data-copy-markdown
+					data-copy-state="idle"
+					data-check-hidden="true"
+				>
+					<span class="icon color-primary" aria-hidden="true">
+						<span data-show-when="idle" class="docon docon-code-lang"></span>
+						<span data-show-when="loading" class="loader" hidden></span>
+						<span data-show-when="success" class="docon docon-check-mark" hidden></span>
+					</span>
+					<span>Copy Markdown</span>
+				</button>
+		   
+				<button
+					class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+					type="button"
+					data-bi-name="print"
+					data-page-action-item="overflow-all"
+					data-popover-close
+					data-print-page
+					data-check-hidden="true"
+				>
+					<span class="icon color-primary" aria-hidden="true">
+						<span class="docon docon-print"></span>
+					</span>
+					<span>Print</span>
+				</button>
+		  
+	
+				</div>
+			</details>
+		</div>
+	
+			</div>
+		</div>
+	  
+		<!-- privateUnauthorizedTemplate is hidden by default -->
+		<div unauthorized-private-section data-bi-name="permission-content-unauthorized-private" hidden>
+			<hr class="hr margin-top-xs margin-bottom-sm" />
+			<div class="notification notification-info">
+				<div class="notification-content">
+					<p class="margin-top-none notification-title">
+						<span class="icon" aria-hidden="true"
+							><span class="docon docon-exclamation-circle-solid"></span
+						></span>
+						<span>Note</span>
+					</p>
+					<p class="margin-top-none authentication-determined not-authenticated">
+						Access to this page requires authorization. You can try <a class="docs-sign-in" href="#" data-bi-name="permission-content-sign-in">signing in</a> or <a  class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+					<p class="margin-top-none authentication-determined authenticated">
+						Access to this page requires authorization. You can try <a class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	
+					<div class="content"><h1 id="discover-local-ai-agents-with-microsoft-defender-for-endpoint">Discover local AI agents with Microsoft Defender for Endpoint</h1></div>
+					
+		<div
+			id="article-metadata"
+			data-bi-name="article-metadata"
+			data-test-id="article-metadata"
+			class="page-metadata-container display-flex gap-xxs justify-content-space-between align-items-center flex-wrap-wrap"
+		>
+			 
+				<div
+					id="user-feedback"
+					class="margin-block-xxs display-none display-none-print"
+					hidden
+					data-hide-on-archived
+				>
+					
+		<button
+			id="user-feedback-button"
+			data-test-id="conceptual-feedback-button"
+			class="button button-sm button-clear button-primary display-none"
+			type="button"
+			data-bi-name="user-feedback-button"
+			data-user-feedback-button
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-like"></span>
+			</span>
+			<span>Feedback</span>
+		</button>
+	
+				</div>
+		  
+		</div>
+	 
+		<div data-id="ai-summary" class="display-none-print">
+			<div id="ms--ai-summary-cta" class="margin-top-xs display-flex align-items-center">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-sparkle-fill gradient-text-vivid"></span>
+				</span>
+				<button
+					id="ms--ai-summary"
+					type="button"
+					class="tag tag-sm tag-suggestion margin-left-xxs"
+					data-test-id="ai-summary-cta"
+					data-bi-name="ai-summary-cta"
+					data-an="ai-summary"
+				>
+					<span class="ai-summary-cta-text">
+						Summarize this article for me
+					</span>
+				</button>
+			</div>
+			<!-- Slot where the client will render the summary card after the user clicks the CTA -->
+			<div id="ms--ai-summary-header" class="margin-top-xs"></div>
+		</div>
+	 
+		<nav
+			id="center-doc-outline"
+			class="doc-outline display-none-desktop display-none-print margin-bottom-sm"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">
+				In this article
+			</h2>
+		</nav>
+	 <div class="content"><p>Microsoft Defender discovers supported AI agents and their MCP servers after it observes agent activity on onboarded devices and surfaces them in the AI agent inventory and advanced hunting. An installed agent might not appear until Defender observes agent activity. To learn more about local AI agent discovery, see <a href="local-agent-discovery-overview" data-linktype="relative-path">Local AI agent discovery with Microsoft Defender for Endpoint</a>. For coverage by agent, operating system, and MCP server configuration, see <a href="ai-agent-support-matrix" data-linktype="relative-path">Microsoft Defender for Endpoint AI agent support matrix</a>.</p>
+<p>In this article, you learn how to view discovered agents in the inventory, review their configuration and risk, explore their relationships with devices and identities, and investigate agent presence using advanced hunting.</p>
+<div class="NOTE">
+<p>Note</p>
+<p>Local AI agent discovery on macOS is in preview.</p>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you can discover local AI agents on endpoints, make sure you meet the following requirements:</p>
+<ul>
+<li>Your environment is in the commercial cloud. Sovereign and national clouds aren't supported.</li>
+<li>Your organization has a Microsoft Defender for Endpoint Plan 2 license. For more information, see <a href="#licensing" data-linktype="self-bookmark">Licensing</a>.</li>
+<li>Your devices are <a href="onboard-configure" data-linktype="relative-path">onboarded to Microsoft Defender for Endpoint</a>.</li>
+<li>Your devices run a supported version of Windows or macOS, and Microsoft Defender Antivirus is updated with current monthly platform and engine updates.</li>
+<li>Microsoft Defender Antivirus is running in active mode on your devices, with real-time protection enabled.</li>
+</ul>
+<p>You don't need additional deployment, configuration, or scripts beyond the device onboarding requirements. If the device meets all of the prerequisites, agent discovery begins automatically.</p>
+<h3 id="licensing">Licensing</h3>
+<p>Microsoft Defender for Endpoint Plan 2 is the minimum license for local AI agent discovery. Security posture capabilities for the agents that Defender discovers require another license, as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Required license</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discover local AI agents and view them in the AI agent inventory, including the agent details, the device and account, and the configured MCP servers</td>
+<td>Microsoft Defender for Endpoint Plan 2</td>
+</tr>
+<tr>
+<td>Query local AI agents in advanced hunting, including the <code>AgentsInfo</code> table</td>
+<td>Microsoft Defender for Endpoint Plan 2</td>
+</tr>
+<tr>
+<td>View the risk level, risk indicators, and security recommendations for discovered local AI agents</td>
+<td>Microsoft 365 E7, or Microsoft Agent 365 together with Microsoft Defender for Endpoint Plan 2</td>
+</tr>
+</tbody>
+</table>
+<p>Microsoft 365 E5 and Microsoft 365 E7 both include Microsoft Defender for Endpoint Plan 2. If your organization has Microsoft Defender for Endpoint Plan 2 without Microsoft 365 E7 or Microsoft Agent 365, you can discover local AI agents, view the inventory, and query agents in advanced hunting, but the risk level, risk indicators, and security recommendations aren't available.</p>
+<h2 id="view-local-ai-agents-in-the-inventory">View local AI agents in the inventory</h2>
+<ol>
+<li><p>Sign in to the <a href="https://security.microsoft.com/" data-linktype="external">Microsoft Defender portal</a>.</p>
+</li>
+<li><p>In the left navigation pane, select <strong>Assets</strong> &gt; <strong>AI agents</strong>.</p>
+</li>
+<li><p>Select the <strong>Local agents</strong> tab to see the local AI agents discovered on your devices.</p>
+<p><span class="mx-imgBorder">
+<a href="media/local-agent-discovery-overview/discovery-overview.png#lightbox" data-linktype="relative-path">
+<img src="media/local-agent-discovery-overview/discovery-overview.png" alt="Screenshot showing the local AI agents inventory in the Microsoft Defender portal with discovered agents listed." data-linktype="relative-path">
+</a>
+</span>
+</p>
+</li>
+</ol>
+<p>The <strong>Agents insights</strong> cards summarize the total number of monitored agents, the number of agents at a high risk level, and the number of critical agents.</p>
+<p>The list shows one entry for each agent installation, so an agent that runs on several devices, or under several accounts on the same device, appears more than once. Use the filters to narrow the list, select <strong>Customize columns</strong> to change which columns appear, or select <strong>Export</strong> to download the list.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent name</strong>, <strong>Version</strong></td>
+<td>The discovered agent, and the version installed.</td>
+</tr>
+<tr>
+<td><strong>Device name</strong>, <strong>Device ID</strong>, <strong>OS platform</strong>, <strong>Device type</strong></td>
+<td>The device where the agent was discovered.</td>
+</tr>
+<tr>
+<td><strong>Account name</strong>, <strong>Account domain</strong></td>
+<td>The account that the agent runs under.</td>
+</tr>
+<tr>
+<td><strong>Risk level</strong></td>
+<td>The overall risk level of the agent.</td>
+</tr>
+<tr>
+<td><strong>Risk indicators</strong></td>
+<td>Why the agent is considered risky, such as <strong>Running on a Critical Device</strong> or <strong>Used by a Critical User</strong>.</td>
+</tr>
+<tr>
+<td><strong>Recommendations</strong></td>
+<td>The security recommendations that apply to the agent.</td>
+</tr>
+<tr>
+<td><strong>MCP servers</strong>, <strong>Local MCPs</strong></td>
+<td>The number of remote MCP servers, and of local MCP servers, configured for the agent.</td>
+</tr>
+<tr>
+<td><strong>First seen</strong></td>
+<td>When the agent was first discovered.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<p>Note</p>
+<p>Risk levels, risk indicators, and security recommendations require Microsoft 365 E7 or Microsoft Agent 365. Without one of these licenses, you can still view the inventory and the details of each agent. For more information, see <a href="#licensing" data-linktype="self-bookmark">Licensing</a>.</p>
+</div>
+<h3 id="view-the-details-of-a-local-ai-agent">View the details of a local AI agent</h3>
+<p>From the <strong>Local agents</strong> list, select an agent to open its details pane:</p>
+<ul>
+<li><strong>Details</strong> shows the agent name, vendor, model, related process, whether the host process is trusted, whether the agent automatically approves its own actions, and the source agent ID.</li>
+<li><strong>Risk</strong> shows the risk level, the risk indicators, and the security recommendations that apply to the agent.</li>
+<li><strong>Device details</strong> shows the device where the agent was discovered, including the OS platform and version, the device type and roles, and the Microsoft Entra device ID.</li>
+<li><strong>User details</strong> shows the ID, name, and domain of the account that the agent runs under.</li>
+<li><strong>MCP servers</strong> lists the MCP servers configured for the agent, with the name, type, and endpoint of each server.</li>
+<li><strong>Local MCP servers</strong> lists the local MCP entries discovered on the device.</li>
+</ul>
+<p>To investigate further, select <strong>Go hunt</strong> to query the agent in advanced hunting, <strong>View on map</strong> to see the agent in the attack surface map, or <strong>Open Agent page</strong> to open the full agent page.</p>
+<h3 id="review-an-agents-attack-surface-and-recommendations">Review an agent's attack surface and recommendations</h3>
+<p>The agent page has an <strong>Overview</strong> tab and a <strong>Security recommendations</strong> tab. The <strong>Attack surface</strong> map on the <strong>Overview</strong> tab shows the other agents, devices, identities, and resources associated with the agent.</p>
+<p>For more information on using the AI agent inventory, see <a href="/en-us/defender-xdr/security-for-ai/ai-agent-inventory" data-linktype="absolute-path">Discover AI agents and assess security posture using Microsoft Defender</a>.</p>
+<h2 id="query-local-ai-agents-using-advanced-hunting">Query local AI agents using advanced hunting</h2>
+<p>Use advanced hunting to proactively investigate local AI agent presence, understand how agents are configured, and identify the agents and users that carry the most risk. These queries help you inventory agents, review the MCP servers they connect to, and trace access to critical or sensitive assets.</p>
+<h3 id="understand-the-tables">Understand the tables</h3>
+<p>Three advanced hunting tables describe local AI agents. Each answers a different question, and they're most useful together.</p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>What it contains</th>
+<th>Use it to answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/en-us/defender-xdr/advanced-hunting-agentsinfo-table" data-linktype="absolute-path">AgentsInfo</a></td>
+<td>A profile record for every AI agent that Microsoft Defender discovers on all agent platforms. For local AI agents, the record includes the publisher, version, host process, trust and auto-approve settings, configured MCP servers, and the device and account where the agent was seen.</td>
+<td>What is this agent, and how is it configured?</td>
+</tr>
+<tr>
+<td><a href="/en-us/defender-xdr/advanced-hunting-exposuregraphnodes-table" data-linktype="absolute-path">ExposureGraphNodes</a></td>
+<td>Every entity in your organization as a node, including AI agents, devices, identities, and cloud resources, along with properties such as asset criticality and whether the entity holds sensitive data.</td>
+<td>What is this entity, and how much does it matter?</td>
+</tr>
+<tr>
+<td><a href="/en-us/defender-xdr/advanced-hunting-exposuregraphedges-table" data-linktype="absolute-path">ExposureGraphEdges</a></td>
+<td>The relationships between nodes, such as the device an agent runs on, or the resources an identity can access.</td>
+<td>What can this agent reach?</td>
+</tr>
+</tbody>
+</table>
+<p>In short, <code>AgentsInfo</code> describes what an agent <em>is</em>, and the exposure graph describes what an agent can <em>reach</em>.</p>
+<p>Both data sources contain agents from every platform, including cloud agents, so each one needs its own filter.</p>
+<p>In <code>AgentsInfo</code>, filter on the <code>Platform</code> column:</p>
+<pre><code class="lang-kusto">AgentsInfo
+| where Platform == "LocalAgents"
+</code></pre>
+<p>In <code>ExposureGraphNodes</code>, AI agents use the <code>ai-agent</code> node label. Filter on the platform reported in the node properties:</p>
+<pre><code class="lang-kusto">ExposureGraphNodes
+| where NodeLabel == "ai-agent"
+| where tostring(NodeProperties.rawData.aiAgentMetadata.platform) == "LocalAgents"
+</code></pre>
+<div class="IMPORTANT">
+<p>Important</p>
+<p>The <code>ExposureGraphEdges</code> table doesn't include a property that identifies local AI agents. Filtering only on <code>SourceNodeLabel == "ai-agent"</code> returns edges for every AI agent in your tenant, including cloud agents. Always resolve the local agent set from <code>ExposureGraphNodes</code> first, and then join to <code>ExposureGraphEdges</code> on the node ID, as shown in the following queries.</p>
+</div>
+<h3 id="combine-the-tables">Combine the tables</h3>
+<p>An agent has two identifiers, and queries that combine the tables need both:</p>
+<ul>
+<li><code>AgentId</code> identifies the agent profile in <code>AgentsInfo</code>. The exposure graph stores the same value in the agent node, as <code>NodeProperties.rawData.aiAgentMetadata.id</code>.</li>
+<li><code>NodeId</code> identifies the agent's node in the exposure graph. This is the value that <code>ExposureGraphEdges</code> refers to, in <code>SourceNodeId</code> and <code>TargetNodeId</code>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>To go from</th>
+<th>To</th>
+<th>Match on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AgentsInfo</code></td>
+<td><code>ExposureGraphNodes</code></td>
+<td><code>tostring(AgentId)</code> and <code>tostring(NodeProperties.rawData.aiAgentMetadata.id)</code></td>
+</tr>
+<tr>
+<td><code>ExposureGraphNodes</code></td>
+<td><code>ExposureGraphEdges</code></td>
+<td><code>NodeId</code> and <code>SourceNodeId</code> or <code>TargetNodeId</code></td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<p>Note</p>
+<p><code>AgentId</code> is a <code>guid</code> column in <code>AgentsInfo</code>, but the exposure graph stores the same value as a string. Convert it with <code>tostring()</code> on both sides of the join. A join between columns of different types doesn't match any rows.</p>
+</div>
+<p>Local AI agent nodes connect to the rest of the exposure graph through the following edges:</p>
+<table>
+<thead>
+<tr>
+<th>Edge label</th>
+<th>Target node label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>runs on</code></td>
+<td><code>device</code>, <code>ec2.instance</code>, <code>microsoft.compute/virtualmachines</code></td>
+<td>The device where the agent was discovered.</td>
+</tr>
+<tr>
+<td><code>uses</code></td>
+<td><code>mcp/server</code></td>
+<td>An MCP server that's configured for the agent.</td>
+</tr>
+<tr>
+<td><code>used by</code></td>
+<td><code>user</code></td>
+<td>The identity that uses the agent.</td>
+</tr>
+</tbody>
+</table>
+<p>Cloud AI agents also use a <code>can authenticate as</code> edge that points to a service principal or a Microsoft Entra OAuth app. Local AI agents don't use that edge, so use <code>used by</code> to resolve the identity behind a local AI agent.</p>
+<p>Asset criticality is stored in <code>ExposureGraphNodes</code>, in <code>NodeProperties.rawData.criticalityLevel.criticalityLevel</code>, where <code>0</code> is the highest level (very high) and <code>3</code> is the lowest (low). The <code>ruleNames</code> property lists the classification rules that made the asset critical.</p>
+<h3 id="work-with-local-ai-agent-profiles">Work with local AI agent profiles</h3>
+<p><code>AgentsInfo</code> adds a record each time an agent profile is updated, so a single agent usually has several records. To return only the most recent record for each agent, summarize with <code>arg_max</code> on <code>Timestamp</code>:</p>
+<pre><code class="lang-kusto">AgentsInfo
+| where Platform == "LocalAgents"
+| summarize arg_max(Timestamp, Name, Version, LifecycleStatus, RawAgentInfo) by AgentId
+</code></pre>
+<p><code>LifecycleStatus</code> reports whether the agent is still present on the device. An agent that's reinstalled can also be reissued with a new <code>AgentId</code>, which leaves the earlier record marked as <code>Deleted</code>, so filter out <code>Deleted</code> and <code>Uninstalled</code> records when you want a current inventory.</p>
+<p>Many <code>AgentsInfo</code> columns describe cloud agents and are empty for local AI agents. The columns that carry local AI agent data are <code>AgentId</code>, <code>Name</code>, <code>Version</code>, <code>PublishedStatus</code>, <code>LifecycleStatus</code>, <code>LastUpdatedDateTime</code>, <code>McpServers</code>, <code>DeclaredTools</code>, and <code>RawAgentInfo</code>.</p>
+<p>Local AI agent posture is nested in the <code>RawAgentInfo</code> column, under <code>localAgentMetadata</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vendor</code></td>
+<td>The publisher of the agent, such as Anthropic, Google, or OpenAI.</td>
+</tr>
+<tr>
+<td><code>relatedProcess</code></td>
+<td>The process that hosts the agent, such as <code>code.exe</code>.</td>
+</tr>
+<tr>
+<td><code>trustedProcess</code></td>
+<td>Whether the host process is trusted. Reported as the string <code>"true"</code> or <code>"false"</code>.</td>
+</tr>
+<tr>
+<td><code>autoApprove</code></td>
+<td>Whether the agent acts without prompting the user for approval. Reported as the string <code>"true"</code> or <code>"false"</code>.</td>
+</tr>
+<tr>
+<td><code>deviceName</code>, <code>aadDeviceId</code></td>
+<td>The device where the agent was discovered.</td>
+</tr>
+<tr>
+<td><code>accountName</code>, <code>accountDomain</code>, <code>accountSid</code></td>
+<td>The account that the agent ran under.</td>
+</tr>
+<tr>
+<td><code>localMcps</code></td>
+<td>MCP servers that run locally on the device, including the command that starts each one.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<p>Note</p>
+<p><code>trustedProcess</code> and <code>autoApprove</code> are reported as strings, not as boolean values. Compare them to <code>"true"</code> or <code>"false"</code> rather than using <code>tobool()</code>.</p>
+</div>
+<p>Each of the following queries is self-contained. The queries that use the exposure graph start with a set of <code>let</code> statements that resolve local AI agents and the devices they run on.</p>
+<h3 id="get-an-inventory-of-local-ai-agents">Get an inventory of local AI agents</h3>
+<p>This query lists the local AI agents discovered in your organization, together with the publisher, the host process, the versions in use, and how widely each agent is deployed:</p>
+<pre><code class="lang-kusto">AgentsInfo
+| where Platform == "LocalAgents"
+| summarize arg_max(Timestamp, Name, Version, LifecycleStatus, RawAgentInfo)
+    by AgentId
+| where LifecycleStatus !in~ ("Deleted", "Uninstalled")
+| extend AgentMetadata = RawAgentInfo.localAgentMetadata
+| extend Vendor = tostring(AgentMetadata.vendor),
+         Process = tostring(AgentMetadata.relatedProcess),
+         Device = tostring(AgentMetadata.deviceName),
+         Account = tostring(AgentMetadata.accountName)
+| summarize Installations = count(),
+            DeviceCount = dcount(Device),
+            Devices = make_set(Device, 100),
+            Versions = make_set(Version, 20),
+            Accounts = make_set_if(Account, isnotempty(Account), 50)
+    by Agent = Name, Vendor, Process
+| sort by DeviceCount desc, Installations desc
+</code></pre>
+<p>Each <code>AgentId</code> represents one agent profile, which is a single agent on a single device for a single account. <code>Installations</code> counts those profiles, so an agent that two people use on the same device counts twice, while <code>DeviceCount</code> counts the device once.</p>
+<p>Compare the <code>Name</code> and <code>Vendor</code> values returned by the query with the <a href="ai-agent-support-matrix#ai-agent-discovery-support" data-linktype="relative-path">AI agent discovery support matrix</a>.</p>
+<h3 id="review-the-mcp-servers-and-tools-that-local-ai-agents-use">Review the MCP servers and tools that local AI agents use</h3>
+<p>This query lists the MCP servers and tools configured for local AI agents, the agents and devices that use them, and where each one runs:</p>
+<pre><code class="lang-kusto">let localAgentProfiles =
+    AgentsInfo
+    | where Platform == "LocalAgents"
+    | extend AgentMetadata = RawAgentInfo.localAgentMetadata
+    | project Timestamp,
+              Agent = Name,
+              Device = tostring(AgentMetadata.deviceName),
+              Account = tostring(AgentMetadata.accountName),
+              McpServers,
+              DeclaredTools,
+              LocalServers = AgentMetadata.localMcps;
+let remoteMcpServers =
+    localAgentProfiles
+    | mv-expand Server = McpServers
+    | project Timestamp, Agent, Device, Account,
+              McpServer = tostring(Server.name),
+              Origin = "Remote MCP server",
+              Transport = tostring(Server.type),
+              Location = tostring(Server.endpoint);
+let agentDeclaredTools =
+    localAgentProfiles
+    | mv-expand Tool = DeclaredTools
+    | project Timestamp, Agent, Device, Account,
+              McpServer = tostring(Tool.name),
+              Origin = "Declared tool",
+              Transport = tostring(Tool.type),
+              Location = tostring(Tool.endpoint);
+let localMcpServers =
+    localAgentProfiles
+    | mv-expand Server = LocalServers
+    | project Timestamp, Agent, Device, Account,
+              McpServer = tostring(Server.name),
+              Origin = "Local MCP server",
+              Transport = tostring(Server.transportType),
+              Location = tostring(Server.commandName);
+remoteMcpServers
+| union agentDeclaredTools, localMcpServers
+| where isnotempty(McpServer)
+| summarize LastSeen = max(Timestamp),
+            Agents = make_set(Agent, 20),
+            Devices = make_set(Device, 20),
+            Accounts = make_set_if(Account, isnotempty(Account), 20)
+    by McpServer, Origin, Transport, Location
+| sort by McpServer asc, Origin asc
+</code></pre>
+<p>The <code>Origin</code> column distinguishes the three ways a server or tool is reported:</p>
+<ul>
+<li>A <strong>remote MCP server</strong> is reached over the network, and <code>Location</code> holds its endpoint.</li>
+<li>A <strong>local MCP server</strong> runs as a process on the device, and <code>Location</code> holds the command that starts it. Local MCP servers are reported only in <code>AgentsInfo</code>.</li>
+<li>A <strong>declared tool</strong> is a tool the agent advertises. Declared tools are often backed by an MCP server, but they don't always report an endpoint.</li>
+</ul>
+<p>Unlike the other queries, this one reads every profile record for each agent, so that MCP servers reported at any point are included. The <code>LastSeen</code> column shows when each server was last reported.</p>
+<h3 id="find-local-ai-agents-with-risky-configurations">Find local AI agents with risky configurations</h3>
+<p>This query returns local AI agents that act without asking the user for approval, or that run in a host process that isn't trusted:</p>
+<pre><code class="lang-kusto">AgentsInfo
+| where Platform == "LocalAgents"
+| summarize arg_max(Timestamp, Name, Version, LifecycleStatus, RawAgentInfo)
+    by AgentId
+| where LifecycleStatus !in~ ("Deleted", "Uninstalled")
+| extend AgentMetadata = RawAgentInfo.localAgentMetadata
+| extend AutoApprove = tostring(AgentMetadata.autoApprove),
+         TrustedProcess = tostring(AgentMetadata.trustedProcess),
+         Vendor = tostring(AgentMetadata.vendor),
+         Process = tostring(AgentMetadata.relatedProcess),
+         Device = tostring(AgentMetadata.deviceName),
+         Account = tostring(AgentMetadata.accountName)
+| where AutoApprove =~ "true" or TrustedProcess =~ "false"
+| extend RiskReason = case(
+    AutoApprove =~ "true" and TrustedProcess =~ "false",
+        "Acts without approval, and the host process isn't trusted",
+    AutoApprove =~ "true",
+        "Acts without approval",
+    "The host process isn't trusted")
+| project Agent = Name, Vendor, Version, Process, Device, Account,
+          AutoApprove, TrustedProcess, RiskReason, LastSeen = Timestamp
+| sort by Device asc, Agent asc
+</code></pre>
+<p>An agent that auto-approves its own actions runs tools and reaches resources without a person confirming each step, so the account and device that the agent runs on define what it can do unsupervised.</p>
+<h3 id="find-risky-local-ai-agents-on-critical-devices">Find risky local AI agents on critical devices</h3>
+<p>This query combines agent configuration from <code>AgentsInfo</code> with asset criticality from the exposure graph, so you can start with the agents that both act unsupervised and run on business-critical devices:</p>
+<pre><code class="lang-kusto">let deviceLabels = dynamic(["device", "ec2.instance",
+                            "microsoft.compute/virtualmachines"]);
+let riskyAgentProfiles =
+    AgentsInfo
+    | where Platform == "LocalAgents"
+    | summarize arg_max(Timestamp, Name, Version, LifecycleStatus, RawAgentInfo)
+        by AgentId
+    | where LifecycleStatus !in~ ("Deleted", "Uninstalled")
+    | extend AgentMetadata = RawAgentInfo.localAgentMetadata
+    | extend AutoApprove = tostring(AgentMetadata.autoApprove),
+             TrustedProcess = tostring(AgentMetadata.trustedProcess)
+    | where AutoApprove =~ "true" or TrustedProcess =~ "false"
+    | project AgentId = tostring(AgentId),
+              Agent = Name,
+              Version,
+              Vendor = tostring(AgentMetadata.vendor),
+              Account = tostring(AgentMetadata.accountName),
+              AutoApprove,
+              TrustedProcess;
+let localAgentNodes =
+    ExposureGraphNodes
+    | where NodeLabel == "ai-agent"
+    | where tostring(NodeProperties.rawData.aiAgentMetadata.platform) == "LocalAgents"
+    | project AgentNodeId = NodeId,
+              AgentId = tostring(NodeProperties.rawData.aiAgentMetadata.id);
+let agentDeviceEdges =
+    ExposureGraphEdges
+    | where SourceNodeLabel == "ai-agent"
+    | where EdgeLabel =~ "runs on"
+    | where TargetNodeLabel in (deviceLabels)
+    | project AgentNodeId = SourceNodeId, DeviceId = TargetNodeId,
+              Device = TargetNodeName, DeviceType = TargetNodeLabel;
+let criticalDevices =
+    ExposureGraphNodes
+    | where NodeLabel in (deviceLabels)
+    | where NodeProperties has "criticalityLevel"
+    | extend CriticalityLevel =
+        toint(NodeProperties.rawData.criticalityLevel.criticalityLevel)
+    | where CriticalityLevel between (0 .. 3)
+    | extend Criticality = case(
+        CriticalityLevel == 0, "Very high",
+        CriticalityLevel == 1, "High",
+        CriticalityLevel == 2, "Medium",
+        "Low")
+    | project DeviceId = NodeId, CriticalityLevel, Criticality,
+              CriticalityReason =
+                  tostring(NodeProperties.rawData.criticalityLevel.ruleNames);
+riskyAgentProfiles
+| join kind=inner localAgentNodes on AgentId
+| join kind=inner agentDeviceEdges on AgentNodeId
+| join kind=inner criticalDevices on DeviceId
+| project Device, DeviceType, Criticality, CriticalityReason,
+          Agent, Vendor, Version, Account, AutoApprove, TrustedProcess,
+          CriticalityLevel
+| sort by CriticalityLevel asc, Device asc, Agent asc
+| project-away CriticalityLevel
+</code></pre>
+<p>To review every local AI agent on a critical device instead of only the risky ones, remove the <code>where AutoApprove =~ "true" or TrustedProcess =~ "false"</code> line.</p>
+<h3 id="rank-the-users-whose-local-ai-agents-reach-critical-or-sensitive-assets">Rank the users whose local AI agents reach critical or sensitive assets</h3>
+<p>This query ranks the identities that use local AI agents by how many critical or sensitive resources they can reach, so you can prioritize the users with the widest blast radius. The <code>UserCriticality</code> column shows whether the identity is itself classified as a critical asset, such as a Global Administrator:</p>
+<pre><code class="lang-kusto">let deviceLabels = dynamic(["device", "ec2.instance",
+                            "microsoft.compute/virtualmachines"]);
+let localAgents =
+    ExposureGraphNodes
+    | where NodeLabel == "ai-agent"
+    | where tostring(NodeProperties.rawData.aiAgentMetadata.platform) == "LocalAgents"
+    | project AgentNodeId = NodeId, AIAgent = NodeName;
+let agentDeviceEdges =
+    ExposureGraphEdges
+    | where SourceNodeLabel == "ai-agent"
+    | where EdgeLabel =~ "runs on"
+    | where TargetNodeLabel in (deviceLabels)
+    | project AgentNodeId = SourceNodeId, DeviceId = TargetNodeId,
+              Device = TargetNodeName;
+let agentUserEdges =
+    ExposureGraphEdges
+    | where SourceNodeLabel == "ai-agent"
+    | where EdgeLabel =~ "used by"
+    | project AgentNodeId = SourceNodeId, UserId = TargetNodeId,
+              User = TargetNodeName;
+let userReach =
+    ExposureGraphEdges
+    | where EdgeLabel in~ ("has permissions to", "has role on")
+    | project UserId = SourceNodeId, AssetId = TargetNodeId
+    | union (
+        ExposureGraphNodes
+        | where NodeLabel == "user"
+        | project UserId = NodeId, AssetId = NodeId
+    );
+let sensitiveAssets =
+    ExposureGraphNodes
+    | where NodeProperties has "criticalityLevel"
+         or NodeProperties has "containsSensitiveData"
+    | extend
+        CriticalityLevel =
+            toint(NodeProperties.rawData.criticalityLevel.criticalityLevel),
+        SensitiveDataRaw = tostring(NodeProperties.rawData.containsSensitiveData)
+    | extend HasSensitiveData =
+        iff(isnotempty(SensitiveDataRaw) and SensitiveDataRaw !~ "false", "Yes", "No")
+    | where CriticalityLevel between (0 .. 3) or HasSensitiveData == "Yes"
+    | extend CriticalityRank =
+        iff(CriticalityLevel between (0 .. 3), CriticalityLevel, 4)
+    | project AssetId = NodeId, AssetName = NodeName,
+              CriticalityRank, HasSensitiveData;
+let agentUsers =
+    localAgents
+    | join kind=inner agentDeviceEdges on AgentNodeId
+    | join kind=inner agentUserEdges on AgentNodeId
+    | project AIAgent, Device, UserId, User;
+agentUsers
+| join kind=inner userReach on UserId
+| join kind=inner sensitiveAssets on AssetId
+| summarize AIAgents = make_set(AIAgent, 20),
+            Devices = make_set(Device, 20),
+            ReachableAssets = dcountif(AssetId, AssetId != UserId),
+            SensitiveAssets = dcountif(AssetId,
+                AssetId != UserId and HasSensitiveData == "Yes"),
+            Assets = make_set_if(AssetName, AssetId != UserId, 50),
+            UserRank = minif(CriticalityRank, AssetId == UserId),
+            AssetRank = minif(CriticalityRank, AssetId != UserId)
+    by User
+| extend UserCriticality = case(
+             UserRank == 0, "Very high",
+             UserRank == 1, "High",
+             UserRank == 2, "Medium",
+             UserRank == 3, "Low",
+             "Not classified"),
+         HighestAssetCriticality = case(
+             AssetRank == 0, "Very high",
+             AssetRank == 1, "High",
+             AssetRank == 2, "Medium",
+             AssetRank == 3, "Low",
+             AssetRank == 4, "Sensitive data",
+             "None")
+| extend SortRank = coalesce(AssetRank, 99)
+| project User, UserCriticality, ReachableAssets, SensitiveAssets,
+          HighestAssetCriticality, AIAgents, Devices, Assets, SortRank
+| sort by SortRank asc, ReachableAssets desc
+| project-away SortRank
+</code></pre>
+</div>
+					
+		<div
+			id="ms--inline-notifications"
+			class="margin-block-xs"
+			data-bi-name="inline-notification"
+		></div>
+	 
+		<div
+			id="assertive-live-region"
+			role="alert"
+			aria-live="assertive"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+		<div
+			id="polite-live-region"
+			role="status"
+			aria-live="polite"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+	
+					
+		<!-- feedback section -->
+		<section
+			id="site-user-feedback-footer"
+			class="font-size-sm margin-top-md display-none-print display-none-desktop"
+			data-test-id="site-user-feedback-footer"
+			data-bi-name="site-feedback-section"
+		>
+			<hr class="hr" />
+			<h2 id="ms--feedback" class="title is-3">Feedback</h2>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					Was this page helpful?
+				</p>
+				<div class="buttons">
+					<button
+						class="thumb-rating-button like button button-primary button-sm"
+						data-test-id="footer-rating-yes"
+						data-binary-rating-response="rating-yes"
+						type="button"
+						title="This article is helpful"
+						data-bi-name="button-rating-yes"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+						<span>Yes</span>
+					</button>
+					<button
+						class="thumb-rating-button dislike button button-primary button-sm"
+						id="standard-rating-no-button"
+						hidden
+						data-test-id="footer-rating-no"
+						data-binary-rating-response="rating-no"
+						type="button"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</button>
+					<details
+						class="popover popover-top"
+						id="mobile-help-popover"
+						data-test-id="footer-feedback-popover"
+					>
+						<summary
+							class="thumb-rating-button dislike button button-primary button-sm"
+							data-test-id="details-footer-rating-no"
+							data-binary-rating-response="rating-no"
+							title="This article is not helpful"
+							data-bi-name="button-rating-no"
+							aria-pressed="false"
+							data-bi-an="feedback-unhelpful-popover"
+						>
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-dislike"></span>
+							</span>
+							<span>No</span>
+						</summary>
+						<div
+							class="popover-content width-200 width-300-tablet"
+							role="dialog"
+							aria-labelledby="popover-heading"
+							aria-describedby="popover-description"
+						>
+							<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+								Need help with this topic?
+							</p>
+							<p id="popover-description" class="font-size-sm margin-bottom-xs">
+								Want to try using Ask Learn to clarify or guide you through this topic?
+							</p>
+							
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+		<!-- end feedback section -->
+	
+				</div>
+				
+		<div id="ms--additional-resources-mobile" class="display-none-print">
+			<hr class="hr" hidden />
+			<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>
+				Additional resources
+			</h2>
+			
+		<section
+			id="right-rail-recommendations-mobile"
+			class=""
+			data-bi-name="recommendations"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-training-mobile"
+			class=""
+			data-bi-name="learning-resource-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-events-mobile"
+			class=""
+			data-bi-name="events-card"
+			hidden
+		></section>
+	
+		</div>
+	 
+		<div
+			id="article-metadata-footer"
+			data-bi-name="article-metadata-footer"
+			data-test-id="article-metadata-footer"
+			class="page-metadata-container"
+		>
+			<hr class="hr" />
+			<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+				<li class="visibility-hidden-visual-diff">
+			<span class="badge badge-sm text-wrap-pretty">
+				<span>Last updated on <local-time format="twoDigitNumeric"
+		datetime="2026-10-07T08:00:00.000Z"
+		data-article-date-source="calculated"
+		class="is-invisible"
+	>
+		2026-10-07
+	</local-time></span>
+			</span>
+		</li>
+			</ul>
+		</div>
+	
+			</div>
+		
+				</main>
+				<aside
+					id="layout-body-aside"
+					class="layout-body-aside  "
+					data-bi-name="aside"
+					aria-label="Additional resources"
+			  >
+					
+		<div
+			id="ms--additional-resources"
+			class="right-container padding-sm display-none display-block-desktop height-full"
+			data-bi-name="pageactions"
+		>
+			<div id="affixed-right-container" data-bi-name="right-column">
+				
+		<nav
+			id="side-doc-outline"
+			class="doc-outline border-bottom padding-bottom-xs margin-bottom-xs scrollbar-width-thin"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h3>In this article</h3>
+		</nav>
+	
+				<!-- Feedback -->
+				
+		<section
+			id="ms--site-user-feedback-right-rail"
+			class="font-size-sm display-none-print"
+			data-test-id="site-user-feedback-right-rail"
+			data-bi-name="site-feedback-right-rail"
+		>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					Was this page helpful?
+				</p>
+				<div class="display-flex flex-wrap-nowrap">
+					<button
+						class="thumb-rating-button like inner-focus"
+						data-test-id="right-rail-rating-yes"
+						data-binary-rating-response="rating-yes"
+						type="button"
+						title="This article is helpful"
+						aria-label="This article is helpful"
+						data-bi-name="button-rating-yes"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+					</button>
+					<button
+						class="thumb-rating-button dislike inner-focus"
+						id="right-rail-no-button"
+						hidden
+						data-test-id="right-rail-rating-no"
+						data-binary-rating-response="rating-no"
+						type="button"
+						title="This article is not helpful"
+						aria-label="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+					</button>
+					<details class="popover popover-right" id="help-popover" data-test-id="feedback-popover">
+						<summary
+							tabindex="0"
+							class="thumb-rating-button dislike inner-focus"
+							data-test-id="details-right-rail-rating-no"
+							data-binary-rating-response="rating-no"
+							title="This article is not helpful"
+							aria-label="This article is not helpful"
+							data-bi-name="button-rating-no"
+							aria-pressed="false"
+							data-bi-an="feedback-unhelpful-popover"
+						>
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-dislike"></span>
+							</span>
+						</summary>
+						<div
+							class="popover-content width-200 width-300-tablet"
+							role="dialog"
+							aria-labelledby="popover-heading-right-rail"
+							aria-describedby="popover-description-right-rail"
+						>
+							<p
+								id="popover-heading-right-rail"
+								class="font-size-lg margin-bottom-xxs font-weight-semibold"
+							>
+								Need help with this topic?
+							</p>
+							<p id="popover-description-right-rail" class="font-size-sm margin-bottom-xs">
+								Want to try using Ask Learn to clarify or guide you through this topic?
+							</p>
+							
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+	
+			</div>
+		</div>
+	
+			  </aside> <section
+					id="layout-body-flyout"
+					class="layout-body-flyout "
+					data-bi-name="flyout"
+			  >
+					 <div
+	class="height-full border-left background-color-body-medium"
+	id="ask-learn-flyout"
+></div>
+			  </section> <div class="layout-body-footer " data-bi-name="layout-footer">
+		<footer
+			id="footer"
+			data-test-id="footer"
+			data-bi-name="footer"
+			class="footer-layout padding-xs padding-sm-desktop has-default-focus border-top"
+			role="contentinfo"
+		>
+			<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+				
+		<a
+			data-mscc-ic="false"
+			href="#"
+			data-bi-name="select-locale"
+			class="locale-selector-link flex-shrink-0 button button-sm button-clear external-link-indicator"
+			id=""
+			title=""
+			><span class="icon" aria-hidden="true"
+				><span class="docon docon-world"></span></span
+			><span class="local-selector-link-text">en-us</span></a
+		>
+	 <div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://aka.ms/yourcaliforniaprivacychoices"
+			data-bi-name="your-privacy-choices"
+			class="button button-sm button-clear flex-shrink-0 external-link-indicator"
+			id=""
+			title=""
+			>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 30 14"
+			xml:space="preserve"
+			height="16"
+			width="43"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<path
+				d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"
+			></path>
+			<path
+				d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"
+			></path>
+			<path
+				d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z"
+				style="fill:#fff"
+			></path>
+			<path
+				d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z"
+				style="fill:#06f"
+			></path>
+		</svg>
+	
+			<span>Your Privacy Choices</span></a
+		>
+	
+	</div>
+				<div class="flex-shrink-0">
+		<div class="dropdown has-caret-up">
+			<button
+				data-test-id="theme-selector-button"
+				class="dropdown-trigger button button-clear button-sm inner-focus theme-dropdown-trigger"
+				aria-controls="{{ themeMenuId }}"
+				aria-haspopup="true"
+				aria-expanded="false"
+				data-bi-name="theme"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-sun"></span></span>
+				<span>Theme</span>
+				<span class="icon expanded-indicator" aria-hidden="true">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<div class="dropdown-menu" id="{{ themeMenuId }}" role="menu">
+				<ul class="theme-selector padding-xxs" data-test-id="theme-dropdown-menu" role="none">
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="light"
+							tabindex="-1"
+						>
+							<span class="theme-light margin-right-xxs">
+								<span
+									class="theme-selector-icon border display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> Light </span>
+						</button>
+					</li>
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="dark"
+							tabindex="-1"
+						>
+							<span class="theme-dark margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> Dark </span>
+						</button>
+					</li>
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="high-contrast"
+							tabindex="-1"
+						>
+							<span class="theme-high-contrast margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> High contrast </span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+			</div>
+			<ul class="links" data-bi-name="footerlinks">
+				<li class="manage-cookies-holder" hidden=""></li>
+				<li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/principles-for-ai-generated-content"
+			data-bi-name="aiDisclaimer"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>AI Disclaimer</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/previous-versions/"
+			data-bi-name="archivelink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Previous Versions</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog"
+			data-bi-name="bloglink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Blog</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/contribute"
+			data-bi-name="contributorGuide"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Contribute</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?LinkId=521839"
+			data-bi-name="privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Privacy</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?linkid=2259814"
+			data-bi-name="consumer-health-privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Consumer Health Privacy</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/legal/termsofuse"
+			data-bi-name="termsofuse"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Terms of Use</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/"
+			data-bi-name="trademarks"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Trademarks</a
+		>
+	
+	</li>
+				<li>&copy; Microsoft 2026</li>
+			</ul>
+		</footer>
+	</footer>
+			<noscript><img src="https://learn.microsoft.com/akam/13/pixel_3ce08613?a=dD00NjJlYzBmOTJlOWI2YTk4YTUzMjg0N2Y2NGVjNTMyNjVhMmJlOGYyJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript></body>
+		</html>

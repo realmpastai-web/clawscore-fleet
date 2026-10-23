@@ -1,0 +1,4 @@
+FAIL	S3.H4.beta_unknown_not_clean	verdict=unknown version=None vulnerable=False declared=2026.10.10-beta.1
+FAIL	S4.H4.listed_unidentified	unidentified=[]
+GATE FAIL ['S3.H4.beta_unknown_not_clean', 'S4.H4.listed_unidentified']
+exit=1

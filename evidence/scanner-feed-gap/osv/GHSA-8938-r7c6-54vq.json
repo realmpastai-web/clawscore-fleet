@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nMicrosoft Teams access-group failures could admit unlisted senders. In affected versions, missing or unsupported configured access groups produced denied results that were not rejected by the final message-admission check.\n\nThis advisory is scoped to the named feature and configuration. It does not change OpenClaw's trusted-operator model: authenticated Gateway operators, installed plugins, and intentional local execution surfaces remain trusted unless a separate policy, approval, allowlist, sandbox, or auth boundary is crossed.\n\n### Impact\n\nWhen `groupPolicy` was set to `allowlist` with an affected access-group entry, an unlisted Teams member could trigger the configured agent despite the administrator's group boundary. Practical impact depended on the conversations, tools, and data available to that agent.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, avoid unresolved access-group entries and use explicit supported sender or conversation allowlists.",
+  "id": "GHSA-8938-r7c6-54vq",
+  "modified": "2026-09-11T00:57:47Z",
+  "published": "2026-09-11T00:57:47Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-8938-r7c6-54vq"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Microsoft Teams access-group failures could admit unlisted senders"
+}

@@ -1,0 +1,18 @@
+HTTP/1.1 200 Connection Established
+
+HTTP/2 200 
+date: Sat, 17 Oct 2026 15:34:29 GMT
+content-type: application/json
+content-length: 19886890
+cf-ray: a4c05e230cdc150f-PDX
+cf-cache-status: HIT
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 30
+cache-control: public, max-age=300
+etag: "37a6477aaa899ef6719fa0e1d9f1d7c5"
+last-modified: Thu, 15 Oct 2026 23:58:33 GMT
+server: cloudflare
+vary: accept-encoding, accept
+set-cookie: __cf_bm=zexx5axIPXxp7TLkApweYXZZY2OHMf5NxmNMaVtLOOg-1792251269.603893-1.0.1.1-UVescwGCyR1CzWevbyhZgX20YfGzIs.MWzYJbwwVitAyFEbgmAs0m7f5qUfDjSeSok2PW3a.okwN3C6oyaJW2vFSaVuW8fA.Y6ROG2FAc7dvjMhcHqt_TLjuH2XFan4y; HttpOnly; SameSite=None; Secure; Path=/; Domain=npmjs.org; Expires=Sat, 17 Oct 2026 16:04:29 GMT
+

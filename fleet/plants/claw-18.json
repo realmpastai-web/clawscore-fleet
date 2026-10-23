@@ -1,0 +1,20 @@
+{
+  "auto_approve": false,
+  "env_names": [],
+  "extra_files": [],
+  "false_version": null,
+  "id": "claw-18",
+  "openclaw_servers": {
+    "github": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "command": "npx",
+      "env_names": []
+    }
+  },
+  "state_dir": "/home/node/work/claw-18/.openclaw",
+  "stripped": "none",
+  "work_dir": "/home/node/work/claw-18"
+}

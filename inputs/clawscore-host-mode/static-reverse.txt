@@ -1,0 +1,41 @@
+# static reverse of 4 public openclaw npm tarballs vs clawscore-fleet main 026f719 fingerprints/db.json (117 versions)
+
+## openclaw@2026.1.29
+tgz_sha256 e6d895a668c0f3a482ff835edfedbc2607426ecbe08b66c0e47a95e5feb82e68
+integrity sha512-CVUOAH83BCrlnD56I1JahGVpg0mjp4fjJPdJg9q6Pijn/YdOopsfdInDqSeIEZwGtu/+0w69/uJccY23C9I+vg==
+files 9706
+family early (by file presence, fingerprint.family_name)
+dist/build-info.json sha256 566dc659018e2f35eb6b246cd04128f789f885bff10fda161cf67e17e341195b
+db_hits ['2026.1.29']
+package.json version 2026.1.29 license MIT
+dist/build-info.json {"builtAt": "2026-01-30T04:49:03.120Z", "commit": "a5b4d22cbff07a1bfd01a41391b7e071e1d9074d", "version": "2026.1.29"}
+
+## openclaw@2026.4.15
+tgz_sha256 8c95f77538130c77967c970da4744786c4d5b773937b8208f622efb4cf0d2564
+integrity sha512-vHH11WXuuHkTlA2Nfu+r7WzWo4uccraCgYjhMpzE+PjXUT4p+B3NMq0F24NbpBy+eNw5YjPPZyxxsY31qyFACw==
+files 7379
+family runtime (by file presence, fingerprint.family_name)
+dist/abort.runtime.js sha256 858c9b555c2d7cbcd6c2ecddb86a966db3ddd60bf7a402e246862a2eb2bdaf76
+db_hits ['2026.4.15']
+package.json version 2026.4.15 license MIT
+dist/build-info.json {"builtAt": "2026-04-16T22:07:24.387Z", "commit": "041266a6699cac3baef8ef39db41fa26f29f9db3", "version": "2026.4.15"}
+
+## openclaw@2026.10.4
+tgz_sha256 0a41c2ed708abc812498de58d71d058dde322700488d6e8062c7c070dfdca6dc
+integrity sha512-+FH0StZF1tlTazM7JJGY6JePeJmhFNSRByi2Q3jXPRiLO7o4dJh2xa9Vy4Dk8Cd2ic8B7Zkf5NfEaCCWUkgqnQ==
+files 13985
+family runtime (by file presence, fingerprint.family_name)
+dist/abort.runtime.js sha256 b4707d245e94b8eac1a9622ecdfcb6b3efb61ea1a42ae10a6b60e71bc4e0b1f6
+db_hits ['2026.10.4']
+package.json version 2026.10.4 license MIT
+dist/build-info.json {"buildId": "2026.10.4-release-383c124cc32f-2026-10-15T17-18-22.749Z", "builtAt": "2026-10-15T17:18:22.749Z", "commit": "383c124cc32ffee3f8e56f549b88da94d269a4af", "version": "2026.10.4"}
+
+## openclaw@2026.10.10-beta.1
+tgz_sha256 49ed15ca0af744081a06abf3790473663a6d6eb7eca454399a6b0cb0f827a6a1
+integrity sha512-bo0YvBN6N3iQuirkhVnwFa+O4vxt0pZ7+R6kvViNl+kv3KOD+O4P5FEywcO0vTtQ1B2GUs0J8UIRb/JZyciZ6Q==
+files 14898
+family runtime (by file presence, fingerprint.family_name)
+dist/abort.runtime.js sha256 cefdee8d0963c375d56af4f762c4d3bb8e90f488af7ff76718b9c1c737c24514
+db_hits []
+package.json version 2026.10.10-beta.1 license MIT
+dist/build-info.json {"buildId": "2026.10.10-beta.1-release-87175a8e989c-2026-10-15T13-06-17.645Z", "builtAt": "2026-10-15T13:06:17.645Z", "commit": "87175a8e989c7b7197d085d155c9e7b04c001da8", "version": "2026.10.10-beta.1"}

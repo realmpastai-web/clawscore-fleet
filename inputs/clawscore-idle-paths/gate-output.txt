@@ -1,0 +1,22 @@
+PASS	R.cli.default_prefix	'  --prefix <path>                     Install prefix (default: ~/.openclaw; use \\$OPENCLAW_PREFIX to override)'
+PASS	R.cli.node_dir	'  echo "${PREFIX}/tools/node-v${NODE_VERSION}"'
+PASS	R.cli.default_node	'DEFAULT_NODE_VERSION="24.21.0"'
+PASS	R.cli.npm_global_into_node_dir	'  local npm_install_args=(install -g --prefix "$(node_dir)" "${npm_args[@]}")'
+PASS	R.cli.entry	'  installed_entry="$(node_dir)/lib/node_modules/openclaw/dist/entry.js"'
+PASS	R.sh.global_install	'    cmd+=(--no-fund --no-audit "$freshness_flag" install -g)'
+PASS	R.sh.npm_global_prefix	'    npm config set prefix "$HOME/.npm-global" < /dev/null'
+PASS	R.sh.sudo_system_prefix_warning	'Avoid sudo npm i -g for future OpenClaw updates'
+PASS	F.idle	4 users with linger markers and user units; fixture has no /proc, so no process evidence
+PASS	E.osquery_paths	9 non-mac osquery roots parsed; ~/.openclaw absent
+PASS	E.wazuh_paths	7 non-mac Wazuh roots parsed; ~/.openclaw absent
+ROW	L1	osquery=2026.4.15	wazuh=2026.4.15	clawscore=2026.4.15 (package.json)	install.sh `install -g`, system prefix /usr (Debian/Ubuntu node; sudo npm i -g)
+ROW	L2	osquery=2026.4.15	wazuh=2026.4.15	clawscore=2026.4.15 (package.json)	install.sh `npm config set prefix $HOME/.npm-global`
+ROW	L3	osquery=MISS	wazuh=MISS	clawscore=2026.4.15 (package.json)	install-cli.sh default prefix ~/.openclaw, node_dir, install -g --prefix
+ROW	L3s	osquery=MISS	wazuh=MISS	clawscore=2026.4.15 (dist/build-info.json)	L3 with version/gitHead stripped from package.json (ClawScore claim 3)
+PASS	G1.osquery_sees_L1_L2	osquery 5.23.1 default roots list L1 and L2 with version
+PASS	G2.wazuh_sees_L1_L2	Wazuh 4.14.9 default roots list L1 and L2 with version
+PASS	G3.defaults_miss_L3	neither default list reaches ~/.openclaw/tools/node-v*/lib (install-cli.sh)
+PASS	G4.clawscore_all4	ClawScore reference finds L1, L2, L3, L3s with version 2026.4.15
+PASS	G5.L3s_from_build_info	L3s version recovered from dist/build-info.json (package.json has none)
+PASS	G6.no_false_extra	ClawScore found exactly 4 installs
+GATE PASS

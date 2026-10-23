@@ -1,0 +1,20 @@
+{
+ "product": "mock-agent365",
+ "generated": "2026-10-18",
+ "note": "fixture; advisories Agent365 claims visibility of for openclaw",
+ "advisories": [
+  "GHSA-2rqg-gjgv-84jm",
+  "GHSA-4jpw-hj22-2xmc",
+  "GHSA-5m9r-p9g7-679c",
+  "GHSA-5wcw-8jjv-m286",
+  "GHSA-82qx-6vj7-p8m2",
+  "GHSA-99qw-6mr3-36qr",
+  "GHSA-f8r2-vg7x-gh8m",
+  "GHSA-g353-mgv3-8pcj",
+  "GHSA-m69h-jm2f-2pv8",
+  "GHSA-r7vr-gr74-94p8",
+  "GHSA-rqpp-rjj8-7wv8",
+  "GHSA-vmhq-cqm9-6p7q",
+  "GHSA-wcxr-59v9-rxr8"
+ ]
+}

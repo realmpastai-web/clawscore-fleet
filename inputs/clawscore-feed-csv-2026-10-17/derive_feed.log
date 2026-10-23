@@ -1,0 +1,5 @@
+G=760 R=722 both=588 R_only=134 feed=894 FEED_NEWEST=2026-09-11
+R_only published after 2026-07-02: 75
+GHSA-xx9p-hc9w-6p5h in feed: True
+patched_versions not a single version (first_patched_version=None): 0 []
+v0.2 pinned file: 760 entries; G objects identical to pinned: 760/760; G ids == pinned ids: True

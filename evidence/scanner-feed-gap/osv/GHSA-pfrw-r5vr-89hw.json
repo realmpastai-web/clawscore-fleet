@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": ">= 2026.4.25, < 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": ">= 2026.4.25, < 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "2026.4.25"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nA workspace endpoint override could expose Azure Speech credentials. In affected versions, an untrusted workspace `.env` could set `AZURE_SPEECH_ENDPOINT` because the workspace filter did not block the `_ENDPOINT` suffix. Azure Speech preferred that value over its configured region.\n\nThis advisory is scoped to operators who started OpenClaw in attacker-controlled workspace content, configured Azure Speech with a key and region, and had not set a trusted endpoint override.\n\n### Impact\n\nWhen Azure Speech made a synthesis or voice-list request, the attacker-selected endpoint received the operator's Azure Speech key in the request header. The exposed key could then be used against the operator's Azure Speech resource.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, run OpenClaw only from trusted workspaces or set `AZURE_SPEECH_ENDPOINT` through a trusted process or global runtime environment.",
+  "id": "GHSA-pfrw-r5vr-89hw",
+  "modified": "2026-09-11T00:58:33Z",
+  "published": "2026-09-11T00:58:33Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-pfrw-r5vr-89hw"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Workspace endpoint override could expose Azure Speech credentials"
+}

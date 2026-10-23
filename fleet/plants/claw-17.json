@@ -1,0 +1,11 @@
+{
+  "auto_approve": true,
+  "env_names": [],
+  "extra_files": [],
+  "false_version": null,
+  "id": "claw-17",
+  "openclaw_servers": {},
+  "state_dir": "/opt/apps/claw-17/.openclaw",
+  "stripped": "none",
+  "work_dir": "/opt/apps/claw-17"
+}

@@ -1,0 +1,8 @@
+{"dist_js": 2147, "changelog_ghsa": 30, "package_json_has_version": true}
+has_version_field: True
+version_value: '2026.4.15'
+has_gitHead: False
+gitHead: None
+name: 'openclaw'
+bin: {'openclaw': 'openclaw.mjs'}
+main: 'dist/index.js'

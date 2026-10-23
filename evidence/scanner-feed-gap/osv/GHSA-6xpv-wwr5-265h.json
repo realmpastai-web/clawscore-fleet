@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": ">= 2026.5.28, < 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": ">= 2026.5.28, < 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "2026.5.28"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nThe `tar.bz2` skill installer treated bounded command-output suffixes as complete archive listings. A crafted archive could push prohibited entries out of both retained listings, pass entry and size checks, and then be extracted in full.\n\n### Impact\n\nAfter an operator approved installation of a malicious or compromised skill archive, over-limit files or entry counts could be persisted in the skill tools directory and consume disk space or inodes. The demonstrated issue bypassed OpenClaw's explicit extraction budgets; it did not execute archive contents by itself.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade `openclaw` to `2026.8.1` or later. Until upgraded, avoid installing `.tar.bz2` or `.tbz2` skills from untrusted sources and inspect or extract such archives with an independently bounded tool before installation.",
+  "id": "GHSA-6xpv-wwr5-265h",
+  "modified": "2026-09-11T00:57:39Z",
+  "published": "2026-09-11T00:57:39Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-6xpv-wwr5-265h"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Truncated tar listings could bypass extraction limits"
+}

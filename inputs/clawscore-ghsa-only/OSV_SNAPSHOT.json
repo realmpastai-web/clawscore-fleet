@@ -1,0 +1,7 @@
+{
+ "fetched": "2026-10-18 ~14:00 IST",
+ "source": "POST https://api.osv.dev/v1/query {\"package\":{\"name\":\"openclaw\",\"ecosystem\":\"npm\"}} (all pages)",
+ "advisories": 590,
+ "no_cve_alias": 59,
+ "sha256": "e542c4c48bb690f687622e8bc280085eb0f0752982b547805061fb1d11f7c66b"
+}

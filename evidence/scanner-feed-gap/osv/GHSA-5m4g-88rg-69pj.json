@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nMCP loopback could omit sandbox tool deny policy. In affected versions, a sandboxed coding-agent session could list and invoke tools explicitly denied by `sandbox.tools.deny`.\n\nThis advisory is scoped to the bundled MCP loopback used by sandboxed coding-agent sessions. It does not change OpenClaw's trusted-operator model: authenticated Gateway operators, installed plugins, and intentional local execution surfaces remain trusted unless a separate policy, approval, allowlist, sandbox, or auth boundary is crossed.\n\n### Impact\n\nWhen MCP loopback is enabled for a sandboxed session, the session could reach a denied tool and access data or actions that the operator intended to exclude. Practical impact depends on the denied tools and their granted capabilities.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nupgrade to `openclaw@2026.8.1` or later. Until upgraded, disable MCP loopback for sandboxed coding agents or remove sensitive tools from the Gateway inventory.",
+  "id": "GHSA-5m4g-88rg-69pj",
+  "modified": "2026-09-11T00:57:30Z",
+  "published": "2026-09-11T00:57:30Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-5m4g-88rg-69pj"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "MCP loopback could omit sandbox tool deny policy"
+}

@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nFile-transfer `allow-always` approvals could preserve more authority than the operator reviewed. Literal path characters could later be interpreted as glob syntax, and node-specific grants could be reused by another node with the same display name.\n\n### Impact\n\nAfter an operator approved one file-transfer request, a later agent request could reuse that standing grant for a sibling path or a different node that was not shown in the approval. Depending on the original operation, this could broaden durable read or write access. Exploitation still required a prior operator approval and a matching widened target.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade `openclaw` to `2026.8.1` or later. Until upgraded, avoid `allow-always` for file-transfer requests containing glob metacharacters and use unique node display names. Remove and recreate existing standing file-transfer grants after upgrading.",
+  "id": "GHSA-7jfq-rmfm-29wp",
+  "modified": "2026-09-11T00:57:46Z",
+  "published": "2026-09-11T00:57:46Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-7jfq-rmfm-29wp"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:N",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "File-transfer approvals could widen durable authority"
+}

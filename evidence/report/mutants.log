@@ -1,0 +1,162 @@
+===== (a) zero-advisory note changed to No known vulnerabilities -> test_banned_words =====
+exit 1
+test_banned_words (tests.test_report.ReportTests.test_banned_words) ... FAIL
+
+======================================================================
+FAIL: test_banned_words (tests.test_report.ReportTests.test_banned_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/hark-tasks/clawscore-report-2255/tests/test_report.py", line 93, in test_banned_words
+    self.assertEqual(_banned(self.markdown), [])
+AssertionError: Lists differ: ['known vulnerabilit', 'known vulnerabilit', 'known vulnerabilit'] != []
+
+First list contains 3 additional elements.
+First extra element 0:
+'known vulnerabilit'
+
+- ['known vulnerabilit', 'known vulnerabilit', 'known vulnerabilit']
++ []
+
+----------------------------------------------------------------------
+Ran 1 test in 0.543s
+
+FAILED (failures=1)
+
+===== (b) range rendered as candidates[0] only -> test_a1_oracle_agreement =====
+exit 1
+test_a1_oracle_agreement (tests.test_report.ReportTests.test_a1_oracle_agreement) ... FAIL
+
+======================================================================
+FAIL: test_a1_oracle_agreement (tests.test_report.ReportTests.test_a1_oracle_agreement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/hark-tasks/clawscore-report-2255/tests/test_report.py", line 81, in test_a1_oracle_agreement
+    self.assertEqual(failures, [], "\n".join(lines))
+AssertionError: Lists differ: ['claw-10', 'claw-11', 'claw-12', 'claw-13'] != []
+
+First list contains 4 additional elements.
+First extra element 0:
+'claw-10'
+
+- ['claw-10', 'claw-11', 'claw-12', 'claw-13']
++ [] : claw-01 ids 627 oracle 627 ok
+claw-02 ids 627 oracle 627 ok
+claw-03 ids 627 oracle 627 ok
+claw-04 ids 567 oracle 567 ok
+claw-05 ids 567 oracle 567 ok
+claw-06 ids 567 oracle 567 ok
+claw-07 ids 288 oracle 288 ok
+claw-08 ids 288 oracle 288 ok
+claw-09 ids 288 oracle 288 ok
+claw-10 ids 222 oracle 222 extra [] missing [] applies_to ['GHSA-3fv3-6p2v-gxwj', 'GHSA-3vvq-q2qc-7rmp', 'GHSA-4f8g-77mw-3rxc', 'GHSA-5fc7-f62m-8983', 'GHSA-5h3f-885m-v22w']
+claw-11 ids 222 oracle 222 extra [] missing [] applies_to ['GHSA-3fv3-6p2v-gxwj', 'GHSA-3vvq-q2qc-7rmp', 'GHSA-4f8g-77mw-3rxc', 'GHSA-5fc7-f62m-8983', 'GHSA-5h3f-885m-v22w']
+claw-12 ids 222 oracle 222 extra [] missing [] applies_to ['GHSA-3fv3-6p2v-gxwj', 'GHSA-3vvq-q2qc-7rmp', 'GHSA-4f8g-77mw-3rxc', 'GHSA-5fc7-f62m-8983', 'GHSA-5h3f-885m-v22w']
+claw-13 ids 222 oracle 222 extra [] missing [] applies_to ['GHSA-3fv3-6p2v-gxwj', 'GHSA-3vvq-q2qc-7rmp', 'GHSA-4f8g-77mw-3rxc', 'GHSA-5fc7-f62m-8983', 'GHSA-5h3f-885m-v22w']
+claw-14 ids 169 oracle 169 ok
+claw-15 ids 169 oracle 169 ok
+claw-16 ids 169 oracle 169 ok
+claw-17 ids 157 oracle 157 ok
+claw-18 ids 157 oracle 157 ok
+claw-19 ids 157 oracle 157 ok
+claw-20 ids 157 oracle 157 ok
+claw-21 ids 157 oracle 157 ok
+claw-22 ids 157 oracle 157 ok
+claw-23 ids 148 oracle 148 ok
+claw-24 ids 148 oracle 148 ok
+claw-25 ids 148 oracle 148 ok
+claw-26 ids 146 oracle 146 ok
+claw-27 ids 146 oracle 146 ok
+claw-28 ids 0 oracle 0 ok
+claw-29 ids 0 oracle 0 ok
+claw-30 ids 0 oracle 0 ok
+oracle-check 26/30 range=222
+
+----------------------------------------------------------------------
+Ran 1 test in 0.571s
+
+FAILED (failures=1)
+
+===== (c) credential value printed instead of name -> test_no_credential_values =====
+exit 1
+test_no_credential_values (tests.test_report.ReportTests.test_no_credential_values) ... FAIL
+
+======================================================================
+FAIL: test_no_credential_values (tests.test_report.ReportTests.test_no_credential_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/hark-tasks/clawscore-report-2255/tests/test_report.py", line 107, in test_no_credential_values
+    self.assertEqual(leaked, [])
+AssertionError: Lists differ: ['ANTHROPIC_API_KEY', 'AWS_ACCESS_KEY_ID',[131 chars]KEY'] != []
+
+First list contains 8 additional elements.
+First extra element 0:
+'ANTHROPIC_API_KEY'
+
++ []
+- ['ANTHROPIC_API_KEY',
+-  'AWS_ACCESS_KEY_ID',
+-  'AWS_SECRET_ACCESS_KEY',
+-  'DISCORD_BOT_TOKEN',
+-  'GITHUB_PERSONAL_ACCESS_TOKEN',
+-  'OPENAI_API_KEY',
+-  'SLACK_BOT_TOKEN',
+-  'STRIPE_SECRET_KEY']
+
+----------------------------------------------------------------------
+Ran 1 test in 0.451s
+
+FAILED (failures=1)
+
+===== (d) npm ecosystem filter removed -> test_a1_oracle_agreement =====
+exit 1
+test_a1_oracle_agreement (tests.test_report.ReportTests.test_a1_oracle_agreement) ... FAIL
+
+======================================================================
+FAIL: test_a1_oracle_agreement (tests.test_report.ReportTests.test_a1_oracle_agreement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/hark-tasks/clawscore-report-2255/tests/test_report.py", line 81, in test_a1_oracle_agreement
+    self.assertEqual(failures, [], "\n".join(lines))
+AssertionError: Lists differ: ['claw-01', 'claw-02', 'claw-03', 'claw-04', 'claw-05', 'claw-06'] != []
+
+First list contains 6 additional elements.
+First extra element 0:
+'claw-01'
+
+- ['claw-01', 'claw-02', 'claw-03', 'claw-04', 'claw-05', 'claw-06']
++ [] : claw-01 ids 629 oracle 627 extra ['GHSA-2j9j-gf59-p4p5', 'GHSA-mmpf-jwf4-h3qv'] missing [] applies_to ['GHSA-2j9j-gf59-p4p5', 'GHSA-mmpf-jwf4-h3qv']
+claw-02 ids 629 oracle 627 extra ['GHSA-2j9j-gf59-p4p5', 'GHSA-mmpf-jwf4-h3qv'] missing [] applies_to ['GHSA-2j9j-gf59-p4p5', 'GHSA-mmpf-jwf4-h3qv']
+claw-03 ids 629 oracle 627 extra ['GHSA-2j9j-gf59-p4p5', 'GHSA-mmpf-jwf4-h3qv'] missing [] applies_to ['GHSA-2j9j-gf59-p4p5', 'GHSA-mmpf-jwf4-h3qv']
+claw-04 ids 569 oracle 567 extra ['GHSA-2j9j-gf59-p4p5', 'GHSA-mmpf-jwf4-h3qv'] missing [] applies_to ['GHSA-2j9j-gf59-p4p5', 'GHSA-mmpf-jwf4-h3qv']
+claw-05 ids 569 oracle 567 extra ['GHSA-2j9j-gf59-p4p5', 'GHSA-mmpf-jwf4-h3qv'] missing [] applies_to ['GHSA-2j9j-gf59-p4p5', 'GHSA-mmpf-jwf4-h3qv']
+claw-06 ids 569 oracle 567 extra ['GHSA-2j9j-gf59-p4p5', 'GHSA-mmpf-jwf4-h3qv'] missing [] applies_to ['GHSA-2j9j-gf59-p4p5', 'GHSA-mmpf-jwf4-h3qv']
+claw-07 ids 288 oracle 288 ok
+claw-08 ids 288 oracle 288 ok
+claw-09 ids 288 oracle 288 ok
+claw-10 ids 222 oracle 222 ok
+claw-11 ids 222 oracle 222 ok
+claw-12 ids 222 oracle 222 ok
+claw-13 ids 222 oracle 222 ok
+claw-14 ids 169 oracle 169 ok
+claw-15 ids 169 oracle 169 ok
+claw-16 ids 169 oracle 169 ok
+claw-17 ids 157 oracle 157 ok
+claw-18 ids 157 oracle 157 ok
+claw-19 ids 157 oracle 157 ok
+claw-20 ids 157 oracle 157 ok
+claw-21 ids 157 oracle 157 ok
+claw-22 ids 157 oracle 157 ok
+claw-23 ids 148 oracle 148 ok
+claw-24 ids 148 oracle 148 ok
+claw-25 ids 148 oracle 148 ok
+claw-26 ids 146 oracle 146 ok
+claw-27 ids 146 oracle 146 ok
+claw-28 ids 0 oracle 0 ok
+claw-29 ids 0 oracle 0 ok
+claw-30 ids 0 oracle 0 ok
+oracle-check 24/30 range=222
+
+----------------------------------------------------------------------
+Ran 1 test in 0.473s
+
+FAILED (failures=1)

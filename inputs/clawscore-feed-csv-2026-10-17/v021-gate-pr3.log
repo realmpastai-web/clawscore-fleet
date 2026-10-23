@@ -1,0 +1,8 @@
+v0.2.1 gate run on PR #3 (Hark, 2026-10-17T15:38:19Z)
+PR head 97217a8ca4b02d1f83305ccade3af805ad46d3b0 (feat/v0.2.1-defender-export, draft, base main 6ccf7f6)
+pr tarball sha256 3c1f7c1e712485337572f650d75cf0e03d35638614b1e3c4c4463f0dabc56de1
+cc29565 tarball sha256 3f2fcd316c09b3d5576bf2595e293551712e83df970b61c91bb8052ad926ff40
+evidence/SHA256SUMS: 146/146 OK
+verify_offline on PR tree: exit 0, offline_failures [] (pr-verify-offline.log)
+gate_v021.py exit 1: SUMMARY pass=37 fail=2 report=4 failed=['G1.types', 'G2.keys_types']
+root cause (from the export files): Device ID '' and First seen '' on 30/30 CSV rows; Timestamp '', LastUpdatedDateTime '', PublishedStatus '' on 30/30 JSONL rows. The PR's own export_jsonl_schema gate passes empty strings.

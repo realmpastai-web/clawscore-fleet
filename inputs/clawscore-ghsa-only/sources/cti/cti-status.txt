@@ -1,0 +1,6 @@
+CVE-2026-32064 200 https://cti.wazuh.com/vulnerabilities/cves/CVE-2026-32064
+CVE-2026-53846 200 https://cti.wazuh.com/vulnerabilities/cves/CVE-2026-53846
+CVE-2099-9999999 404 https://cti.wazuh.com/vulnerabilities/cves/CVE-2099-9999999
+GHSA-p73f-w79w-jqr5 404 https://cti.wazuh.com/vulnerabilities/cves/GHSA-p73f-w79w-jqr5
+GHSA-2858-xg23-26fp 404 https://cti.wazuh.com/vulnerabilities/cves/GHSA-2858-xg23-26fp
+GHSA-25gx-x37c-7pph 404 https://cti.wazuh.com/vulnerabilities/cves/GHSA-25gx-x37c-7pph

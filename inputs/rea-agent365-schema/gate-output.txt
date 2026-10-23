@@ -1,0 +1,19 @@
+PASS	G1.graph_agent_types_counted	117 agent types (v1.0 23 + beta 94)
+PASS	G1.graph_no_vuln_property	vuln/cve/ghsa/advisory props on agent types: []
+INFO	graph version props: ['beta:agentCardManifest.protocolVersion', 'beta:agentCardManifest.version']
+INFO	graph host props: ['beta:aiAgentEvidence.hostingPlatformType', 'beta:cloudPcAgentHealthCheckErrorType.deviceStatusCheckNotAvailable', 'beta:cloudPcAgentHealthCheckErrorType.deviceStatusCheckNotRunning', 'beta:cloudPcAgentStatusDetail.managedDeviceName', 'beta:managementAgentType.googleCloudDevicePolicyController', 'beta:onPremisesAgent.machineName', 'beta:riskyAgent.deviceId', 'beta:riskyAgent.machineId', 'v1.0:aiAgentEvidence.hostingPlatformType', 'v1.0:managementAgentType.googleCloudDevicePolicyController']
+PASS	G2.agentsinfo_35_columns	35 columns
+PASS	G2.agentsinfo_no_vuln_column	no vuln/cve/ghsa column or description
+PASS	G2.agentsinfo_has_version	Version | string | Version of the agent  (one string per agent row, so version IS exposed)
+PASS	G2.lifecycle_no_idle_state	LifecycleStatus: The agent's current operational state in the tenant; possible values: Active, Blocked, Uninstalled, Deleted
+PASS	G3.tvm_cve_only	DeviceTvmSoftwareVulnerabilities ids: ['CveId', 'CveTags']
+PASS	G4.quote	local-agent-discovery-overview: "Defender discovers local AI agents on Windows and macOS endpoints."
+PASS	G4.quote	local-agent-discovery-overview: "An installed agent might not appear until Defender observes agent activity."
+PASS	G4.quote	local-agent-discovery-overview: "Defender lists a local AI agent after it observes agent activity on an onboarded device."
+PASS	G4.quote	ai-agent-support-matrix: "WSL support doesn't indicate support for native Linux endpoints."
+PASS	G4.quote	ai-agent-support-matrix: "Defender lists an agent after it observes agent activity on an onboarded device."
+PASS	G4.quote	ai-agent-support-matrix: "OpenClaw OpenClaw Foundation"
+PASS	G4.quote	discover-local-ai-agents: "relatedProcess The process that hosts the agent"
+VERDICT A idle host not exposed: PROVEN (published docs: discovery needs observed activity; native Linux unsupported; no idle lifecycle state)
+VERDICT B per-build GHSA list not exposed: PROVEN (no vuln field on Graph agent types or AgentsInfo; TVM keys on CveId only; Version string IS exposed)
+SCOPE published schemas and docs at the frozen commits only; Microsoft's backend and unpublished RawAgentInfo fields stay UNPROVEN

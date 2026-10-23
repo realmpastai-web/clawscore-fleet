@@ -1,0 +1,2756 @@
+[
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agent",
+  "base": "graph.entity",
+  "desc": null,
+  "props": [
+   {
+    "name": "copilotTools",
+    "type": "Collection(graph.copilotTool)",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentCardManifest",
+  "base": "graph.entity",
+  "desc": null,
+  "props": [
+   {
+    "name": "capabilities",
+    "type": "graph.agentCapabilities",
+    "desc": "A declaration of optional capabilities supported by the agent."
+   },
+   {
+    "name": "createdBy",
+    "type": "Edm.String",
+    "desc": "Object ID of the user or application that created the agent card manifest. Read-only."
+   },
+   {
+    "name": "createdDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "When this agent card manifest was created."
+   },
+   {
+    "name": "defaultInputModes",
+    "type": "Collection(Edm.String)",
+    "desc": "Default set of supported input MIME types for all skills, which can be overridden on a per-skill basis."
+   },
+   {
+    "name": "defaultOutputModes",
+    "type": "Collection(Edm.String)",
+    "desc": "Default set of supported output MIME types for all skills, which can be overridden on a per-skill basis."
+   },
+   {
+    "name": "description",
+    "type": "Edm.String",
+    "desc": "A human-readable description of the agent."
+   },
+   {
+    "name": "displayName",
+    "type": "Edm.String",
+    "desc": "A human-readable display name of the agent."
+   },
+   {
+    "name": "documentationUrl",
+    "type": "Edm.String",
+    "desc": "URL to agent's documentation."
+   },
+   {
+    "name": "iconUrl",
+    "type": "Edm.String",
+    "desc": "URL to agent's icon image."
+   },
+   {
+    "name": "lastModifiedDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "When this agent card manifest was last modified."
+   },
+   {
+    "name": "managedBy",
+    "type": "Edm.String",
+    "desc": "appId (referred to as Application (client) ID on the Microsoft Entra admin center) of the application managing this agent manifest."
+   },
+   {
+    "name": "originatingStore",
+    "type": "Edm.String",
+    "desc": "Name of the store/system where agent originated. For example Copilot Studio."
+   },
+   {
+    "name": "ownerIds",
+    "type": "Collection(Edm.String)",
+    "desc": "List of object IDs for the owners of the agent card manifest."
+   },
+   {
+    "name": "protocolVersion",
+    "type": "Edm.String",
+    "desc": "Protocol version supported by the agent."
+   },
+   {
+    "name": "provider",
+    "type": "graph.agentProvider",
+    "desc": "Information about the organization providing the agent."
+   },
+   {
+    "name": "security",
+    "type": "Collection(graph.securityRequirement)",
+    "desc": "Security requirements - array of security scheme references."
+   },
+   {
+    "name": "securitySchemes",
+    "type": "graph.securitySchemes",
+    "desc": "Dictionary of security scheme definitions keyed by scheme name."
+   },
+   {
+    "name": "skills",
+    "type": "Collection(graph.agentSkill)",
+    "desc": "Skills/capabilities that the agent can perform"
+   },
+   {
+    "name": "supportsAuthenticatedExtendedCard",
+    "type": "Edm.Boolean",
+    "desc": "Whether agent supports authenticated extended card retrieval"
+   },
+   {
+    "name": "version",
+    "type": "Edm.String",
+    "desc": "Version of the agent implementation"
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentCollection",
+  "base": "graph.entity",
+  "desc": null,
+  "props": [
+   {
+    "name": "createdBy",
+    "type": "Edm.String",
+    "desc": "Object ID of the user or app that created the agent instance."
+   },
+   {
+    "name": "createdDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "Timestamp when agent collection was created."
+   },
+   {
+    "name": "description",
+    "type": "Edm.String",
+    "desc": "Description / purpose of the collection."
+   },
+   {
+    "name": "displayName",
+    "type": "Edm.String",
+    "desc": "Friendly name of the collection."
+   },
+   {
+    "name": "lastModifiedDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "Timestamp of last update."
+   },
+   {
+    "name": "managedBy",
+    "type": "Edm.String",
+    "desc": "appId (referred to as Application (client) ID on the Microsoft Entra admin center) of the service principal managing this agent."
+   },
+   {
+    "name": "originatingStore",
+    "type": "Edm.String",
+    "desc": "Source system/store where the collection originated. For example Copilot Studio."
+   },
+   {
+    "name": "ownerIds",
+    "type": "Collection(Edm.String)",
+    "desc": "List of object IDs for the owners of the agent instance."
+   },
+   {
+    "name": "members",
+    "type": "Collection(graph.agentInstance)",
+    "desc": "List of agent instances that are members of this collection. Supports $expand."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentCommunicationConfiguration",
+  "base": "graph.entity",
+  "desc": null,
+  "props": [
+   {
+    "name": "endpointConfiguration",
+    "type": "graph.agentEndpointConfiguration",
+    "desc": "The endpoint binding (bot ID or callback URI) that the agent uses to receive messages."
+   },
+   {
+    "name": "isOverridableAtAgentIdLevel",
+    "type": "Edm.Boolean",
+    "desc": "Indicates whether individual agent instances created from this blueprint can override the endpointConfiguration. When true, each instance can override it; when false, every instance inherits it. Not nullable."
+   },
+   {
+    "name": "teamworkConfiguration",
+    "type": "graph.agentTeamworkConfiguration",
+    "desc": "The per-conversation-context message notification settings (group chat, channel, one-on-one chat, and meeting chat) that agents use."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentIdentity",
+  "base": "graph.servicePrincipal",
+  "desc": null,
+  "props": [
+   {
+    "name": "agentIdentityBlueprintId",
+    "type": "Edm.String",
+    "desc": "The appId of the agent identity blueprint that defines the configuration for this agent identity."
+   },
+   {
+    "name": "createdDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "The date and time the agent identity was created. Read-only. Inherited from servicePrincipal."
+   },
+   {
+    "name": "lifecyclePolicyComplianceState",
+    "type": "graph.lifecyclePolicyComplianceState",
+    "desc": null
+   },
+   {
+    "name": "lifecyclePolicyComplianceStateLastModifiedDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": null
+   },
+   {
+    "name": "lifecyclePolicyComplianceStateReason",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "lifecyclePolicyNonComplianceDisablementDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": null
+   },
+   {
+    "name": "managerApplications",
+    "type": "Collection(Edm.Guid)",
+    "desc": "The collection of application IDs designated as managers of this agent identity's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the managerApplications of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the managerApplications property on the backing agentIdentityBlueprint in the tenant where it's registered. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change \u2014 they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on $select."
+   },
+   {
+    "name": "communicationConfiguration",
+    "type": "graph.agentCommunicationConfiguration",
+    "desc": "The effective communication configuration for this agent identity. Represents the agent identity-level override that resolves on top of the configuration inherited from the agent identity blueprint."
+   },
+   {
+    "name": "inheritedAppRoleAssignments",
+    "type": "Collection(graph.appRoleAssignment)",
+    "desc": "Application role assignments that this agent identity inherits from its parent Agent Identity Blueprint service principal. Read-only. Nullable."
+   },
+   {
+    "name": "inheritedOauth2PermissionGrants",
+    "type": "Collection(graph.oAuth2PermissionGrant)",
+    "desc": "Delegated permission grants that this agent identity inherits from its parent Agent Identity Blueprint service principal. Read-only. Nullable."
+   },
+   {
+    "name": "sponsors",
+    "type": "Collection(graph.directoryObject)",
+    "desc": "The sponsors for this agent identity."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentIdentityBlueprint",
+  "base": "graph.application",
+  "desc": null,
+  "props": [
+   {
+    "name": "communicationConfiguration",
+    "type": "graph.agentCommunicationConfiguration",
+    "desc": "The default communication configuration for agent identities created from this agent identity blueprint. Agent identities inherit this configuration unless they define their own override."
+   },
+   {
+    "name": "inheritablePermissions",
+    "type": "Collection(graph.inheritablePermission)",
+    "desc": "Defines scopes of a resource application that may be automatically granted to agent identities without additional consent."
+   },
+   {
+    "name": "sponsors",
+    "type": "Collection(graph.directoryObject)",
+    "desc": "The sponsors for this agent identity blueprint. Sponsors are users or groups who can authorize and manage the lifecycle of agent identity instances. Required during the create operation."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentIdentityBlueprintPrincipal",
+  "base": "graph.servicePrincipal",
+  "desc": null,
+  "props": [
+   {
+    "name": "lifecyclePolicyComplianceState",
+    "type": "graph.lifecyclePolicyComplianceState",
+    "desc": null
+   },
+   {
+    "name": "lifecyclePolicyComplianceStateLastModifiedDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": null
+   },
+   {
+    "name": "lifecyclePolicyComplianceStateReason",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "lifecyclePolicyNonComplianceDisablementDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": null
+   },
+   {
+    "name": "managerApplications",
+    "type": "Collection(Edm.Guid)",
+    "desc": "The collection of application IDs designated as managers of this agent identity blueprint principal's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the managerApplications of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the managerApplications property on the backing agentIdentityBlueprint in the tenant where it's registered. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change \u2014 they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on $select."
+   },
+   {
+    "name": "sponsors",
+    "type": "Collection(graph.directoryObject)",
+    "desc": "The sponsors for this agent identity blueprint principal. Sponsors are users or service principals who can authorize and manage the lifecycle of agent identity instances."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentInstance",
+  "base": "graph.entity",
+  "desc": null,
+  "props": [
+   {
+    "name": "additionalInterfaces",
+    "type": "Collection(graph.agentInterface)",
+    "desc": "Additional interfaces/transports supported by the agent."
+   },
+   {
+    "name": "agentIdentityBlueprintId",
+    "type": "Edm.String",
+    "desc": "Object ID of the agentIdentityBlueprint object."
+   },
+   {
+    "name": "agentIdentityId",
+    "type": "Edm.String",
+    "desc": "Object ID of the agentIdentity object."
+   },
+   {
+    "name": "agentUserId",
+    "type": "Edm.String",
+    "desc": "Object ID of the agentUser associated with the agent. Read-only."
+   },
+   {
+    "name": "createdBy",
+    "type": "Edm.String",
+    "desc": "Object ID of the user or application that created the agent instance. Read-only."
+   },
+   {
+    "name": "createdDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "Timestamp when agent instance was created. Read-only."
+   },
+   {
+    "name": "displayName",
+    "type": "Edm.String",
+    "desc": "Display name for the agent instance."
+   },
+   {
+    "name": "lastModifiedDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "Timestamp of last modification."
+   },
+   {
+    "name": "managedBy",
+    "type": "Edm.String",
+    "desc": "appId (referred to as Application (client) ID on the Microsoft Entra admin center) of the application managing this agent."
+   },
+   {
+    "name": "originatingStore",
+    "type": "Edm.String",
+    "desc": "Name of the store/system where agent originated. For example Copilot Studio."
+   },
+   {
+    "name": "ownerIds",
+    "type": "Collection(Edm.String)",
+    "desc": "List of object IDs for the owners of the agent instance."
+   },
+   {
+    "name": "preferredTransport",
+    "type": "Edm.String",
+    "desc": "Preferred transport protocol. The possible values are JSONRPC, GRPC, and HTTP+JSON."
+   },
+   {
+    "name": "signatures",
+    "type": "Collection(graph.agentCardSignature)",
+    "desc": "Digital signatures for the agent instance."
+   },
+   {
+    "name": "sourceAgentId",
+    "type": "Edm.String",
+    "desc": "Identifier of the agent in the original source system."
+   },
+   {
+    "name": "url",
+    "type": "Edm.String",
+    "desc": "Endpoint URL for the agent instance."
+   },
+   {
+    "name": "agentCardManifest",
+    "type": "graph.agentCardManifest",
+    "desc": "The agent card manifest of the agent instance."
+   },
+   {
+    "name": "collections",
+    "type": "Collection(graph.agentCollection)",
+    "desc": "The agent collections that the agent instance is a member of."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentRegistration",
+  "base": "graph.entity",
+  "desc": null,
+  "props": [
+   {
+    "name": "a2aAuthorization",
+    "type": "graph.a2aAuthorization",
+    "desc": null
+   },
+   {
+    "name": "agentCard",
+    "type": "graph.Json",
+    "desc": null
+   },
+   {
+    "name": "agentIdentityBlueprintId",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "agentIdentityId",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "createdBy",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "description",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "displayName",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "lastPublishedBy",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "managedByAppId",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "originatingStore",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "ownerIds",
+    "type": "Collection(Edm.String)",
+    "desc": null
+   },
+   {
+    "name": "sourceAgentId",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "sourceCreatedDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": null
+   },
+   {
+    "name": "sourceLastModifiedDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentRegistry",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "agentCardManifests",
+    "type": "Collection(graph.agentCardManifest)",
+    "desc": null
+   },
+   {
+    "name": "agentCollections",
+    "type": "Collection(graph.agentCollection)",
+    "desc": null
+   },
+   {
+    "name": "agentInstances",
+    "type": "Collection(graph.agentInstance)",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentRiskDetection",
+  "base": "graph.entity",
+  "desc": null,
+  "props": [
+   {
+    "name": "activityDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, le, and ge)."
+   },
+   {
+    "name": "additionalInfo",
+    "type": "Edm.String",
+    "desc": "Additional information associated with the risk detection."
+   },
+   {
+    "name": "agentDisplayName",
+    "type": "Edm.String",
+    "desc": "Name of the agent. Deprecated. Use displayName instead. This property will be removed after 2027-04-28.  Supports $filter (eq, startsWith)."
+   },
+   {
+    "name": "agentId",
+    "type": "Edm.String",
+    "desc": "The unique identifier for the agent. Deprecated. Use identityId instead. This property will be removed after 2027-04-28. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser.  Supports $filter (eq, startsWith)."
+   },
+   {
+    "name": "blueprintId",
+    "type": "Edm.String",
+    "desc": "The identifier of the blueprint associated with the agent. Nullable."
+   },
+   {
+    "name": "clientSessionId",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "detectedDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, le, and ge)."
+   },
+   {
+    "name": "detectionTimingType",
+    "type": "graph.riskDetectionTimingType",
+    "desc": "Timing of the detected risk (real-time/offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue."
+   },
+   {
+    "name": "displayName",
+    "type": "Edm.String",
+    "desc": "Human-readable name of the identity associated with this risk detection.  Supports $filter (eq, startsWith)."
+   },
+   {
+    "name": "identityId",
+    "type": "Edm.String",
+    "desc": "Unique identifier of the identity associated with this risk detection.  Supports $filter (eq, startsWith)."
+   },
+   {
+    "name": "identityType",
+    "type": "graph.agentIdentityType",
+    "desc": "The type of agent identity associated with this risk detection. The possible values are: agentIdentity, agentIdentityBlueprintPrincipal, agentUser, user, unknownFutureValue. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: agentIdentityBlueprintPrincipal. Required.  Supports $filter (eq)."
+   },
+   {
+    "name": "lastModifiedDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "Date and time that the risk detection was last updated.  Supports $filter (eq, le, and ge)."
+   },
+   {
+    "name": "riskDetail",
+    "type": "graph.riskDetail",
+    "desc": "Details of the detected risk.  Supports $filter (eq)."
+   },
+   {
+    "name": "riskEventType",
+    "type": "Edm.String",
+    "desc": "The type of risk event detected.  Supports $filter (eq)."
+   },
+   {
+    "name": "riskEvidence",
+    "type": "Edm.String",
+    "desc": "Evidence on the risky activity occurred.  Supports $filter (eq)."
+   },
+   {
+    "name": "riskLevel",
+    "type": "graph.riskLevel",
+    "desc": "Level of the detected risk. The possible values are: low, medium, high, hidden, none, unknownFutureValue.  Supports $filter (eq)."
+   },
+   {
+    "name": "riskState",
+    "type": "graph.riskState",
+    "desc": "The state of a detected agentic risk. The possible values are: none, confirmedSafe, dismissed, atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter (eq)."
+   },
+   {
+    "name": "signInClientDisplayName",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "signInCorrelationId",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "signInRequestId",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "source",
+    "type": "Edm.String",
+    "desc": "The source system that generated the risk detection. Nullable."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentUser",
+  "base": "graph.user",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "cloudPcAgentPool",
+  "base": "graph.cloudPcPool",
+  "desc": null,
+  "props": [
+   {
+    "name": "billingConfiguration",
+    "type": "graph.cloudPcAgentPoolBillingConfiguration",
+    "desc": "The billing configuration for the agent pool."
+   },
+   {
+    "name": "capabilities",
+    "type": "graph.cloudPcAgentPoolCapabilityConfiguration",
+    "desc": null
+   },
+   {
+    "name": "poolUrl",
+    "type": "Edm.String",
+    "desc": "The endpoint URL used to check out and check in agent sessions. This value becomes available after the pool reaches the active status. Read-only."
+   },
+   {
+    "name": "scalingPolicy",
+    "type": "graph.cloudPcAgentPoolScalingPolicy",
+    "desc": "The scaling policy defining minimum and maximum counts."
+   },
+   {
+    "name": "sessionUsage",
+    "type": "graph.cloudPcAgentPoolSessionUsage",
+    "desc": "The current session usage of the agent pool. Read-only."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "cloudPcAgentPoolUserAssignment",
+  "base": "graph.cloudPcPoolAssignment",
+  "desc": null,
+  "props": [
+   {
+    "name": "userPrincipalId",
+    "type": "Edm.String",
+    "desc": "The unique identifier of the user principal."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "cloudPcBulkReinstallAgent",
+  "base": "graph.cloudPcBulkAction",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "exactMatchUploadAgent",
+  "base": "graph.entity",
+  "desc": null,
+  "props": [
+   {
+    "name": "creationDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": null
+   },
+   {
+    "name": "description",
+    "type": "Edm.String",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "onPremisesAgent",
+  "base": "graph.entity",
+  "desc": null,
+  "props": [
+   {
+    "name": "externalIp",
+    "type": "Edm.String",
+    "desc": "The external IP address as detected by the service for the agent machine. Read-only"
+   },
+   {
+    "name": "machineName",
+    "type": "Edm.String",
+    "desc": "The name of the machine that the agent is running on. Read-only"
+   },
+   {
+    "name": "status",
+    "type": "graph.agentStatus",
+    "desc": "The possible values are: active, inactive."
+   },
+   {
+    "name": "supportedPublishingTypes",
+    "type": "Collection(graph.onPremisesPublishingType)",
+    "desc": "The possible values are: applicationProxy, exchangeOnline, authentication, provisioning, intunePfx, oflineDomainJoin, unknownFutureValue, privateAccess. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: privateAccess."
+   },
+   {
+    "name": "agentGroups",
+    "type": "Collection(graph.onPremisesAgentGroup)",
+    "desc": "List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "onPremisesAgentGroup",
+  "base": "graph.entity",
+  "desc": null,
+  "props": [
+   {
+    "name": "displayName",
+    "type": "Edm.String",
+    "desc": "Display name of the onPremisesAgentGroup."
+   },
+   {
+    "name": "isDefault",
+    "type": "Edm.Boolean",
+    "desc": "Indicates if the onPremisesAgentGroup is the default agent group. Only a single agent group can be the default onPremisesAgentGroup and is set by the system."
+   },
+   {
+    "name": "publishingType",
+    "type": "graph.onPremisesPublishingType",
+    "desc": "The possible values are: applicationProxy, exchangeOnline, authentication, provisioning, intunePfx, oflineDomainJoin, unknownFutureValue, privateAccess. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: privateAccess."
+   },
+   {
+    "name": "agents",
+    "type": "Collection(graph.onPremisesAgent)",
+    "desc": "List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable."
+   },
+   {
+    "name": "publishedResources",
+    "type": "Collection(graph.publishedResource)",
+    "desc": "List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "riskyAgent",
+  "base": "graph.entity",
+  "desc": null,
+  "props": [
+   {
+    "name": "additionalInfo",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "agentDisplayName",
+    "type": "Edm.String",
+    "desc": "Name of the agent.  Supports $filter (eq, startsWith)."
+   },
+   {
+    "name": "agentPlatform",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "associatedUserId",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "blastRadiusRisk",
+    "type": "graph.blastRadiusRisk",
+    "desc": null
+   },
+   {
+    "name": "blueprintId",
+    "type": "Edm.String",
+    "desc": "The identifier of the blueprint associated with the agent. Nullable."
+   },
+   {
+    "name": "deviceId",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "exposureRisk",
+    "type": "graph.exposureRisk",
+    "desc": null
+   },
+   {
+    "name": "identityType",
+    "type": "graph.agentIdentityType",
+    "desc": "The type of agent identity. The possible values are: agentIdentity, agentUser, unknownFutureValue, agentIdentityBlueprintPrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: agentIdentityBlueprintPrincipal. Required.  Supports $filter (eq)."
+   },
+   {
+    "name": "isDeleted",
+    "type": "Edm.Boolean",
+    "desc": "Indicates whether the agent is deleted."
+   },
+   {
+    "name": "isEnabled",
+    "type": "Edm.Boolean",
+    "desc": "Indicates whether the agent is enabled."
+   },
+   {
+    "name": "isProcessing",
+    "type": "Edm.Boolean",
+    "desc": "Indicates whether an agent's risky state is processing in the backend."
+   },
+   {
+    "name": "machineId",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "riskDetail",
+    "type": "graph.riskDetail",
+    "desc": "Details of the detected risk of the agent.  Supports $filter (eq)."
+   },
+   {
+    "name": "riskLastModifiedDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "The date and time that the risky agent was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, le, and ge)."
+   },
+   {
+    "name": "riskLevel",
+    "type": "graph.riskLevel",
+    "desc": "Level of the detected risky agent. The possible values are: low, medium, high, hidden, none, unknownFutureValue.  Supports $filter (eq)."
+   },
+   {
+    "name": "riskState",
+    "type": "graph.riskState",
+    "desc": "State of the agent's risk. The possible values are: none, confirmedSafe, dismissed, atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter (eq)."
+   },
+   {
+    "name": "runtimeRisk",
+    "type": "graph.runtimeRisk",
+    "desc": null
+   },
+   {
+    "name": "sources",
+    "type": "Collection(Edm.String)",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "riskyAgentDiscoveredAgentIdentity",
+  "base": "graph.riskyAgent",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "riskyAgentIdentity",
+  "base": "graph.riskyAgent",
+  "desc": null,
+  "props": [
+   {
+    "name": "agentIdentity",
+    "type": "graph.agentIdentity",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "riskyAgentIdentityBlueprintPrincipal",
+  "base": "graph.riskyAgent",
+  "desc": null,
+  "props": [
+   {
+    "name": "agentIdentityBlueprintPrincipal",
+    "type": "graph.agentIdentityBlueprintPrincipal",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "riskyAgentUser",
+  "base": "graph.riskyAgent",
+  "desc": null,
+  "props": [
+   {
+    "name": "agentUser",
+    "type": "graph.agentUser",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentBlueprintApiBasedEndpointConfigurationDetails",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "callbackUri",
+    "type": "Edm.String",
+    "desc": "The absolute HTTPS URI that Teams posts agent message events to."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentBlueprintBotBasedEndpointConfigurationDetails",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "botId",
+    "type": "Edm.String",
+    "desc": "The identifier of the bot that Teams uses to deliver messages to the agent through the Bot Framework."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentCapabilities",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "extensions",
+    "type": "Collection(graph.agentExtension)",
+    "desc": "A list of protocol extensions supported by the agent."
+   },
+   {
+    "name": "pushNotifications",
+    "type": "Edm.Boolean",
+    "desc": "Indicates if the agent supports sending push notifications for asynchronous task updates."
+   },
+   {
+    "name": "stateTransitionHistory",
+    "type": "Edm.Boolean",
+    "desc": "Indicates if the agent provides a history of state transitions for a task."
+   },
+   {
+    "name": "streaming",
+    "type": "Edm.Boolean",
+    "desc": "Indicates if the agent supports Server-Sent Events (SSE) for streaming responses."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentCardSignature",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "header",
+    "type": "graph.jwsHeader",
+    "desc": "The unprotected JWS header values."
+   },
+   {
+    "name": "protected",
+    "type": "Edm.String",
+    "desc": "The protected JWS header for the signature. This is a Base64url-encoded JSON object, as per RFC 7515."
+   },
+   {
+    "name": "signature",
+    "type": "Edm.String",
+    "desc": "The computed signature, Base64url-encoded."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentConversationConfiguration",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "messageNotificationMode",
+    "type": "graph.agentMessageNotificationMode",
+    "desc": "Controls which messages in the conversation context the agent is notified about. The possible values are: atMentionedMessagesOnly, allMessages, unknownFutureValue. Not nullable."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentEndpointConfiguration",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "apiBased",
+    "type": "graph.agentBlueprintApiBasedEndpointConfigurationDetails",
+    "desc": "The API-based endpoint details. Populated when configurationType is apiBased; carries the callback URI that Teams posts to. Must be null when configurationType is botBased."
+   },
+   {
+    "name": "botBased",
+    "type": "graph.agentBlueprintBotBasedEndpointConfigurationDetails",
+    "desc": "The bot-based endpoint details. Populated when configurationType is botBased; carries the bot ID that Teams messages. Must be null when configurationType is apiBased."
+   },
+   {
+    "name": "configurationType",
+    "type": "graph.agentEndpointConfigurationType",
+    "desc": "The discriminator that indicates which endpoint variant is in effect. The possible values are: apiBased, botBased, unknownFutureValue. Not nullable."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentExtension",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "description",
+    "type": "Edm.String",
+    "desc": "A human-readable description of how this agent uses the extension."
+   },
+   {
+    "name": "params",
+    "type": "graph.agentExtensionParams",
+    "desc": "Extension-specific configuration parameters."
+   },
+   {
+    "name": "required",
+    "type": "Edm.Boolean",
+    "desc": "If true, the client must understand and comply with the extension's requirements to interact with the agent."
+   },
+   {
+    "name": "uri",
+    "type": "Edm.String",
+    "desc": "The unique URI identifying the extension."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentExtensionParams",
+  "base": null,
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentInterface",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "transport",
+    "type": "Edm.String",
+    "desc": "The transport protocol supported at this URL."
+   },
+   {
+    "name": "url",
+    "type": "Edm.String",
+    "desc": "The URL where this interface is available. Must be a valid absolute HTTPS URL in production."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentMetadata",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "agentAdministrativeUnitId",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "agentBlueprintId",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "agentCategory",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "agentOwner",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "agentPublisher",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "altAgentIds",
+    "type": "Collection(Edm.String)",
+    "desc": null
+   },
+   {
+    "name": "isEntraAgentId",
+    "type": "Edm.Boolean",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentParticipant",
+  "base": "graph.interactionParticipant",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentProvider",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "organization",
+    "type": "Edm.String",
+    "desc": "The name of the agent provider's organization."
+   },
+   {
+    "name": "url",
+    "type": "Edm.String",
+    "desc": "A URL for the agent provider's website or relevant documentation."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentSignIn",
+  "base": "graph.signInIdentity",
+  "desc": null,
+  "props": [
+   {
+    "name": "agentServicePrincipalId",
+    "type": "Edm.String",
+    "desc": "Agent identity object IDs included in the policy."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentSkill",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "description",
+    "type": "Edm.String",
+    "desc": "A detailed description of the skill, intended to help clients or users understand its purpose and functionality."
+   },
+   {
+    "name": "displayName",
+    "type": "Edm.String",
+    "desc": "A human-readable name for the skill."
+   },
+   {
+    "name": "examples",
+    "type": "Collection(Edm.String)",
+    "desc": "Example prompts or scenarios that this skill can handle. Provides a hint to the client on how to use the skill."
+   },
+   {
+    "name": "id",
+    "type": "Edm.String",
+    "desc": "A unique identifier for the agent's skill."
+   },
+   {
+    "name": "inputModes",
+    "type": "Collection(Edm.String)",
+    "desc": "The set of supported input MIME types for this skill, overriding the agent's defaults."
+   },
+   {
+    "name": "outputModes",
+    "type": "Collection(Edm.String)",
+    "desc": "The set of supported output MIME types for this skill, overriding the agent's defaults."
+   },
+   {
+    "name": "security",
+    "type": "Collection(graph.securityRequirement)",
+    "desc": "Security schemes necessary for the agent to leverage this skill."
+   },
+   {
+    "name": "tags",
+    "type": "Collection(Edm.String)",
+    "desc": "A set of keywords describing the skill's capabilities."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "agentTeamworkConfiguration",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "channelConfiguration",
+    "type": "graph.agentConversationConfiguration",
+    "desc": "The message notification settings that the agent uses in channels."
+   },
+   {
+    "name": "groupChatConfiguration",
+    "type": "graph.agentConversationConfiguration",
+    "desc": "The message notification settings that the agent uses in group chats."
+   },
+   {
+    "name": "meetingChatConfiguration",
+    "type": "graph.agentConversationConfiguration",
+    "desc": "The message notification settings that the agent uses in meeting chats."
+   },
+   {
+    "name": "oneOnOneChatConfiguration",
+    "type": "graph.agentConversationConfiguration",
+    "desc": "The message notification settings that the agent uses in one-on-one chats."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "aiAgentInfo",
+  "base": "graph.aiInteractionEntity",
+  "desc": null,
+  "props": [
+   {
+    "name": "blueprintId",
+    "type": "Edm.String",
+    "desc": "Identifier of the parent agent blueprint that defines the identity and configuration of the agent. This identifier is provided by Microsoft Entra."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "cloudPcAgentHealthCheckDetail",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "additionalDetails",
+    "type": "Collection(graph.keyValuePair)",
+    "desc": "Additional information for this health check. Default value is empty. It provides detailed information on the health check to help the customer identify and resolve the issue. For example, 'additionalDetails': [{'@odata.type': 'microsoft.graph.keyValuePair', 'name': 'targetVersion', 'value': '1.3.02793.221' }]. Read-only."
+   },
+   {
+    "name": "errorMessage",
+    "type": "Edm.String",
+    "desc": "Indicates the detailed error message when the agent didn't pass this health check. It provides a friendly message to help the customer understand the reason for the health check failure. Maximum length is 1,500 characters. Read-only."
+   },
+   {
+    "name": "errorType",
+    "type": "graph.cloudPcAgentHealthCheckErrorType",
+    "desc": "Indicates the error type occurred in the health check. Used to identify the reason of failure. Default is healthy. The possible values are: healthy, installationCheckMsiFileNotExecutable, installationFailedToDownloadMaterials, installationCheckFoundErrors, resourceAvailabilityCheckDiskSpaceNotEnough, networkAvailabilityCheckRequiredUrlsNotAccessible, functionalityCheckPowerShellNotRunnable, agentCheckNotRunning, agentCheckNotExisted, agentCheckOldVersion, agentCheckHeartbeatLost, deviceStatusCheckNotRunning, deviceStatusCheckNotAvailable, communicationCheckChannelDowngraded, communicationCheckNotAvailable, internalAgentUnknownError, unknownFutureValue. Read-only."
+   },
+   {
+    "name": "healthCheckName",
+    "type": "Edm.String",
+    "desc": "Indicates the name of the health check performed. Read-only."
+   },
+   {
+    "name": "healthCheckResultType",
+    "type": "graph.cloudPcAgentHealthCheckResultType",
+    "desc": "Indicates the health check result. The default value is succeeded. The possible values are: succeeded, warning, failed, unknownFutureValue. Read-only."
+   },
+   {
+    "name": "lastHealthCheckDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "Indicates the date and time when the last health check finished. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "cloudPcAgentHealthCheckStatusDetail",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "additionalHealthCheckMessage",
+    "type": "Edm.String",
+    "desc": "The optional information about this health check to help explain its current status. For example, HealthCheck can't be triggered while installing. Empty by default. Read-only."
+   },
+   {
+    "name": "cloudPcId",
+    "type": "Edm.String",
+    "desc": "The unique identifier of the Cloud PC where the agent health check occurs. Read-only."
+   },
+   {
+    "name": "healthCheckState",
+    "type": "graph.cloudPcAgentHealthCheckState",
+    "desc": "Indicates the working status of the health check. Default value is pending. The possible values are: pending, processing, succeeded, failed, conflict, canceled, unknownFutureValue. Read-only."
+   },
+   {
+    "name": "lastModifiedDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "Indicates the date and time when the health check state was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only."
+   },
+   {
+    "name": "startDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "Indicates the date and time when the latest agent health check started. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "cloudPcAgentHealthCheckSummary",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "agentHealthCheckDetails",
+    "type": "Collection(graph.cloudPcAgentHealthCheckDetail)",
+    "desc": "A list of health check results performed for the target agent. Provides detailed information about the health checks. Empty by default. Read-only."
+   },
+   {
+    "name": "lastSucceededHealthCheckDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "Indicates the date and time when the last health check finished successfully. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only."
+   },
+   {
+    "name": "latestHealthCheckStatus",
+    "type": "graph.cloudPcAgentHealthCheckStatusDetail",
+    "desc": "Indicates the status of the latest agent health check. It can be an ongoing agent health check or the last finished health check. Tracks the latest triggered health check. Read-only."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "cloudPcAgentPoolBillingConfiguration",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "billingPlanId",
+    "type": "Edm.String",
+    "desc": "The identifier of the billing plan."
+   },
+   {
+    "name": "billingType",
+    "type": "graph.cloudPcAgentPoolBillingType",
+    "desc": "The type of billing for the agent pool. The possible values are: payAsYouGo, unknownFutureValue. The default value is payAsYouGo."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "cloudPcAgentPoolCapabilityConfiguration",
+  "base": "graph.cloudPcPoolCapabilityConfiguration",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "cloudPcAgentPoolScalingPolicy",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "maximumCount",
+    "type": "Edm.Int32",
+    "desc": "The maximum number of Cloud PCs in the pool. The valid values are 1 to 900, and must be greater than or equal to minimumCount."
+   },
+   {
+    "name": "minimumCount",
+    "type": "Edm.Int32",
+    "desc": "The minimum number of Cloud PCs in the pool. The valid values are 0 to 900, and must be less than or equal to maximumCount."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "cloudPcAgentPoolSessionUsage",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "activeSessionsCount",
+    "type": "Edm.Int32",
+    "desc": "The number of active sessions in the pool. Read-only."
+   },
+   {
+    "name": "availableSessionsCount",
+    "type": "Edm.Int32",
+    "desc": "The number of available sessions in the pool. Read-only."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "cloudPcAgentStatusDetail",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "agentVersionNumber",
+    "type": "Edm.String",
+    "desc": "Indicates the version of the Cloud PC agent. For example, 1.2.02783.221. Read-only."
+   },
+   {
+    "name": "cloudPcId",
+    "type": "Edm.String",
+    "desc": "Indicates the unique identifier of the Cloud PC where the agent is installed. This identifier correlates the agent status with the target Cloud PC. It represents the unique identifier of the related Cloud PC entity, which is defined when the entity is created. Read-only."
+   },
+   {
+    "name": "diagnosticResultMessage",
+    "type": "Edm.String",
+    "desc": "Indicates a detailed message related to the diagnostic result type. Maximum length is 1,500 characters. Read-only."
+   },
+   {
+    "name": "diagnosticResultType",
+    "type": "graph.cloudPcAgentDiagnosticResultType",
+    "desc": "Indicates the diagnostic result type detected. Describes the overall issue identified. The possible values are: healthy, versionOutdated, functionalityDefect, communicationUnhealthy, unknownError, unknownFutureValue. Read-only."
+   },
+   {
+    "name": "healthCheckSummary",
+    "type": "graph.cloudPcAgentHealthCheckSummary",
+    "desc": "Describes the details of health checks performed on the agent. Read-only."
+   },
+   {
+    "name": "healthStatus",
+    "type": "graph.cloudPcAgentHealthStatus",
+    "desc": "The health status of the agent. Used to query agents with the same health status. Default value is healthy. The possible values are: healthy, warning, unavailable, unknownFutureValue."
+   },
+   {
+    "name": "lastHealthStatusCheckedDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "Indicates the date and time when the last agent health status check was completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only."
+   },
+   {
+    "name": "managedDeviceName",
+    "type": "Edm.String",
+    "desc": "Indicates the Intune enrolled device name of the Cloud PC. Read-only."
+   },
+   {
+    "name": "userPrincipalName",
+    "type": "Edm.String",
+    "desc": "Indicates the principal name of the user assigned to the Cloud PC, with a maximum length of 113 characters. Read-only."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "cloudPcExternalPartnerAgentSetting",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "agentSha256",
+    "type": "Edm.String",
+    "desc": "The hash value of agent file by sha256 algorithm."
+   },
+   {
+    "name": "agentUrl",
+    "type": "Edm.String",
+    "desc": "The download link url of the agent, when admin sets this url, then partner can call deploy agent API to deploy this agent to targeted Cloud PCs. The format is like this: https://www.external-partner.com/resources/agents/exampleAgentFile.exe"
+   },
+   {
+    "name": "autoDeploymentEnabled",
+    "type": "Edm.Boolean",
+    "desc": "Indicates whether partner agent auto deployment is enabled. When true, then the partner agent will be deployed after the Cloud PC is provisioned. When false, auto deployment isn't performed. Default value is false"
+   },
+   {
+    "name": "installParameters",
+    "type": "Collection(Edm.String)",
+    "desc": "The install command parameters to run the agent install command. The format is like this: ['/p paramValue', '/quiet']"
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "cloudPcPartnerAgentInstallResult",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "errorMessage",
+    "type": "Edm.String",
+    "desc": "Contains a detailed error message when the partner agent installation failed."
+   },
+   {
+    "name": "installStatus",
+    "type": "graph.cloudPcPartnerAgentInstallStatus",
+    "desc": "The status of a partner agent installation. The possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only."
+   },
+   {
+    "name": "isThirdPartyPartner",
+    "type": "Edm.Boolean",
+    "desc": "Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn't known.  The default value is false."
+   },
+   {
+    "name": "partnerAgentName",
+    "type": "graph.cloudPcPartnerAgentName",
+    "desc": "The name of the first-party or third-party partner agent. Possible values for third-party partners are Citrix, VMware and HP. Read-Only."
+   },
+   {
+    "name": "retriable",
+    "type": "Edm.Boolean",
+    "desc": "Indicates whether the partner agent installation should be retried. The default value is false."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "conditionalAccessAgentContext",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "excludeAgentContexts",
+    "type": "Collection(Edm.String)",
+    "desc": null
+   },
+   {
+    "name": "includeAgentContexts",
+    "type": "Collection(Edm.String)",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "conditionalAccessAgents",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "agentFilter",
+    "type": "graph.conditionalAccessFilter",
+    "desc": null
+   },
+   {
+    "name": "excludeAgentUsers",
+    "type": "Collection(Edm.String)",
+    "desc": null
+   },
+   {
+    "name": "includeAgentUsers",
+    "type": "Collection(Edm.String)",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "hybridAgentUpdaterConfiguration",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "allowUpdateConfigurationOverride",
+    "type": "Edm.Boolean",
+    "desc": "Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available."
+   },
+   {
+    "name": "deferUpdateDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z"
+   },
+   {
+    "name": "updateWindow",
+    "type": "graph.updateWindow",
+    "desc": "The time window during which the agent can receive updates."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "policyLocationAgent",
+  "base": "graph.policyLocationApplication",
+  "desc": null,
+  "props": [
+   {
+    "name": "agentMetadata",
+    "type": "graph.agentMetadata",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "targetAgentIdentitySponsorsOrOwners",
+  "base": "graph.userSet",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "agentEndpointConfigurationType",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "apiBased",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "botBased",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "2",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "agentIdentityType",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "agentIdentity",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "agentUser",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "agentIdentityBlueprintPrincipal",
+    "type": "3",
+    "desc": null
+   },
+   {
+    "name": "user",
+    "type": "4",
+    "desc": null
+   },
+   {
+    "name": "discoveredAgentIdentity",
+    "type": "5",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "agentIdRiskLevel",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "none",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "low",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "medium",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "high",
+    "type": "4",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "8",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "agentMessageNotificationMode",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "atMentionedMessagesOnly",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "allMessages",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "2",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "agentStatus",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "active",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "inactive",
+    "type": "1",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "cloudPcAgentDiagnosticResultType",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "healthy",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "versionOutdated",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "functionalityDefect",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "communicationUnhealthy",
+    "type": "3",
+    "desc": null
+   },
+   {
+    "name": "unknownError",
+    "type": "4",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "5",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "cloudPcAgentHealthCheckErrorType",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "healthy",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "installationCheckMsiFileNotExecutable",
+    "type": "1001",
+    "desc": null
+   },
+   {
+    "name": "installationFailedToDownloadMaterials",
+    "type": "1002",
+    "desc": null
+   },
+   {
+    "name": "installationCheckFoundErrors",
+    "type": "1003",
+    "desc": null
+   },
+   {
+    "name": "resourceAvailabilityCheckDiskSpaceNotEnough",
+    "type": "2001",
+    "desc": null
+   },
+   {
+    "name": "networkAvailabilityCheckRequiredUrlsNotAccessible",
+    "type": "3001",
+    "desc": null
+   },
+   {
+    "name": "functionalityCheckPowerShellNotRunnable",
+    "type": "4001",
+    "desc": null
+   },
+   {
+    "name": "agentCheckNotRunning",
+    "type": "5001",
+    "desc": null
+   },
+   {
+    "name": "agentCheckNotExisted",
+    "type": "5002",
+    "desc": null
+   },
+   {
+    "name": "agentCheckOldVersion",
+    "type": "5003",
+    "desc": null
+   },
+   {
+    "name": "agentCheckHeartbeatLost",
+    "type": "5004",
+    "desc": null
+   },
+   {
+    "name": "deviceStatusCheckNotRunning",
+    "type": "6001",
+    "desc": null
+   },
+   {
+    "name": "deviceStatusCheckNotAvailable",
+    "type": "6002",
+    "desc": null
+   },
+   {
+    "name": "communicationCheckChannelDowngraded",
+    "type": "7001",
+    "desc": null
+   },
+   {
+    "name": "communicationCheckNotAvailable",
+    "type": "7002",
+    "desc": null
+   },
+   {
+    "name": "internalAgentUnknownError",
+    "type": "9999",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "10000",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "cloudPcAgentHealthCheckResultType",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "succeeded",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "warning",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "failed",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "3",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "cloudPcAgentHealthCheckState",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "pending",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "processing",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "succeeded",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "failed",
+    "type": "3",
+    "desc": null
+   },
+   {
+    "name": "conflict",
+    "type": "4",
+    "desc": null
+   },
+   {
+    "name": "canceled",
+    "type": "5",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "6",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "cloudPcAgentHealthStatus",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "healthy",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "warning",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "unavailable",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "3",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "cloudPcAgentPoolBillingType",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "payAsYouGo",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "1",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "cloudPcPartnerAgentInstallStatus",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "installed",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "installFailed",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "installing",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "uninstalling",
+    "type": "3",
+    "desc": null
+   },
+   {
+    "name": "uninstallFailed",
+    "type": "4",
+    "desc": null
+   },
+   {
+    "name": "licensed",
+    "type": "5",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "6",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "cloudPcPartnerAgentName",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "citrix",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "vMware",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "hp",
+    "type": "3",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "conditionalAccessAgentIdRiskLevels",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "low",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "medium",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "high",
+    "type": "4",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "8",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "managementAgentType",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "eas",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "mdm",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "easMdm",
+    "type": "3",
+    "desc": null
+   },
+   {
+    "name": "intuneClient",
+    "type": "4",
+    "desc": null
+   },
+   {
+    "name": "easIntuneClient",
+    "type": "5",
+    "desc": null
+   },
+   {
+    "name": "configurationManagerClient",
+    "type": "8",
+    "desc": null
+   },
+   {
+    "name": "configurationManagerClientMdm",
+    "type": "10",
+    "desc": null
+   },
+   {
+    "name": "configurationManagerClientMdmEas",
+    "type": "11",
+    "desc": null
+   },
+   {
+    "name": "unknown",
+    "type": "16",
+    "desc": null
+   },
+   {
+    "name": "jamf",
+    "type": "32",
+    "desc": null
+   },
+   {
+    "name": "googleCloudDevicePolicyController",
+    "type": "64",
+    "desc": null
+   },
+   {
+    "name": "microsoft365ManagedMdm",
+    "type": "258",
+    "desc": null
+   },
+   {
+    "name": "msSense",
+    "type": "1024",
+    "desc": null
+   },
+   {
+    "name": "intuneAosp",
+    "type": "2048",
+    "desc": null
+   },
+   {
+    "name": "google",
+    "type": "8192",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "8193",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.agentic",
+  "kind": "ComplexType",
+  "name": "agentSignIn",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "agentSubjectParentId",
+    "type": "Edm.String",
+    "desc": "The subject's parent object ID. This is either the id of the agentIdentity or agentIdentityBlueprint."
+   },
+   {
+    "name": "agentSubjectType",
+    "type": "agentic.agentType",
+    "desc": "The type of the subject that requested the token. The possible values are: notAgentic, agenticApp, agenticAppInstance, unknownFutureValue, agentIdentityBlueprintPrincipal, agentIDuser. Use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: agentIdentityBlueprintPrincipal, agentIDuser."
+   },
+   {
+    "name": "agentType",
+    "type": "agentic.agentType",
+    "desc": "Indicates whether the identity is agentic or nonagentic. The possible values are: notAgentic, agenticApp, agenticAppInstance, unknownFutureValue, agentIdentityBlueprintPrincipal, agentIDuser. Use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: agentIdentityBlueprintPrincipal, agentIDuser."
+   },
+   {
+    "name": "parentAppId",
+    "type": "Edm.String",
+    "desc": "The appId of the parent agent where the agentType is agentic."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.agentic",
+  "kind": "EnumType",
+  "name": "agentType",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "notAgentic",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "agenticApp",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "agenticAppInstance",
+    "type": "3",
+    "desc": null
+   },
+   {
+    "name": "agentIdentityBlueprintPrincipal",
+    "type": "4",
+    "desc": null
+   },
+   {
+    "name": "agentIDuser",
+    "type": "5",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "6",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.callRecords",
+  "kind": "ComplexType",
+  "name": "clientUserAgent",
+  "base": "microsoft.graph.callRecords.userAgent",
+  "desc": null,
+  "props": [
+   {
+    "name": "azureADAppId",
+    "type": "Edm.String",
+    "desc": "The unique identifier of the Microsoft Entra application used by this endpoint."
+   },
+   {
+    "name": "communicationServiceId",
+    "type": "Edm.String",
+    "desc": "Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs."
+   },
+   {
+    "name": "platform",
+    "type": "microsoft.graph.callRecords.clientPlatform",
+    "desc": "Identifies the platform used by this endpoint. The possible values are: unknown, windows, macOS, iOS, android, web, ipPhone, roomSystem, surfaceHub, holoLens, unknownFutureValue."
+   },
+   {
+    "name": "productFamily",
+    "type": "microsoft.graph.callRecords.productFamily",
+    "desc": "Identifies the family of application software used by this endpoint. The possible values are: unknown, teams, skypeForBusiness, lync, unknownFutureValue, azureCommunicationServices.  Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: azureCommunicationServices."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.callRecords",
+  "kind": "ComplexType",
+  "name": "serviceUserAgent",
+  "base": "microsoft.graph.callRecords.userAgent",
+  "desc": null,
+  "props": [
+   {
+    "name": "role",
+    "type": "microsoft.graph.callRecords.serviceRole",
+    "desc": "Identifies the role of the service used by this endpoint. The possible values are: unknown, customBot, skypeForBusinessMicrosoftTeamsGateway, skypeForBusinessAudioVideoMcu, skypeForBusinessApplicationSharingMcu, skypeForBusinessCallQueues, skypeForBusinessAutoAttendant, mediationServer, mediationServerCloudConnectorEdition, exchangeUnifiedMessagingService, mediaController, conferencingAnnouncementService, conferencingAttendant, audioTeleconferencerController, skypeForBusinessUnifiedCommunicationApplicationPlatform, responseGroupServiceAnnouncementService, gateway, skypeTranslator, skypeForBusinessAttendant, responseGroupService, voicemail, unknownFutureValue."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.callRecords",
+  "kind": "ComplexType",
+  "name": "userAgent",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "applicationVersion",
+    "type": "Edm.String",
+    "desc": "Identifies the version of application software used by this endpoint."
+   },
+   {
+    "name": "headerValue",
+    "type": "Edm.String",
+    "desc": "User-agent header value reported by this endpoint."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.identityGovernance",
+  "kind": "EntityType",
+  "name": "agentIdentityLifecycle",
+  "base": "microsoft.graph.identityGovernance.identityLifecycle",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.identityGovernance",
+  "kind": "EntityType",
+  "name": "agentIdentityLifecyclePolicy",
+  "base": "microsoft.graph.identityGovernance.lifecyclePolicy",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.identityGovernance",
+  "kind": "ComplexType",
+  "name": "allExcludingAgentBuilderPlatformsSubjectSet",
+  "base": "graph.subjectSet",
+  "desc": null,
+  "props": [
+   {
+    "name": "excludedAgentBuilderPlatforms",
+    "type": "microsoft.graph.identityGovernance.agentBuilderPlatforms",
+    "desc": "The agent builder platforms whose agent identities are excluded from the policy scope. This flagged enumeration allows multiple members to be selected simultaneously. The possible values are: microsoftCopilotStudio, foundry, unknownFutureValue."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.identityGovernance",
+  "kind": "ComplexType",
+  "name": "lifecyclePolicyAgentIdentitySubjectReference",
+  "base": "microsoft.graph.identityGovernance.lifecyclePolicySubjectReference",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.identityGovernance",
+  "kind": "EnumType",
+  "name": "agentBuilderPlatforms",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "microsoftCopilotStudio",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "foundry",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "4",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.networkaccess",
+  "kind": "ComplexType",
+  "name": "aiAgent",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "firstAccessDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": null
+   },
+   {
+    "name": "id",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "lastAccessDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": null
+   },
+   {
+    "name": "name",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "totalBytesReceived",
+    "type": "Edm.Int64",
+    "desc": null
+   },
+   {
+    "name": "totalBytesSent",
+    "type": "Edm.Int64",
+    "desc": null
+   },
+   {
+    "name": "trafficType",
+    "type": "microsoft.graph.networkaccess.trafficType",
+    "desc": null
+   },
+   {
+    "name": "transactionCount",
+    "type": "Edm.Int64",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.networkaccess",
+  "kind": "ComplexType",
+  "name": "aiAgentDetails",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "id",
+    "type": "Edm.String",
+    "desc": null
+   },
+   {
+    "name": "name",
+    "type": "Edm.String",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "a365AiInvokeAgent",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "agentAdminActivityRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "agentSettingAdminActivity",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "aiAgentEvidence",
+  "base": "self.alertEvidence",
+  "desc": null,
+  "props": [
+   {
+    "name": "agentId",
+    "type": "Edm.String",
+    "desc": "The unique identifier for the AI agent."
+   },
+   {
+    "name": "agentName",
+    "type": "Edm.String",
+    "desc": "The display name for the AI agent."
+   },
+   {
+    "name": "hostingPlatformType",
+    "type": "self.aiAgentPlatform",
+    "desc": "Type of the platform the agent runs on. The possible values are: unknown, azureAIFoundry, copilotStudio, copilot, unknownFutureValue."
+   },
+   {
+    "name": "instructions",
+    "type": "Edm.String",
+    "desc": "The instructions of the agent."
+   }
+  ]
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "aiInvokeAgentAuditRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "copilotAgentManagementAuditRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "mosAgentInfoRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "mosAgentInfoRecordV2",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "purviewPostureAgentAuditRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "rtiOperationsAgentAuditRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "sensitiveInfoRemediationAgentDataRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "vivaGlintAgenticCampaignAuditRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "beta",
+  "ns": "microsoft.graph.security",
+  "kind": "EnumType",
+  "name": "aiAgentPlatform",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "unknown",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "azureAIFoundry",
+    "type": "10",
+    "desc": null
+   },
+   {
+    "name": "copilotStudio",
+    "type": "20",
+    "desc": null
+   },
+   {
+    "name": "copilot",
+    "type": "30",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "40",
+    "desc": null
+   }
+  ]
+ }
+]

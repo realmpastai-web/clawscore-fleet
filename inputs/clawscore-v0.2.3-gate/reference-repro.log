@@ -1,0 +1,13 @@
+== regen_v023 on v0.2 760 feed (inputs/landscape) must equal v0.2.2 frozen c8b9b34f
+c8b9b34f9ede4ef54d77bbc80ec4782a73a3525e50e21c64e79e7bae05fd10f8  -
+== regen_v023 on 894 feed (@1216d18 ghsa-all.json c66f072b)
+556bd11e0d5f9fa49ddf8dc1910f24d6f075073e29eafd0e22cd5437097c732c  -
+556bd11e0d5f9fa49ddf8dc1910f24d6f075073e29eafd0e22cd5437097c732c  version-vulns-v023.json
+{"advisories": 894, "advisories_with_openclaw_range": 869, "unique_ranges": 190, "comparators": 959, "stable": 117, "min_clearing_version": "2026.8.1", "2026.1.29": ["2026.1.29", "2026-01-30", 786, {"critical": 23, "high": 295, "medium": 390, "low": 78}], "2026.4.22": ["2026.4.22", "2026-04-23", 181, {"critical": 1, "high": 100, "medium": 64, "low": 16}]}
+== npm semver cross-check
+semver 7.8.5 versions 278 ranges 142 decisions 39476 disagreements 53 post_release_suffix 53 other 0
+semver 7.8.5 versions 278 ranges 190 decisions 52820 disagreements 65 post_release_suffix 65 other 0
+== escape reference
+VECTORS ok=30/30 fail=[]
+== live feed check 2026-10-18T05:01:28Z
+GHSA-xx9p-hc9w-6p5h	2026-09-11

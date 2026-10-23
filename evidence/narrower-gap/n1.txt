@@ -1,0 +1,18 @@
+./CLAIMS.md: OK
+./README.md: OK
+./controls-output.txt: OK
+./controls/mutant-quotes-fabricated.tsv: OK
+./controls/mutant-verify-report.json: OK
+./gate-output.txt: OK
+./gate_narrower_gap.py: OK
+./quotes.tsv: OK
+./run_controls.sh: OK
+./sources/defender-endpoint_ai-agent-support-matrix.html: OK
+./sources/defender-endpoint_discover-local-ai-agents.html: OK
+./sources/defender-endpoint_local-agent-discovery-overview.html: OK
+./sources/defender-vulnerability-management_fixed-reported-inaccuracies.html: OK
+./sources/defender-vulnerability-management_tvm-remediation.html: OK
+./sources/defender-vulnerability-management_tvm-security-recommendation.html: OK
+./sources/defender-vulnerability-management_tvm-software-inventory.html: OK
+./sources/defender-xdr_security-for-ai_ai-agent-risk-assessment.html: OK
+exit=0

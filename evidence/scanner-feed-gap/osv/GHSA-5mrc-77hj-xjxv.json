@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": ">= 2026.3.28, < 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": ">= 2026.3.28, < 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "2026.3.28"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nWorkspace Cloud SDK arguments could execute code during Gmail setup. In affected versions, an untrusted workspace `.env` could set `CLOUDSDK_PYTHON_ARGS`. Gmail setup inherited that value when starting `gcloud`, whose launcher passed it as arguments to Python.\n\nThis advisory is scoped to operators who started OpenClaw in attacker-controlled workspace content and then invoked the Gmail setup flow.\n\n### Impact\n\nA crafted `CLOUDSDK_PYTHON_ARGS` value could make the trusted Python interpreter execute attacker-supplied code when Gmail setup ran `gcloud`. The code ran with the OpenClaw host user's permissions and could read credentials, modify files, or start other processes.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, run Gmail setup only from trusted workspaces and clear inherited `CLOUDSDK_*` variables before invoking it.",
+  "id": "GHSA-5mrc-77hj-xjxv",
+  "modified": "2026-09-11T00:57:31Z",
+  "published": "2026-09-11T00:57:31Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-5mrc-77hj-xjxv"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Workspace Cloud SDK arguments could execute code during Gmail setup"
+}

@@ -1,0 +1,404 @@
+{
+  "agent_product": "Agent 365",
+  "chain_url": "https://www.cyera.com/blog/claw-chain-cyera-research-unveil-four-chainable-vulnerabilities-in-openclaw",
+  "cves": [
+    {
+      "affected": "<= 2026.4.21",
+      "fixed_in": "2026.4.22",
+      "ghsa_id": "GHSA-wppj-c6mr-83jj",
+      "id": "CVE-2026-44112",
+      "sources": [
+        "https://github.com/advisories/GHSA-wppj-c6mr-83jj",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44112"
+      ],
+      "title": "OpenClaw: OpenShell FS bridge writes stay pinned to the sandbox mount root"
+    },
+    {
+      "affected": "<= 2026.4.21",
+      "fixed_in": "2026.4.22",
+      "ghsa_id": "GHSA-5h3g-6xhh-rg6p",
+      "id": "CVE-2026-44113",
+      "sources": [
+        "https://github.com/advisories/GHSA-5h3g-6xhh-rg6p",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44113"
+      ],
+      "title": "OpenClaw: OpenShell FS bridge reads pin and verify the opened file before returning bytes"
+    },
+    {
+      "affected": "<= 2026.4.21",
+      "fixed_in": "2026.4.22",
+      "ghsa_id": "GHSA-x3h8-jrgh-p8jx",
+      "id": "GHSA-x3h8-jrgh-p8jx",
+      "sources": [
+        "https://github.com/advisories/GHSA-x3h8-jrgh-p8jx"
+      ],
+      "title": "OpenClaw's exec allowlist analysis rejects shell expansion in unquoted heredocs"
+    },
+    {
+      "affected": "<= 2026.4.21",
+      "fixed_in": "2026.4.22",
+      "ghsa_id": "GHSA-r6xh-pqhr-v4xh",
+      "id": "CVE-2026-44118",
+      "sources": [
+        "https://github.com/advisories/GHSA-r6xh-pqhr-v4xh",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44118"
+      ],
+      "title": "OpenClaw: MCP loopback owner context is derived from server-issued bearer tokens"
+    }
+  ],
+  "defender_url": "https://learn.microsoft.com/en-us/defender-endpoint/discover-local-ai-agents",
+  "display": {
+    "acc_correct": 26,
+    "acc_percent": "100.0",
+    "acc_target": 95,
+    "acc_total": 26,
+    "blast_found": 42,
+    "blast_percent": "100.0",
+    "blast_planted": 42,
+    "blast_target": 90,
+    "collision_count": 1,
+    "collision_group": "2026.4.7-1, 2026.4.8",
+    "diff_lines": 0,
+    "dirlist_correct": 117,
+    "dirlist_percent": "100.0",
+    "dirlist_total": 117,
+    "focus_advisories": 101,
+    "focus_critical": 1,
+    "focus_high": 53,
+    "focus_version": "2026.4.22",
+    "install_count": 30,
+    "matrix_correct": 115,
+    "matrix_first": "2026.1.29",
+    "matrix_have": 117,
+    "matrix_last": "2026.10.4",
+    "matrix_non_colliding": 115,
+    "matrix_percent": "100.0",
+    "matrix_total": 117,
+    "old_count": 9,
+    "old_cutoff": "2026.3.31",
+    "old_minimum": 8,
+    "old_months": "2026-01, 2026-02, 2026-03",
+    "pre_correct": 9,
+    "pre_percent": "100.0",
+    "pre_total": 9,
+    "range_ok": 4,
+    "range_total": 4,
+    "read_limit": 20,
+    "reads_max": 1,
+    "reads_mean": "1.00",
+    "seed_label": "v0.1",
+    "seed_matched": 9,
+    "seed_total": 9,
+    "semver_disagreements": 5267,
+    "semver_unexplained": 0,
+    "stripped_ok": 4,
+    "stripped_total": 4
+  },
+  "failures": [],
+  "feed_newest": "2026-07-02",
+  "fix_version": "2026.5.27",
+  "gate_status": "pass",
+  "gates": {
+    "blast_recall": {
+      "found": 42,
+      "pass": true,
+      "percent_display": "100.0",
+      "planted": 42,
+      "target_percent": 90
+    },
+    "collisions": {
+      "count": 1,
+      "includes_pair": [
+        "2026.4.7-1",
+        "2026.4.8"
+      ],
+      "pass": true
+    },
+    "cve_mapping": {
+      "diff_lines": 0,
+      "pass": true
+    },
+    "dirlist_metric": {
+      "accuracy_display": "100.0",
+      "correct": 117,
+      "listing_collision_groups": 0,
+      "pass": true,
+      "total": 117
+    },
+    "export_header": {
+      "actual": "Agent name,Version,Device name,Device ID,OS platform,Device type,Account name,Account domain,Risk level,Risk indicators,Recommendations,MCP servers,Local MCPs,First seen,cs_build_verdict,cs_candidates,cs_reads,cs_stripped,cs_ghsa_ids,cs_cve_ids,cs_ghsa_only_count,cs_crit_high_count,cs_readable_secret_classes,cs_fix_target,cs_feed_newest",
+      "error": "",
+      "expected": "Agent name,Version,Device name,Device ID,OS platform,Device type,Account name,Account domain,Risk level,Risk indicators,Recommendations,MCP servers,Local MCPs,First seen,cs_build_verdict,cs_candidates,cs_reads,cs_stripped,cs_ghsa_ids,cs_cve_ids,cs_ghsa_only_count,cs_crit_high_count,cs_readable_secret_classes,cs_fix_target,cs_feed_newest",
+      "pass": true
+    },
+    "export_jsonl_schema": {
+      "errors": [],
+      "pass": true,
+      "rows": 30
+    },
+    "export_traceable": {
+      "mapped_gates": {
+        "cs_build_verdict": [
+          "version_accuracy",
+          "range_verdicts"
+        ],
+        "cs_candidates": [
+          "version_accuracy",
+          "range_verdicts"
+        ],
+        "cs_crit_high_count": [
+          "cve_mapping"
+        ],
+        "cs_cve_ids": [
+          "cve_mapping"
+        ],
+        "cs_feed_newest": [
+          "freshness"
+        ],
+        "cs_fix_target": [
+          "fix_target"
+        ],
+        "cs_ghsa_ids": [
+          "cve_mapping"
+        ],
+        "cs_ghsa_only_count": [
+          "cve_mapping"
+        ],
+        "cs_readable_secret_classes": [
+          "blast_recall"
+        ],
+        "cs_reads": [
+          "reads"
+        ],
+        "cs_stripped": [
+          "stripped"
+        ]
+      },
+      "pass": true,
+      "untraceable": []
+    },
+    "fix_target": {
+      "advisories": 101,
+      "critical": 1,
+      "focus_version": "2026.4.22",
+      "high": 53,
+      "low": 12,
+      "medium": 35,
+      "min_clearing_version": "2026.5.27",
+      "pass": true
+    },
+    "freshness": {
+      "feed_newest": "2026-07-02",
+      "missing_feed": [],
+      "pass": true,
+      "skipped": [
+        "evidence/landscape",
+        "evidence/matrix/listings.json"
+      ],
+      "word_hits": []
+    },
+    "landscape_hashes": {
+      "parse_error": "",
+      "pass": true,
+      "recompute_exit": 0,
+      "sha256sum_exit": 0,
+      "total_advisories": 760,
+      "with_cve_id": 452,
+      "without_cve_id": 308,
+      "without_cve_id_critical_or_high": 110
+    },
+    "matrix_coverage": {
+      "bad_hash": 0,
+      "cache_checked": 117,
+      "cache_mismatch": [],
+      "expected": 117,
+      "have": 117,
+      "pass": true,
+      "total": 117
+    },
+    "matrix_exact": {
+      "confusion_match": true,
+      "correct": 115,
+      "non_colliding": 115,
+      "pass": true,
+      "percent_display": "100.0",
+      "total": 117
+    },
+    "old_builds": {
+      "count": 9,
+      "cutoff": "2026.3.31",
+      "includes_2026.1.29": true,
+      "includes_2026.3.28": true,
+      "minimum": 8,
+      "months": [
+        "2026-01",
+        "2026-02",
+        "2026-03"
+      ],
+      "pass": true
+    },
+    "range_verdicts": {
+      "ok": 4,
+      "pass": true,
+      "total": 4
+    },
+    "readme_unprovens": {
+      "checked": 16,
+      "missing": [],
+      "pass": true
+    },
+    "reads": {
+      "installs": 30,
+      "limit": 20,
+      "matrix_max": 1,
+      "max": 1,
+      "mean": "1.00",
+      "pass": true,
+      "total_reads": 30
+    },
+    "semver_crosscheck": {
+      "decisions": 39476,
+      "disagreements": 5267,
+      "pass": true,
+      "semver": "7.8.5",
+      "unexplained": 0
+    },
+    "stripped": {
+      "minimum": 3,
+      "ok": 4,
+      "pass": true,
+      "total": 4
+    },
+    "v01_regression": {
+      "matched": 9,
+      "pass": true,
+      "total": 9
+    },
+    "version_accuracy": {
+      "correct": 26,
+      "pass": true,
+      "percent_display": "100.0",
+      "pre_correct": 9,
+      "pre_percent_display": "100.0",
+      "pre_total": 9,
+      "target_percent": 95,
+      "total": 26
+    }
+  },
+  "no_advisory_wording": "no published advisory as of 2026-07-02",
+  "ok": true,
+  "patch_boundary": "2026.4.22",
+  "patch_released": "2026-04-23",
+  "python_requirement": "3.11",
+  "release": "0.2.1",
+  "spec_unprovens": [
+    "GLOBAL UNPROVENS (Learn doesn't document them)",
+    "- Export file format (CSV or XLSX), header spelling in the file, column order, date format, encoding. Learn says only \"select Export to download the list\" (C09).",
+    "- How Defender formats an OpenClaw Version string, e.g. \"2026.4.22\" vs \"v2026.4.22\".",
+    "- Row grain is documented: one row per agent installation, so a repeat on several devices or accounts appears more than once (C10).",
+    "Agent name | string, \"OpenClaw\" for our rows | C01; the Name value \"OpenClaw\", vendor \"OpenClaw Foundation\" (C27, support matrix) | documented; the cell type is UNPROVEN",
+    "Version | string | C01 \"The discovered agent, and the version installed.\" | documented; format UNPROVEN",
+    "Device ID | string | C02 | documented; format UNPROVEN",
+    "OS platform | string (Windows, macOS) | C02 | documented; value set UNPROVEN",
+    "Device type | string | C02 | documented; value set UNPROVEN",
+    "Risk indicators | string list, e.g. \"Running on a Critical Device\" | C05 | documented; list separator UNPROVEN",
+    "Recommendations | string | C06 | documented; cell format (count vs names) UNPROVEN",
+    "First seen | datetime | C08 | documented; format UNPROVEN, so emit ISO 8601 UTC",
+    "AgentId | CONFLICT: schema says string (C14 page) vs discover says guid (C13) | emit a GUID string | flag in README",
+    "Name / AgentName | CONFLICT: discover lists Name (C16), schema lists AgentName (C15) | emit both keys, same value | flag in README",
+    "PublishedStatus | string: Draft or Published | C18 | documented; value for local agents UNPROVEN",
+    "  relatedProcess string (C23); OpenClaw's process name is UNPROVEN"
+  ],
+  "summary": {
+    "no_usable_version": 14,
+    "registry_sees": 30,
+    "rotate_order": [
+      {
+        "credential": "AWS_ACCESS_KEY_ID",
+        "installs": [
+          "claw-09",
+          "claw-10",
+          "claw-16",
+          "claw-25",
+          "claw-26"
+        ],
+        "reach": 5
+      },
+      {
+        "credential": "SLACK_BOT_TOKEN",
+        "installs": [
+          "claw-07",
+          "claw-13",
+          "claw-14",
+          "claw-15",
+          "claw-23"
+        ],
+        "reach": 5
+      },
+      {
+        "credential": "STRIPE_SECRET_KEY",
+        "installs": [
+          "claw-08",
+          "claw-14",
+          "claw-15",
+          "claw-16",
+          "claw-24"
+        ],
+        "reach": 5
+      },
+      {
+        "credential": "ANTHROPIC_API_KEY",
+        "installs": [
+          "claw-09",
+          "claw-15",
+          "claw-16",
+          "claw-25"
+        ],
+        "reach": 4
+      },
+      {
+        "credential": "AWS_SECRET_ACCESS_KEY",
+        "installs": [
+          "claw-10",
+          "claw-11",
+          "claw-26",
+          "claw-27"
+        ],
+        "reach": 4
+      },
+      {
+        "credential": "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "installs": [
+          "claw-05",
+          "claw-12",
+          "claw-13",
+          "claw-21"
+        ],
+        "reach": 4
+      },
+      {
+        "credential": "OPENAI_API_KEY",
+        "installs": [
+          "claw-06",
+          "claw-13",
+          "claw-14",
+          "claw-22"
+        ],
+        "reach": 4
+      },
+      {
+        "credential": "DISCORD_BOT_TOKEN",
+        "installs": [
+          "claw-11",
+          "claw-12",
+          "claw-27"
+        ],
+        "reach": 3
+      }
+    ],
+    "rotate_tokens": 8,
+    "sentence": "registry sees 30 / 14 with no usable version / 27 vulnerable / rotate these 8 tokens first",
+    "vulnerable": 27
+  },
+  "xdr_url": "https://learn.microsoft.com/en-us/defender-xdr/security-for-ai/ai-agent-inventory"
+}

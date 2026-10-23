@@ -1,0 +1,21 @@
+{
+  "offline_failures": [
+    "landscape_hashes failed",
+    "cve_mapping failed",
+    "semver_crosscheck failed",
+    "freshness failed",
+    "fix_target failed"
+  ],
+  "gates": {
+    "landscape_hashes": false,
+    "matrix_coverage": true,
+    "matrix_exact": true,
+    "collisions": true,
+    "dirlist_metric": true,
+    "cve_mapping": false,
+    "semver_crosscheck": false,
+    "freshness": false,
+    "fix_target": false,
+    "v01_regression": true
+  }
+}

@@ -1,0 +1,2 @@
+The three openclaw-*.tgz files were sha512-checked (see ../rea-brief-openclaw-latest/sha512-check.txt and recon.log) and are not in git because each is over GitHub's 100MB file limit.
+listing-2026.10.5.json is the tarfile file listing (path, sha256) for 2026.10.5. sig/ holds the fingerprint mark files copied out of the extract. Neither was produced by executing openclaw.

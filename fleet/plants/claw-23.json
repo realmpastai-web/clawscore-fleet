@@ -1,0 +1,37 @@
+{
+  "auto_approve": true,
+  "env_names": [
+    "SLACK_BOT_TOKEN"
+  ],
+  "extra_files": [
+    {
+      "format": "mcpServers",
+      "path": "/opt/apps/claw-23/.mcp.json",
+      "servers": {
+        "slack": {
+          "args": [
+            "-y",
+            "@modelcontextprotocol/server-slack"
+          ],
+          "command": "npx",
+          "env_names": []
+        }
+      }
+    }
+  ],
+  "false_version": null,
+  "id": "claw-23",
+  "openclaw_servers": {
+    "github": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "command": "npx",
+      "env_names": []
+    }
+  },
+  "state_dir": "/opt/apps/claw-23/.openclaw",
+  "stripped": "none",
+  "work_dir": "/opt/apps/claw-23"
+}

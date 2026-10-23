@@ -1,0 +1,72 @@
+schema recorded before ID-list TSVs
+trivy metadata.json {"DownloadedAt": "0001-01-01T00:00:00Z", "NextUpdate": "2026-10-22T13:15:34.794357402Z", "UpdatedAt": "2026-10-21T13:15:34.794358024Z", "Version": 2}
+trivy bbolt meta will be read next; layer sha256 3399c7b11c8c01d0423c115e938c30c05562cd5346ddcfc56db5197e79dd97d0
+grype sqlite_master tables used by grype_extract.sql:
+affected_cpe_handles
+CREATE TABLE `affected_cpe_handles` (`id` integer PRIMARY KEY AUTOINCREMENT,`vulnerability_id` integer NOT NULL,`cpe_id` integer,`blob_id` integer,CONSTRAINT `fk_affected_cpe_handles_vulnerability` FOREIGN KEY (`vulnerability_id`) REFERENCES `vulnerability_handles`(`id`),CONSTRAINT `fk_affected_cpe_handles_cpe` FOREIGN KEY (`cpe_id`) REFERENCES `cpes`(`id`));
+
+affected_package_handles
+CREATE TABLE `affected_package_handles` (`id` integer PRIMARY KEY AUTOINCREMENT,`vulnerability_id` integer NOT NULL,`operating_system_id` integer,`package_id` integer,`blob_id` integer,CONSTRAINT `fk_affected_package_handles_operating_system` FOREIGN KEY (`operating_system_id`) REFERENCES `operating_systems`(`id`),CONSTRAINT `fk_affected_package_handles_package` FOREIGN KEY (`package_id`) REFERENCES `packages`(`id`),CONSTRAINT `fk_affected_package_handles_vulnerability` FOREIGN KEY (`vulnerability_id`) REFERENCES `vulnerability_handles`(`id`));
+
+blobs
+CREATE TABLE `blobs` (`id` integer PRIMARY KEY AUTOINCREMENT,`value` text NOT NULL);
+
+cpes
+CREATE TABLE `cpes` (`id` integer PRIMARY KEY AUTOINCREMENT,`part` text NOT NULL,`vendor` text,`product` text NOT NULL,`edition` text,`language` text,`software_edition` text,`target_hardware` text,`target_software` text,`other` text);
+
+db_metadata
+CREATE TABLE `db_metadata` (`build_timestamp` datetime NOT NULL,`model` integer NOT NULL,`revision` integer NOT NULL,`addition` integer NOT NULL);
+
+packages
+CREATE TABLE `packages` (`id` integer PRIMARY KEY AUTOINCREMENT,`ecosystem` text,`name` text);
+
+providers
+CREATE TABLE `providers` (`id` text,`version` text,`processor` text,`date_captured` datetime,`input_digest` text,PRIMARY KEY (`id`));
+
+vulnerability_handles
+CREATE TABLE `vulnerability_handles` (`id` integer PRIMARY KEY AUTOINCREMENT,`name` text NOT NULL,`status` text NOT NULL,`published_date` datetime,`modified_date` datetime,`withdrawn_date` datetime,`provider_id` text NOT NULL,`blob_id` integer,CONSTRAINT `fk_vulnerability_handles_provider` FOREIGN KEY (`provider_id`) REFERENCES `providers`(`id`));
+rea --version
+6.7.0
+
+rea inspect exit 1
+rea snapshot bytes 966656
+full-db refusal is rea-grype-inventory.json
+
+REA SQLite built-in was not usable for an Evidence ID.
+rea --version printed 6.7.0.
+inspect-sqlite-database on frozen/grype/vulnerability.db returned resource_constraint: the file is 2507653120 bytes and the offline snapshot budget is 268435456. That JSON is rea-grype-inventory.json.
+A 966656-byte snapshot of the npm openclaw rows was written to frozen/grype-openclaw.sqlite and was not committed.
+inspect-sqlite-database on that snapshot returned capability_unavailable. Node is v22.23.3. REA asked for Node.js 24.15+ or 26+ because DatabaseSync.limits is absent. That JSON is rea-grype-snapshot.json.
+No Evidence ID was issued. ID sets were read with Python sqlite3 3.46.1 and the bbolt reader.
+
+q-measure.stdout follows. Q3 is the intersection of the held TSV advisory_id column with the frozen counted file. The wording sentence uses Q3.
+
+counted_file_equals_build_index 2026.6.10 True
+Q2 trivy 2026.6.10 0
+Q3 trivy 2026.6.10 0
+held_and_withdrawn trivy 2026.6.10 0
+held_ghsa_not_in_counted_or_withdrawn trivy 2026.6.10 0
+Q2 grype 2026.6.10 0
+Q3 grype 2026.6.10 0
+held_and_withdrawn grype 2026.6.10 0
+held_ghsa_not_in_counted_or_withdrawn grype 2026.6.10 0
+ghsa_intersection_equal 2026.6.10 True
+counted_file_equals_build_index 2026.4.22 True
+Q2 trivy 2026.4.22 115
+Q3 trivy 2026.4.22 68
+held_and_withdrawn trivy 2026.4.22 0
+held_ghsa_not_in_counted_or_withdrawn trivy 2026.4.22 0
+Q2 grype 2026.4.22 101
+Q3 grype 2026.4.22 68
+held_and_withdrawn grype 2026.4.22 33
+held_ghsa_not_in_counted_or_withdrawn grype 2026.4.22 0
+ghsa_intersection_equal 2026.4.22 True
+grype_2026.4.22_status {'active': 68, 'rejected': 33}
+gap_ids 87
+gap_sorted_sha 6d522fed3d59fcfbacb33b5909dec5cd3afc5b7275babde292237861daaaf0b1
+
+WORDING
+trivy DB digest sha256:bc1ab2ce4f54245efb7861f81993c8abf4ae95aca67d00dce37c60dc59e7d415 lists 0; the maker's repository lists 58 (feed newest 2026-09-11)
+trivy DB digest sha256:bc1ab2ce4f54245efb7861f81993c8abf4ae95aca67d00dce37c60dc59e7d415 lists 68; the maker's repository lists 148 (feed newest 2026-09-11)
+grype DB digest fe51ed05fd0bf2e0642a362b75b245caf0da0eabb92b26a543e061f9873ec2ba lists 0; the maker's repository lists 58 (feed newest 2026-09-11)
+grype DB digest fe51ed05fd0bf2e0642a362b75b245caf0da0eabb92b26a543e061f9873ec2ba lists 68; the maker's repository lists 148 (feed newest 2026-09-11)

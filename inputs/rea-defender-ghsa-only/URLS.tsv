@@ -1,0 +1,14 @@
+file	url (fetched 2026-10-18 ~14:45 IST; .txt = <main> text of the .html)
+learn-tvm-software-inventory	https://learn.microsoft.com/en-us/defender-vulnerability-management/tvm-software-inventory
+learn-tvm-vulnerable-components	https://learn.microsoft.com/en-us/defender-vulnerability-management/tvm-vulnerable-components
+defender-vulnerability-management_tvm-weaknesses	https://learn.microsoft.com/en-us/defender-vulnerability-management/tvm-weaknesses
+defender-vulnerability-management_tvm-supported-os	https://learn.microsoft.com/en-us/defender-vulnerability-management/tvm-supported-os
+defender-xdr_advanced-hunting-devicetvmsoftwarevulnerabilities-table	https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-devicetvmsoftwarevulnerabilities-table
+defender-xdr_advanced-hunting-devicetvmsoftwarevulnerabilitieskb-table	https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-devicetvmsoftwarevulnerabilitieskb-table
+azure_defender-for-cloud_support-matrix-defender-for-containers	https://learn.microsoft.com/en-us/azure/defender-for-cloud/support-matrix-defender-for-containers
+azure_defender-for-cloud_agentless-vulnerability-assessment-azure	https://learn.microsoft.com/en-us/azure/defender-for-cloud/agentless-vulnerability-assessment-azure
+azure_defender-for-cloud_view-and-remediate-vulnerability-assessment-findings	https://learn.microsoft.com/en-us/azure/defender-for-cloud/view-and-remediate-vulnerability-assessment-findings
+azure_defender-for-cloud_concept-agentless-data-collection	https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-agentless-data-collection
+azure_defender-for-cloud_defender-cli-syntax	https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-cli-syntax
+prior/*	byte-identical copies of rea-agent365-schema/extracted (clawscore-fleet @2d4e787), hashes in PRIOR_HASHES.txt
+note	MicrosoftDocs/defender-docs GitHub repo returned 404 on 2026-10-18, so Learn HTML is the pinned artifact.

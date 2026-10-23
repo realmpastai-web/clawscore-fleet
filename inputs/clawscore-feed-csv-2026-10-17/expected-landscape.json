@@ -1,0 +1,13 @@
+{
+  "total_advisories": 894,
+  "with_cve_id": 459,
+  "without_cve_id": 435,
+  "without_cve_id_critical_or_high": 176,
+  "feed_newest": "2026-09-11",
+  "sources": {
+    "global_db": 760,
+    "repo_only": 134,
+    "repo_only_after_2026_07_02": 75,
+    "repo_only_on_or_before_2026_07_02": 59
+  }
+}

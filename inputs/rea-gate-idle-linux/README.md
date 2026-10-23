@@ -1,0 +1,5 @@
+# rea-gate-idle-linux (Hark, frozen 2026-10-18)
+Invention-in-reverse gate for the next ClawScore Cursor task. Reversed artifact: openclaw@2026.4.15 npm tarball (sha256 8c95f775…cf0d2564), static reads only, no execution, no secret values. Evidence: recon.log, and the user REA brief at /workspace/hark-tasks/invention/rea-openclaw-2026-10-18.
+Proves: an idle-Linux gateway (systemd USER unit + linger, no process) can be discovered, its version recovered from dist/build-info.json and the hashed dist/*.js dirlist with package.json carrying no version, and the on-disk CHANGELOG's 30 GHSAs include ≥1 ID missing from a mock Agent365 export (and ≥1 not in ClawScore's pinned feed, so the feed CSV stays required).
+Run: `python3 gate_idle_linux.py` → GATE PASS.
+Files: build_fixture.py, discover_recover.py, gate_idle_linux.py, dirlist_fingerprint.json, dist-names-2026.4.15.txt (2147), changelog-ghsa-2026.4.15.txt (30), mock-agent365-export.json (13), expected-idle-linux.json, CURSOR_TASK_idle-linux-fingerprint.md, recon.log.

@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": ">= 2026.4.5, < 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": ">= 2026.4.5, < 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "2026.4.5"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nSession-derived memory could lose the originating requester's restrictions before later dreaming runs processed it. Text from an admitted sender with limited tools could be persisted without its untrusted provenance, then supplied to an unattended agent with broader file and command capabilities.\n\n### Impact\n\nIn deployments with session-memory capture and dreaming enabled, a restricted external sender could place instructions that a later background model might follow with authority unavailable to the original turn. Successful exploitation required the content to be captured, selected for later processing, and followed by the model. Resulting actions could affect files, commands, or services available to the dreaming agent.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade `openclaw` to `2026.8.1` or later. Until upgraded, disable dreaming for agents that accept restricted external senders, disable session-memory capture for those conversations, or run background memory processing without mutation and command tools.",
+  "id": "GHSA-62qm-6fjj-6g23",
+  "modified": "2026-09-11T00:57:36Z",
+  "published": "2026-09-11T00:57:36Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-62qm-6fjj-6g23"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Dreaming could widen restricted sender authority"
+}

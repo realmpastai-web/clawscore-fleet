@@ -1,0 +1,23 @@
+counted_file_equals_build_index 2026.6.10 True
+Q2 trivy 2026.6.10 0
+Q3 trivy 2026.6.10 0
+held_and_withdrawn trivy 2026.6.10 0
+held_ghsa_not_in_counted_or_withdrawn trivy 2026.6.10 0
+Q2 grype 2026.6.10 0
+Q3 grype 2026.6.10 0
+held_and_withdrawn grype 2026.6.10 0
+held_ghsa_not_in_counted_or_withdrawn grype 2026.6.10 0
+ghsa_intersection_equal 2026.6.10 True
+counted_file_equals_build_index 2026.4.22 True
+Q2 trivy 2026.4.22 115
+Q3 trivy 2026.4.22 68
+held_and_withdrawn trivy 2026.4.22 0
+held_ghsa_not_in_counted_or_withdrawn trivy 2026.4.22 0
+Q2 grype 2026.4.22 101
+Q3 grype 2026.4.22 68
+held_and_withdrawn grype 2026.4.22 33
+held_ghsa_not_in_counted_or_withdrawn grype 2026.4.22 0
+ghsa_intersection_equal 2026.4.22 True
+grype_2026.4.22_status {'active': 68, 'rejected': 33}
+gap_ids 87
+gap_sorted_sha 6d522fed3d59fcfbacb33b5909dec5cd3afc5b7275babde292237861daaaf0b1

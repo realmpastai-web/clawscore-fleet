@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nWhen `tools.fs.workspaceOnly` was enabled, Unicode filename fallback could normalize already-validated parent directory components. On filesystems where canonically equivalent sibling directories coexist, a missing path inside the workspace could be retried against a sibling outside it.\n\n### Impact\n\nAn admitted requester could cause a tool-enabled agent to read a known file outside its configured workspace boundary. Exploitation required a filesystem layout with distinct canonically equivalent parent directory names and knowledge of a useful target path. It did not rely on symlinks or hardlinks.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade `openclaw` to `2026.8.1` or later. Until upgraded, avoid workspace paths with canonically equivalent Unicode sibling names and deny filesystem read tools to lower-trust senders on affected hosts.",
+  "id": "GHSA-5rx7-34fw-64qg",
+  "modified": "2026-09-11T00:57:33Z",
+  "published": "2026-09-11T00:57:33Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-5rx7-34fw-64qg"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Unicode fallback could escape workspaceOnly roots"
+}

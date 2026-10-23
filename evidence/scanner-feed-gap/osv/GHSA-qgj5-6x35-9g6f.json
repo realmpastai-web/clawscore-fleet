@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nRedacted configuration responses could include deterministic hashes computed over the original unredacted configuration. When a Gateway password had low entropy and the rest of the configuration was reconstructable, those values acted as offline password verifiers.\n\n### Impact\n\nA caller able to obtain the redacted configuration could test password candidates without reaching the rate-limited Gateway authentication path. Recovering the password could grant the documented shared-secret operator authority. Practical exploitation depended on a weak password and sufficient knowledge of every other hashed configuration value. Secret references were not affected in the same way.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade `openclaw` to `2026.8.1` or later. Until upgraded, use a high-entropy Gateway token or password, prefer secret references over inline low-entropy values, and restrict `config.get` to trusted operators.",
+  "id": "GHSA-qgj5-6x35-9g6f",
+  "modified": "2026-09-11T00:58:37Z",
+  "published": "2026-09-11T00:58:37Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-qgj5-6x35-9g6f"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Config revision hashes could expose password verifiers"
+}

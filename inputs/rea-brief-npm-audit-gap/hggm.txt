@@ -1,0 +1,5 @@
+ghsa-all.json OpenClaw is vulnerable to Path Traversal through path validation bypass [({'ecosystem': 'npm', 'name': 'openclaw'}, '<= 2026.3.23')] 2026-03-26T18:31:41Z None
+gh-global-openclaw.json OpenClaw is vulnerable to Path Traversal through path validation bypass [({'ecosystem': 'npm', 'name': 'openclaw'}, '<= 2026.3.23')] 2026-03-26T18:31:41Z None
+live GH DB hggm: None [{'package': {'ecosystem': 'npm', 'name': 'openclaw'}, 'vulnerable_version_range': '<= 2026.3.23', 'first_patched_version': '2026.03.28', 'vulnerable_functions': []}] 2026-06-08
+npm audit 2026.3.23 has hggm: False
+npm audit 2026.3.22 has hggm: False

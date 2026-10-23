@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nUsage CSV export could interpret session labels as formulas. In affected versions, the Control UI quoted session labels as CSV text but did not neutralize leading characters that spreadsheet applications can interpret as formulas.\n\nThis advisory is scoped to the exported artifact and the spreadsheet application used to open it. OpenClaw did not evaluate the formula itself, and impact required an operator to open the export in software with formula evaluation enabled.\n\n### Impact\n\nA lower-trust participant who influenced a session label or first user message could place a formula-like cell in the Usage export. Opening that file in an affected spreadsheet could evaluate the cell with the spreadsheet user's permissions. Practical impact depended on spreadsheet security settings and formula support.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, import Usage exports as plain text or inspect formula-leading cells before opening them in a spreadsheet.",
+  "id": "GHSA-xx9p-hc9w-6p5h",
+  "modified": "2026-09-11T00:58:59Z",
+  "published": "2026-09-11T00:58:59Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-xx9p-hc9w-6p5h"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Usage CSV export could interpret session labels as formulas"
+}

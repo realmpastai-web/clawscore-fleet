@@ -1,0 +1,36 @@
+{
+ "dist-tags": {
+  "beta": "2026.10.10-beta.1",
+  "extended-stable": "2026.9.33",
+  "latest": "2026.10.4"
+ },
+ "fetched_utc": "2026-10-18T11:20Z",
+ "registry_version_count": 278,
+ "url": "https://registry.npmjs.org/openclaw",
+ "versions": {
+  "2026.1.29": {
+   "integrity": "sha512-CVUOAH83BCrlnD56I1JahGVpg0mjp4fjJPdJg9q6Pijn/YdOopsfdInDqSeIEZwGtu/+0w69/uJccY23C9I+vg==",
+   "license": "MIT",
+   "tarball": "https://registry.npmjs.org/openclaw/-/openclaw-2026.1.29.tgz",
+   "time": "2026-01-30T04:49:17.280Z"
+  },
+  "2026.10.10-beta.1": {
+   "integrity": "sha512-bo0YvBN6N3iQuirkhVnwFa+O4vxt0pZ7+R6kvViNl+kv3KOD+O4P5FEywcO0vTtQ1B2GUs0J8UIRb/JZyciZ6Q==",
+   "license": "MIT",
+   "tarball": "https://registry.npmjs.org/openclaw/-/openclaw-2026.10.10-beta.1.tgz",
+   "time": "2026-10-15T17:26:44.944Z"
+  },
+  "2026.10.4": {
+   "integrity": "sha512-+FH0StZF1tlTazM7JJGY6JePeJmhFNSRByi2Q3jXPRiLO7o4dJh2xa9Vy4Dk8Cd2ic8B7Zkf5NfEaCCWUkgqnQ==",
+   "license": "MIT",
+   "tarball": "https://registry.npmjs.org/openclaw/-/openclaw-2026.10.4.tgz",
+   "time": "2026-10-15T23:58:28.695Z"
+  },
+  "2026.4.15": {
+   "integrity": "sha512-vHH11WXuuHkTlA2Nfu+r7WzWo4uccraCgYjhMpzE+PjXUT4p+B3NMq0F24NbpBy+eNw5YjPPZyxxsY31qyFACw==",
+   "license": "MIT",
+   "tarball": "https://registry.npmjs.org/openclaw/-/openclaw-2026.4.15.tgz",
+   "time": "2026-04-16T22:11:23.282Z"
+  }
+ }
+}

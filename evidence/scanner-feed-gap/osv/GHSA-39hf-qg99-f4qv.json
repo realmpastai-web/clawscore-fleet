@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nGoogle Meet attendance CSV could interpret names as formulas. In affected versions, participant display names were quoted for CSV output but leading spreadsheet formula characters were not neutralized.\n\nThis advisory is scoped to the exported artifact and the spreadsheet application used to open it. OpenClaw did not evaluate the formula itself, and impact required an operator to open the attendance export in software with formula evaluation enabled.\n\n### Impact\n\nA meeting participant who controlled their display name could place a formula-like cell in `attendance.csv`. Opening that export in an affected spreadsheet could evaluate the cell with the spreadsheet user's permissions. Practical impact depended on spreadsheet security settings and supported formula behavior.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, import attendance exports as plain text or inspect formula-leading participant cells before opening them in a spreadsheet.",
+  "id": "GHSA-39hf-qg99-f4qv",
+  "modified": "2026-09-11T00:57:15Z",
+  "published": "2026-09-11T00:57:14Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-39hf-qg99-f4qv"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Google Meet attendance CSV could interpret names as formulas"
+}

@@ -1,0 +1,92 @@
+pulled_at 2026-10-18T13:19:19Z | sources: global 760 repo 722 affects 100
+GLOBAL_DB (ours): match_rows=101 unique=101 duplicate_rows=0 withdrawn=33 counted=68
+REPO_PUBLISHED (ours): match_rows=147 unique=146 duplicate_rows=1 withdrawn=0 counted=146
+range_normalizations (global+repo, first pass) {'v-prefix': 6, 'bare-version-as-=': 2}
+GLOBAL_DB (GitHub affects=openclaw@2026.4.22): unique=100 withdrawn=33 counted=67
+FROZEN ghsa-all.json (README 181): match_rows=181 unique=181 duplicate_rows=0 withdrawn=33 counted=148
+ours_vs_github_affects: only_ours ['GHSA-2j8v-hwgc-x698'] only_github []
+counted global (non-withdrawn)=68 | repo=146 | both=66 | global_only=2 | repo_only=80 | UNION_COUNTED=148
+withdrawn_also_in_repo_published []
+cve_shared_by_>1_counted_ghsa []
+UNION severity (global record preferred) {'critical': 1, 'high': 84, 'low': 10, 'medium': 53}
+severity_differs_repo_vs_global 27 [('GHSA-24vr-rprv-67rf', 'medium', 'high'), ('GHSA-2hfg-4fh4-qp7f', 'high', 'medium'), ('GHSA-2j8v-hwgc-x698', 'medium', 'high'), ('GHSA-77pv-3w4q-vrj5', 'medium', 'high'), ('GHSA-7hxm-f538-3xp6', 'medium', 'high'), ('GHSA-8c59-hr4w-qg69', 'medium', 'high'), ('GHSA-8mg9-j9cf-54cj', 'medium', 'low'), ('GHSA-8wg3-5mcm-fjq8', 'medium', 'high'), ('GHSA-9v8j-9c9g-w66c', 'medium', 'low'), ('GHSA-c29c-2q9c-pc86', 'medium', 'high'), ('GHSA-ccwh-wwpp-6wg5', 'medium', 'high'), ('GHSA-cw4q-gqg5-g38h', 'medium', 'high'), ('GHSA-cwpp-5962-q4f6', 'medium', 'low'), ('GHSA-f397-5vjw-v2c2', 'medium', 'high'), ('GHSA-fcvx-5cxc-v5p8', 'low', 'medium'), ('GHSA-fq9j-vw4w-fr6v', 'medium', 'high'), ('GHSA-j472-gf56-x589', 'medium', 'high'), ('GHSA-p73f-w79w-jqr5', 'medium', 'high'), ('GHSA-q7q8-3mgw-q67r', 'medium', 'high'), ('GHSA-rggc-m335-3wvj', 'medium', 'high'), ('GHSA-rx78-29qr-5hq8', 'medium', 'high'), ('GHSA-v6r2-jh58-xx6w', 'medium', 'high'), ('GHSA-v8cx-933x-r976', 'medium', 'high'), ('GHSA-vxx3-6hc9-7cc3', 'medium', 'high'), ('GHSA-w4v6-g3wm-w36c', 'medium', 'critical'), ('GHSA-w5ww-7chg-mxcq', 'medium', 'high'), ('GHSA-wc84-j36w-pw4x', 'medium', 'high')]
+FROZEN_counted == UNION_COUNTED: True | frozen_only [] | fresh_only []
+repo advisory with >1 matching openclaw range (counted once): GHSA-q7q8-3mgw-q67r ['<= 2026.5.18', '<= 2026.5.19-beta.2']
+GLOBAL_ONLY GHSA-77q5-rr5v-x43q repo_published: True repo_packages: [('', '< 2026.5.7')] global_packages: [('openclaw', '< 2026.5.7')]
+GLOBAL_ONLY GHSA-jvm4-4j77-39p6 repo_published: True repo_packages: [('@openclaw/qqbot', '<= 2026.4.27')] global_packages: [('openclaw', '<= 2026.4.27')]
+
+WITHDRAWN -> ORIGINAL (title match after dropping 'Duplicate Advisory:' / 'OpenClaw:')
+GHSA-2w22-3f6x-3hf4	-> GHSA-rx78-29qr-5hq8	counted
+GHSA-35c7-4r45-9gv3	-> GHSA-77pv-3w4q-vrj5	counted
+GHSA-3qg8-hq7j-jj33	-> GHSA-rggc-m335-3wvj	counted
+GHSA-3v3j-737j-7g74	-> GHSA-v2ww-5rh7-2h5v	counted
+GHSA-4qgr-57jq-93vh	-> GHSA-wc84-j36w-pw4x	counted
+GHSA-58wc-8wrv-xp9j	-> GHSA-x629-46cc-7xgw	counted
+GHSA-6jm4-83g2-35gv	-> GHSA-72fw-cqh5-f324	counted
+GHSA-6xcg-6q43-rj2v	-> GHSA-w9hf-3pp7-pvxv	counted
+GHSA-8hj2-w4c9-fjfq	-> GHSA-8j37-5w68-wj2g	counted
+GHSA-8wmm-344f-mpjg	-> GHSA-985f-72mj-8gf7	counted
+GHSA-c85p-9pvr-f7f5	-> GHSA-83w9-h5wv-j9xm	counted
+GHSA-c8w7-9w9h-x69q	-> GHSA-fcvx-5cxc-v5p8	counted
+GHSA-chqm-wxm2-w73w	-> GHSA-gp79-m99v-gjmh	counted
+GHSA-ffhm-8fwq-7q27	-> GHSA-j472-gf56-x589	counted
+GHSA-g796-jqmx-wf9q	-> GHSA-c226-q6fx-6j6c	counted
+GHSA-gw2c-6hcg-5g52	-> GHSA-mpc8-jxjh-qpgh	counted
+GHSA-gwcq-453v-2frr	-> GHSA-mhq8-78pj-5j79	counted
+GHSA-h9h6-pwqv-j9hv	-> GHSA-9v8j-9c9g-w66c	counted
+GHSA-hc4w-hm59-9w88	-> GHSA-8mg9-j9cf-54cj	counted
+GHSA-hx4v-668p-g2qr	-> GHSA-mgq6-vr84-7m2j	counted
+GHSA-p44v-rx83-vjp4	-> GHSA-cw4q-gqg5-g38h	counted
+GHSA-qp5j-jr73-m2pw	-> GHSA-24vr-rprv-67rf	counted
+GHSA-r27j-fxmq-rg2q	-> GHSA-jvm4-4j77-39p6	counted
+GHSA-r2fx-hp6p-pgrm	-> GHSA-4hpg-mp64-x7xq	counted
+GHSA-r7vv-6763-m739	-> GHSA-68xw-r643-9p5w	counted
+GHSA-v383-2wgg-v483	-> GHSA-f397-5vjw-v2c2	counted
+GHSA-v8j2-5f9p-fmh4	-> GHSA-q8ff-7ffm-m3r9	counted
+GHSA-vqx6-6j84-2794	-> GHSA-gxg4-2rrr-jhc7	counted
+GHSA-vr6h-vxqj-3pjx	-> GHSA-ccwh-wwpp-6wg5	counted
+GHSA-w7m7-3xcf-mp48	-> GHSA-8c59-hr4w-qg69	counted
+GHSA-wrmq-9fc4-gwwj	-> GHSA-q99w-vh6v-q3v7	counted
+GHSA-wrr6-p5r6-474m	-> GHSA-cwpp-5962-q4f6	counted
+GHSA-xpr6-2hgm-4wwp	-> GHSA-r39h-4c2p-3jxp	counted
+withdrawn_with_counted_original 33 no_title_match 0
+
+WITHDRAWN (global DB, range covers 2026.4.22):
+GHSA-2w22-3f6x-3hf4	withdrawn_at=2026-06-18	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: Workspace-derived service PATH could influence trash command selection
+GHSA-35c7-4r45-9gv3	withdrawn_at=2026-08-28	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: OpenClaw: QQBot pre-dispatch slash commands could skip allowFrom check
+GHSA-3qg8-hq7j-jj33	withdrawn_at=2026-08-28	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: OpenClaw: Same-host trusted-proxy deployments could accept local forge
+GHSA-3v3j-737j-7g74	withdrawn_at=2026-06-18	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: Linux and macOS exec allowlists skipped configured argument patterns
+GHSA-4qgr-57jq-93vh	withdrawn_at=2026-06-18	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: Workspace .env STATE_DIRECTORY could influence bundled runtime depende
+GHSA-58wc-8wrv-xp9j	withdrawn_at=2026-06-18	severity=medium	cve=-	in_repo_published=no	Duplicate Advisory: Active Memory write scope could mutate global config
+GHSA-6jm4-83g2-35gv	withdrawn_at=2026-06-18	severity=medium	cve=-	in_repo_published=no	Duplicate Advisory: memory-wiki shared search could miss session visibility checks
+GHSA-6xcg-6q43-rj2v	withdrawn_at=2026-06-18	severity=low	cve=-	in_repo_published=no	Duplicate Advisory: Exported session HTML could keep unsafe markdown links
+GHSA-8hj2-w4c9-fjfq	withdrawn_at=2026-06-18	severity=low	cve=-	in_repo_published=no	Duplicate Advisory: BlueBubbles sender policy could match mutable conversation identifiers
+GHSA-8wmm-344f-mpjg	withdrawn_at=2026-06-18	severity=medium	cve=-	in_repo_published=no	Duplicate Advisory: Tool group policy callers could accept unvalidated group IDs
+GHSA-c85p-9pvr-f7f5	withdrawn_at=2026-08-25	severity=medium	cve=-	in_repo_published=no	Duplicate Advisory: OpenClaw: Node pairing reconnection could confuse approval scope state
+GHSA-c8w7-9w9h-x69q	withdrawn_at=2026-06-18	severity=medium	cve=-	in_repo_published=no	Duplicate Advisory: Slack reaction events could ignore reaction notification settings
+GHSA-chqm-wxm2-w73w	withdrawn_at=2026-08-28	severity=medium	cve=-	in_repo_published=no	Duplicate Advisory: OpenClaw: Mattermost handlers could fall open when channel type was mi
+GHSA-ffhm-8fwq-7q27	withdrawn_at=2026-08-25	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: OpenClaw: PowerShell encoded-command aliases could miss exec allowlist
+GHSA-g796-jqmx-wf9q	withdrawn_at=2026-06-18	severity=medium	cve=-	in_repo_published=no	Duplicate Advisory: macOS Swift exec allowlist missed combined POSIX inline flags
+GHSA-gw2c-6hcg-5g52	withdrawn_at=2026-06-18	severity=medium	cve=-	in_repo_published=no	Duplicate Advisory: Focus command could miss controlScope enforcement
+GHSA-gwcq-453v-2frr	withdrawn_at=2026-08-25	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: OpenClaw's POSIX node system.run safe-bin allowlist could be widened b
+GHSA-h9h6-pwqv-j9hv	withdrawn_at=2026-06-18	severity=low	cve=-	in_repo_published=no	Duplicate Advisory: Bootstrap token replay could widen pending pairing scopes
+GHSA-hc4w-hm59-9w88	withdrawn_at=2026-06-18	severity=low	cve=-	in_repo_published=no	Duplicate Advisory: Empty-scope device re-pairing could confuse caller scope containment
+GHSA-hx4v-668p-g2qr	withdrawn_at=2026-07-02	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: OpenClaw: QQBot native approval buttons did not enforce configured app
+GHSA-p44v-rx83-vjp4	withdrawn_at=2026-06-18	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: Discord allowFrom could bind to mutable display names
+GHSA-qp5j-jr73-m2pw	withdrawn_at=2026-06-18	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: Workspace .env npm_execpath could influence bundled runtime dependency
+GHSA-r27j-fxmq-rg2q	withdrawn_at=2026-08-27	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: OpenClaw: QQBot streaming command could mutate config without explicit
+GHSA-r2fx-hp6p-pgrm	withdrawn_at=2026-06-18	severity=medium	cve=-	in_repo_published=no	Duplicate Advisory: Internal/webchat command auth could inherit ownerAllowFrom wildcard st
+GHSA-r7vv-6763-m739	withdrawn_at=2026-06-18	severity=low	cve=-	in_repo_published=no	Duplicate Advisory: Skill-command dispatch could skip before-tool-call hooks
+GHSA-v383-2wgg-v483	withdrawn_at=2026-06-18	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: Shell inline-command parsing could miss an allowlist check
+GHSA-v8j2-5f9p-fmh4	withdrawn_at=2026-05-18	severity=medium	cve=-	in_repo_published=no	Duplicate Advisory: OpenClaw's Webhooks SecretRef route secret remains valid after rotatio
+GHSA-vqx6-6j84-2794	withdrawn_at=2026-06-18	severity=medium	cve=-	in_repo_published=no	Duplicate Advisory: Hostname checks could treat trailing-dot hosts inconsistently
+GHSA-vr6h-vxqj-3pjx	withdrawn_at=2026-06-18	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: Host environment sanitizer missed two Node.js control variables
+GHSA-w7m7-3xcf-mp48	withdrawn_at=2026-06-18	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: Zalo allowFrom could bind to mutable display names
+GHSA-wrmq-9fc4-gwwj	withdrawn_at=2026-06-18	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: Pairing-scoped device session could restore revoked node token authori
+GHSA-wrr6-p5r6-474m	withdrawn_at=2026-06-18	severity=low	cve=-	in_repo_published=no	Duplicate Advisory: Exec allowlist could miss side effects from transparent command wrappe
+GHSA-xpr6-2hgm-4wwp	withdrawn_at=2026-05-18	severity=high	cve=-	in_repo_published=no	Duplicate Advisory: OpenClaw vulnerable to arbitrary code execution via attacker-controlle
+
+REPO_ONLY counted (absent from global DB as non-withdrawn): 80
+GLOBAL_ONLY counted (repo advisory exists but its package row is not npm openclaw):
+GHSA-77q5-rr5v-x43q	high	https://api.github.com/repos/openclaw/openclaw/security-advisories/GHSA-77q5-rr5v-x43q	OpenClaw: Trusted retry endpoint checks could match hostname prefixes
+GHSA-jvm4-4j77-39p6	high	https://api.github.com/repos/openclaw/openclaw/security-advisories/GHSA-jvm4-4j77-39p6	OpenClaw: QQBot streaming command could mutate config without explicit allowFrom

@@ -1,0 +1,636 @@
+name: clawscore-lab
+networks:
+  labnet:
+    name: clawscore-lab
+    internal: true
+services:
+  claw-01:
+    image: clawscore-openclaw:2026.1.29
+    pull_policy: never
+    container_name: claw-01
+    hostname: claw-01
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-01.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-02:
+    image: clawscore-openclaw:2026.1.29
+    pull_policy: never
+    container_name: claw-02
+    hostname: claw-02
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-02.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-03:
+    image: clawscore-openclaw:2026.1.29
+    pull_policy: never
+    container_name: claw-03
+    hostname: claw-03
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-03.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-04:
+    image: clawscore-openclaw:2026.2.14
+    pull_policy: never
+    container_name: claw-04
+    hostname: claw-04
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-04.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-05:
+    image: clawscore-openclaw:2026.2.14
+    pull_policy: never
+    container_name: claw-05
+    hostname: claw-05
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-05.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-06:
+    image: clawscore-openclaw:2026.2.14
+    pull_policy: never
+    container_name: claw-06
+    hostname: claw-06
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-06.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-07:
+    image: clawscore-openclaw:2026.3.28
+    pull_policy: never
+    container_name: claw-07
+    hostname: claw-07
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-07.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-08:
+    image: clawscore-openclaw:2026.3.28
+    pull_policy: never
+    container_name: claw-08
+    hostname: claw-08
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-08.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-09:
+    image: clawscore-openclaw:2026.3.28
+    pull_policy: never
+    container_name: claw-09
+    hostname: claw-09
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-09.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-10:
+    image: clawscore-openclaw:2026.4.7-1
+    pull_policy: never
+    container_name: claw-10
+    hostname: claw-10
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-10.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-11:
+    image: clawscore-openclaw:2026.4.7-1
+    pull_policy: never
+    container_name: claw-11
+    hostname: claw-11
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-11.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-12:
+    image: clawscore-openclaw:2026.4.8
+    pull_policy: never
+    container_name: claw-12
+    hostname: claw-12
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-12.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-13:
+    image: clawscore-openclaw:2026.4.8
+    pull_policy: never
+    container_name: claw-13
+    hostname: claw-13
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-13.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-14:
+    image: clawscore-openclaw:2026.4.15
+    pull_policy: never
+    container_name: claw-14
+    hostname: claw-14
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-14.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-15:
+    image: clawscore-openclaw:2026.4.15
+    pull_policy: never
+    container_name: claw-15
+    hostname: claw-15
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-15.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-16:
+    image: clawscore-openclaw:2026.4.15
+    pull_policy: never
+    container_name: claw-16
+    hostname: claw-16
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-16.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-17:
+    image: clawscore-openclaw:2026.4.20
+    pull_policy: never
+    container_name: claw-17
+    hostname: claw-17
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-17.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-18:
+    image: clawscore-openclaw:2026.4.20
+    pull_policy: never
+    container_name: claw-18
+    hostname: claw-18
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-18.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-19:
+    image: clawscore-openclaw:2026.4.20
+    pull_policy: never
+    container_name: claw-19
+    hostname: claw-19
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-19.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-20:
+    image: clawscore-openclaw:2026.4.21
+    pull_policy: never
+    container_name: claw-20
+    hostname: claw-20
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-20.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-21:
+    image: clawscore-openclaw:2026.4.21
+    pull_policy: never
+    container_name: claw-21
+    hostname: claw-21
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-21.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-22:
+    image: clawscore-openclaw:2026.4.21
+    pull_policy: never
+    container_name: claw-22
+    hostname: claw-22
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-22.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-23:
+    image: clawscore-openclaw:2026.4.22
+    pull_policy: never
+    container_name: claw-23
+    hostname: claw-23
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-23.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-24:
+    image: clawscore-openclaw:2026.4.22
+    pull_policy: never
+    container_name: claw-24
+    hostname: claw-24
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-24.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-25:
+    image: clawscore-openclaw:2026.4.22
+    pull_policy: never
+    container_name: claw-25
+    hostname: claw-25
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-25.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-26:
+    image: clawscore-openclaw:2026.4.23
+    pull_policy: never
+    container_name: claw-26
+    hostname: claw-26
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-26.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-27:
+    image: clawscore-openclaw:2026.4.23
+    pull_policy: never
+    container_name: claw-27
+    hostname: claw-27
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-27.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-28:
+    image: clawscore-openclaw:2026.10.4
+    pull_policy: never
+    container_name: claw-28
+    hostname: claw-28
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-28.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-29:
+    image: clawscore-openclaw:2026.10.4
+    pull_policy: never
+    container_name: claw-29
+    hostname: claw-29
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-29.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false
+  claw-30:
+    image: clawscore-openclaw:2026.10.4
+    pull_policy: never
+    container_name: claw-30
+    hostname: claw-30
+    entrypoint:
+    - /bin/sh
+    - /opt/lab/entrypoint.sh
+    environment:
+      LAB_PLANT: /opt/lab/plant.json
+    volumes:
+    - ./entrypoint.sh:/opt/lab/entrypoint.sh:ro
+    - ./apply-plant.js:/opt/lab/apply-plant.js:ro
+    - ./secrets-pool.json:/opt/lab/secrets-pool.json:ro
+    - ./plants/claw-30.json:/opt/lab/plant.json:ro
+    networks:
+    - labnet
+    labels:
+      clawscore.lab: '1'
+    restart: 'no'
+    init: false

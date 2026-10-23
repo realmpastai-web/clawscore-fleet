@@ -1,0 +1,339 @@
+{
+  "agents": [
+    {
+      "autoApprove": "true",
+      "device": "claw-01",
+      "mcpServers": [],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": ""
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-02",
+      "mcpServers": [
+        "github"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.1.29"
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-03",
+      "mcpServers": [
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.10.4"
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-04",
+      "mcpServers": [
+        "filesystem",
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.2.14"
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-05",
+      "mcpServers": [],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.2.14"
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-06",
+      "mcpServers": [
+        "github"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": ""
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-07",
+      "mcpServers": [
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.3.28"
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-08",
+      "mcpServers": [
+        "filesystem",
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.10.4"
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-09",
+      "mcpServers": [],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.3.28"
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-10",
+      "mcpServers": [
+        "github"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.4.7-1"
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-11",
+      "mcpServers": [
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": ""
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-12",
+      "mcpServers": [
+        "filesystem",
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.4.8"
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-13",
+      "mcpServers": [],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.10.4"
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-14",
+      "mcpServers": [
+        "github"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.4.15"
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-15",
+      "mcpServers": [
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.4.15"
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-16",
+      "mcpServers": [
+        "filesystem",
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": ""
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-17",
+      "mcpServers": [],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.4.20"
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-18",
+      "mcpServers": [
+        "github"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.10.4"
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-19",
+      "mcpServers": [
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.4.20"
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-20",
+      "mcpServers": [
+        "filesystem",
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.4.21"
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-21",
+      "mcpServers": [],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": ""
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-22",
+      "mcpServers": [
+        "github"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.4.21"
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-23",
+      "mcpServers": [
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.10.4"
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-24",
+      "mcpServers": [
+        "filesystem",
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.4.22"
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-25",
+      "mcpServers": [],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.4.22"
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-26",
+      "mcpServers": [
+        "github"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": ""
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-27",
+      "mcpServers": [
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.4.23"
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-28",
+      "mcpServers": [
+        "filesystem",
+        "github",
+        "slack"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.4.15"
+    },
+    {
+      "autoApprove": "true",
+      "device": "claw-29",
+      "mcpServers": [],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.10.4"
+    },
+    {
+      "autoApprove": "false",
+      "device": "claw-30",
+      "mcpServers": [
+        "github"
+      ],
+      "name": "OpenClaw",
+      "process": "sleep",
+      "user": "root",
+      "version": "2026.10.4"
+    }
+  ]
+}

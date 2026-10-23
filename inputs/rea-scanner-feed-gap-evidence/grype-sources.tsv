@@ -1,0 +1,30 @@
+source_field	source_value	label	scope	row_count
+provider_id	alma	UNCLASSIFIED	providers-table	
+provider_id	alpine	UNCLASSIFIED	providers-table	
+provider_id	amazon	UNCLASSIFIED	providers-table	
+provider_id	arch	UNCLASSIFIED	providers-table	
+provider_id	bitnami	UNCLASSIFIED	providers-table	
+provider_id	chainguard	UNCLASSIFIED	providers-table	
+provider_id	chainguard-libraries	UNCLASSIFIED	providers-table	
+provider_id	debian	UNCLASSIFIED	providers-table	
+provider_id	echo	UNCLASSIFIED	providers-table	
+provider_id	eol	UNCLASSIFIED	providers-table	
+provider_id	epss	UNCLASSIFIED	providers-table	
+provider_id	fedora	UNCLASSIFIED	providers-table	
+provider_id	github	GHSA	npm-openclaw	760
+provider_id	github	GHSA	npm-packages	133024
+provider_id	github	GHSA	providers-table	
+provider_id	govulndb	UNCLASSIFIED	providers-table	
+provider_id	hummingbird	UNCLASSIFIED	providers-table	
+provider_id	kev	UNCLASSIFIED	providers-table	
+provider_id	mariner	UNCLASSIFIED	providers-table	
+provider_id	minimos	UNCLASSIFIED	providers-table	
+provider_id	nvd	NVD	cpe-product-openclaw	644
+provider_id	nvd	NVD	providers-table	
+provider_id	oracle	UNCLASSIFIED	providers-table	
+provider_id	photon	UNCLASSIFIED	providers-table	
+provider_id	rhel	UNCLASSIFIED	providers-table	
+provider_id	secureos	UNCLASSIFIED	providers-table	
+provider_id	sles	UNCLASSIFIED	providers-table	
+provider_id	ubuntu	UNCLASSIFIED	providers-table	
+provider_id	wolfi	UNCLASSIFIED	providers-table	

@@ -1,0 +1,13 @@
+$ git rev-parse HEAD~1   # origin/main
+3439300a345174cee72323e390f14ed31c9c2d1d
+$ python3 inputs/clawscore-host-mode-post-withdrawn/recompute_expected.py
+pin evidence/landscape/ghsa-all.json 27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034 OK
+pin evidence/landscape/versions.json 6e2b3ff8619dba5c5043dafb3944c270623ac15a3991ad30fb9c07e78a11dfda OK
+old expected inputs/clawscore-host-mode/expected-advisories-026f719.json sha256 14b77eefd897ee450fa32e2a2b4d497aef0dd42aa529f776dd771722ddc8cc37 source clawscore-fleet main 026f719 evidence/scan.json
+version     host     with_withdrawn(cves)  ==026f719  excluded  withdrawn_dropped  post(cves)  crit/high/med/low  vulnerable
+2026.1.29   H3,H5     786 (428)            True        629      157                 629 (427)  18/249/306/56         True
+2026.4.15   H2        217 ( 62)            True        169       48                 169 ( 62)  1/86/68/14         True
+2026.10.4   H1          0 (  0)            True          0        0                   0 (  0)  0/0/0/0         False
+wrote expected-advisories-post-withdrawn.json sha256 7c7642a14d362454a079e198c6e574dcfc5a34016a469dd1451f322ace17139a
+CONTROL OK (with-withdrawn recompute == 026f719 expected; only withdrawn ids dropped)
+exit=0

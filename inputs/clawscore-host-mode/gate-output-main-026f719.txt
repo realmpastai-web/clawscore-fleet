@@ -1,0 +1,5 @@
+FAIL	S0.scan_host_exit0	exit=2 ["clawscore-fleet: error: argument cmd: invalid choice: 'scan-host' (choose from scan)"]
+PASS	S0.read_only_root	
+FAIL	S0.scan_json_written	no <out>/scan.json
+GATE FAIL ['S0.scan_host_exit0', 'S0.scan_json_written']
+exit=1

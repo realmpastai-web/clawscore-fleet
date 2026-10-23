@@ -1,0 +1,16 @@
+PASS	R1.gate_withdrawn	exit=0 GATE PASS
+PASS	R2.gate_host_mode_post_withdrawn	exit=0 GATE PASS
+PASS	R3.check_user_pack_post_fix	exit=0 CHECK PASS
+INFO	rows_total=117 rows_changed_vs_v0.2=80
+PASS	R4.every_placeholder_traced	missing=[]
+PASS	R4.withdrawn_gate_agrees_with_user_pack_F9	gate=['148', '1', '84', '53', '10'] F9=('148', '1', '84', '53', '10')
+PASS	R4.no_untraced_number_in_template	stray=[]
+PASS	R4.no_unknown_placeholder	[]
+PASS	R4.rendered_notes_equal_frozen	RELEASE_NOTES_v0.3.md sha=848f2834fcaaaf67 rendered sha=848f2834fcaaaf67
+INFO	values {"feed_rows": "894", "feed_withdrawn": "168", "v422": "148", "v422_c": "1", "v422_h": "84", "v422_m": "53", "v422_l": "10", "v422_old": "181", "v422_old_w": "33", "rows_total": "117", "rows_changed": "80", "h3": "629", "h2": "169", "h1": "0", "h5": "629", "host_installs": "5"}
+PASS	R5.readme_results_2026.4.22	readme=- 2026.4.22 shows 148 advisories (1 critical / 84 high)
+PASS	R6.pyproject_0.3.0	pyproject=0.3.0
+PASS	R6.readme_heading_0.3.0	heading='# clawscore-fleet 0.3.0'
+PASS	R7.no_forbidden_claims	files=4 hits=0
+RELEASE GATE PASS
+exit=0

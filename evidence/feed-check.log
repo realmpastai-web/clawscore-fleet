@@ -1,0 +1,20 @@
+feed-check
+pinned_feed_newest: 2026-09-11
+verify_report_feed_newest: 2026-09-11
+freshness_gate_feed_newest: 2026-09-11
+client: public advisories API
+query: https://api.github.com/repos/openclaw/openclaw/security-advisories?state=published&per_page=100&sort=published&direction=desc
+newest_ghsa: GHSA-xx9p-hc9w-6p5h
+newest_published: 2026-09-11T00:58:59Z
+newest_updated: 2026-09-11T00:58:59Z
+newest_severity: medium
+newest_html_url: https://github.com/openclaw/openclaw/security/advisories/GHSA-xx9p-hc9w-6p5h
+newest_summary: Usage CSV export could interpret session labels as formulas
+comparison: same
+newest_date: 2026-09-11
+pinned_date: 2026-10-20
+version_counts withdrawn_excluded=yes
+2026.10.5 github_db=0 repo_only=0 osv=0
+2026.10.4 github_db=0 repo_only=0 osv=0
+2026.6.10 github_db=0 repo_only=58 osv=0
+2026.4.22 github_db=68 repo_only=80 osv=67

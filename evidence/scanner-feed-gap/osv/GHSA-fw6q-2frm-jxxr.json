@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": ">= 2026.3.25, < 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": ">= 2026.3.25, < 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "2026.3.25"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nSynology pre-auth limits could lock out valid webhooks. In affected versions, invalid-token throttling ran before authentication and identified requests by the raw proxy socket address.\n\n### Affected configurations\n\nThis affected Synology Chat webhooks behind a trusted reverse proxy or tunnel where multiple external clients shared one socket address at OpenClaw.\n\n### Impact\n\nAn unauthenticated sender could consume the shared invalid-token budget and cause later valid Synology Chat callbacks to be rejected until the rate-limit window cleared. The attacker could not obtain a valid token or access message data; impact was temporary channel availability loss.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, avoid placing untrusted traffic and Synology callbacks behind the same proxy source address, or enforce per-client limits at the proxy.",
+  "id": "GHSA-fw6q-2frm-jxxr",
+  "modified": "2026-09-11T00:58:07Z",
+  "published": "2026-09-11T00:58:07Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-fw6q-2frm-jxxr"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Synology pre-auth limits could lock out valid webhooks"
+}

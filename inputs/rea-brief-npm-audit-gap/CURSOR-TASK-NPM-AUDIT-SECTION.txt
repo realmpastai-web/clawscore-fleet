@@ -1,0 +1,42 @@
+CURSOR TASK: clawscore-fleet - "npm audit comparison" section in the written report (follow-up; do not touch the frozen sample-report task)
+
+Start: ONLY after feat/written-report (CURSOR-TASK-SAMPLE-REPORT fd607b7c) is merged and its holdout H1-H4 is scored. Branch feat/npm-audit-section from that merge SHA.
+Static only. Never install or run openclaw. The CI tests are offline.
+Brief: commit Hark's bundle rea-brief-npm-audit-gap.tgz under inputs/rea-brief-npm-audit-gap/, then run sha256sum -c SHA256SUMS.
+
+BUILD
+N1. clawscore_fleet/npm_audit.py, ported from inputs/rea-brief-npm-audit-gap/probe.py. Keep the same endpoint, request body and split definitions.
+    - live: python3 -m clawscore_fleet.npm_audit --live --versions <scan versions> --out evidence/npm-audit/
+      Writes raw/req-*, raw/resp-*, raw/meta-* (with fetched_utc, server_date, status, sha256s) and split.json.
+    - offline: --offline evidence/npm-audit/raw. Re-scores the saved bytes. Refuse to run if a response sha256 does not match its meta.
+N2. In report.py, an optional section "npm audit comparison", rendered only when evidence/npm-audit/split.json exists.
+    - One row per distinct version in the fleet: npm audit N, ClawScore M, overlap, GitHub-DB-not-returned (with ids), repo-only, npm-only.
+    - The sentence per version, verbatim: "npm audit returned N advisories for openclaw@X on <fetched date>; the maker's repository lists M (feed newest <feed_newest>)."
+    - Banned in this section, in addition to the report's list: wrong, misses, missed, fails, failed, broken, blind, incorrect. Also forbidden: any statement of cause.
+N3. Make target: npm-audit-live (network, manual) and npm-audit-offline (CI).
+
+ACCEPTANCE
+M1. Brief replay: python3 inputs/rea-brief-npm-audit-gap/probe.py --repo . --out /tmp/x --offline inputs/rea-brief-npm-audit-gap/live/raw --versions 2026.4.22 2026.6.10 2026.1.29
+    - split.json sha256 must equal 17a37df397c2c8d9cc0039a5650ad3740738ecd11fd9bfd7294eae63a0257037 at the base feed.
+    - If the feed moved, report the delta and stop; do not force it.
+M2. On the brief's raw responses, the ported module reproduces:
+    - 2026.4.22: 67 / 148 = 67 + 1 (GHSA-2j8v-hwgc-x698) + 80, npm-only 0.
+    - 2026.6.10: 0 / 58 = 0 + 0 + 58, npm-only 0.
+    - 2026.1.29: 555 / 627 = 555 + 2 + 70, npm-only 0.
+    Write the output to evidence/npm-audit/brief-replay.log.
+M3. Disjoint parts: overlap + db_not_npm + repo_only == clawscore for every version (assert in code and in a test).
+M4. Source check (skeptic): count the rows in each ClawScore set whose source_code_location is not https://github.com/openclaw/openclaw.
+    - If 0: keep the sentence.
+    - Else: the sentence becomes "...; the GitHub advisory database and the maker's repository list M ...". Log to evidence/npm-audit/source-check.log.
+M5. Mutants, each must fail a named test; log to evidence/npm-audit/mutants.log:
+    (a) a tampered raw response byte -> the offline run refuses;
+    (b) the sentence reworded to "npm audit misses" -> banned-word test fails;
+    (c) repo_only computed as S - npm -> M3 fails;
+    (d) the fetched date dropped from the sentence -> sentence-format test fails.
+M6. Lab report: run npm-audit-live once on the team box for the 30-install lab versions. Commit the raw files and split.json. evidence/report/sample-report.md gains the section. The frozen scorer (score_holdout.py) still gives RESULT PASS on the lab key.
+M7. pytest all passed; make verify-offline all gates true; sha256sum -c evidence/SHA256SUMS OK; CI green on push and pull_request.
+
+SKEPTIC (answer in the PR body, with file evidence)
+S1. grep -niE over the new section for the full banned list: 0 hits.
+S2. Every N and M in the section traces to split.json; quote the fields.
+S3. Do the npm query date and the feed date both appear next to every count?

@@ -1,0 +1,31 @@
+PASS	V01	equals (OWASP)
+PASS	V02	plus (OWASP)
+PASS	V03	minus (OWASP)
+PASS	V04	at (OWASP)
+PASS	V05	leading tab 0x09 (OWASP)
+PASS	V06	leading CR 0x0D (OWASP)
+PASS	V07	leading LF 0x0A (OWASP)
+PASS	V08	full-width equals (OWASP)
+PASS	V09	full-width plus (OWASP)
+PASS	V10	full-width minus (OWASP)
+PASS	V11	full-width at (OWASP)
+PASS	V12	OWASP example 1: embedded quote and ;
+PASS	V13	OWASP example 2: quote, space, ; and ,
+PASS	V14	realistic exfil payload
+PASS	V15	classic DDE payload
+PASS	V16	negative number in a TEXT column is escaped (decision: text columns only; ints never negative)
+PASS	V17	normal device name unchanged
+PASS	V18	version string unchanged
+PASS	V19	empty stays empty
+PASS	V20	already starts with a quote: quote doubled so the rule stays reversible
+PASS	V21	leading space: unchanged by this rule (REPORT only; Excel behaviour UNPROVEN)
+PASS	V22	= not first: unchanged
+PASS	V23	commas: RFC 4180 quoting only
+PASS	V24	embedded quotes doubled only
+PASS	V25	embedded newline: quoted only
+PASS	V26	non-ASCII unchanged
+PASS	V27	joined list starting with G unchanged
+PASS	V28	joined list whose first element starts with - is escaped as one cell
+PASS	V29	MCP name list starting with @ escaped
+PASS	V30	single dangerous char escaped
+VECTORS ok=30/30 fail=[]

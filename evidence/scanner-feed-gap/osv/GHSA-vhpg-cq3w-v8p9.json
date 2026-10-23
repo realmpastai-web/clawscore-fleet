@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nOpenAI-compatible transport could send provider credentials to the wrong endpoint. In affected versions, a pinned third-party provider session whose model metadata lacked a concrete base URL could retain that provider's credential while the OpenAI SDK selected its default endpoint after a model hot reload.\n\n### Affected configurations\n\nThis affects configurations where a third-party provider uses an OpenAI-compatible API, the resolved model lacks an explicit provider endpoint, and an existing pinned session continues after model configuration is reloaded.\n\n### Impact\n\nA request could disclose the configured third-party provider credential to an unrelated provider endpoint and fail with a misleading authentication error. Operators who observed this condition should rotate the affected credential.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, configure explicit base URLs for third-party OpenAI-compatible providers and avoid continuing pinned sessions after changing model defaults.",
+  "id": "GHSA-vhpg-cq3w-v8p9",
+  "modified": "2026-09-11T00:58:48Z",
+  "published": "2026-09-11T00:58:47Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-vhpg-cq3w-v8p9"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:N/A:L",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "OpenAI-compatible transport could send provider credentials to the wrong endpoint"
+}

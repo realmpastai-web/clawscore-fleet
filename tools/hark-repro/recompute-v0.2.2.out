@@ -1,0 +1,7 @@
+advisories 760 {'high': 266, 'medium': 392, 'low': 76, 'critical': 26} with CVE 452
+published 2026-02-04 2026-07-02
+stable releases 117
+2026.1.29 714 {'high': 256, 'medium': 363, 'low': 72, 'critical': 23}
+2026.4.20 119 {'high': 55, 'medium': 49, 'low': 14, 'critical': 1}
+2026.4.22 101 {'high': 53, 'medium': 35, 'low': 12, 'critical': 1}
+dist-pair versions 71 collisions [['2026.4.7-1', '2026.4.8']]

@@ -1,0 +1,12 @@
+65:def _unknown_report() -> dict:
+66-    report = report_for_versions([])
+67-    report["note"] = "version was not identified"
+68-    report["vulnerable"] = False
+69-    return report
+70-
+7:    vulnerable = [item for item in installs if item.get("vulnerable")]
+    recovered_ok = bool(recovered) and match and recovered == fingerprint_version
+    package_version = package_json.get("version")
+    if package_version:
+        return version, recovered_ok, package_version, "package.json"
+159:    scan_parser = sub.add_parser("scan")

@@ -1,0 +1,20 @@
+{
+  "buildstamp_head": "041266a6699cac3baef8ef39db41fa26f29f9db3",
+  "dirlist_jaccard": 1.0,
+  "dirlist_match": true,
+  "from_build_info": "2026.4.15",
+  "id": "idle-linux",
+  "idle": {
+    "enabled_symlink": true,
+    "linger_markers": [
+      "claw4"
+    ],
+    "running_process_evidence": 0,
+    "user_unit": true
+  },
+  "install": "home/claw4/.openclaw/tools/node-v24.21.0/lib/node_modules/openclaw",
+  "package_json_has_version": false,
+  "state": "idle",
+  "version": "2026.4.15",
+  "version_source": "build-info+dirlist"
+}

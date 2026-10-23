@@ -1,0 +1,5 @@
+FAIL	S6.H5.bytes_beat_package_json	version=2026.10.4 declared=2026.10.4 mismatch=False adv=0
+FAIL	S7.mismatch_only_H5	
+FAIL	S8.fix_order_is_the_3_vulnerable	['h2', 'h3']
+GATE FAIL ['S6.H5.bytes_beat_package_json', 'S7.mismatch_only_H5', 'S8.fix_order_is_the_3_vulnerable']
+exit=1

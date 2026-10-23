@@ -1,0 +1,2 @@
+feed sha256 27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034
+versions 118 oracle == cves.build_index minus {2j9j,mmpf}: 117 other: [('2026.10.5', 'not in cves index; oracle', 0)]

@@ -1,0 +1,2 @@
+$ grep -n "no usable version" README.md ; echo exit=$?
+exit=1

@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": ">= 2026.5.12, < 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": ">= 2026.5.12, < 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "2026.5.12"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nRevoked Canvas capability could remain active during disconnect. In affected versions, node revocation invalidated the WebSocket client but Canvas HTTP authorization continued accepting and renewing its capability until close cleanup finished.\n\nThis advisory is scoped to the named feature and configuration. It does not change OpenClaw's trusted-operator model: authenticated Gateway operators, installed plugins, and intentional local execution surfaces remain trusted unless a separate policy, approval, allowlist, sandbox, or auth boundary is crossed.\n\n### Impact\n\nA revoked paired node could continue using its previously granted Canvas capability during the WebSocket close grace period. Practical impact was limited to the capability's configured routes and the short interval before connection cleanup, but revocation did not take effect at the owner-held invalidation point.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, restart the Gateway after revoking a node with Canvas access.",
+  "id": "GHSA-g697-vv6h-r8hv",
+  "modified": "2026-09-11T00:58:10Z",
+  "published": "2026-09-11T00:58:10Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-g697-vv6h-r8hv"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Revoked Canvas capability could remain active during disconnect"
+}

@@ -1,0 +1,51 @@
+{
+  "status": "UNPROVEN",
+  "reason": "The parent's result capacity was exhausted after retaining static facts for dist/loader-irDIqRVT.mjs; remaining sources were not analyzed",
+  "code": "resource_constraint",
+  "retryable": false,
+  "evidence_id": "ev_99ee139eabfa522bee0eae4446715a62e561196978f171ec6bbcca5320f6ab4d",
+  "supports_q1_q3": false,
+  "note": "Partial observation only. Analysis stopped on resource_constraint before the file inventory was complete, so this Evidence ID does not establish family_name or the 2026.10.4 vs 2026.10.5 diff.",
+  "reported_limits": {
+    "worker_old_space_mb": 1024,
+    "worker_heap_limit_bytes": 1098907648,
+    "worker_timeout_ms": 300000,
+    "parent_result_budget_bytes": 1813856920,
+    "parent_result_budget_exhausted": true
+  },
+  "kept": {
+    "evidence_id": "ev_99ee139eabfa522bee0eae4446715a62e561196978f171ec6bbcca5320f6ab4d",
+    "subject": {
+      "name": "package",
+      "digest": {
+        "sha256": "e57c74092f8561b4e7ddded90800568581d531e39ce5f7dacdd165cd568ab5cf"
+      },
+      "local_path": "/workspace/hark-tasks/clawscore-latest-1052/.cache/rea-openclaw-extract/2026.10.5/package",
+      "format": "directory",
+      "architecture": null
+    },
+    "provider": {
+      "id": "rea-javascript-application",
+      "name": "REA JavaScript application analyzer",
+      "version": "1"
+    },
+    "analysis_profile": null,
+    "predicate_type": "rea.javascript-application-analysis",
+    "operation": "analyze_javascript_application",
+    "parameters": {
+      "format": "auto",
+      "integrity_policy": "fail"
+    },
+    "confidence": "derived",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": {
+      "truncated": true,
+      "type": "list",
+      "chars": 2059285
+    },
+    "relationship_coverage": null
+  },
+  "full_json_bytes": 368089909,
+  "full_json_committed": false
+}

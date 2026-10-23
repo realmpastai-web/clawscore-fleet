@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.7.1",
+        "vulnerable_version_range": "< 2026.7.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.7.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.7.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nActive Memory global toggles could omit owner checks. In affected versions, an authorized non-owner external-channel sender could enable or disable Active Memory for the Gateway.\n\nThis advisory is scoped to persistent global `on` and `off` mutations. Session-level controls and read-only status remain governed by their existing command policy, and OpenClaw does not treat one shared Gateway as adversarial multi-tenant isolation.\n\n### Impact\n\nA non-owner sender could disable memory recall for future sessions or re-enable global recall where the owner expected it to remain disabled. Practical confidentiality and availability impact depends on stored memories and subsequent conversations.\n\n### Patched Versions\n\nThe first stable patched version is `2026.7.1`.\n\n### Mitigations\n\nupgrade to `openclaw@2026.7.1` or later. Before upgrading, disable global Active Memory commands in external channels or restrict command access to owners.",
+  "id": "GHSA-xw9g-7xvv-gcjc",
+  "modified": "2026-09-11T00:58:58Z",
+  "published": "2026-09-11T00:58:58Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-xw9g-7xvv-gcjc"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Active Memory global toggles could omit owner checks"
+}

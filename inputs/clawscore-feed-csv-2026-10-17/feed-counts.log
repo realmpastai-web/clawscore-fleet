@@ -1,0 +1,2 @@
+evidence 760 {'high': 266, 'medium': 392, 'low': 76, 'critical': 26} with_cve 452 ghsa_only 308
+work 894 {'medium': 449, 'high': 335, 'low': 84, 'critical': 26} with_cve 459 ghsa_only 435

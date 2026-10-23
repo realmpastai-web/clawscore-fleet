@@ -1,0 +1,24 @@
+{
+  "auto_approve": false,
+  "env_names": [
+    "AWS_ACCESS_KEY_ID"
+  ],
+  "extra_files": [],
+  "false_version": "2026.4.22",
+  "id": "claw-10",
+  "openclaw_servers": {
+    "github": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "command": "npx",
+      "env_names": [
+        "AWS_SECRET_ACCESS_KEY"
+      ]
+    }
+  },
+  "state_dir": "/var/lib/claw/claw-10/.openclaw",
+  "stripped": "false-version",
+  "work_dir": "/var/lib/claw/claw-10"
+}

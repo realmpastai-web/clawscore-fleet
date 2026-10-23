@@ -1,0 +1,2 @@
+P1. Both DBs hold 0 of the 58 at 2026.6.10.
+P2. Both DBs hold at most 68 of the 148 at 2026.4.22.

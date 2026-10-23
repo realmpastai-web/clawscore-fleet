@@ -1,0 +1,409 @@
+[
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentIdentity",
+  "base": "graph.servicePrincipal",
+  "desc": null,
+  "props": [
+   {
+    "name": "agentIdentityBlueprintId",
+    "type": "Edm.String",
+    "desc": "The appId of the agent identity blueprint that defines the configuration for this agent identity."
+   },
+   {
+    "name": "createdDateTime",
+    "type": "Edm.DateTimeOffset",
+    "desc": "The date and time the agent identity was created. Read-only. Inherited from servicePrincipal."
+   },
+   {
+    "name": "managerApplications",
+    "type": "Collection(Edm.Guid)",
+    "desc": "The collection of application IDs designated as managers of this agent identity's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the managerApplications of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the managerApplications property on the backing agentIdentityBlueprint in the tenant where it's registered. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change \u2014 they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on $select."
+   },
+   {
+    "name": "sponsors",
+    "type": "Collection(graph.directoryObject)",
+    "desc": "The sponsors for this agent identity."
+   }
+  ]
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentIdentityBlueprint",
+  "base": "graph.application",
+  "desc": null,
+  "props": [
+   {
+    "name": "inheritablePermissions",
+    "type": "Collection(graph.inheritablePermission)",
+    "desc": "Defines scopes of a resource application that may be automatically granted to agent identities without additional consent."
+   },
+   {
+    "name": "sponsors",
+    "type": "Collection(graph.directoryObject)",
+    "desc": "The sponsors for this agent identity blueprint. Sponsors are users or groups who can authorize and manage the lifecycle of agent identity instances. Required during the create operation."
+   }
+  ]
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentIdentityBlueprintPrincipal",
+  "base": "graph.servicePrincipal",
+  "desc": null,
+  "props": [
+   {
+    "name": "managerApplications",
+    "type": "Collection(Edm.Guid)",
+    "desc": "The collection of application IDs designated as managers of this agent identity blueprint principal's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the managerApplications of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the managerApplications property on the backing agentIdentityBlueprint in the tenant where it's registered. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change \u2014 they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on $select."
+   },
+   {
+    "name": "sponsors",
+    "type": "Collection(graph.directoryObject)",
+    "desc": "The sponsors for this agent identity blueprint principal. Sponsors are users or service principals who can authorize and manage the lifecycle of agent identity instances."
+   }
+  ]
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph",
+  "kind": "EntityType",
+  "name": "agentUser",
+  "base": "graph.user",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "aiAgentInfo",
+  "base": "graph.aiInteractionEntity",
+  "desc": null,
+  "props": [
+   {
+    "name": "blueprintId",
+    "type": "Edm.String",
+    "desc": "The unique identifier of the parent agent blueprint that defines the identity and configuration of this agent instance. This identifier is provided by Microsoft Entra."
+   }
+  ]
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph",
+  "kind": "ComplexType",
+  "name": "targetAgentIdentitySponsorsOrOwners",
+  "base": "graph.subjectSet",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph",
+  "kind": "EnumType",
+  "name": "managementAgentType",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "eas",
+    "type": "1",
+    "desc": null
+   },
+   {
+    "name": "mdm",
+    "type": "2",
+    "desc": null
+   },
+   {
+    "name": "easMdm",
+    "type": "3",
+    "desc": null
+   },
+   {
+    "name": "intuneClient",
+    "type": "4",
+    "desc": null
+   },
+   {
+    "name": "easIntuneClient",
+    "type": "5",
+    "desc": null
+   },
+   {
+    "name": "configurationManagerClient",
+    "type": "8",
+    "desc": null
+   },
+   {
+    "name": "configurationManagerClientMdm",
+    "type": "10",
+    "desc": null
+   },
+   {
+    "name": "configurationManagerClientMdmEas",
+    "type": "11",
+    "desc": null
+   },
+   {
+    "name": "unknown",
+    "type": "16",
+    "desc": null
+   },
+   {
+    "name": "jamf",
+    "type": "32",
+    "desc": null
+   },
+   {
+    "name": "googleCloudDevicePolicyController",
+    "type": "64",
+    "desc": null
+   },
+   {
+    "name": "microsoft365ManagedMdm",
+    "type": "258",
+    "desc": null
+   },
+   {
+    "name": "msSense",
+    "type": "1024",
+    "desc": null
+   }
+  ]
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.callRecords",
+  "kind": "ComplexType",
+  "name": "clientUserAgent",
+  "base": "microsoft.graph.callRecords.userAgent",
+  "desc": null,
+  "props": [
+   {
+    "name": "azureADAppId",
+    "type": "Edm.String",
+    "desc": "The unique identifier of the Microsoft Entra application used by this endpoint."
+   },
+   {
+    "name": "communicationServiceId",
+    "type": "Edm.String",
+    "desc": "Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs."
+   },
+   {
+    "name": "platform",
+    "type": "microsoft.graph.callRecords.clientPlatform",
+    "desc": "Identifies the platform used by this endpoint. The possible values are: unknown, windows, macOS, iOS, android, web, ipPhone, roomSystem, surfaceHub, holoLens, unknownFutureValue."
+   },
+   {
+    "name": "productFamily",
+    "type": "microsoft.graph.callRecords.productFamily",
+    "desc": "Identifies the family of application software used by this endpoint. The possible values are: unknown, teams, skypeForBusiness, lync, unknownFutureValue, azureCommunicationServices. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: azureCommunicationServices."
+   }
+  ]
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.callRecords",
+  "kind": "ComplexType",
+  "name": "serviceUserAgent",
+  "base": "microsoft.graph.callRecords.userAgent",
+  "desc": null,
+  "props": [
+   {
+    "name": "role",
+    "type": "microsoft.graph.callRecords.serviceRole",
+    "desc": "Identifies the role of the service used by this endpoint. The possible values are: unknown, customBot, skypeForBusinessMicrosoftTeamsGateway, skypeForBusinessAudioVideoMcu, skypeForBusinessApplicationSharingMcu, skypeForBusinessCallQueues, skypeForBusinessAutoAttendant, mediationServer, mediationServerCloudConnectorEdition, exchangeUnifiedMessagingService, mediaController, conferencingAnnouncementService, conferencingAttendant, audioTeleconferencerController, skypeForBusinessUnifiedCommunicationApplicationPlatform, responseGroupServiceAnnouncementService, gateway, skypeTranslator, skypeForBusinessAttendant, responseGroupService, voicemail, unknownFutureValue."
+   }
+  ]
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.callRecords",
+  "kind": "ComplexType",
+  "name": "userAgent",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "applicationVersion",
+    "type": "Edm.String",
+    "desc": "Identifies the version of application software used by this endpoint."
+   },
+   {
+    "name": "headerValue",
+    "type": "Edm.String",
+    "desc": "User-agent header value reported by this endpoint."
+   }
+  ]
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "a365AiInvokeAgent",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "agentAdminActivityRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "agentSettingAdminActivity",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "aiAgentEvidence",
+  "base": "self.alertEvidence",
+  "desc": null,
+  "props": [
+   {
+    "name": "agentId",
+    "type": "Edm.String",
+    "desc": "The unique identifier for the AI agent."
+   },
+   {
+    "name": "agentName",
+    "type": "Edm.String",
+    "desc": "The display name for the AI agent."
+   },
+   {
+    "name": "hostingPlatformType",
+    "type": "self.aiAgentPlatform",
+    "desc": "Type of the platform the agent runs on. The possible values are: unknown, azureAIFoundry, copilotStudio, copilot, unknownFutureValue."
+   },
+   {
+    "name": "instructions",
+    "type": "Edm.String",
+    "desc": "The instructions of the agent."
+   }
+  ]
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "aiInvokeAgentAuditRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "copilotAgentManagementAuditRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "mosAgentInfoRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "mosAgentInfoRecordV2",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "purviewPostureAgentAuditRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "rtiOperationsAgentAuditRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "sensitiveInfoRemediationAgentDataRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "ComplexType",
+  "name": "vivaGlintAgenticCampaignAuditRecord",
+  "base": "self.auditData",
+  "desc": null,
+  "props": []
+ },
+ {
+  "metadata": "v1.0",
+  "ns": "microsoft.graph.security",
+  "kind": "EnumType",
+  "name": "aiAgentPlatform",
+  "base": null,
+  "desc": null,
+  "props": [
+   {
+    "name": "unknown",
+    "type": "0",
+    "desc": null
+   },
+   {
+    "name": "azureAIFoundry",
+    "type": "10",
+    "desc": null
+   },
+   {
+    "name": "copilotStudio",
+    "type": "20",
+    "desc": null
+   },
+   {
+    "name": "copilot",
+    "type": "30",
+    "desc": null
+   },
+   {
+    "name": "unknownFutureValue",
+    "type": "40",
+    "desc": null
+   }
+  ]
+ }
+]

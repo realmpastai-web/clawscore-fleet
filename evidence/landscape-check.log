@@ -1,0 +1,43 @@
+command: sha256sum -c SHA256SUMS
+ghsa-all.json: OK
+meta-2026.1.29.json: OK
+meta-2026.3.28.json: OK
+meta-2026.3.31.json: OK
+stable-3file.json: OK
+version-vulns.json: OK
+versions.json: OK
+recompute.py: OK
+count_nocve.py: OK
+count_nocve.offline.log: OK
+count_nocve.live.log: OK
+
+
+exit 0
+
+command: /home/box/.local/bin/python3.11 count_nocve.py
+source: ghsa-all.json sha256=27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034
+total_advisories: 894
+with_cve_id: 459
+without_cve_id: 435
+without_cve_id_by_severity: {'critical': 9, 'high': 167, 'low': 39, 'medium': 220}
+without_cve_id_critical_or_high: 176
+newest_published: 2026-09-11T00:58:59Z
+example_ghsa_without_cve: ['GHSA-224w-vfr9-h35c', 'GHSA-22v4-33m3-8p7m', 'GHSA-27pq-2ph8-8x25']
+
+
+exit 0
+
+command: /home/box/.local/bin/python3.11 recompute.py
+advisories 894 {'medium': 449, 'high': 335, 'low': 84, 'critical': 26} with CVE 459
+published 2026-01-31 2026-09-11
+stable releases 117
+2026.1.29 627 {'critical': 18, 'high': 249, 'medium': 306, 'low': 54}
+2026.1.29 withdrawn (not counted) 157 {'high': 46, 'low': 22, 'medium': 84, 'critical': 5}
+2026.4.20 157 {'critical': 1, 'high': 85, 'medium': 61, 'low': 10}
+2026.4.20 withdrawn (not counted) 41 {'high': 17, 'low': 8, 'medium': 16}
+2026.4.22 148 {'critical': 1, 'high': 84, 'medium': 53, 'low': 10}
+2026.4.22 withdrawn (not counted) 33 {'high': 16, 'low': 6, 'medium': 11}
+dist-pair versions 71 collisions [['2026.4.7-1', '2026.4.8']]
+
+
+exit 0

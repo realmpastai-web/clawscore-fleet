@@ -1,0 +1,12 @@
+2026.4.22 npm_audit=67 clawscore=148 = overlap 67 + db_not_npm 1 ['GHSA-2j8v-hwgc-x698'] + repo_only 80; npm_only 0
+  npm audit returned 67 advisories for openclaw@2026.4.22 on 2026-10-20; the maker's repository lists 148 (feed newest 2026-09-11).
+2026.4.22: 67 / 148 = 67 + 1 + 80, npm-only 0.
+2026.4.22: 67 / 148 = 67 + 1 (GHSA-2j8v-hwgc-x698) + 80, npm-only 0.
+2026.6.10 npm_audit=0 clawscore=58 = overlap 0 + db_not_npm 0 [] + repo_only 58; npm_only 0
+  npm audit returned 0 advisories for openclaw@2026.6.10 on 2026-10-20; the maker's repository lists 58 (feed newest 2026-09-11).
+2026.6.10: 0 / 58 = 0 + 0 + 58, npm-only 0.
+2026.1.29 npm_audit=555 clawscore=627 = overlap 555 + db_not_npm 2 ['GHSA-2j8v-hwgc-x698', 'GHSA-hggm-x7r9-mm7v'] + repo_only 70; npm_only 0
+  npm audit returned 555 advisories for openclaw@2026.1.29 on 2026-10-20; the maker's repository lists 627 (feed newest 2026-09-11).
+2026.1.29: 555 / 627 = 555 + 2 + 70, npm-only 0.
+2026.1.29: 555 / 627 = 555 + 2 (GHSA-2j8v-hwgc-x698, GHSA-hggm-x7r9-mm7v) + 70, npm-only 0.
+split.json sha256 26549e147f139ba56bcbad4204627f585f0851d1363041e1487cee856523f692

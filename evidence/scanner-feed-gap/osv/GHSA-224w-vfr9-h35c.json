@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.7.1",
+        "vulnerable_version_range": ">= 2026.5.1 < 2026.7.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": ">= 2026.5.1 < 2026.7.1"
+          },
+          "events": [
+            {
+              "introduced": "2026.5.1"
+            },
+            {
+              "fixed": "2026.7.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nGoogle Meet node commands could skip exec approvals. In affected versions, `googlemeet.chrome` accepted caller-supplied audio command arrays and executed them on a paired node outside the normal `system.run` approval path.\n\nThis advisory is scoped to deployments with the Google Meet plugin enabled, a paired Chrome node, and the node command allowed. Pairing a node remains an operator-level trust decision; the failed boundary is the configured exec approval path for model-triggered commands.\n\n### Impact\n\nA tool-enabled agent able to invoke the allowed Google Meet node command could execute attacker-selected processes on the paired node. This could affect files, credentials, browser profiles, and availability on that node.\n\n### Patched Versions\n\nThe first stable patched version is `2026.7.1`.\n\n### Mitigations\n\nupgrade to `openclaw@2026.7.1` or later. Before upgrading, remove `googlemeet.chrome` from allowed node commands or disable the Google Meet plugin.",
+  "id": "GHSA-224w-vfr9-h35c",
+  "modified": "2026-09-11T00:56:59Z",
+  "published": "2026-09-11T00:56:59Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-224w-vfr9-h35c"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Google Meet node commands could skip exec approvals"
+}

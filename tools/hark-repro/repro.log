@@ -1,0 +1,36 @@
+== 1. v0.2 log re-judged (5,267 DISAGREE lines, commas stripped, includePrerelease=true)
+agree_after_norm	5236
+agree_was_grammar	719
+label:hark-grammar	737
+label:post-release-suffix	1402
+label:prerelease	3128
+leftover_was:hark-grammar	18
+leftover_was:post-release-suffix	12
+leftover_was:prerelease	1
+mislabeled_grammar	737
+parser_diff	1
+post_release	30
+total	5267
+PARSER_DIFF 2026.5.19-alpha.1 | <= 2026.5.19-beta.2 | project False npm True
+== 2. full 39,476 decisions, v0.2 grammar
+fixed_key False glued False versions 278 ranges 142
+decisions	39476
+disagree_default_raw	5267
+disagree_norm_pre:other	35
+disagree_norm_pre:post_release	67
+35
+== 3. full decisions, alpha/rc fix only
+fixed_key True glued False versions 278 ranges 142
+decisions	39476
+disagree_default_raw	5272
+disagree_norm_pre:other	28
+disagree_norm_pre:post_release	67
+== 4. full decisions, alpha/rc + glued betaN fix
+fixed_key True glued True versions 278 ranges 142
+decisions	39476
+disagree_default_raw	5314
+disagree_norm_pre:post_release	53
+== 5. version-vulns regen
+30a0e9bf7bb5a81fa337ab5225a254848fb250419d443f80b66ca704436f5a0c  -
+30a0e9bf7bb5a81fa337ab5225a254848fb250419d443f80b66ca704436f5a0c  /workspace/hark-tasks/cursor/evidence/openclaw-landscape/version-vulns.json
+c8b9b34f9ede4ef54d77bbc80ec4782a73a3525e50e21c64e79e7bae05fd10f8  -

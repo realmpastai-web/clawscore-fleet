@@ -1,0 +1,47 @@
+{
+  "2026.10.4": {
+    "family": "runtime",
+    "file_count": 13985,
+    "marks": {
+      "dist/cli.runtime.js": "bb479cc1662ad0c83aa8b0f9fec9627378d89a3b5d43cdb147cfc5c24f1b2c37",
+      "dist/abort.runtime.js": "b4707d245e94b8eac1a9622ecdfcb6b3efb61ea1a42ae10a6b60e71bc4e0b1f6",
+      "dist/.buildstamp": null,
+      "dist/build-info.json": "0c06698a91b39530f8ed544f9a3bd9d7edf598e0de253f6f7b9ed36b5a16d91d",
+      "dist/version.js": null,
+      "openclaw.mjs": "aa8606ca0d62ff133ef5b7bd2323ec8ff3f8eb384404399cd5e742918d63b0a1",
+      "package.json": "1ef9c6031d4789c57f1d7632d0b1c149d31e194b2a9441d93dcfc0010d8d74f6"
+    },
+    "has_buildstamp": false,
+    "has_build_info": true
+  },
+  "2026.10.5": {
+    "family": "runtime",
+    "file_count": 13982,
+    "marks": {
+      "dist/cli.runtime.js": "46af0a1a276c656a008d9335ab1339a49f2ecf2dc40bd0afe4f68349bf592301",
+      "dist/abort.runtime.js": "fb7ae248c4555e5c1e90548931970b8ea68a946ab29dcc9947c5666ff92b37ba",
+      "dist/.buildstamp": null,
+      "dist/build-info.json": "b1a6aeee7490b724fa7f1f859872ea71fb46777baaf30e4b914a2ef315fcc429",
+      "dist/version.js": null,
+      "openclaw.mjs": "aa8606ca0d62ff133ef5b7bd2323ec8ff3f8eb384404399cd5e742918d63b0a1",
+      "package.json": "44c4e2ed880440392d10224f0fec7c4f5ad59d93008827586e2acb038a5a21ee"
+    },
+    "has_buildstamp": false,
+    "has_build_info": true
+  },
+  "2026.10.10-beta.2": {
+    "family": "runtime",
+    "file_count": 14903,
+    "marks": {
+      "dist/cli.runtime.js": "561971402f8f8134d84cde51236cee4d3e82c337bcc2c8e1dba3d37a1805a1e9",
+      "dist/abort.runtime.js": "1e0ce9708ffdc7adfcc2945c5edfc8d94f5447c46d13cd52af32c179033c1d3f",
+      "dist/.buildstamp": null,
+      "dist/build-info.json": "8e6d413e1408e362775b91f3e9d9f58eaed500a73fbda476596f50c944fa7204",
+      "dist/version.js": null,
+      "openclaw.mjs": "24c1dfbe9116dbf2b032015d70302ea54f32717b7e6a477624505075340699f5",
+      "package.json": "2a704e9b61a064b8bd9a0a385768536f8eddb88c22ae5ed86e521c68bfa0afb3"
+    },
+    "has_buildstamp": false,
+    "has_build_info": true
+  }
+}

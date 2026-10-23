@@ -1,0 +1,2 @@
+FAIL	G2	bad=['trivy-held-2026.6.10.tsv']
+GATE FAIL ['G2']

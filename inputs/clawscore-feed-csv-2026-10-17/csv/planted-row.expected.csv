@@ -1,0 +1,2 @@
+Agent name,Version,Device name,Device ID,OS platform,Device type,Account name,Account domain,Risk level,Risk indicators,Recommendations,MCP servers,Local MCPs,First seen,cs_build_verdict,cs_candidates,cs_reads,cs_stripped,cs_ghsa_ids,cs_cve_ids,cs_ghsa_only_count,cs_crit_high_count,cs_readable_secret_classes,cs_fix_target,cs_feed_newest
+OpenClaw,2026.4.8,"'=HYPERLINK(""http://evil.example"",""x"")",7c3e0d4a-1111-5222-8333-944455556666,Linux,Server,'+cmd,'@corp,,,'-upgrade,2,1,2026-10-17T00:00:00Z,exact,2026.4.8,3,false,GHSA-xx9p-hc9w-6p5h,,1,0,'＝TOKEN,2026.8.1,2026-09-11

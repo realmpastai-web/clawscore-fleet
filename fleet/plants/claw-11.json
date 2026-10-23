@@ -1,0 +1,39 @@
+{
+  "auto_approve": true,
+  "env_names": [
+    "AWS_SECRET_ACCESS_KEY"
+  ],
+  "extra_files": [
+    {
+      "format": "mcpServers",
+      "path": "/opt/apps/claw-11/.mcp.json",
+      "servers": {
+        "slack": {
+          "args": [
+            "-y",
+            "@modelcontextprotocol/server-slack"
+          ],
+          "command": "npx",
+          "env_names": []
+        }
+      }
+    }
+  ],
+  "false_version": null,
+  "id": "claw-11",
+  "openclaw_servers": {
+    "github": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "command": "npx",
+      "env_names": [
+        "DISCORD_BOT_TOKEN"
+      ]
+    }
+  },
+  "state_dir": "/opt/apps/claw-11/.openclaw",
+  "stripped": "none",
+  "work_dir": "/opt/apps/claw-11"
+}

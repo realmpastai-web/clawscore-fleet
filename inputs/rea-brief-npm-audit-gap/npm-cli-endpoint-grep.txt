@@ -1,0 +1,3 @@
+npm 12.2.0 registry integrity match: True
+package/node_modules/@npmcli/arborist/lib/audit-report.js | const res = await npmFetch('/-/npm/v1/security/advisories/bulk', {
+package/node_modules/@npmcli/arborist/lib/query-selector-all.js | const res = await npmFetch('/-/npm/v1/security/advisories/bulk', {

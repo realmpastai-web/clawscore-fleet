@@ -1,0 +1,7 @@
+{"release":"idle-linux-fingerprint","target":"openclaw@2026.4.15","tarball_sha256":"8c95f77538130c77967c970da4744786c4d5b773937b8208f622efb4cf0d2564",
+ "fixture":{"files":2158,"dist_js":2147,"package_json_has_version":false},
+ "version_recovery":{"from_build_info":"2026.4.15","buildstamp_head":"041266a6699cac3baef8ef39db41fa26f29f9db3","dirlist_jaccard":1.0,"dirlist_match_threshold":0.99},
+ "idle":{"user_unit":true,"enabled_symlink":true,"linger_markers":["<user>"],"running_process_evidence":0},
+ "changelog_ghsa":{"count":30,"in_pinned_feed":13,"not_in_pinned_feed":17,"missing_from_mock_export":17,"min_missing_required":1},
+ "service_name":"openclaw-gateway","unit_path":"$HOME/.config/systemd/user/openclaw-gateway.service","linger_status_source":"/var/lib/systemd/linger + loginctl show-user <user> -p Linger",
+ "gate":"gate_idle_linux.py prints GATE PASS (G1, G2.idle_no_process, G2.version_recovered_no_pkg, G3.changelog_ids_30, G3.at_least_1_missing_from_export, G4.changelog_not_feed)"}

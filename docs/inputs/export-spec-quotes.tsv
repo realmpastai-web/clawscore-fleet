@@ -1,0 +1,29 @@
+C01	discover	The discovered agent, and the version installed.
+C02	discover	The device where the agent was discovered.
+C03	discover	The account that the agent runs under.
+C04	discover	The overall risk level of the agent.
+C05	discover	Why the agent is considered risky, such as Running on a Critical Device or Used by a Critical User.
+C06	discover	The security recommendations that apply to the agent.
+C07	discover	The number of remote MCP servers, and of local MCP servers, configured for the agent.
+C08	discover	When the agent was first discovered.
+C09	discover	select Export to download the list
+C10	discover	The list shows one entry for each agent installation, so an agent that runs on several devices, or under several accounts on the same device, appears more than once.
+C11	risk	Defender assessed the agent and found no active risk indicators.
+C12	risk	Defender didn't have enough information to assess the agent.
+C13	discover	AgentId is a guid column in AgentsInfo, but the exposure graph stores the same value as a string.
+C14	agentsinfo	Unique identifier for the agent
+C15	agentsinfo	Display name of the agent
+C16	discover	The columns that carry local AI agent data are AgentId, Name, Version, PublishedStatus, LifecycleStatus, LastUpdatedDateTime, McpServers, DeclaredTools, and RawAgentInfo.
+C17	agentsinfo	The agent's current operational state in the tenant; possible values: Active, Blocked, Uninstalled, Deleted
+C18	agentsinfo	The agent's publication status; possible values: Draft, Published
+C19	agentsinfo	Date and time when the agent's metadata was last modified
+C20	discover	trustedProcess and autoApprove are reported as strings, not as boolean values.
+C21	discover	where Platform == "LocalAgents"
+C22	discover	The publisher of the agent, such as Anthropic, Google, or OpenAI.
+C23	discover	The process that hosts the agent, such as code.exe.
+C24	discover	MCP servers that run locally on the device, including the command that starts each one.
+C25	discover	Location = tostring(Server.endpoint);
+C26	discover	Location = tostring(Server.commandName);
+C27	matrix	OpenClaw OpenClaw Foundation
+C28	agentsinfo	Date and time the agent information was recorded
+C29	discover	Risk levels, risk indicators, and security recommendations require Microsoft 365 E7 or Microsoft Agent 365.

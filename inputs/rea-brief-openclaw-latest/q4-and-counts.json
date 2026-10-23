@@ -1,0 +1,53 @@
+{
+  "q4": {
+    "cutoff": "published_at date > 2026-09-11",
+    "fetch_time_ist": "2026-10-20 18:57:58 IST",
+    "github_advisory_db": 0,
+    "repo_security_advisories": 0,
+    "osv": 0,
+    "github_db_max": "2026-07-02",
+    "repo_max": "2026-09-11",
+    "osv_max": "2026-07-02",
+    "osv_modified_max": "2026-09-10"
+  },
+  "counts": [
+    {
+      "version": "2026.10.5",
+      "github_db": 0,
+      "repo_only": 0,
+      "osv": 0,
+      "landscape_non_withdrawn": 0,
+      "landscape_withdrawn_excluded": 0
+    },
+    {
+      "version": "2026.10.4",
+      "github_db": 0,
+      "repo_only": 0,
+      "osv": 0,
+      "landscape_non_withdrawn": 0,
+      "landscape_withdrawn_excluded": 0
+    },
+    {
+      "version": "2026.6.10",
+      "github_db": 0,
+      "repo_only": 58,
+      "osv": 0,
+      "landscape_non_withdrawn": 58,
+      "landscape_withdrawn_excluded": 0
+    },
+    {
+      "version": "2026.4.22",
+      "github_db": 68,
+      "repo_only": 80,
+      "osv": 67,
+      "landscape_non_withdrawn": 148,
+      "landscape_withdrawn_excluded": 33
+    }
+  ],
+  "diff": {
+    "only_2026.10.4": 7818,
+    "only_2026.10.5": 8067,
+    "content_differ": 2489,
+    "lines": 18374
+  }
+}

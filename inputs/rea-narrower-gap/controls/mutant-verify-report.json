@@ -1,0 +1,861 @@
+{
+ "advisory_global": 760,
+ "advisory_repo_already": 59,
+ "advisory_repo_only": 134,
+ "advisory_total": 894,
+ "agent_product": "Agent 365",
+ "base": "58d4925c3f83a0fae5ed947bd285cbc3d32f72f7",
+ "chain_url": "https://www.cyera.com/blog/claw-chain-cyera-research-unveil-four-chainable-vulnerabilities-in-openclaw",
+ "cited_version": "2026.1.29",
+ "csv_standard": "RFC 4180",
+ "cves": [
+  {
+   "affected": "<= 2026.4.21",
+   "fixed_in": "2026.4.22",
+   "ghsa_id": "GHSA-wppj-c6mr-83jj",
+   "id": "CVE-2026-44112",
+   "sources": [
+    "https://github.com/advisories/GHSA-wppj-c6mr-83jj",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-44112"
+   ],
+   "title": "OpenClaw: OpenShell FS bridge writes stay pinned to the sandbox mount root"
+  },
+  {
+   "affected": "<= 2026.4.21",
+   "fixed_in": "2026.4.22",
+   "ghsa_id": "GHSA-5h3g-6xhh-rg6p",
+   "id": "CVE-2026-44113",
+   "sources": [
+    "https://github.com/advisories/GHSA-5h3g-6xhh-rg6p",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-44113"
+   ],
+   "title": "OpenClaw: OpenShell FS bridge reads pin and verify the opened file before returning bytes"
+  },
+  {
+   "affected": "<= 2026.4.21",
+   "fixed_in": "2026.4.22",
+   "ghsa_id": "GHSA-x3h8-jrgh-p8jx",
+   "id": "GHSA-x3h8-jrgh-p8jx",
+   "sources": [
+    "https://github.com/advisories/GHSA-x3h8-jrgh-p8jx"
+   ],
+   "title": "OpenClaw's exec allowlist analysis rejects shell expansion in unquoted heredocs"
+  },
+  {
+   "affected": "<= 2026.4.21",
+   "fixed_in": "2026.4.22",
+   "ghsa_id": "GHSA-r6xh-pqhr-v4xh",
+   "id": "CVE-2026-44118",
+   "sources": [
+    "https://github.com/advisories/GHSA-r6xh-pqhr-v4xh",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-44118"
+   ],
+   "title": "OpenClaw: MCP loopback owner context is derived from server-issued bearer tokens"
+  }
+ ],
+ "defender_url": "https://learn.microsoft.com/en-us/defender-endpoint/discover-local-ai-agents",
+ "display": {
+  "acc_correct": 26,
+  "acc_percent": "100.0",
+  "acc_target": 95,
+  "acc_total": 26,
+  "blast_found": 42,
+  "blast_percent": "100.0",
+  "blast_planted": 42,
+  "blast_target": 90,
+  "collision_count": 1,
+  "collision_group": "2026.4.7-1, 2026.4.8",
+  "diff_lines": 0,
+  "dirlist_correct": 117,
+  "dirlist_percent": "100.0",
+  "dirlist_total": 117,
+  "focus_advisories": 148,
+  "focus_critical": 1,
+  "focus_high": 84,
+  "focus_version": "2026.4.22",
+  "install_count": 30,
+  "matrix_correct": 115,
+  "matrix_first": "2026.1.29",
+  "matrix_have": 117,
+  "matrix_last": "2026.10.4",
+  "matrix_non_colliding": 115,
+  "matrix_percent": "100.0",
+  "matrix_total": 117,
+  "old_count": 9,
+  "old_cutoff": "2026.3.31",
+  "old_minimum": 8,
+  "old_months": "2026-01, 2026-02, 2026-03",
+  "pre_correct": 9,
+  "pre_percent": "100.0",
+  "pre_total": 9,
+  "range_ok": 4,
+  "range_total": 4,
+  "read_limit": 20,
+  "reads_max": 1,
+  "reads_mean": "1.00",
+  "seed_label": "v0.1",
+  "seed_matched": 9,
+  "seed_total": 9,
+  "semver_disagreements": 65,
+  "semver_unexplained": 0,
+  "stripped_ok": 4,
+  "stripped_total": 4
+ },
+ "failures": [],
+ "feed_newest": "2026-09-11",
+ "fix_version": "2026.8.1",
+ "gate_status": "pass",
+ "gates": {
+  "agent365_published_schema": {
+   "actuals": {
+    "agentsinfo_version_line": "Version | string | Version of the agent  (one string per agent row, so version IS exposed)",
+    "exit_code": 0,
+    "frozen_output": "inputs/rea-agent365-schema/gate-output.txt",
+    "output_matches_frozen": true,
+    "scope": "published schemas and docs at the frozen commits only; Microsoft's backend and unpublished RawAgentInfo fields stay UNPROVEN",
+    "script": "inputs/rea-agent365-schema/gate_agent365_schema.py",
+    "verdict_a": "PROVEN",
+    "verdict_a_detail": "published docs: discovery needs observed activity; native Linux unsupported; no idle lifecycle state",
+    "verdict_b": "PROVEN",
+    "verdict_b_detail": "no vuln field on Graph agent types or AgentsInfo; TVM keys on CveId only; Version string IS exposed"
+   },
+   "pass": true
+  },
+  "blast_recall": {
+   "found": 30,
+   "pass": true,
+   "percent_display": "100.0",
+   "planted": 42,
+   "target_percent": 90
+  },
+  "changelog_ghsa_30": {
+   "actuals": {
+    "count": 30,
+    "evidence_matches": true,
+    "source": "inputs/rea-gate-idle-linux/changelog-ghsa-2026.4.15.txt",
+    "threshold": 30
+   },
+   "pass": true
+  },
+  "changelog_not_in_feed": {
+   "actuals": {
+    "about": "pinned feed versus on-disk CHANGELOG GHSA ids; not an Agent 365 result",
+    "changelog_ids": 30,
+    "feed_file": "inputs/clawscore-feed-csv-2026-10-17/ghsa-all.json",
+    "label": "feed_vs_changelog",
+    "missing": 17,
+    "missing_ids_sample": [
+     "GHSA-2pwv-x786-56f8",
+     "GHSA-4mhr-g7xj-cg8j",
+     "GHSA-57jw-9722-6rf2"
+    ]
+   },
+   "pass": true
+  },
+  "collisions": {
+   "count": 1,
+   "includes_pair": [
+    "2026.4.7-1",
+    "2026.4.8"
+   ],
+   "pass": true
+  },
+  "csv_escape": {
+   "bare_danger": [],
+   "pass": true,
+   "planted_byte_equal": true,
+   "planted_error": "",
+   "round_trip_failures": [],
+   "scan_round_trip_failures": [],
+   "text_cells": 402,
+   "vector_failures": [],
+   "vectors_ok": 30,
+   "vectors_total": 30
+  },
+  "cve_mapping": {
+   "diff_lines": 0,
+   "pass": true
+  },
+  "dirlist_metric": {
+   "accuracy_display": "100.0",
+   "correct": 117,
+   "listing_collision_groups": 0,
+   "pass": true,
+   "total": 117
+  },
+  "export_header": {
+   "actual": "Agent name,Version,Device name,Device ID,OS platform,Device type,Account name,Account domain,Risk level,Risk indicators,Recommendations,MCP servers,Local MCPs,First seen,cs_build_verdict,cs_candidates,cs_reads,cs_stripped,cs_ghsa_ids,cs_cve_ids,cs_ghsa_only_count,cs_crit_high_count,cs_readable_secret_classes,cs_fix_target,cs_feed_newest",
+   "error": "",
+   "expected": "Agent name,Version,Device name,Device ID,OS platform,Device type,Account name,Account domain,Risk level,Risk indicators,Recommendations,MCP servers,Local MCPs,First seen,cs_build_verdict,cs_candidates,cs_reads,cs_stripped,cs_ghsa_ids,cs_cve_ids,cs_ghsa_only_count,cs_crit_high_count,cs_readable_secret_classes,cs_fix_target,cs_feed_newest",
+   "pass": true
+  },
+  "export_jsonl_schema": {
+   "errors": [],
+   "pass": true,
+   "rows": 30
+  },
+  "export_traceable": {
+   "mapped_gates": {
+    "cs_build_verdict": [
+     "version_accuracy",
+     "range_verdicts"
+    ],
+    "cs_candidates": [
+     "version_accuracy",
+     "range_verdicts"
+    ],
+    "cs_crit_high_count": [
+     "cve_mapping"
+    ],
+    "cs_cve_ids": [
+     "cve_mapping"
+    ],
+    "cs_feed_newest": [
+     "freshness"
+    ],
+    "cs_fix_target": [
+     "fix_target"
+    ],
+    "cs_ghsa_ids": [
+     "cve_mapping"
+    ],
+    "cs_ghsa_only_count": [
+     "cve_mapping"
+    ],
+    "cs_readable_secret_classes": [
+     "blast_recall"
+    ],
+    "cs_reads": [
+     "reads"
+    ],
+    "cs_stripped": [
+     "stripped"
+    ]
+   },
+   "pass": true,
+   "untraceable": []
+  },
+  "feed_check_same": {
+   "newer": 0,
+   "pass": true,
+   "status": "same"
+  },
+  "feed_pinned": {
+   "feed_newest": "2026-09-11",
+   "ghsa_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034",
+   "ghsa_xx9p_present": true,
+   "pass": true
+  },
+  "fix_target": {
+   "advisories": 148,
+   "critical": 1,
+   "focus_version": "2026.4.22",
+   "high": 84,
+   "low": 10,
+   "medium": 53,
+   "min_clearing_version": "2026.8.1",
+   "pass": true,
+   "withdrawn_not_counted": 33
+  },
+  "freshness": {
+   "feed_newest": "2026-09-11",
+   "missing_feed": [],
+   "pass": true,
+   "skipped": [
+    "evidence/landscape",
+    "evidence/matrix/listings.json",
+    "evidence/rea/idle-linux/dist-names-2026.4.15.txt"
+   ],
+   "word_hits": []
+  },
+  "ghsa_only": {
+   "defender_claim": "On Linux hosts where OpenClaw is installed with npm, Defender Vulnerability Management does not list the package (Microsoft Learn, tvm-software-inventory), so neither CVE nor GHSA-only advisories surface there. ClawScore lists the GHSA-only ones.",
+   "detail": "inputs=0 fixtures=0 report=0",
+   "follow_up": "Follow-up, not changed here. The task says the same gap window also exists for advisories that have CVEs: 13 in the landscape, 10 of them no-CVE. Measured on the pinned OSV snapshot against evidence/landscape/ghsa-all.json for patches 2026.4.3 through 2026.4.7: 2 advisories are inside an OSV SEMVER range and outside every landscape vulnerable_version_range (2 with no CVE alias and cve_id null, 0 otherwise). possibly_affected is not folded into ghsa_ids or the counts.",
+   "pass": true,
+   "readme_claim": "Lists the OpenClaw advisories that have no CVE id (59 in the OSV snapshot of 2026-10-18) per install, marking the 2026.4.3 to 2026.4.7 window as possibly affected where GitHub's range stops early.",
+   "steps": [
+    {
+     "exit": 0,
+     "step": "inputs"
+    },
+    {
+     "exit": 0,
+     "step": "fixtures"
+    },
+    {
+     "exit": 0,
+     "step": "report"
+    }
+   ]
+  },
+  "glued_bound_effect": {
+   "added_ghsa": {
+    "GHSA-7xhj-55q9-pc3m": 16,
+    "GHSA-hv93-r4j3-q65f": 14
+   },
+   "advisories_added": 30,
+   "changed": [
+    {
+     "after": 714,
+     "before": 712,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.1.29"
+    },
+    {
+     "after": 713,
+     "before": 711,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.1.30"
+    },
+    {
+     "after": 707,
+     "before": 705,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.1"
+    },
+    {
+     "after": 699,
+     "before": 697,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.2"
+    },
+    {
+     "after": 699,
+     "before": 697,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.2-1"
+    },
+    {
+     "after": 699,
+     "before": 697,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.2-2"
+    },
+    {
+     "after": 699,
+     "before": 697,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.2-3"
+    },
+    {
+     "after": 698,
+     "before": 696,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.3"
+    },
+    {
+     "after": 698,
+     "before": 696,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.3-1"
+    },
+    {
+     "after": 701,
+     "before": 699,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.6"
+    },
+    {
+     "after": 701,
+     "before": 699,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.6-1"
+    },
+    {
+     "after": 701,
+     "before": 699,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.6-2"
+    },
+    {
+     "after": 701,
+     "before": 699,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.6-3"
+    },
+    {
+     "after": 701,
+     "before": 699,
+     "delta": 2,
+     "severity_delta": {
+      "critical": 0,
+      "high": 2,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.9"
+    },
+    {
+     "after": 694,
+     "before": 693,
+     "delta": 1,
+     "severity_delta": {
+      "critical": 0,
+      "high": 1,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.12"
+    },
+    {
+     "after": 689,
+     "before": 688,
+     "delta": 1,
+     "severity_delta": {
+      "critical": 0,
+      "high": 1,
+      "low": 0,
+      "medium": 0
+     },
+     "version": "2026.2.13"
+    }
+   ],
+   "cited_after": 714,
+   "cited_before": 712,
+   "cited_critical": 23,
+   "cited_high": 256,
+   "cited_version": "2026.1.29",
+   "critical_added": 0,
+   "cve_map_diff_bytes": 0,
+   "focus_advisories": 101,
+   "focus_unchanged": true,
+   "focus_version": "2026.4.22",
+   "min_clearing_version": "2026.5.27",
+   "pass": true,
+   "releases_changed": 16,
+   "removed_ghsa": {},
+   "version_vulns_sha256": "c8b9b34f9ede4ef54d77bbc80ec4782a73a3525e50e21c64e79e7bae05fd10f8"
+  },
+  "idle_linux_discovered": {
+   "actuals": {
+    "dist_js": 2147,
+    "enabled_symlink": true,
+    "fixture_files": 2185,
+    "id": "idle-linux",
+    "linger_markers": [
+     "claw4"
+    ],
+    "running_process_evidence": 0,
+    "state": "idle",
+    "user_unit": true,
+    "version_in_package_json": false
+   },
+   "pass": true
+  },
+  "idle_linux_version_recovered": {
+   "actuals": {
+    "buildstamp_head": "041266a6699cac3baef8ef39db41fa26f29f9db3",
+    "changelog_diff_empty": true,
+    "dirlist_jaccard": 1.0,
+    "dirlist_match": true,
+    "dist_names_diff_empty": true,
+    "fingerprint_version": "2026.4.15",
+    "from_build_info": "2026.4.15",
+    "jaccard_min": 0.99,
+    "package_json_has_version": false,
+    "tarball_package_json_has_version": "True",
+    "tarball_sha256": "8c95f77538130c77967c970da4744786c4d5b773937b8208f622efb4cf0d2564",
+    "version": "2026.4.15",
+    "version_source": "build-info+dirlist"
+   },
+   "pass": true
+  },
+  "idle_paths": {
+   "actuals": {
+    "expected": {
+     "L1": "usr/lib/node_modules/openclaw",
+     "L2": "home/claw2/.npm-global/lib/node_modules/openclaw",
+     "L3": "home/claw3/.openclaw/tools/node-v24.21.0/lib/node_modules/openclaw",
+     "L3s": "home/claw4/.openclaw/tools/node-v24.21.0/lib/node_modules/openclaw"
+    },
+    "idle": {
+     "L1": true,
+     "L2": true,
+     "L3": true,
+     "L3s": true
+    },
+    "installs": [
+     "home/claw2/.npm-global/lib/node_modules/openclaw",
+     "home/claw3/.openclaw/tools/node-v24.21.0/lib/node_modules/openclaw",
+     "home/claw4/.openclaw/tools/node-v24.21.0/lib/node_modules/openclaw",
+     "usr/lib/node_modules/openclaw"
+    ],
+    "version_sources": {
+     "L1": "package.json",
+     "L2": "package.json",
+     "L3": "package.json",
+     "L3s": "build-info+dirlist"
+    },
+    "versions": {
+     "L1": "2026.4.15",
+     "L2": "2026.4.15",
+     "L3": "2026.4.15",
+     "L3s": "2026.4.15"
+    }
+   },
+   "pass": true
+  },
+  "landscape_constants": {
+   "feed_newest": "2026-09-11",
+   "pass": true,
+   "total_advisories": 894,
+   "with_cve_id": 459,
+   "without_cve_id": 435,
+   "without_cve_id_critical_or_high": 176
+  },
+  "landscape_hashes": {
+   "parse_error": "",
+   "pass": true,
+   "recompute_exit": 0,
+   "sha256sum_exit": 0,
+   "total_advisories": 894,
+   "with_cve_id": 459,
+   "without_cve_id": 435,
+   "without_cve_id_critical_or_high": 176
+  },
+  "matrix_coverage": {
+   "bad_hash": 0,
+   "cache_checked": 117,
+   "cache_mismatch": [],
+   "expected": 117,
+   "have": 117,
+   "pass": true,
+   "total": 117
+  },
+  "matrix_exact": {
+   "confusion_match": true,
+   "correct": 115,
+   "non_colliding": 115,
+   "pass": true,
+   "percent_display": "100.0",
+   "total": 117
+  },
+  "no_regression": {
+   "differ": [],
+   "figures": {
+    "matrix_coverage": [
+     117,
+     117
+    ],
+    "matrix_exact": [
+     115,
+     115
+    ],
+    "range_verdicts": [
+     4,
+     4
+    ],
+    "stripped": [
+     4,
+     4
+    ],
+    "version_accuracy": [
+     26,
+     26
+    ],
+    "version_accuracy_pre": [
+     9,
+     9
+    ]
+   },
+   "pass": true,
+   "unchanged_gates": 14,
+   "unchanged_total": 14
+  },
+  "old_builds": {
+   "count": 9,
+   "cutoff": "2026.3.31",
+   "includes_2026.1.29": true,
+   "includes_2026.3.28": true,
+   "minimum": 8,
+   "months": [
+    "2026-01",
+    "2026-02",
+    "2026-03"
+   ],
+   "pass": true
+  },
+  "prerelease_order": {
+   "bounds": 183,
+   "bounds_parsed": 183,
+   "catalog_parsed": 278,
+   "catalog_versions": 278,
+   "decisions": 39476,
+   "disagreements": 53,
+   "key_mismatches": 0,
+   "order_ok": true,
+   "parser_diff": 0,
+   "pass": true,
+   "post_release_suffix": 53,
+   "ranges": 142,
+   "unexplained": 0
+  },
+  "range_verdicts": {
+   "ok": 4,
+   "pass": true,
+   "total": 4
+  },
+  "readme_unprovens": {
+   "checked": 16,
+   "missing": [],
+   "pass": true
+  },
+  "reads": {
+   "installs": 30,
+   "limit": 20,
+   "matrix_max": 1,
+   "max": 1,
+   "mean": "1.00",
+   "pass": true,
+   "total_reads": 30
+  },
+  "semver_comma_normalized": {
+   "agree_after_norm": 5236,
+   "comma_ranges_sent": 0,
+   "hark_grammar_lines": 0,
+   "mislabeled_grammar": 737,
+   "parser_diff": 1,
+   "pass": true,
+   "post_release": 30
+  },
+  "semver_crosscheck": {
+   "decisions": 52820,
+   "disagreements": 65,
+   "pass": true,
+   "semver": "7.8.5",
+   "unexplained": 0
+  },
+  "semver_crosscheck_894": {
+   "bounds_unparsed": 0,
+   "catalog_unparsed": 0,
+   "comma_ranges_sent": 0,
+   "decisions": 52820,
+   "disagreements": 65,
+   "hark_grammar_lines": 0,
+   "pass": true,
+   "post_release_suffix": 65,
+   "ranges_unparsed": 0,
+   "semver": "7.8.5",
+   "unexplained": 0
+  },
+  "stripped": {
+   "minimum": 3,
+   "ok": 2,
+   "pass": true,
+   "total": 4
+  },
+  "v01_regression": {
+   "matched": 9,
+   "pass": true,
+   "total": 9
+  },
+  "version_accuracy": {
+   "correct": 26,
+   "pass": true,
+   "percent_display": "100.0",
+   "pre_correct": 9,
+   "pre_percent_display": "100.0",
+   "pre_total": 9,
+   "target_percent": 95,
+   "total": 26
+  }
+ },
+ "grammar_after": 714,
+ "grammar_before": 712,
+ "no_advisory_wording": "no published advisory as of 2026-09-11",
+ "ok": true,
+ "patch_boundary": "2026.4.22",
+ "patch_released": "2026-04-23",
+ "previous_feed_newest": "2026-07-02",
+ "python_requirement": "3.11",
+ "release": "0.2.3",
+ "spec_unprovens": [
+  "GLOBAL UNPROVENS (Learn doesn't document them)",
+  "- Export file format (CSV or XLSX), header spelling in the file, column order, date format, encoding. Learn says only \"select Export to download the list\" (C09).",
+  "- How Defender formats an OpenClaw Version string, e.g. \"2026.4.22\" vs \"v2026.4.22\".",
+  "- Row grain is documented: one row per agent installation, so a repeat on several devices or accounts appears more than once (C10).",
+  "Agent name | string, \"OpenClaw\" for our rows | C01; the Name value \"OpenClaw\", vendor \"OpenClaw Foundation\" (C27, support matrix) | documented; the cell type is UNPROVEN",
+  "Version | string | C01 \"The discovered agent, and the version installed.\" | documented; format UNPROVEN",
+  "Device ID | string | C02 | documented; format UNPROVEN",
+  "OS platform | string (Windows, macOS) | C02 | documented; value set UNPROVEN",
+  "Device type | string | C02 | documented; value set UNPROVEN",
+  "Risk indicators | string list, e.g. \"Running on a Critical Device\" | C05 | documented; list separator UNPROVEN",
+  "Recommendations | string | C06 | documented; cell format (count vs names) UNPROVEN",
+  "First seen | datetime | C08 | documented; format UNPROVEN, so emit ISO 8601 UTC",
+  "AgentId | CONFLICT: schema says string (C14 page) vs discover says guid (C13) | emit a GUID string | flag in README",
+  "Name / AgentName | CONFLICT: discover lists Name (C16), schema lists AgentName (C15) | emit both keys, same value | flag in README",
+  "PublishedStatus | string: Draft or Published | C18 | documented; value for local agents UNPROVEN",
+  "  relatedProcess string (C23); OpenClaw's process name is UNPROVEN"
+ ],
+ "summary": {
+  "no_usable_version": 14,
+  "registry_sees": 30,
+  "rotate_order": [
+   {
+    "credential": "AWS_ACCESS_KEY_ID",
+    "installs": [
+     "claw-09",
+     "claw-10",
+     "claw-16",
+     "claw-25",
+     "claw-26"
+    ],
+    "reach": 5
+   },
+   {
+    "credential": "SLACK_BOT_TOKEN",
+    "installs": [
+     "claw-07",
+     "claw-13",
+     "claw-14",
+     "claw-15",
+     "claw-23"
+    ],
+    "reach": 5
+   },
+   {
+    "credential": "STRIPE_SECRET_KEY",
+    "installs": [
+     "claw-08",
+     "claw-14",
+     "claw-15",
+     "claw-16",
+     "claw-24"
+    ],
+    "reach": 5
+   },
+   {
+    "credential": "ANTHROPIC_API_KEY",
+    "installs": [
+     "claw-09",
+     "claw-15",
+     "claw-16",
+     "claw-25"
+    ],
+    "reach": 4
+   },
+   {
+    "credential": "AWS_SECRET_ACCESS_KEY",
+    "installs": [
+     "claw-10",
+     "claw-11",
+     "claw-26",
+     "claw-27"
+    ],
+    "reach": 4
+   },
+   {
+    "credential": "GITHUB_PERSONAL_ACCESS_TOKEN",
+    "installs": [
+     "claw-05",
+     "claw-12",
+     "claw-13",
+     "claw-21"
+    ],
+    "reach": 4
+   },
+   {
+    "credential": "OPENAI_API_KEY",
+    "installs": [
+     "claw-06",
+     "claw-13",
+     "claw-14",
+     "claw-22"
+    ],
+    "reach": 4
+   },
+   {
+    "credential": "DISCORD_BOT_TOKEN",
+    "installs": [
+     "claw-11",
+     "claw-12",
+     "claw-27"
+    ],
+    "reach": 3
+   }
+  ],
+  "rotate_tokens": 8,
+  "sentence": "registry sees 30 / 14 with no usable version / 27 vulnerable / rotate these 8 tokens first",
+  "vulnerable": 27
+ },
+ "xdr_url": "https://learn.microsoft.com/en-us/defender-xdr/security-for-ai/ai-agent-inventory"
+}

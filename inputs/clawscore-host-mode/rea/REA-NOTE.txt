@@ -1,0 +1,6 @@
+REA = rea-agents@6.5.0 (npm; pinned per Hark mirror UPSTREAM.json, GitHub release 6.6.0 not yet on npm).
+1) extract-artifact openclaw-2026.10.10-beta.1.tgz --format json -> exit 1, "unsupported binary format" (extract-artifact-beta-tgz.json).
+2) analyze-javascript-application <extracted beta package> --json, started 2026-10-18 ~11:23 UTC, stopped by Hark at ~11:30 UTC
+   in phase parse_javascript_source at file 1754/11539 (1757 progress lines, analyze-beta-partial.stderr.gz); no Evidence JSON produced.
+   At that rate the full run is ~40 min, over Hark's 20-min job cap -> the full REA run is acceptance step A0 of the CURSOR TASK.
+Nothing was executed from the target. The reverse below is static: tar listing + sha256 + JSON reads (static-reverse.txt).

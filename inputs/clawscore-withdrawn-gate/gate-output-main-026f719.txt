@@ -1,0 +1,14 @@
+$ git rev-parse HEAD
+026f719561bff84d49a155fbe72a0a8468a18e92
+$ python3 inputs/clawscore-withdrawn-gate/gate_withdrawn.py
+PASS	G0.pin evidence/landscape/ghsa-all.json	c66f072b01ef6657
+PASS	G0.pin evidence/landscape/versions.json	6e2b3ff8619dba5c
+PASS	G0.pin inputs/clawscore-withdrawn-reconcile/counted-2026.4.22.tsv	15425b03969f7688
+PASS	G1.control evaluator WITH withdrawn == main 026f719 version-vulns.json	rows=117 main_sha=556bd11e0d5f9fa4
+FAIL	G2.rows version-vulns == recompute excluding withdrawn	rows=117/117 mismatched=80 extra=[] first=[('2026.1.29', 786, 629), ('2026.1.30', 785, 628), ('2026.2.1', 779, 622)] (version, file_total, expected_total)
+INFO	2026.4.22 file=[181, {'critical': 1, 'high': 100, 'medium': 64, 'low': 16}] expected=[148, {'critical': 1, 'high': 84, 'medium': 53, 'low': 10}]
+PASS	G3.ids recompute 2026.4.22 == counted-2026.4.22.tsv	recompute=148 tsv=148 only_recompute=[] only_tsv=[] sev={'critical': 1, 'high': 84, 'low': 10, 'medium': 53}
+FAIL	G4.code clawscore_fleet.cves 2026.4.22 ids == tsv	code=181 only_code=['GHSA-2w22-3f6x-3hf4', 'GHSA-35c7-4r45-9gv3', 'GHSA-3qg8-hq7j-jj33', 'GHSA-3v3j-737j-7g74', 'GHSA-4qgr-57jq-93vh'] only_tsv=[]
+FAIL	G4.code no withdrawn id under any version	withdrawn_counted=168 e.g. ['GHSA-27pq-2ph8-8x25', 'GHSA-2cwr-f5hx-gg3w', 'GHSA-2hv5-4h3g-4hjv']
+GATE FAIL (3 checks)
+exit=1

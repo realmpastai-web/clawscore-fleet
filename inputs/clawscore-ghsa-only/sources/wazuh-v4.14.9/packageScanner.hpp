@@ -1,0 +1,993 @@
+/*
+ * Wazuh Vulnerability scanner - Scan Orchestrator
+ * Copyright (C) 2015, Wazuh Inc.
+ * May 1, 2023.
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General Public
+ * License (version 2) as published by the FSF - Free Software
+ * Foundation.
+ */
+
+#ifndef _PACKAGE_SCANNER_HPP
+#define _PACKAGE_SCANNER_HPP
+
+#include "chainOfResponsability.hpp"
+#include "databaseFeedManager.hpp"
+#include "remediationDataCache.hpp"
+#include "scanContext.hpp"
+#include "scannerHelper.hpp"
+#include "versionMatcher/versionMatcher.hpp"
+#include "vulnerabilityScannerDefs.hpp"
+#include <memory>
+#include <unordered_set>
+#include <variant>
+
+auto constexpr DEFAULT_CNA {"nvd"};
+auto constexpr L1_CACHE_SIZE {2048};
+
+/**
+ * @brief PackageScanner class.
+ * This class is responsible for scanning the package and checking if it is vulnerable.
+ * It receives the scan context and the database feed manager and returns the scan context with the vulnerability
+ * details. The package format is used to determine the version object type or the version matcher strategy. The package
+ * format can be deb, rpm, pypi, npm, pacman, snap, pkg, apk, win, macports. The vulnerability scan is performed using
+ * the database feed manager.
+ */
+template<typename TDatabaseFeedManager = DatabaseFeedManager,
+         typename TScanContext = ScanContext,
+         typename TGlobalData = GlobalData,
+         typename TRemediationDataCache = RemediationDataCache<>>
+class TPackageScanner final : public AbstractHandler<std::shared_ptr<TScanContext>>
+{
+private:
+    /**
+     * @brief Package format to VersionObjectType / VersionMatcherStrategy map.
+     *
+     * @note The map is used to determine the version object type or the version matcher strategy based on the package
+     * format.
+     */
+    std::unordered_map<std::string_view, std::variant<VersionObjectType, VersionMatcherStrategy>> m_packageMap {
+        {"deb", VersionObjectType::DPKG},
+        {"rpm", VersionObjectType::RPM},
+        {"pypi", VersionObjectType::PEP440},
+        {"npm", VersionObjectType::SemVer},
+        {"pacman", VersionMatcherStrategy::Pacman},
+        {"snap", VersionMatcherStrategy::Snap},
+        {"pkg", VersionMatcherStrategy::PKG},
+        {"apk", VersionMatcherStrategy::APK},
+        {"win", VersionMatcherStrategy::Windows},
+        {"macports", VersionMatcherStrategy::MacOS}};
+
+    std::shared_ptr<TDatabaseFeedManager> m_databaseFeedManager;
+
+    LRUCache<std::string, std::vector<TranslatedData>> m_translationL1Cache {L1_CACHE_SIZE};
+
+    /**
+     * @brief Scans a package for vulnerabilities using translation data from caches.
+     *
+     * This function scans a package for vulnerabilities by first searching for translation data in the Level 1 cache.
+     * If translation data is found in the Level 1 cache, vulnerability scans are initiated based on the translations.
+     * If translation data is not found in the Level 1 cache, the function searches the Level 2 cache.
+     * If translation data is found in the Level 2 cache, vulnerability scans are initiated based on the translations.
+     * If translation data is not found in either cache, the function logs a debug message.
+     *
+     * @param cnaName The name of the CVE Numbering Authorities (CNA) for vulnerability identification.
+     * @param packageToTranslate The package data structure.
+     * @param data The scan context containing package information and platform details.
+     * @param vulnerabilityScan The function to perform vulnerability scans.
+     * @return True if translations were found and vulnerability scans were initiated, false otherwise.
+     *
+     * @note The function assumes that the Level 1 cache (m_translationL1Cache) has been initialized and contains valid
+     * data.
+     */
+    bool scanPackageTranslation(
+        const std::string& cnaName,
+        const PackageData& packageToTranslate,
+        const std::shared_ptr<TScanContext> data,
+        const std::function<bool(const std::string& cnaName,
+                                 const PackageData& package,
+                                 const NSVulnerabilityScanner::ScanVulnerabilityCandidate&)>& vulnerabilityScan)
+    {
+        // Generate cache key based on package details
+        const auto osPlatform = std::string(data->osPlatform().data());
+
+        // Search in Level 1 cache
+        if (const auto cacheKey = osPlatform + "_" + packageToTranslate.vendor + "_" + packageToTranslate.name;
+            m_translationL1Cache.isHit(cacheKey))
+        {
+            logDebug2(WM_VULNSCAN_LOGTAG,
+                      "Translation for package '%s' in platform '%s' found in Level 1 cache.",
+                      packageToTranslate.name.c_str(),
+                      osPlatform.c_str());
+
+            const auto L1Translations = m_translationL1Cache.getValue(cacheKey).value();
+
+            // Retrieve translations from cache and initiate vulnerability scans
+            for (const auto& translation : L1Translations)
+            {
+                auto translatedPackage {packageToTranslate};
+                if (!translation.translatedProduct.empty())
+                {
+                    translatedPackage.name = translation.translatedProduct;
+                }
+
+                if (!translation.translatedVendor.empty())
+                {
+                    translatedPackage.vendor = translation.translatedVendor;
+                }
+
+                if (!translation.translatedVersion.empty())
+                {
+                    translatedPackage.version = translation.translatedVersion;
+                }
+
+                logDebug1(WM_VULNSCAN_LOGTAG,
+                          "Initiating a vulnerability scan for package '%s' (%s) (%s) with CVE Numbering "
+                          "Authorities (CNA) '%s' on Agent '%s' (ID: '%s', Version: '%s').",
+                          translatedPackage.name.c_str(),
+                          translatedPackage.format.c_str(),
+                          translatedPackage.vendor.c_str(),
+                          cnaName.c_str(),
+                          data->agentName().data(),
+                          data->agentId().data(),
+                          data->agentVersion().data());
+
+                m_databaseFeedManager->getVulnerabilitiesCandidates(cnaName, translatedPackage, vulnerabilityScan);
+            }
+            return true;
+        }
+        else
+        {
+            // Search in Level 2 cache
+            if (const auto L2Translations = m_databaseFeedManager->getTranslationFromL2(packageToTranslate, osPlatform);
+                !L2Translations.empty())
+            {
+                logDebug2(WM_VULNSCAN_LOGTAG,
+                          "Translation for package '%s' in platform '%s' found in Level 2 cache.",
+                          packageToTranslate.name.c_str(),
+                          osPlatform.c_str());
+
+                // Retrieve translations from cache and initiate vulnerability scans
+                for (const auto& translation : L2Translations)
+                {
+                    auto translatedPackage {packageToTranslate};
+                    if (!translation.translatedProduct.empty())
+                    {
+                        translatedPackage.name = translation.translatedProduct;
+                    }
+
+                    if (!translation.translatedVendor.empty())
+                    {
+                        translatedPackage.vendor = translation.translatedVendor;
+                    }
+
+                    if (!translation.translatedVersion.empty())
+                    {
+                        translatedPackage.version = translation.translatedVersion;
+                    }
+
+                    logDebug1(WM_VULNSCAN_LOGTAG,
+                              "Initiating a vulnerability scan for package '%s' (%s) (%s) with CVE Numbering "
+                              "Authorities (CNA) '%s' on Agent '%s' (ID: '%s', Version: '%s').",
+                              translatedPackage.name.c_str(),
+                              translatedPackage.format.c_str(),
+                              translatedPackage.vendor.c_str(),
+                              cnaName.c_str(),
+                              data->agentName().data(),
+                              data->agentId().data(),
+                              data->agentVersion().data());
+
+                    m_databaseFeedManager->getVulnerabilitiesCandidates(cnaName, translatedPackage, vulnerabilityScan);
+                }
+                // Store translations in Level 1 cache
+                m_translationL1Cache.insertKey(cacheKey, std::move(L2Translations));
+                return true;
+            }
+        }
+
+        // If translations are not found in any cache, log a debug message and return false
+        logDebug2(WM_VULNSCAN_LOGTAG,
+                  "Translation for package '%s' in platform '%s' not found. Using provided packageName.",
+                  packageToTranslate.name.c_str(),
+                  osPlatform.c_str());
+        return false;
+    }
+
+    /**
+     * @brief Debian backports version marker.
+     *
+     * @note A Debian backport carries the version it was rebuilt from plus a "~bpoN+M" suffix, where N is the
+     * release the package is *installed on* (e.g. "6.12.90-2~bpo12+1" is "6.12.90-2" rebuilt for bookworm).
+     */
+    static constexpr std::string_view BPO_MARKER {"~bpo"};
+
+    /**
+     * @brief Debian release number to suite code name equivalence.
+     *
+     * @details The mapping is read from the DEBIAN_RELEASE_CODE_NAMES_KEY key of the CNA mappings feed content,
+     * so new Debian releases are added through a content update and no code change.
+     *
+     * @param release Debian release number.
+     * @return const std::string& Code name, empty if the release is unknown to the content.
+     */
+    static const std::string& debianCodeName(const unsigned long release)
+    {
+        static const std::string EMPTY_CODE_NAME;
+
+        if (const auto& mapping = TGlobalData::instance().cnaMappings(); mapping.is_object())
+        {
+            if (const auto itContent = mapping.find(DEBIAN_RELEASE_CODE_NAMES_KEY); itContent != mapping.end())
+            {
+                if (const auto itRelease = itContent->find(std::to_string(release)); itRelease != itContent->end())
+                {
+                    return itRelease->template get_ref<const std::string&>();
+                }
+            }
+        }
+
+        return EMPTY_CODE_NAME;
+    }
+
+    /**
+     * @brief Parses the release number of the "~bpoN" marker.
+     *
+     * @param packageVersion Installed package version.
+     * @param release Output, release number found after the marker.
+     * @return true If the version carries a parseable backports marker.
+     */
+    static bool backportRelease(const std::string& packageVersion, unsigned long& release)
+    {
+        const auto markerPos = packageVersion.find(BPO_MARKER);
+        if (markerPos == std::string::npos)
+        {
+            return false;
+        }
+
+        auto pos = markerPos + BPO_MARKER.size();
+        bool hasDigits {false};
+        release = 0;
+
+        while (pos < packageVersion.size() && packageVersion[pos] >= '0' && packageVersion[pos] <= '9')
+        {
+            hasDigits = true;
+            release = (release * 10) + static_cast<unsigned long>(packageVersion[pos] - '0');
+            ++pos;
+        }
+
+        return hasDigits;
+    }
+
+    /**
+     * @brief Code name of the suite a Debian backports package was rebuilt from.
+     *
+     * @details Debian security data is organized by suite code name ("bookworm", "trixie", ...), which the
+     * scanner matches against the agent OS code name. A "~bpoN" package installed on release N is a rebuild of
+     * the package of release N + 1 (bookworm-backports comes from trixie), so the entries of that newer suite
+     * are the ones that describe the installed binary. Without this, a backported package is only evaluated
+     * against its base suite, where the CVE is typically still open with no fixed version, and the default
+     * status fallback reports it as vulnerable even though the installed package already carries the fix.
+     *
+     * @note "~bpo" is a Debian convention, so only the "debian" platform is considered.
+     *
+     * @param platform OS platform.
+     * @param packageVersion Installed package version.
+     * @return const std::string& Code name of the suite the package was rebuilt from, empty if not applicable.
+     */
+    static const std::string& backportsCodeName(std::string_view platform, const std::string& packageVersion)
+    {
+        static const std::string EMPTY_CODE_NAME;
+
+        if (platform != "debian")
+        {
+            return EMPTY_CODE_NAME;
+        }
+
+        unsigned long release {0};
+        if (!backportRelease(packageVersion, release))
+        {
+            return EMPTY_CODE_NAME;
+        }
+
+        const auto& codeName {debianCodeName(release + 1)};
+        if (codeName.empty())
+        {
+            logDebug2(WM_VULNSCAN_LOGTAG,
+                      "No code name known for Debian release '%lu' (backports package version '%s'). Using the "
+                      "base release data.",
+                      release + 1,
+                      packageVersion.c_str());
+        }
+
+        return codeName;
+    }
+
+    /**
+     * @brief Installed version without the Debian backports suffix, i.e. the version it was rebuilt from.
+     *
+     * @param packageVersion Installed package version.
+     * @return std::string Version without the "~bpoN+M" suffix.
+     */
+    static std::string withoutBackportSuffix(const std::string& packageVersion)
+    {
+        const auto markerPos = packageVersion.find(BPO_MARKER);
+        return markerPos == std::string::npos ? packageVersion : packageVersion.substr(0, markerPos);
+    }
+
+    /**
+     * @brief Whether a Debian backports package is being evaluated against an entry scoped to its base suite.
+     *
+     * @details Used to skip the default status fallback: the status of the base suite (where the CVE is often
+     * still open) does not describe a package rebuilt from a newer suite. Entries that also cover the suite the
+     * package comes from are left untouched, so a backport that is genuinely affected is still reported.
+     *
+     * @param package Package data.
+     * @param callbackData Vulnerability candidate.
+     * @param contextData Scan context.
+     * @return true If the candidate only describes the base suite of a backports package.
+     */
+    static bool backportOutOfSuite(const PackageData& package,
+                                   const NSVulnerabilityScanner::ScanVulnerabilityCandidate& callbackData,
+                                   const std::shared_ptr<TScanContext>& contextData)
+    {
+        const auto& backportCodeName {backportsCodeName(contextData->osPlatform(), package.version)};
+        if (backportCodeName.empty() || !callbackData.platforms())
+        {
+            return false;
+        }
+
+        bool baseSuiteOnly {false};
+        for (const auto& platform : *callbackData.platforms())
+        {
+            const std::string platformValue {platform->str()};
+            if (platformValue.compare(backportCodeName) == 0)
+            {
+                // The candidate describes the suite the package was rebuilt from: its status is meaningful.
+                return false;
+            }
+
+            if (platformValue.compare(contextData->osCodeName()) == 0)
+            {
+                baseSuiteOnly = true;
+            }
+        }
+
+        return baseSuiteOnly;
+    }
+
+    /**
+     * @brief Define what CNA will be used to read the data.
+     *
+     * @param ctx Scan context.
+     * @return std::pair<std::string, std::string> CNA pair.
+     */
+    std::pair<std::string, std::string> getCNA(std::shared_ptr<TScanContext> ctx)
+    {
+        auto cnaName {m_databaseFeedManager->getCnaNameByFormat(ctx->packageFormat().data())};
+
+        if (cnaName.empty())
+        {
+            cnaName = m_databaseFeedManager->getCnaNameBySource(ctx->packageSource().data());
+            if (cnaName.empty())
+            {
+                cnaName =
+                    m_databaseFeedManager->getCnaNameByPrefix(ctx->packageVendor().data(), ctx->osPlatform().data());
+                if (cnaName.empty())
+                {
+                    cnaName = m_databaseFeedManager->getCnaNameByContains(ctx->packageVendor().data(),
+                                                                          ctx->osPlatform().data());
+                    if (cnaName.empty())
+                    {
+                        return {DEFAULT_CNA, DEFAULT_CNA};
+                    }
+                }
+            }
+        }
+        const auto& mapping = TGlobalData::instance().cnaMappings();
+
+        const auto& cnaMapping = mapping.at("cnaMapping");
+        const auto platformEquivalence = [&](const std::string& platform) -> const std::string&
+        {
+            const auto& platformMapping = mapping.at("platformEquivalence");
+            if (const auto it = platformMapping.find(platform); it == platformMapping.end())
+            {
+                return platform;
+            }
+            else
+            {
+                return it->template get_ref<const std::string&>();
+            }
+        };
+
+        const auto majorVersionEquivalence = [&](const std::string& platform,
+                                                 const std::string& majorVersion) -> const std::string&
+        {
+            const auto& majorVersionMapping = mapping.at("majorVersionEquivalence");
+            if (const auto itPlatform = majorVersionMapping.find(platform); itPlatform == majorVersionMapping.end())
+            {
+                return majorVersion;
+            }
+            else
+            {
+                if (const auto itMajorVersion = itPlatform->find(majorVersion); itMajorVersion == itPlatform->end())
+                {
+                    return majorVersion;
+                }
+                else
+                {
+                    return itMajorVersion->template get_ref<const std::string&>();
+                }
+            }
+        };
+
+        if (const auto it = cnaMapping.find(cnaName); it == cnaMapping.end())
+        {
+            return {cnaName, cnaName};
+        }
+        else
+        {
+            std::string base = it->template get<std::string>();
+            Utils::replaceAll(base, "$(PLATFORM)", platformEquivalence(ctx->osPlatform().data()));
+            Utils::replaceAll(base,
+                              "$(MAJOR_VERSION)",
+                              majorVersionEquivalence(ctx->osPlatform().data(), ctx->osMajorVersion().data()));
+            return {cnaName, base};
+        }
+    }
+
+    bool platformVerify(const PackageData& package,
+                        const NSVulnerabilityScanner::ScanVulnerabilityCandidate& callbackData,
+                        std::shared_ptr<TScanContext> contextData)
+    {
+        // if the platforms are not empty, we need to check if the platform is in the list.
+        if (callbackData.platforms())
+        {
+            // A Debian backports package is also described by the entries of the suite it was rebuilt from.
+            const auto& backportCodeName {backportsCodeName(contextData->osPlatform(), package.version)};
+
+            bool matchPlatform {false};
+            for (const auto& platform : *callbackData.platforms())
+            {
+                const std::string platformValue {platform->str()};
+                // if the platform is a CPE, we need to parse it and check if the product is the same as the os
+                // cpe.
+                if (ScannerHelper::isCPE(platformValue))
+                {
+                    const auto cpe {ScannerHelper::parseCPE(platformValue)};
+                    if (cpe.part.compare("o") == 0)
+                    {
+                        if (ScannerHelper::compareCPE(cpe, ScannerHelper::parseCPE(contextData->osCPEName().data())))
+                        {
+                            logDebug2(WM_VULNSCAN_LOGTAG,
+                                      "The platform is in the list based on CPE comparison for "
+                                      "Package: %s, Version: %s, CVE: %s, Content platform CPE: %s OS CPE: %s",
+                                      package.name.c_str(),
+                                      package.version.c_str(),
+                                      callbackData.cveId()->str().c_str(),
+                                      platformValue.c_str(),
+                                      contextData->osCPEName().data());
+                            matchPlatform = true;
+                            break;
+                        }
+                    }
+                }
+                // If the platform is not a CPE, it is a string, at the moment, we only support the os code
+                // name. This is used mainly for debian and ubuntu platforms.
+                else
+                {
+                    if (platformValue.compare(contextData->osCodeName()) == 0 ||
+                        (!backportCodeName.empty() && platformValue.compare(backportCodeName) == 0))
+                    {
+                        logDebug2(WM_VULNSCAN_LOGTAG,
+                                  "The platform is in the list based on OS code name comparison for "
+                                  "Package: %s, Version: %s, CVE: %s, Content OS code name: %s, OS code name: %s",
+                                  package.name.c_str(),
+                                  package.version.c_str(),
+                                  callbackData.cveId()->str().c_str(),
+                                  platformValue.c_str(),
+                                  contextData->osCodeName().data());
+                        matchPlatform = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!matchPlatform)
+            {
+                logDebug2(WM_VULNSCAN_LOGTAG,
+                          "The platform is not in the list for Package: %s, Version: %s, CVE: %s, OS CPE: %s, "
+                          "OS code name: %s",
+                          package.name.c_str(),
+                          package.version.c_str(),
+                          callbackData.cveId()->str().c_str(),
+                          contextData->osCPEName().data(),
+                          contextData->osCodeName().data());
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    bool vendorVerify(const PackageData& package,
+                      const NSVulnerabilityScanner::ScanVulnerabilityCandidate& callbackData)
+    {
+        if (callbackData.vendor())
+        {
+            if (package.vendor.empty() || " " == package.vendor)
+            {
+                logDebug2(WM_VULNSCAN_LOGTAG,
+                          "The vendor information is not available for Package: %s, Version: %s, "
+                          "CVE: %s, Content vendor: %s",
+                          package.name.c_str(),
+                          package.version.c_str(),
+                          callbackData.cveId()->str().c_str(),
+                          callbackData.vendor()->str().c_str());
+                return false;
+            }
+            else
+            {
+                if (package.vendor.compare(callbackData.vendor()->str()) != 0)
+                {
+                    logDebug2(WM_VULNSCAN_LOGTAG,
+                              "The vendor is not the same for Package: %s, Version: %s, "
+                              "CVE: %s, Content vendor: %s, Package vendor: %s",
+                              package.name.c_str(),
+                              package.version.c_str(),
+                              callbackData.cveId()->str().c_str(),
+                              callbackData.vendor()->str().c_str(),
+                              package.vendor.c_str());
+                    return false;
+                }
+                else
+                {
+                    logDebug2(WM_VULNSCAN_LOGTAG,
+                              "Vendor match for Package: %s, Version: %s, "
+                              "CVE: %s, Vendor: %s",
+                              package.name.c_str(),
+                              package.version.c_str(),
+                              callbackData.cveId()->str().c_str(),
+                              package.vendor.c_str());
+                }
+            }
+        }
+
+        return true;
+    }
+
+    bool versionMatch(const PackageData& package,
+                      const NSVulnerabilityScanner::ScanVulnerabilityCandidate& callbackData,
+                      std::shared_ptr<TScanContext> contextData)
+    {
+        std::variant<VersionObjectType, VersionMatcherStrategy> objectType = VersionMatcherStrategy::Unspecified;
+        if (const auto it = m_packageMap.find(package.format); it != m_packageMap.end())
+        {
+            objectType = it->second;
+        }
+        const auto& packageVersion {package.version};
+        auto packageVersionObject = VersionMatcher::createVersionObject(packageVersion, objectType);
+        auto cveId = callbackData.cveId()->str();
+
+        // dpkg orders "~" before the empty string, so a backport always compares lower than the very version it
+        // was rebuilt from ("6.12.90-2~bpo12+1" < "6.12.90-2") even though it carries the same fix. When the
+        // threshold is not itself a backport, compare against the version the package was rebuilt from.
+        std::string rebuiltFromVersion;
+        auto rebuiltFromVersionObject = decltype(packageVersionObject) {};
+        if (std::holds_alternative<VersionObjectType>(objectType) &&
+            std::get<VersionObjectType>(objectType) == VersionObjectType::DPKG &&
+            packageVersion.find(BPO_MARKER) != std::string::npos)
+        {
+            rebuiltFromVersion = withoutBackportSuffix(packageVersion);
+            rebuiltFromVersionObject = VersionMatcher::createVersionObject(rebuiltFromVersion, objectType);
+        }
+
+        const auto compareWithPackage = [&](const std::string& other)
+        {
+            if (rebuiltFromVersionObject && other.find(BPO_MARKER) == std::string::npos)
+            {
+                return VersionMatcher::compare(rebuiltFromVersionObject, rebuiltFromVersion, other, objectType);
+            }
+
+            return VersionMatcher::compare(packageVersionObject, packageVersion, other, objectType);
+        };
+
+        for (const auto& version : *callbackData.versions())
+        {
+            std::string versionString {version->version() ? version->version()->str() : ""};
+            std::string versionStringLessThan {version->lessThan() ? version->lessThan()->str() : ""};
+            std::string versionStringLessThanOrEqual {version->lessThanOrEqual() ? version->lessThanOrEqual()->str()
+                                                                                 : ""};
+
+            logDebug2(WM_VULNSCAN_LOGTAG,
+                      "Scanning package - '%s' (Installed Version: %s, Security Vulnerability: %s). Identified "
+                      "vulnerability: "
+                      "Version: %s. Required Version Threshold: %s. Required Version Threshold (or Equal): %s.",
+                      package.name.c_str(),
+                      packageVersion.c_str(),
+                      cveId.c_str(),
+                      versionString.c_str(),
+                      versionStringLessThan.c_str(),
+                      versionStringLessThanOrEqual.c_str());
+
+            // No version range specified, check if the installed version is equal to the required version.
+            if (versionStringLessThan.empty() && versionStringLessThanOrEqual.empty())
+            {
+                if (compareWithPackage(versionString) == VersionComparisonResult::A_EQUAL_B)
+                {
+                    // Version match found, the package status is defined by the vulnerability status.
+                    if (version->status() == NSVulnerabilityScanner::Status::Status_affected)
+                    {
+                        logDebug1(WM_VULNSCAN_LOGTAG,
+                                  "Match found, the package '%s', is vulnerable to '%s'. Current version: '%s' is "
+                                  "equal to '%s'. - Agent '%s' (ID: '%s', Version: '%s').",
+                                  package.name.c_str(),
+                                  cveId.c_str(),
+                                  packageVersion.c_str(),
+                                  versionString.c_str(),
+                                  contextData->agentName().data(),
+                                  contextData->agentId().data(),
+                                  contextData->agentVersion().data());
+
+                        contextData->m_elements[cveId] = nlohmann::json::object();
+                        contextData->m_matchConditions[cveId] = {std::move(versionString), MatchRuleCondition::Equal};
+
+                        return true;
+                    }
+
+                    return false;
+                }
+            }
+            else
+            {
+                // Version range specified
+
+                // Check if the installed version satisfies the lower bound of the version range.
+                auto lowerBoundMatch = false;
+                if (versionString.compare("0") == 0)
+                {
+                    lowerBoundMatch = true;
+                }
+                else
+                {
+                    const auto matchResult = compareWithPackage(versionString);
+                    lowerBoundMatch = matchResult == VersionComparisonResult::A_GREATER_THAN_B ||
+                                      matchResult == VersionComparisonResult::A_EQUAL_B;
+                }
+
+                if (lowerBoundMatch)
+                {
+                    // Check if the installed version satisfies the upper bound of the version range.
+                    auto upperBoundMatch = false;
+                    if (!versionStringLessThan.empty() && versionStringLessThan.compare("*") != 0)
+                    {
+                        const auto matchResult = compareWithPackage(versionStringLessThan);
+                        upperBoundMatch = matchResult == VersionComparisonResult::A_LESS_THAN_B;
+                    }
+                    else if (!versionStringLessThanOrEqual.empty())
+                    {
+                        const auto matchResult = compareWithPackage(versionStringLessThanOrEqual);
+                        upperBoundMatch = matchResult == VersionComparisonResult::A_LESS_THAN_B ||
+                                          matchResult == VersionComparisonResult::A_EQUAL_B;
+                    }
+                    else
+                    {
+                        upperBoundMatch = false;
+                    }
+
+                    if (upperBoundMatch)
+                    {
+                        // Version match found, the package status is defined by the vulnerability status.
+                        if (version->status() == NSVulnerabilityScanner::Status::Status_affected)
+                        {
+                            logDebug1(WM_VULNSCAN_LOGTAG,
+                                      "Match found, the package '%s', is vulnerable to '%s'. Current version: "
+                                      "'%s' ("
+                                      "less than '%s' or equal to '%s'). - Agent '%s' (ID: '%s', Version: '%s').",
+                                      package.name.c_str(),
+                                      cveId.c_str(),
+                                      packageVersion.c_str(),
+                                      versionStringLessThan.c_str(),
+                                      versionStringLessThanOrEqual.c_str(),
+                                      contextData->agentName().data(),
+                                      contextData->agentId().data(),
+                                      contextData->agentVersion().data());
+
+                            contextData->m_elements[cveId] = nlohmann::json::object();
+
+                            if (!versionStringLessThanOrEqual.empty())
+                            {
+                                contextData->m_matchConditions[cveId] = {std::move(versionStringLessThanOrEqual),
+                                                                         MatchRuleCondition::LessThanOrEqual};
+                            }
+                            else
+                            {
+                                contextData->m_matchConditions[cveId] = {std::move(versionStringLessThan),
+                                                                         MatchRuleCondition::LessThan};
+                            }
+                            return true;
+                        }
+                        else
+                        {
+                            logDebug2(WM_VULNSCAN_LOGTAG,
+                                      "No match due to default status for Package: %s, Version: %s while scanning "
+                                      "for Vulnerability: %s, "
+                                      "Installed Version: %s, Required Version Threshold: %s, Required Version "
+                                      "Threshold (or Equal): %s",
+                                      package.name.c_str(),
+                                      packageVersion.c_str(),
+                                      cveId.c_str(),
+                                      versionString.c_str(),
+                                      versionStringLessThan.c_str(),
+                                      versionStringLessThanOrEqual.c_str());
+
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+
+        // No match found, the default status defines the package status.
+        if (callbackData.defaultStatus() == NSVulnerabilityScanner::Status::Status_affected)
+        {
+            if (backportOutOfSuite(package, callbackData, contextData))
+            {
+                logDebug1(WM_VULNSCAN_LOGTAG,
+                          "No match for the backports package '%s' (%s) and '%s': the candidate only describes "
+                          "the base suite '%s', not the suite the package was rebuilt from. - Agent '%s' (ID: "
+                          "'%s', Version: '%s').",
+                          package.name.c_str(),
+                          packageVersion.c_str(),
+                          cveId.c_str(),
+                          contextData->osCodeName().data(),
+                          contextData->agentName().data(),
+                          contextData->agentId().data(),
+                          contextData->agentVersion().data());
+
+                return false;
+            }
+
+            logDebug1(WM_VULNSCAN_LOGTAG,
+                      "Match found, the package '%s' is vulnerable to '%s' due to default status. - Agent "
+                      "'%s' (ID: '%s', Version: '%s').",
+                      package.name.c_str(),
+                      cveId.c_str(),
+                      contextData->agentName().data(),
+                      contextData->agentId().data(),
+                      contextData->agentVersion().data());
+
+            contextData->m_elements[cveId] = nlohmann::json::object();
+            contextData->m_matchConditions[cveId] = {"", MatchRuleCondition::DefaultStatus};
+            return true;
+        }
+
+        logDebug2(WM_VULNSCAN_LOGTAG,
+                  "No match due to default status for Package: %s, Version: %s while scanning for Vulnerability: %s",
+                  package.name.c_str(),
+                  package.version.c_str(),
+                  cveId.c_str());
+
+        return false;
+    }
+
+    bool packageHotfixSolved(const PackageData& package,
+                             const NSVulnerabilityScanner::ScanVulnerabilityCandidate& callbackData,
+                             std::shared_ptr<TScanContext> contextData)
+    {
+        FlatbufferDataPair<NSVulnerabilityScanner::RemediationInfo> remediations {};
+        m_databaseFeedManager->getVulnerabilityRemediation(callbackData.cveId()->str(), remediations);
+
+        if (remediations.data == nullptr || remediations.data->updates() == nullptr ||
+            remediations.data->updates()->size() == 0)
+        {
+            return false;
+        }
+
+        // Check that the agent has remediation data.
+        auto agentRemediations = TRemediationDataCache::instance().getRemediationData(contextData->agentId().data());
+        if (agentRemediations.hotfixes.empty())
+        {
+            logDebug2(
+                WM_VULNSCAN_LOGTAG, "No remediations for agent '%s' have been found.", contextData->agentId().data());
+
+            return false;
+        }
+
+        for (const auto& remediation : *(remediations.data->updates()))
+        {
+            // Check if the remediation is installed on the agent.
+            if (agentRemediations.hotfixes.count(remediation->str()) != 0)
+            {
+                logDebug2(WM_VULNSCAN_LOGTAG,
+                          "Remediation '%s' for package '%s' on agent '%s' that solves CVE '%s' has been found.",
+                          remediation->str().c_str(),
+                          package.name.c_str(),
+                          contextData->agentId().data(),
+                          callbackData.cveId()->str().c_str());
+
+                contextData->m_elements.erase(callbackData.cveId()->str());
+                contextData->m_matchConditions.erase(callbackData.cveId()->str());
+                return true;
+            }
+        }
+
+        logDebug2(WM_VULNSCAN_LOGTAG,
+                  "No remediation for package '%s' on agent '%s' that solves CVE '%s' has been found.",
+                  package.name.c_str(),
+                  contextData->agentId().data(),
+                  callbackData.cveId()->str().c_str());
+
+        return false;
+    }
+
+    void packageScan(const std::shared_ptr<TScanContext>& data, const std::string& CNAValue)
+    {
+        auto vulnerabilityScan = [&](const std::string& cnaName,
+                                     const PackageData& package,
+                                     const NSVulnerabilityScanner::ScanVulnerabilityCandidate& callbackData)
+        {
+            try
+            {
+                // We don't override the vulnerability if it was detected before.
+                auto cveId = callbackData.cveId()->str();
+                if (data->m_elements.find(cveId) != data->m_elements.end())
+                {
+                    logDebug1(WM_VULNSCAN_LOGTAG,
+                              "CVE '%s' already found by a higher priority CNA. Skipping.",
+                              cveId.c_str());
+                    return true;
+                }
+
+                /* Preliminary verifications before version matching. We return if the basic conditions are not met. */
+
+                // If the candidate contains platforms, verify if agent OS is in the list.
+                if (!platformVerify(package, callbackData, data))
+                {
+                    return false;
+                }
+
+                // If the candidate contains a vendor, verify if package vendor matches.
+                if (!vendorVerify(package, callbackData))
+                {
+                    return false;
+                }
+
+                /* Real version analysis of the candidate. */
+                if (versionMatch(package, callbackData, data))
+                {
+                    data->m_cnaDetectionSource[cveId] = cnaName;
+
+                    // The candidate version matches the package. Post-match filtering.
+                    if (data->osPlatform().compare("windows") == 0)
+                    {
+                        if (packageHotfixSolved(package, callbackData, data))
+                        {
+                            // An installed hotfix solves the vulnerability.
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+
+                /* The candidate for this CVE is discarded. */
+                return false;
+            }
+            catch (const std::exception& e)
+            {
+                // Log the warning and continue with the next vulnerability.
+                logDebug1(WM_VULNSCAN_LOGTAG,
+                          "Failed to scan package: '%s', CVE Numbering Authorities (CNA): '%s', Error: '%s'",
+                          package.name.c_str(),
+                          cnaName.c_str(),
+                          e.what());
+
+                return false;
+            }
+        };
+
+        try
+        {
+            // Grouping all package related data in one single structure
+            PackageData package = {.name = data->packageName().data(),
+                                   .vendor = data->packageVendor().data(),
+                                   .format = data->packageFormat().data(),
+                                   .version = data->packageVersion().data()};
+
+            if (!scanPackageTranslation(CNAValue, package, data, vulnerabilityScan))
+            {
+                package.name = Utils::toLowerCase(std::string(data->packageName()));
+                package.vendor = Utils::toLowerCase(std::string(data->packageVendor()));
+
+                logDebug1(WM_VULNSCAN_LOGTAG,
+                          "Initiating a vulnerability scan for package '%s' (%s) (%s) with CVE Numbering "
+                          "Authorities (CNA) "
+                          "'%s' on Agent "
+                          "'%s' (ID: '%s', Version: '%s').",
+                          package.name.c_str(),
+                          package.format.c_str(),
+                          package.vendor.c_str(),
+                          CNAValue.c_str(),
+                          data->agentName().data(),
+                          data->agentId().data(),
+                          data->agentVersion().data());
+
+                m_databaseFeedManager->getVulnerabilitiesCandidates(CNAValue, package, vulnerabilityScan);
+            }
+        }
+        catch (const std::exception& e)
+        {
+            logWarn(WM_VULNSCAN_LOGTAG,
+                    "Failed to scan package: '%s', CVE Numbering Authorities (CNA): '%s', Error: '%s'.",
+                    data->packageName().data(),
+                    CNAValue.c_str(),
+                    e.what());
+        }
+    }
+
+public:
+    // LCOV_EXCL_START
+    /**
+     * @brief PackageScanner constructor.
+     *
+     * @param databaseFeedManager Database feed manager.
+     */
+    explicit TPackageScanner(std::shared_ptr<TDatabaseFeedManager>& databaseFeedManager)
+        : m_databaseFeedManager(databaseFeedManager)
+    {
+    }
+    // LCOV_EXCL_STOP
+
+    /**
+     * @brief Handles request and passes control to the next step of the chain.
+     *
+     * @param data Scan context.
+     * @return std::shared_ptr<TScanContext> Abstract handler.
+     */
+    std::shared_ptr<TScanContext> handleRequest(std::shared_ptr<TScanContext> data) override
+    {
+        data->m_vulnerabilitySource = getCNA(data);
+
+        const auto& CNAValue = data->m_vulnerabilitySource.second;
+
+        if (DEFAULT_CNA != CNAValue)
+        {
+            packageScan(data, CNAValue);
+        }
+        else
+        {
+            // If the default CNA is used, we verify the CNA priority array
+            if (TGlobalData::instance().vendorMaps().contains(ADP_DEFAULT_ARRAY_KEY))
+            {
+                auto& defaultCNAsArray = TGlobalData::instance().vendorMaps().at(ADP_DEFAULT_ARRAY_KEY);
+
+                for (const nlohmann::json& cna : defaultCNAsArray)
+                {
+                    logDebug2(WM_VULNSCAN_LOGTAG, "Using CNA '%s' from CNA array.", cna.get<std::string>().c_str());
+                    packageScan(data, cna);
+                }
+            }
+            else
+            {
+                logDebug2(WM_VULNSCAN_LOGTAG, "No CNA array found, using default CNA '%s'.", DEFAULT_CNA);
+                packageScan(data, DEFAULT_CNA);
+            }
+        }
+
+        // Vulnerability scan ended for agent and package...
+        logDebug1(WM_VULNSCAN_LOGTAG,
+                  "Vulnerability scan for package '%s' on Agent '%s' has completed.",
+                  data->packageName().data(),
+                  data->agentId().data());
+
+        if (data->m_elements.empty())
+        {
+            return nullptr;
+        }
+        return AbstractHandler<std::shared_ptr<TScanContext>>::handleRequest(std::move(data));
+    }
+};
+
+using PackageScanner = TPackageScanner<>;
+
+#endif // _PACKAGE_SCANNER_HPP

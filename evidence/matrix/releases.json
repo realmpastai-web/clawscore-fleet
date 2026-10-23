@@ -1,0 +1,832 @@
+{
+  "count": 118,
+  "feed_newest": "2026-09-11",
+  "releases": [
+    {
+      "files": 9706,
+      "published": "2026-01-30T04:49:17.280Z",
+      "sha256": "e6d895a668c0f3a482ff835edfedbc2607426ecbe08b66c0e47a95e5feb82e68",
+      "tarball": "openclaw-2026.1.29.tgz",
+      "version": "2026.1.29"
+    },
+    {
+      "files": 4607,
+      "published": "2026-01-31T13:11:58.089Z",
+      "sha256": "01225c50375ed369613da55c33f27fcaf25aced98e16b76a1560dfe49cc47b86",
+      "tarball": "openclaw-2026.1.30.tgz",
+      "version": "2026.1.30"
+    },
+    {
+      "files": 9449,
+      "published": "2026-02-02T11:45:27.606Z",
+      "sha256": "eb737fb5ea4f771ed11b3870ff0e72fc978b723f944382fd16c7844b8d69ea03",
+      "tarball": "openclaw-2026.2.1.tgz",
+      "version": "2026.2.1"
+    },
+    {
+      "files": 6812,
+      "published": "2026-02-04T00:56:41.932Z",
+      "sha256": "5fd6f18cb53c68a80f86224f340066307bd57fbde36da301ca433b4bf069a746",
+      "tarball": "openclaw-2026.2.2.tgz",
+      "version": "2026.2.2"
+    },
+    {
+      "files": 8688,
+      "published": "2026-02-04T01:27:05.304Z",
+      "sha256": "f7d632cc8f7dde99ee7c8b24c7104fb3344b64ae5bee9d169094b7ef5dc3c5bd",
+      "tarball": "openclaw-2026.2.2-1.tgz",
+      "version": "2026.2.2-1"
+    },
+    {
+      "files": 8688,
+      "published": "2026-02-04T01:32:47.566Z",
+      "sha256": "e2ee5b5a8f4f9d7c07b6969c7e8bce1235c6ae260301858c503f43ddaa2d4c90",
+      "tarball": "openclaw-2026.2.2-2.tgz",
+      "version": "2026.2.2-2"
+    },
+    {
+      "files": 8690,
+      "published": "2026-02-04T02:07:15.985Z",
+      "sha256": "a0e4862c4e56a8386d7c030121ae300c7bff1a4b76d4f8a48b5444998d169f38",
+      "tarball": "openclaw-2026.2.2-3.tgz",
+      "version": "2026.2.2-3"
+    },
+    {
+      "files": 8700,
+      "published": "2026-02-05T01:38:27.585Z",
+      "sha256": "dd334859ae5e921fb91897ba76090899a2dbdc4482cd4f05af904f300785f7d6",
+      "tarball": "openclaw-2026.2.3.tgz",
+      "version": "2026.2.3"
+    },
+    {
+      "files": 8699,
+      "published": "2026-02-05T07:58:05.642Z",
+      "sha256": "c149cb63e1bee395c6d52c8dd377d9fd398a25434e584b95409eb4c09afcefc6",
+      "tarball": "openclaw-2026.2.3-1.tgz",
+      "version": "2026.2.3-1"
+    },
+    {
+      "files": 6798,
+      "published": "2026-02-07T01:50:47.396Z",
+      "sha256": "9cb13c65c1c6e7bf1057014a90c91408515f4b9a9684a621d2f4bb4205212943",
+      "tarball": "openclaw-2026.2.6.tgz",
+      "version": "2026.2.6"
+    },
+    {
+      "files": 7843,
+      "published": "2026-02-07T06:58:31.167Z",
+      "sha256": "508a4abffc59b34e7321346d445cb966ae9a13548165c49826ce04e7befd6a3a",
+      "tarball": "openclaw-2026.2.6-1.tgz",
+      "version": "2026.2.6-1"
+    },
+    {
+      "files": 7844,
+      "published": "2026-02-07T08:33:28.417Z",
+      "sha256": "f9fae17fcc8465ab5af4308d413473c20f21bd34e383f5e8eae9198b98f58341",
+      "tarball": "openclaw-2026.2.6-2.tgz",
+      "version": "2026.2.6-2"
+    },
+    {
+      "files": 7844,
+      "published": "2026-02-07T08:46:48.158Z",
+      "sha256": "cc33111738dd7ad770d10e3bbaa088287a2a57b5308f12a74ba2fdbb65684c93",
+      "tarball": "openclaw-2026.2.6-3.tgz",
+      "version": "2026.2.6-3"
+    },
+    {
+      "files": 2786,
+      "published": "2026-02-09T19:01:11.300Z",
+      "sha256": "0f7c67bd47dd2b84679ef35a741fabcea1f06daab7f5d98d6db0f9cbf45de80d",
+      "tarball": "openclaw-2026.2.9.tgz",
+      "version": "2026.2.9"
+    },
+    {
+      "files": 4767,
+      "published": "2026-02-13T01:53:22.639Z",
+      "sha256": "0adafbffc20a4db8e6e4e1f51c6363fdf5a510b811dded7a752788740a31a8ba",
+      "tarball": "openclaw-2026.2.12.tgz",
+      "version": "2026.2.12"
+    },
+    {
+      "files": 5017,
+      "published": "2026-02-14T03:20:08.219Z",
+      "sha256": "52a6d49b5dbfffd20ed8540dac438bc234c96cd5a59ab9c012e1a63b017198c8",
+      "tarball": "openclaw-2026.2.13.tgz",
+      "version": "2026.2.13"
+    },
+    {
+      "files": 5147,
+      "published": "2026-02-15T02:59:48.267Z",
+      "sha256": "eecbf4565a1e71df1e2f6c9dceaf0192d59fd11b59fa68ffc5cadfea546db7ef",
+      "tarball": "openclaw-2026.2.14.tgz",
+      "version": "2026.2.14"
+    },
+    {
+      "files": 5466,
+      "published": "2026-02-16T03:56:42.422Z",
+      "sha256": "653a3f32ac8beeb38da77a763851694ff96146433234170c590584842e0a985a",
+      "tarball": "openclaw-2026.2.15.tgz",
+      "version": "2026.2.15"
+    },
+    {
+      "files": 5618,
+      "published": "2026-02-18T02:47:54.422Z",
+      "sha256": "42e083bfa6ba27b5ca5ceff256d26396542b7f5c4ba41fa5fef3b8387d2aa811",
+      "tarball": "openclaw-2026.2.17.tgz",
+      "version": "2026.2.17"
+    },
+    {
+      "files": 7676,
+      "published": "2026-02-19T16:05:33.610Z",
+      "sha256": "412fd15121f20ce7638b16db2d7dba309d675850c054b4be50fecc84eb6bfc91",
+      "tarball": "openclaw-2026.2.19.tgz",
+      "version": "2026.2.19"
+    },
+    {
+      "files": 7676,
+      "published": "2026-02-19T16:48:15.099Z",
+      "sha256": "e5b763447d594572365c4de5b87f825f7b049af2bb4947ec64227ef1279252ff",
+      "tarball": "openclaw-2026.2.19-1.tgz",
+      "version": "2026.2.19-1"
+    },
+    {
+      "files": 7676,
+      "published": "2026-02-19T17:02:05.631Z",
+      "sha256": "296cc537462a2ff0b9b2a3c4b7c5083171a13523c4c3ba82ca10ef1c5b915c71",
+      "tarball": "openclaw-2026.2.19-2.tgz",
+      "version": "2026.2.19-2"
+    },
+    {
+      "files": 7811,
+      "published": "2026-02-21T16:02:01.230Z",
+      "sha256": "1c537ca6a3dced57645c99b8e141794f5e08108b6e06c62682bbe1ffd0a5524c",
+      "tarball": "openclaw-2026.2.21.tgz",
+      "version": "2026.2.21"
+    },
+    {
+      "files": 7811,
+      "published": "2026-02-21T16:42:58.440Z",
+      "sha256": "8b2a37bf57d84defe5267f5e05022089b18f5ca6e7b937d357239f9f6f11fdb8",
+      "tarball": "openclaw-2026.2.21-1.tgz",
+      "version": "2026.2.21-1"
+    },
+    {
+      "files": 9791,
+      "published": "2026-02-21T17:10:33.153Z",
+      "sha256": "d328f8c98b89c8bce06196407f5eeaeb687d7e51c5332daafb30e775ca45b2bd",
+      "tarball": "openclaw-2026.2.21-2.tgz",
+      "version": "2026.2.21-2"
+    },
+    {
+      "files": 7920,
+      "published": "2026-02-23T00:36:27.582Z",
+      "sha256": "f2b310fa8359b317a6a5679caae287942eb81604be0140a634433c27c12080ed",
+      "tarball": "openclaw-2026.2.22.tgz",
+      "version": "2026.2.22"
+    },
+    {
+      "files": 9902,
+      "published": "2026-02-23T01:04:08.398Z",
+      "sha256": "0ff84471c87a91a740f18589e22a1dc8def856fb6d695274aafe17e6f14a388a",
+      "tarball": "openclaw-2026.2.22-1.tgz",
+      "version": "2026.2.22-1"
+    },
+    {
+      "files": 9902,
+      "published": "2026-02-23T01:19:21.625Z",
+      "sha256": "d799b7d7f8dc344d1cf2d8307305325346a304f36679ad9a1d5a3f2492118fa2",
+      "tarball": "openclaw-2026.2.22-2.tgz",
+      "version": "2026.2.22-2"
+    },
+    {
+      "files": 9943,
+      "published": "2026-02-24T05:40:17.896Z",
+      "sha256": "26053f73fcd87f87e7bbd1562a835f3b6ae4a0205b931b8455ae0ecc5a59369e",
+      "tarball": "openclaw-2026.2.23.tgz",
+      "version": "2026.2.23"
+    },
+    {
+      "files": 7950,
+      "published": "2026-02-25T02:50:19.980Z",
+      "sha256": "0f31d79c8ca77a5af9758834067e51bb8c9ce4e513c60b839ef577db66d1aff2",
+      "tarball": "openclaw-2026.2.24.tgz",
+      "version": "2026.2.24"
+    },
+    {
+      "files": 10007,
+      "published": "2026-02-26T04:16:34.010Z",
+      "sha256": "9012376acf5a95daba7e86485453bffc623b42927d7c878ab367a73236b3f8b4",
+      "tarball": "openclaw-2026.2.25.tgz",
+      "version": "2026.2.25"
+    },
+    {
+      "files": 10125,
+      "published": "2026-02-26T23:59:10.915Z",
+      "sha256": "b021c79864a673e86598f49ab3ad37c73ef923e54fb9b2feb9daf46ce5d3e860",
+      "tarball": "openclaw-2026.2.26.tgz",
+      "version": "2026.2.26"
+    },
+    {
+      "files": 10248,
+      "published": "2026-03-02T04:50:50.547Z",
+      "sha256": "c4851a440981d67b7fe40fe578e09735bdfbb8d5744ee8bf4481eb861e01f618",
+      "tarball": "openclaw-2026.3.1.tgz",
+      "version": "2026.3.1"
+    },
+    {
+      "files": 10592,
+      "published": "2026-03-03T04:36:54.843Z",
+      "sha256": "3ec99c93003725c3afb3d8c3236f7fb7054647d151dc27b9e0256e00372f31b7",
+      "tarball": "openclaw-2026.3.2.tgz",
+      "version": "2026.3.2"
+    },
+    {
+      "files": 11390,
+      "published": "2026-03-08T05:46:01.183Z",
+      "sha256": "a4cea9b802d9677dedc083cb3cf388fab00e6aa05dee56195ec1dbf02fbe5da7",
+      "tarball": "openclaw-2026.3.7.tgz",
+      "version": "2026.3.7"
+    },
+    {
+      "files": 9390,
+      "published": "2026-03-09T07:44:44.237Z",
+      "sha256": "71cfdc82141c008d82acdaef1af6382ec43769f20e021ed22429ddf885ba6909",
+      "tarball": "openclaw-2026.3.8.tgz",
+      "version": "2026.3.8"
+    },
+    {
+      "files": 9202,
+      "published": "2026-03-12T05:05:47.469Z",
+      "sha256": "4c6641bac62ce2ccb86d8df2d0252dc2a4769fe3ddca12c1f1ee1013ebd65dba",
+      "tarball": "openclaw-2026.3.11.tgz",
+      "version": "2026.3.11"
+    },
+    {
+      "files": 5278,
+      "published": "2026-03-13T04:13:28.358Z",
+      "sha256": "2ee324fc0d378deb13cf24be16a3996aec35e27f44d1a58ba9a1ded3afce3d37",
+      "tarball": "openclaw-2026.3.12.tgz",
+      "version": "2026.3.12"
+    },
+    {
+      "files": 4730,
+      "published": "2026-03-14T05:36:38.206Z",
+      "sha256": "6711d9f8c4f12bdbdcd5090e6865e2ee141b8cda3eaa8f20259304406a20e96a",
+      "tarball": "openclaw-2026.3.13.tgz",
+      "version": "2026.3.13"
+    },
+    {
+      "files": 14076,
+      "published": "2026-03-23T11:10:33.721Z",
+      "sha256": "b5fd94116f8dd7b689cc3ab1e8470abd50b15d5ac0649c8c3b21d34f3f248b87",
+      "tarball": "openclaw-2026.3.22.tgz",
+      "version": "2026.3.22"
+    },
+    {
+      "files": 14646,
+      "published": "2026-03-23T23:15:44.243Z",
+      "sha256": "c70ede6bf0d876d0b0ece35e88be6d2026d4a91498b71c5d44138d5818bca456",
+      "tarball": "openclaw-2026.3.23.tgz",
+      "version": "2026.3.23"
+    },
+    {
+      "files": 14931,
+      "published": "2026-03-24T00:44:11.918Z",
+      "sha256": "bb9ec8b7fd8b84e916b6ea8e9019705ce7bc8d6bf05ea6d6a635210f5618ad0f",
+      "tarball": "openclaw-2026.3.23-1.tgz",
+      "version": "2026.3.23-1"
+    },
+    {
+      "files": 14954,
+      "published": "2026-03-24T03:09:17.478Z",
+      "sha256": "6bcb1f60fd12772a5c55befe90288a289c6b97fbefdfed744ce63e4bca8598ef",
+      "tarball": "openclaw-2026.3.23-2.tgz",
+      "version": "2026.3.23-2"
+    },
+    {
+      "files": 14950,
+      "published": "2026-03-25T16:57:13.942Z",
+      "sha256": "e4079634e040f0f098eb1963360975645a8954c87161c531f0c1d52a2f5f5429",
+      "tarball": "openclaw-2026.3.24.tgz",
+      "version": "2026.3.24"
+    },
+    {
+      "files": 19887,
+      "published": "2026-03-29T02:02:57.581Z",
+      "sha256": "fd709a39f5d14c02f773f37e18aabc0f5180c3737b26f71efa90b06dafc3edc2",
+      "tarball": "openclaw-2026.3.28.tgz",
+      "version": "2026.3.28"
+    },
+    {
+      "files": 21037,
+      "published": "2026-03-31T21:28:37.089Z",
+      "sha256": "638a14e096cbd22c57e77f17f1bfb7055acfd1ca039e4b03ebf4ef65daf628e1",
+      "tarball": "openclaw-2026.3.31.tgz",
+      "version": "2026.3.31"
+    },
+    {
+      "files": 21148,
+      "published": "2026-04-01T17:29:53.692Z",
+      "sha256": "41ffe85b4f3dfe9666132153614e8d1dae7f3220b82ad59d9bd5796f71d8ae50",
+      "tarball": "openclaw-2026.4.1.tgz",
+      "version": "2026.4.1"
+    },
+    {
+      "files": 21256,
+      "published": "2026-04-02T19:02:03.564Z",
+      "sha256": "b5b5c86a5cffc0e94d70cff775c79510d905fef0ccaab264fc2b1edbed5e9f70",
+      "tarball": "openclaw-2026.4.2.tgz",
+      "version": "2026.4.2"
+    },
+    {
+      "files": 24698,
+      "published": "2026-04-06T03:34:53.357Z",
+      "sha256": "df1e57a5f95b6968f5ac0bdcafc5f970178c04f4af85779a50ca88487743d0d5",
+      "tarball": "openclaw-2026.4.5.tgz",
+      "version": "2026.4.5"
+    },
+    {
+      "files": 27295,
+      "published": "2026-04-08T02:24:55.744Z",
+      "sha256": "0eb1856cf473eb3f95b50bb20b0c10953203de68fb07e4f7bd23b6b85c3d0b42",
+      "tarball": "openclaw-2026.4.7.tgz",
+      "version": "2026.4.7"
+    },
+    {
+      "files": 27301,
+      "published": "2026-04-08T04:24:00.961Z",
+      "sha256": "78eb7c6069c51efbf97fdb74c94e17d6bd9e488acaa0e7b6b7fb38665441539b",
+      "tarball": "openclaw-2026.4.7-1.tgz",
+      "version": "2026.4.7-1"
+    },
+    {
+      "files": 27301,
+      "published": "2026-04-08T05:18:48.421Z",
+      "sha256": "b242bd1200d63a8b133136503af159f3d97d9e390234550f768159b0ab783011",
+      "tarball": "openclaw-2026.4.8.tgz",
+      "version": "2026.4.8"
+    },
+    {
+      "files": 26179,
+      "published": "2026-04-09T02:41:36.405Z",
+      "sha256": "aae282abf8aa388b10baf32732c64eb3f56c976ae8f74f136563aadb50dc4bd0",
+      "tarball": "openclaw-2026.4.9.tgz",
+      "version": "2026.4.9"
+    },
+    {
+      "files": 25724,
+      "published": "2026-04-11T03:26:40.180Z",
+      "sha256": "d40b21336076969b57d5c420dc896ba81f073467684aa03fb59f4a9e9f4ecef5",
+      "tarball": "openclaw-2026.4.10.tgz",
+      "version": "2026.4.10"
+    },
+    {
+      "files": 25873,
+      "published": "2026-04-12T00:41:39.867Z",
+      "sha256": "95fdabf7a4cfdd2cff5490eff3a237efc63f95ba9b971c9eba40e067115bc0e6",
+      "tarball": "openclaw-2026.4.11.tgz",
+      "version": "2026.4.11"
+    },
+    {
+      "files": 27823,
+      "published": "2026-04-13T12:51:25.897Z",
+      "sha256": "74f903f1d2abe8be3ac5c79498024961459606c4c86601c1cc8dc9a5811a4850",
+      "tarball": "openclaw-2026.4.12.tgz",
+      "version": "2026.4.12"
+    },
+    {
+      "files": 24425,
+      "published": "2026-04-14T13:13:36.097Z",
+      "sha256": "b7b641d4e4bdfa9dcb6fba934d452e963ea3c6d3128dcd8cd46a092a74c33cba",
+      "tarball": "openclaw-2026.4.14.tgz",
+      "version": "2026.4.14"
+    },
+    {
+      "files": 7379,
+      "published": "2026-04-16T22:11:23.282Z",
+      "sha256": "8c95f77538130c77967c970da4744786c4d5b773937b8208f622efb4cf0d2564",
+      "tarball": "openclaw-2026.4.15.tgz",
+      "version": "2026.4.15"
+    },
+    {
+      "files": 7231,
+      "published": "2026-04-21T19:58:49.993Z",
+      "sha256": "ba599fa11b7d057a6cf80ffb62b84c9a8b999a7e949764827bd921650a090f3c",
+      "tarball": "openclaw-2026.4.20.tgz",
+      "version": "2026.4.20"
+    },
+    {
+      "files": 7231,
+      "published": "2026-04-22T02:44:33.765Z",
+      "sha256": "4c0a43cd712e66dab146d5b25551cd24ca10b6c75a6218c05365f6dd292bffb2",
+      "tarball": "openclaw-2026.4.21.tgz",
+      "version": "2026.4.21"
+    },
+    {
+      "files": 7457,
+      "published": "2026-04-23T14:21:23.543Z",
+      "sha256": "5c055f30846666a42ab509650538f55a1c0e5193f1cca5f9d28bf012d0f6c04e",
+      "tarball": "openclaw-2026.4.22.tgz",
+      "version": "2026.4.22"
+    },
+    {
+      "files": 7532,
+      "published": "2026-04-24T16:30:05.632Z",
+      "sha256": "f733232008e9768e31b1017b999e391ee27e5e756117944ad5b0120547ad366c",
+      "tarball": "openclaw-2026.4.23.tgz",
+      "version": "2026.4.23"
+    },
+    {
+      "files": 7730,
+      "published": "2026-04-25T18:11:19.840Z",
+      "sha256": "8f4a0f598a041732eeb5180a4af48ea371c79fcb178ea6206fbd2370766360e7",
+      "tarball": "openclaw-2026.4.24.tgz",
+      "version": "2026.4.24"
+    },
+    {
+      "files": 8844,
+      "published": "2026-04-27T12:12:04.469Z",
+      "sha256": "a31f43b6cdafd21f67fd84c20997a7e067795cdaf1442865383a90c453c9a23d",
+      "tarball": "openclaw-2026.4.25.tgz",
+      "version": "2026.4.25"
+    },
+    {
+      "files": 9084,
+      "published": "2026-04-28T01:32:04.075Z",
+      "sha256": "a1c0b9d417003b302d6c63bfc93d015784ad4b6a4a1360d1814ee1f5928ce3b4",
+      "tarball": "openclaw-2026.4.26.tgz",
+      "version": "2026.4.26"
+    },
+    {
+      "files": 9186,
+      "published": "2026-04-29T22:28:04.240Z",
+      "sha256": "a45fb32d94caa1cf52a48a9a71701b63f58ca8f375094031000bfabe01231c0a",
+      "tarball": "openclaw-2026.4.27.tgz",
+      "version": "2026.4.27"
+    },
+    {
+      "files": 9309,
+      "published": "2026-04-30T20:54:49.247Z",
+      "sha256": "7b813d9ec7913d10962a4736d0bdfb9d9a7759184a5bde9ea96c984079018aab",
+      "tarball": "openclaw-2026.4.29.tgz",
+      "version": "2026.4.29"
+    },
+    {
+      "files": 9882,
+      "published": "2026-05-03T00:24:51.497Z",
+      "sha256": "f0efe516eb29ac04d07985d974061f381b1ff0374ba3cfb0caf15209bbfea130",
+      "tarball": "openclaw-2026.5.2.tgz",
+      "version": "2026.5.2"
+    },
+    {
+      "files": 9185,
+      "published": "2026-05-04T07:46:24.298Z",
+      "sha256": "a96fb8499e75a18f4251287b202f3172e0bb1f4305163b9f913832fcafcd2c1e",
+      "tarball": "openclaw-2026.5.3.tgz",
+      "version": "2026.5.3"
+    },
+    {
+      "files": 9280,
+      "published": "2026-05-04T09:34:57.121Z",
+      "sha256": "031ffcde7cbe4cf3895b9d8d993fdae62c02b675d2e646d339453fc2549e4d87",
+      "tarball": "openclaw-2026.5.3-1.tgz",
+      "version": "2026.5.3-1"
+    },
+    {
+      "files": 9692,
+      "published": "2026-05-05T08:11:28.661Z",
+      "sha256": "a843f2ab3823a9216ce4f9f4ae09d69466a1b1544dbc3a027af0567ab6b52e90",
+      "tarball": "openclaw-2026.5.4.tgz",
+      "version": "2026.5.4"
+    },
+    {
+      "files": 9705,
+      "published": "2026-05-06T08:46:22.905Z",
+      "sha256": "c349de6b98d0fac388b0201c039238f6f1f782bb2d1a27cf01480940a3f64d56",
+      "tarball": "openclaw-2026.5.5.tgz",
+      "version": "2026.5.5"
+    },
+    {
+      "files": 9706,
+      "published": "2026-05-06T17:33:28.172Z",
+      "sha256": "3f8f42181f0fbc99fc17420de002a1e28c73cd643dbb4bdbc4faf63f4a46dbce",
+      "tarball": "openclaw-2026.5.6.tgz",
+      "version": "2026.5.6"
+    },
+    {
+      "files": 9708,
+      "published": "2026-05-07T20:38:57.626Z",
+      "sha256": "1fe195d8e3928062cfaf7f9ef616670cde25b35ea9631fcae5f8aaf8be2986fd",
+      "tarball": "openclaw-2026.5.7.tgz",
+      "version": "2026.5.7"
+    },
+    {
+      "files": 12035,
+      "published": "2026-05-14T18:26:44.431Z",
+      "sha256": "1cae4d1d4132e5fd548478ab3ad3c578627a9c78e37e67379dde7659c674bf1e",
+      "tarball": "openclaw-2026.5.12.tgz",
+      "version": "2026.5.12"
+    },
+    {
+      "files": 12292,
+      "published": "2026-05-18T18:53:48.330Z",
+      "sha256": "12223d7ac9dbe90c47c55a57f23854123655463063190f2c5b1293f16fe9e3aa",
+      "tarball": "openclaw-2026.5.18.tgz",
+      "version": "2026.5.18"
+    },
+    {
+      "files": 12314,
+      "published": "2026-05-20T20:20:41.341Z",
+      "sha256": "fc2e773418c8e909345034d78f04f85290c38f79fb7237e7a00e003c19b60f13",
+      "tarball": "openclaw-2026.5.19.tgz",
+      "version": "2026.5.19"
+    },
+    {
+      "files": 12377,
+      "published": "2026-05-21T20:41:31.699Z",
+      "sha256": "28ceb8330cb00354572c23fddacb1544dc661a330d4562f280a3ff72b0108f63",
+      "tarball": "openclaw-2026.5.20.tgz",
+      "version": "2026.5.20"
+    },
+    {
+      "files": 12386,
+      "published": "2026-05-24T03:20:32.592Z",
+      "sha256": "273322e7e131093ce25ed04ab13f38598b4dee64d8fa427e5caf1a1485bb957b",
+      "tarball": "openclaw-2026.5.22.tgz",
+      "version": "2026.5.22"
+    },
+    {
+      "files": 12576,
+      "published": "2026-05-27T12:38:41.427Z",
+      "sha256": "40784b514e5e0e3a82b4da484ca6574b8cfc28575a6643371a5f5e878ead3e62",
+      "tarball": "openclaw-2026.5.26.tgz",
+      "version": "2026.5.26"
+    },
+    {
+      "files": 12509,
+      "published": "2026-05-28T11:41:30.934Z",
+      "sha256": "cfdc32b25c9b097c47afed049ca38378c62e4508eaa6e4e82dd0f913164ea499",
+      "tarball": "openclaw-2026.5.27.tgz",
+      "version": "2026.5.27"
+    },
+    {
+      "files": 9082,
+      "published": "2026-05-30T20:05:56.431Z",
+      "sha256": "2f67aa242bfdd58fd1bcd3fea46df12531fb34b3c6987d98982b2020d0e4f905",
+      "tarball": "openclaw-2026.5.28.tgz",
+      "version": "2026.5.28"
+    },
+    {
+      "files": 9441,
+      "published": "2026-06-03T19:35:05.903Z",
+      "sha256": "e43ec41fd810c147775baa42692a2eb110e5233abb67534901c727866369a4bb",
+      "tarball": "openclaw-2026.6.1.tgz",
+      "version": "2026.6.1"
+    },
+    {
+      "files": 9491,
+      "published": "2026-06-09T18:12:49.010Z",
+      "sha256": "95efb5ed8a177068324c1ed83f891df446c936637096b89f32a496cc7e411540",
+      "tarball": "openclaw-2026.6.5.tgz",
+      "version": "2026.6.5"
+    },
+    {
+      "files": 9498,
+      "published": "2026-06-12T11:03:39.456Z",
+      "sha256": "dc869bb0486abd9b5e215caaba8c1bea0fb4507660b1dcf9b287e36b1f60bdbb",
+      "tarball": "openclaw-2026.6.6.tgz",
+      "version": "2026.6.6"
+    },
+    {
+      "files": 9533,
+      "published": "2026-06-16T16:27:41.596Z",
+      "sha256": "3200e398b731104fe34e50d198adc45f329b90d0aa944ccb1a912ca53bd44554",
+      "tarball": "openclaw-2026.6.8.tgz",
+      "version": "2026.6.8"
+    },
+    {
+      "files": 9247,
+      "published": "2026-06-21T01:37:53.047Z",
+      "sha256": "581c61d9cfef2dd0235508fef68293d07b8f56e3f22728633c2c5229a3322596",
+      "tarball": "openclaw-2026.6.9.tgz",
+      "version": "2026.6.9"
+    },
+    {
+      "files": 9257,
+      "published": "2026-06-24T03:01:21.544Z",
+      "sha256": "263d6b0d7f5fa6f772e58e3413979484549540397722dd51230d8522e94e3202",
+      "tarball": "openclaw-2026.6.10.tgz",
+      "version": "2026.6.10"
+    },
+    {
+      "files": 8944,
+      "published": "2026-06-30T16:04:00.916Z",
+      "sha256": "3b3165508391b82b38e62189979df589a45a2d8019a8ef7910fccc554649ce7b",
+      "tarball": "openclaw-2026.6.11.tgz",
+      "version": "2026.6.11"
+    },
+    {
+      "files": 8945,
+      "published": "2026-07-21T11:25:55.513Z",
+      "sha256": "96880d5a9fe3ef6b3d2ec0ac016e48f99fff7b1af4e22b7c814db6357c163952",
+      "tarball": "openclaw-2026.6.33.tgz",
+      "version": "2026.6.33"
+    },
+    {
+      "files": 8946,
+      "published": "2026-08-04T21:14:03.969Z",
+      "sha256": "d0edcbc937428ce1cb5729e444ea615651c9a8895807653ac2c4ed4e05122fa5",
+      "tarball": "openclaw-2026.6.34.tgz",
+      "version": "2026.6.34"
+    },
+    {
+      "files": 8752,
+      "published": "2026-09-10T04:51:20.511Z",
+      "sha256": "55d4bba7ce27b89e5e08771143dc4237dc1d1faa77a5b948781bdae6432276fc",
+      "tarball": "openclaw-2026.6.35.tgz",
+      "version": "2026.6.35"
+    },
+    {
+      "files": 8550,
+      "published": "2026-07-13T17:58:18.920Z",
+      "sha256": "67ad539d9915efb63d5f294beeb9290b7172d23c92d8052110a9c8355f783458",
+      "tarball": "openclaw-2026.7.1.tgz",
+      "version": "2026.7.1"
+    },
+    {
+      "files": 8550,
+      "published": "2026-07-18T03:25:50.713Z",
+      "sha256": "f18080a221d4e43e0426d60b2c9883a430fdb9bf17b0ba11edad2cb44c1eaade",
+      "tarball": "openclaw-2026.7.1-1.tgz",
+      "version": "2026.7.1-1"
+    },
+    {
+      "files": 8550,
+      "published": "2026-07-18T03:53:48.967Z",
+      "sha256": "5bb525f36f471a41239615d321c441778c7e1c007018ed6d84b795be77803276",
+      "tarball": "openclaw-2026.7.1-2.tgz",
+      "version": "2026.7.1-2"
+    },
+    {
+      "files": 8618,
+      "published": "2026-09-18T05:10:01.893Z",
+      "sha256": "740862004c7110f0b0e0fdcd650bf52906707d3c28a113e54664e32b2853fac7",
+      "tarball": "openclaw-2026.7.33.tgz",
+      "version": "2026.7.33"
+    },
+    {
+      "files": 8618,
+      "published": "2026-09-20T02:52:05.465Z",
+      "sha256": "7334d821c07686b1ef4413fbdc4bcb06f184f3f0cee04d55729b2a8ed238abfc",
+      "tarball": "openclaw-2026.7.34.tgz",
+      "version": "2026.7.34"
+    },
+    {
+      "files": 8617,
+      "published": "2026-09-21T12:16:02.348Z",
+      "sha256": "615d1da0cd6a93e64c253b8f975cf77d6c2d3e4512180b2c406dd4460505066a",
+      "tarball": "openclaw-2026.7.35.tgz",
+      "version": "2026.7.35"
+    },
+    {
+      "files": 11104,
+      "published": "2026-08-31T02:45:39.923Z",
+      "sha256": "43c4b1f81afcd50244c85bcb5686fa6e39f0da6a5941735811b58064b7e0ca10",
+      "tarball": "openclaw-2026.8.1.tgz",
+      "version": "2026.8.1"
+    },
+    {
+      "files": 11184,
+      "published": "2026-09-01T16:19:50.535Z",
+      "sha256": "20e9c2f16742dfcebfb21504e51067d31e000a19577126ff4fab117e5e87dbe2",
+      "tarball": "openclaw-2026.8.2.tgz",
+      "version": "2026.8.2"
+    },
+    {
+      "files": 11166,
+      "published": "2026-09-28T22:37:47.204Z",
+      "sha256": "7d5f81f19b49272d81730344f609b2e408c904764dd6b0568f3d7c30040888de",
+      "tarball": "openclaw-2026.8.33.tgz",
+      "version": "2026.8.33"
+    },
+    {
+      "files": 11184,
+      "published": "2026-10-01T20:28:57.660Z",
+      "sha256": "39e80e7d2952362317d431f62c6d9fecff3b48e2de26482078378b6d6ba05f1f",
+      "tarball": "openclaw-2026.8.34.tgz",
+      "version": "2026.8.34"
+    },
+    {
+      "files": 11184,
+      "published": "2026-10-02T13:20:17.208Z",
+      "sha256": "e268aa06b67f2c9bd73c41dde69ac8de13cff4d71031e107b29f9385895c0ec4",
+      "tarball": "openclaw-2026.8.35.tgz",
+      "version": "2026.8.35"
+    },
+    {
+      "files": 9422,
+      "published": "2026-09-03T18:03:45.738Z",
+      "sha256": "1bfcac877d53f1e41b69d15c24e081895b2f07d6ff2ffdfe0bf8a7336ab00e59",
+      "tarball": "openclaw-2026.9.1.tgz",
+      "version": "2026.9.1"
+    },
+    {
+      "files": 9707,
+      "published": "2026-09-05T19:13:07.937Z",
+      "sha256": "3431f4cd2d8dbd6b936def2694ac27e19fa0256295cf4ada0f652ecf1c9ee520",
+      "tarball": "openclaw-2026.9.2.tgz",
+      "version": "2026.9.2"
+    },
+    {
+      "files": 9997,
+      "published": "2026-09-08T13:06:36.195Z",
+      "sha256": "d1c63366833f8ae4a6ab4f3b60b1aa84ca82d03dba13d3d3eba989aa159e2449",
+      "tarball": "openclaw-2026.9.3.tgz",
+      "version": "2026.9.3"
+    },
+    {
+      "files": 10616,
+      "published": "2026-09-11T02:44:59.212Z",
+      "sha256": "4f1f656770461d4677dea755b1899cba12b912b06798c89a59e2f0c18688b761",
+      "tarball": "openclaw-2026.9.4.tgz",
+      "version": "2026.9.4"
+    },
+    {
+      "files": 11428,
+      "published": "2026-09-19T01:14:57.889Z",
+      "sha256": "1fb6ef4fae447af14f1e3b1028334f39146d181a66a4cce2848d4f741c636340",
+      "tarball": "openclaw-2026.9.5.tgz",
+      "version": "2026.9.5"
+    },
+    {
+      "files": 12583,
+      "published": "2026-09-23T23:07:43.684Z",
+      "sha256": "1a7355691bc0e605222ba818f1f72c1787253c78dfeb0df6be2086ec73b71e63",
+      "tarball": "openclaw-2026.9.6.tgz",
+      "version": "2026.9.6"
+    },
+    {
+      "files": 13281,
+      "published": "2026-09-30T03:38:09.894Z",
+      "sha256": "1b4746d9dfe1768e73da849e824172140f1a71b6edde3f7625f70477a73f83f7",
+      "tarball": "openclaw-2026.9.7.tgz",
+      "version": "2026.9.7"
+    },
+    {
+      "files": 13320,
+      "published": "2026-10-03T02:08:46.095Z",
+      "sha256": "317e0a58db32b386e01187fe9c5c4de541f4ce6d815657bf79a102609b81752a",
+      "tarball": "openclaw-2026.9.8.tgz",
+      "version": "2026.9.8"
+    },
+    {
+      "files": 13396,
+      "published": "2026-10-08T09:38:01.687Z",
+      "sha256": "a46df5fc5e4d73837d5b3eeebc286e64a85dffc429c30f3a07f6398e2a9423f7",
+      "tarball": "openclaw-2026.9.9.tgz",
+      "version": "2026.9.9"
+    },
+    {
+      "files": 13453,
+      "published": "2026-10-15T10:05:43.246Z",
+      "sha256": "66062ac2acd2720bdc76a3560ac1565660daed37f97ae7d4f37e7a2d7ac04287",
+      "tarball": "openclaw-2026.9.33.tgz",
+      "version": "2026.9.33"
+    },
+    {
+      "files": 13834,
+      "published": "2026-10-10T22:45:05.897Z",
+      "sha256": "6af9925274c60309763e1c6c9bcc9afcc3c59775c0ac4c403fe5460fe0190136",
+      "tarball": "openclaw-2026.10.1.tgz",
+      "version": "2026.10.1"
+    },
+    {
+      "files": 13889,
+      "published": "2026-10-12T05:28:25.059Z",
+      "sha256": "d1c979c9ff6c5fb600a4582a7d777e0ef5264f5a570d2e822323a8c508d744fe",
+      "tarball": "openclaw-2026.10.2.tgz",
+      "version": "2026.10.2"
+    },
+    {
+      "files": 13937,
+      "published": "2026-10-13T13:43:36.600Z",
+      "sha256": "761685d010d96645d1deabe19299ecde263eac3f2489a17322f48c461a1130a5",
+      "tarball": "openclaw-2026.10.3.tgz",
+      "version": "2026.10.3"
+    },
+    {
+      "files": 13985,
+      "published": "2026-10-15T23:58:28.695Z",
+      "sha256": "0a41c2ed708abc812498de58d71d058dde322700488d6e8062c7c070dfdca6dc",
+      "tarball": "openclaw-2026.10.4.tgz",
+      "version": "2026.10.4"
+    },
+    {
+      "files": 13982,
+      "published": "2026-10-18T21:16:43.569Z",
+      "sha256": "dbb1bdcf2346292e25f672822b6a9928c234909abe6fee0df5fc4556e769d40e",
+      "tarball": "openclaw-2026.10.5.tgz",
+      "version": "2026.10.5"
+    }
+  ]
+}

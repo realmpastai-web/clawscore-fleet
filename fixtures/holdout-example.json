@@ -1,0 +1,33 @@
+{
+  "salt": "example-fixture-not-sealed",
+  "feed_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034",
+  "installs": [
+    {
+      "id": "hold-01",
+      "version": "2026.1.29",
+      "stripped": "removed",
+      "false_version": null,
+      "auto_approve": true,
+      "credentials": ["OPENAI_API_KEY"],
+      "mcp_servers": ["github"]
+    },
+    {
+      "id": "hold-02",
+      "version": "2026.4.22",
+      "stripped": "none",
+      "false_version": null,
+      "auto_approve": false,
+      "credentials": ["AWS_ACCESS_KEY_ID", "SLACK_BOT_TOKEN"],
+      "mcp_servers": ["filesystem", "slack"]
+    },
+    {
+      "id": "hold-03",
+      "version": "2026.10.4",
+      "stripped": "false-version",
+      "false_version": "2026.4.15",
+      "auto_approve": true,
+      "credentials": [],
+      "mcp_servers": []
+    }
+  ]
+}

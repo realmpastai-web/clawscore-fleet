@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nAgent cron tool could reach operator command jobs. In affected versions, a model-visible agent caller could read and force-run ownerless command cron jobs routed to the same agent even though command cron was reserved for operator administration.\n\nThis advisory is scoped to the model-tool versus operator-admin boundary. It does not claim arbitrary command construction: the affected caller could inspect or replay an existing operator-authored command job.\n\n### Impact\n\nA lower-trust message capable of steering an agent with the cron tool could read a matching command job's stored environment and force-run that job while disabled or before it was due. Practical impact depended on the secrets and commands the operator had placed in existing jobs.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, remove the cron tool from lower-trust agents and avoid storing sensitive environment values in ownerless command jobs.",
+  "id": "GHSA-hpg5-cq3m-phqp",
+  "modified": "2026-09-11T00:58:20Z",
+  "published": "2026-09-11T00:58:20Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-hpg5-cq3m-phqp"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Agent cron tool could reach operator command jobs"
+}

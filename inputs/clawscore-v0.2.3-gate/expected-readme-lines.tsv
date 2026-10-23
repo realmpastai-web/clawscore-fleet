@@ -1,0 +1,14 @@
+UNPROVEN	Export file format (CSV or XLSX), header spelling in the file, column order, date format, encoding. Learn says only "select Export to download the list" (C09).
+UNPROVEN	How Defender formats an OpenClaw Version string, e.g. "2026.4.22" vs "v2026.4.22".
+UNPROVEN	Agent name | string, "OpenClaw" for our rows | C01; the Name value "OpenClaw", vendor "OpenClaw Foundation" (C27, support matrix) | documented; the cell type is UNPROVEN
+UNPROVEN	Version | string | C01 "The discovered agent, and the version installed." | documented; format UNPROVEN
+UNPROVEN	Device ID | string | C02 | documented; format UNPROVEN
+UNPROVEN	OS platform | string (Windows, macOS) | C02 | documented; value set UNPROVEN
+UNPROVEN	Device type | string | C02 | documented; value set UNPROVEN
+UNPROVEN	Risk indicators | string list, e.g. "Running on a Critical Device" | C05 | documented; list separator UNPROVEN
+UNPROVEN	Recommendations | string | C06 | documented; cell format (count vs names) UNPROVEN
+UNPROVEN	First seen | datetime | C08 | documented; format UNPROVEN, so emit ISO 8601 UTC
+UNPROVEN	PublishedStatus | string: Draft or Published | C18 | documented; value for local agents UNPROVEN
+UNPROVEN	relatedProcess string (C23); OpenClaw's process name is UNPROVEN
+CONFLICT	AgentId | CONFLICT: schema says string (C14 page) vs discover says guid (C13) | emit a GUID string | flag in README
+CONFLICT	Name / AgentName | CONFLICT: discover lists Name (C16), schema lists AgentName (C15) | emit both keys, same value | flag in README

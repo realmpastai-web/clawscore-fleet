@@ -1,0 +1,520 @@
+lab: clawscore-fleet
+patch_boundary: 2026.4.22
+versions:
+- 2026.1.29
+- 2026.2.14
+- 2026.3.28
+- 2026.4.7-1
+- 2026.4.8
+- 2026.4.15
+- 2026.4.20
+- 2026.4.21
+- 2026.4.22
+- 2026.4.23
+- 2026.10.4
+installs:
+- id: claw-01
+  version: 2026.1.29
+  work_dir: /srv/agents/claw-01
+  state_dir: /srv/agents/claw-01/.openclaw
+  install_root: /srv/agents/claw-01/node_modules/openclaw
+  stripped: removed
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials: []
+  mcp_servers: []
+  mcp_config_count: 0
+  agent365_version: ''
+- id: claw-02
+  version: 2026.1.29
+  work_dir: /workspace/claw-02
+  state_dir: /workspace/claw-02/.openclaw
+  install_root: /workspace/claw-02/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials: []
+  mcp_servers:
+  - github
+  mcp_config_count: 1
+  agent365_version: 2026.1.29
+- id: claw-03
+  version: 2026.1.29
+  work_dir: /app/claw-03
+  state_dir: /app/claw-03/.openclaw
+  install_root: /app/claw-03/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials: []
+  mcp_servers:
+  - github
+  - slack
+  mcp_config_count: 2
+  agent365_version: 2026.10.4
+- id: claw-04
+  version: 2026.2.14
+  work_dir: /var/lib/claw/claw-04
+  state_dir: /var/lib/claw/claw-04/.openclaw
+  install_root: /var/lib/claw/claw-04/node_modules/openclaw
+  stripped: false-version
+  false_version: 2026.10.4
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials: []
+  mcp_servers:
+  - filesystem
+  - github
+  - slack
+  mcp_config_count: 3
+  agent365_version: 2026.2.14
+- id: claw-05
+  version: 2026.2.14
+  work_dir: /opt/apps/claw-05
+  state_dir: /opt/apps/claw-05/.openclaw
+  install_root: /opt/apps/claw-05/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials:
+  - GITHUB_PERSONAL_ACCESS_TOKEN
+  mcp_servers: []
+  mcp_config_count: 0
+  agent365_version: 2026.2.14
+- id: claw-06
+  version: 2026.2.14
+  work_dir: /home/node/work/claw-06
+  state_dir: /home/node/work/claw-06/.openclaw
+  install_root: /home/node/work/claw-06/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials:
+  - OPENAI_API_KEY
+  mcp_servers:
+  - github
+  mcp_config_count: 1
+  agent365_version: ''
+- id: claw-07
+  version: 2026.3.28
+  work_dir: /srv/agents/claw-07
+  state_dir: /srv/agents/claw-07/.openclaw
+  install_root: /srv/agents/claw-07/node_modules/openclaw
+  stripped: removed
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials:
+  - SLACK_BOT_TOKEN
+  mcp_servers:
+  - github
+  - slack
+  mcp_config_count: 2
+  agent365_version: 2026.3.28
+- id: claw-08
+  version: 2026.3.28
+  work_dir: /workspace/claw-08
+  state_dir: /workspace/claw-08/.openclaw
+  install_root: /workspace/claw-08/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials:
+  - STRIPE_SECRET_KEY
+  mcp_servers:
+  - filesystem
+  - github
+  - slack
+  mcp_config_count: 3
+  agent365_version: 2026.10.4
+- id: claw-09
+  version: 2026.3.28
+  work_dir: /app/claw-09
+  state_dir: /app/claw-09/.openclaw
+  install_root: /app/claw-09/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials:
+  - ANTHROPIC_API_KEY
+  - AWS_ACCESS_KEY_ID
+  mcp_servers: []
+  mcp_config_count: 0
+  agent365_version: 2026.3.28
+- id: claw-10
+  version: 2026.4.7-1
+  work_dir: /var/lib/claw/claw-10
+  state_dir: /var/lib/claw/claw-10/.openclaw
+  install_root: /var/lib/claw/claw-10/node_modules/openclaw
+  stripped: false-version
+  false_version: 2026.4.22
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials:
+  - AWS_ACCESS_KEY_ID
+  - AWS_SECRET_ACCESS_KEY
+  mcp_servers:
+  - github
+  mcp_config_count: 1
+  agent365_version: 2026.4.7-1
+- id: claw-11
+  version: 2026.4.7-1
+  work_dir: /opt/apps/claw-11
+  state_dir: /opt/apps/claw-11/.openclaw
+  install_root: /opt/apps/claw-11/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials:
+  - AWS_SECRET_ACCESS_KEY
+  - DISCORD_BOT_TOKEN
+  mcp_servers:
+  - github
+  - slack
+  mcp_config_count: 2
+  agent365_version: ''
+- id: claw-12
+  version: 2026.4.8
+  work_dir: /home/node/work/claw-12
+  state_dir: /home/node/work/claw-12/.openclaw
+  install_root: /home/node/work/claw-12/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials:
+  - DISCORD_BOT_TOKEN
+  - GITHUB_PERSONAL_ACCESS_TOKEN
+  mcp_servers:
+  - filesystem
+  - github
+  - slack
+  mcp_config_count: 3
+  agent365_version: 2026.4.8
+- id: claw-13
+  version: 2026.4.8
+  work_dir: /srv/agents/claw-13
+  state_dir: /srv/agents/claw-13/.openclaw
+  install_root: /srv/agents/claw-13/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials:
+  - GITHUB_PERSONAL_ACCESS_TOKEN
+  - OPENAI_API_KEY
+  - SLACK_BOT_TOKEN
+  mcp_servers: []
+  mcp_config_count: 0
+  agent365_version: 2026.10.4
+- id: claw-14
+  version: 2026.4.15
+  work_dir: /workspace/claw-14
+  state_dir: /workspace/claw-14/.openclaw
+  install_root: /workspace/claw-14/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials:
+  - OPENAI_API_KEY
+  - SLACK_BOT_TOKEN
+  - STRIPE_SECRET_KEY
+  mcp_servers:
+  - github
+  mcp_config_count: 1
+  agent365_version: 2026.4.15
+- id: claw-15
+  version: 2026.4.15
+  work_dir: /app/claw-15
+  state_dir: /app/claw-15/.openclaw
+  install_root: /app/claw-15/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials:
+  - ANTHROPIC_API_KEY
+  - SLACK_BOT_TOKEN
+  - STRIPE_SECRET_KEY
+  mcp_servers:
+  - github
+  - slack
+  mcp_config_count: 2
+  agent365_version: 2026.4.15
+- id: claw-16
+  version: 2026.4.15
+  work_dir: /var/lib/claw/claw-16
+  state_dir: /var/lib/claw/claw-16/.openclaw
+  install_root: /var/lib/claw/claw-16/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials:
+  - ANTHROPIC_API_KEY
+  - AWS_ACCESS_KEY_ID
+  - STRIPE_SECRET_KEY
+  mcp_servers:
+  - filesystem
+  - github
+  - slack
+  mcp_config_count: 3
+  agent365_version: ''
+- id: claw-17
+  version: 2026.4.20
+  work_dir: /opt/apps/claw-17
+  state_dir: /opt/apps/claw-17/.openclaw
+  install_root: /opt/apps/claw-17/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials: []
+  mcp_servers: []
+  mcp_config_count: 0
+  agent365_version: 2026.4.20
+- id: claw-18
+  version: 2026.4.20
+  work_dir: /home/node/work/claw-18
+  state_dir: /home/node/work/claw-18/.openclaw
+  install_root: /home/node/work/claw-18/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials: []
+  mcp_servers:
+  - github
+  mcp_config_count: 1
+  agent365_version: 2026.10.4
+- id: claw-19
+  version: 2026.4.20
+  work_dir: /srv/agents/claw-19
+  state_dir: /srv/agents/claw-19/.openclaw
+  install_root: /srv/agents/claw-19/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials: []
+  mcp_servers:
+  - github
+  - slack
+  mcp_config_count: 2
+  agent365_version: 2026.4.20
+- id: claw-20
+  version: 2026.4.21
+  work_dir: /workspace/claw-20
+  state_dir: /workspace/claw-20/.openclaw
+  install_root: /workspace/claw-20/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials: []
+  mcp_servers:
+  - filesystem
+  - github
+  - slack
+  mcp_config_count: 3
+  agent365_version: 2026.4.21
+- id: claw-21
+  version: 2026.4.21
+  work_dir: /app/claw-21
+  state_dir: /app/claw-21/.openclaw
+  install_root: /app/claw-21/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials:
+  - GITHUB_PERSONAL_ACCESS_TOKEN
+  mcp_servers: []
+  mcp_config_count: 0
+  agent365_version: ''
+- id: claw-22
+  version: 2026.4.21
+  work_dir: /var/lib/claw/claw-22
+  state_dir: /var/lib/claw/claw-22/.openclaw
+  install_root: /var/lib/claw/claw-22/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials:
+  - OPENAI_API_KEY
+  mcp_servers:
+  - github
+  mcp_config_count: 1
+  agent365_version: 2026.4.21
+- id: claw-23
+  version: 2026.4.22
+  work_dir: /opt/apps/claw-23
+  state_dir: /opt/apps/claw-23/.openclaw
+  install_root: /opt/apps/claw-23/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials:
+  - SLACK_BOT_TOKEN
+  mcp_servers:
+  - github
+  - slack
+  mcp_config_count: 2
+  agent365_version: 2026.10.4
+- id: claw-24
+  version: 2026.4.22
+  work_dir: /home/node/work/claw-24
+  state_dir: /home/node/work/claw-24/.openclaw
+  install_root: /home/node/work/claw-24/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials:
+  - STRIPE_SECRET_KEY
+  mcp_servers:
+  - filesystem
+  - github
+  - slack
+  mcp_config_count: 3
+  agent365_version: 2026.4.22
+- id: claw-25
+  version: 2026.4.22
+  work_dir: /srv/agents/claw-25
+  state_dir: /srv/agents/claw-25/.openclaw
+  install_root: /srv/agents/claw-25/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials:
+  - ANTHROPIC_API_KEY
+  - AWS_ACCESS_KEY_ID
+  mcp_servers: []
+  mcp_config_count: 0
+  agent365_version: 2026.4.22
+- id: claw-26
+  version: 2026.4.23
+  work_dir: /workspace/claw-26
+  state_dir: /workspace/claw-26/.openclaw
+  install_root: /workspace/claw-26/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials:
+  - AWS_ACCESS_KEY_ID
+  - AWS_SECRET_ACCESS_KEY
+  mcp_servers:
+  - github
+  mcp_config_count: 1
+  agent365_version: ''
+- id: claw-27
+  version: 2026.4.23
+  work_dir: /app/claw-27
+  state_dir: /app/claw-27/.openclaw
+  install_root: /app/claw-27/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials:
+  - AWS_SECRET_ACCESS_KEY
+  - DISCORD_BOT_TOKEN
+  mcp_servers:
+  - github
+  - slack
+  mcp_config_count: 2
+  agent365_version: 2026.4.23
+- id: claw-28
+  version: 2026.10.4
+  work_dir: /var/lib/claw/claw-28
+  state_dir: /var/lib/claw/claw-28/.openclaw
+  install_root: /var/lib/claw/claw-28/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials:
+  - DISCORD_BOT_TOKEN
+  - GITHUB_PERSONAL_ACCESS_TOKEN
+  mcp_servers:
+  - filesystem
+  - github
+  - slack
+  mcp_config_count: 3
+  agent365_version: 2026.4.15
+- id: claw-29
+  version: 2026.10.4
+  work_dir: /opt/apps/claw-29
+  state_dir: /opt/apps/claw-29/.openclaw
+  install_root: /opt/apps/claw-29/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: true
+  user: root
+  process: sleep
+  credentials:
+  - GITHUB_PERSONAL_ACCESS_TOKEN
+  - OPENAI_API_KEY
+  - SLACK_BOT_TOKEN
+  mcp_servers: []
+  mcp_config_count: 0
+  agent365_version: 2026.10.4
+- id: claw-30
+  version: 2026.10.4
+  work_dir: /home/node/work/claw-30
+  state_dir: /home/node/work/claw-30/.openclaw
+  install_root: /home/node/work/claw-30/node_modules/openclaw
+  stripped: none
+  false_version: null
+  auto_approve: false
+  user: root
+  process: sleep
+  credentials:
+  - OPENAI_API_KEY
+  - SLACK_BOT_TOKEN
+  - STRIPE_SECRET_KEY
+  mcp_servers:
+  - github
+  mcp_config_count: 1
+  agent365_version: 2026.10.4

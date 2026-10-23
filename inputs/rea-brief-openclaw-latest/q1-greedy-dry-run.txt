@@ -1,0 +1,11 @@
+Dry-run of clawscore_fleet.build_fingerprints greedy on matrix listings, then with listing-2026.10.5.json merged. No db.json write.
+runtime base_files ['dist/abort.runtime.js'] n 72 unresolved 1
+runtime plus_files ['dist/abort.runtime.js'] n 73 unresolved 1
+files_same True groups_same True
+buildstamp base_files ['dist/.buildstamp'] n 6 unresolved 0
+buildstamp plus_files ['dist/.buildstamp'] n 6 unresolved 0
+files_same True groups_same True
+early base_files ['dist/build-info.json'] n 39 unresolved 0
+early plus_files ['dist/build-info.json'] n 39 unresolved 0
+files_same True groups_same True
+unresolved runtime group on the current db fingerprint-set.json: [["2026.4.7-1", "2026.4.8"]]

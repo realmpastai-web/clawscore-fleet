@@ -1,0 +1,55 @@
+CURSOR TASK: clawscore-fleet - reader-ready written report generator, proved on a sealed holdout
+
+Repo: realmpastai-web/clawscore-fleet. Branch feat/written-report from main AFTER fix/pkg-match is merged; record that base SHA in the PR body.
+Static only. Never run openclaw. The lab keeps --ignore-scripts and the sleep process. No new network calls in tests.
+Brief: commit Hark's bundle (report-brief.tgz) under inputs/rea-brief-sample-report/ EXCEPT sealed/ (Hark keeps sealed/). Use git add -f for *.log/*.txt if they are ignored. Verify with sha256sum -c SHA256SUMS.
+
+BUILD
+B1. clawscore_fleet/report.py: python3 -m clawscore_fleet.report --scan evidence/scan.json --out evidence/report/
+    Writes report-data.json and report.md, deterministically: same input gives byte-identical output.
+    report-data.json fields:
+      - header: fleet, observed_at, feed_newest, feed_sha256, tool_commit, rule.
+      - installs[]: id, verdict, version, candidates, files_read, matched_files, advisories[] {ghsa_id, url = https://github.com/advisories/<id>, severity, applies_to}, critical, high, advisory_count, advisory_note, credential_names, credential_sources, auto_approve, mcp_servers.
+      - fix_order: patch list with min_clear_release, and rotate list ordered by reach.
+    report.md sections:
+      1. Header.
+      2. Fleet summary table.
+      3. Fix order.
+      4. Per-install detail: crit and high advisories inline; the full id list in an appendix.
+      5. Method and limits: the claim-boundary wording, "credential reach is lab-tested only", "Agent 365 comparison is a local mock", and a citation of inputs/rea-narrower-gap/CLAIMS.md.
+    Wording:
+      - Use "matches N published advisories (C critical, H high) as of <feed_newest>".
+      - With zero matches, write exactly "no published advisory as of <feed_newest>".
+      - Never write: safe, not vulnerable, secure(d/s), no vulnerabilities, clean, protected, guarantee, risk-free, fully patched, immune.
+    Range installs: list the union across the candidates, and set applies_to when an id covers only some of them.
+B2. Optional: report.pdf via pandoc if available. Record its hash, but do not gate on it.
+B3. Holdout lab mode: python3 fleet/gen_lab.py --holdout <manifest.json> --out fleet-holdout/
+    - Separate compose and plants; the main lab must stay byte-identical.
+    - Manifest schema: {salt, feed_sha256, installs:[{id, version, stripped: none|removed|false-version, false_version, auto_approve, credentials:[pool names], mcp_servers:[filesystem|github|slack]}]}
+    - Fixture for tests: fixtures/holdout-example.json, built from 3 LAB versions only.
+    - Make targets: holdout-lab-up, holdout-scan, holdout-report, holdout-lab-down. holdout-report refuses to run on a dirty tree, and prints git rev-parse HEAD.
+B4. Run on the public 30-install lab: evidence/report/sample-report.md plus report-data.json, added to evidence/SHA256SUMS. This is the sample we can show readers.
+
+ACCEPTANCE (at the PR head)
+A1. Oracle agreement. For every lab install, the advisory ids in report-data.json equal Hark's oracle (inputs/rea-brief-sample-report/oracle.py, sha256 82e0033a...02bf6) run on evidence/landscape/ghsa-all.json (sha256 27b020df...46034) for its candidates (union for a range). Range claw-10..13 = 222. Log this to evidence/report/oracle-check.log, 30/30.
+A2. Scorer on the lab. Build a lab key with the same schema as Hark's key (from manifest.yaml + oracle.py) and run score_holdout.py on it, the lab report-data.json, report.md and fleet/secrets-pool.json. RESULT PASS. Log to evidence/report/lab-score.log.
+A3. Determinism: run report twice; cmp gives byte-identical report-data.json and report.md.
+A4. Provenance: test_report_numbers. Every integer and every GHSA id in report.md appears in report-data.json. Mutating one advisory_count in the data changes report.md (test asserts).
+A5. Mutants, each must fail a named test; save the logs to evidence/report/mutants.log:
+    (a) zero-advisory note changed to "No known vulnerabilities" -> banned-word test fails;
+    (b) range rendered as candidates[0] only -> A1 fails;
+    (c) credential value printed instead of name -> leak test fails;
+    (d) the npm ecosystem filter removed -> A1 fails for claw-01..06, because GHSA-2j9j (swift) and GHSA-mmpf (other) reappear on 2026.1.29 and 2026.2.14.
+A6. Main lab files (fleet/compose.yaml, plants/, manifest.yaml) unchanged; fixtures/holdout-example.json builds a 3-install fleet-holdout/.
+A7. pytest all passed; make verify-offline all gates true; sha256sum -c evidence/SHA256SUMS OK; CI green on push and pull_request.
+
+HOLDOUT (after merge, on the team box with Docker)
+H1. Post the merge SHA G. Hark then reveals holdout-manifest.json (sha256 91b22f52bcccf0fd8e242b5c13e178c5f83a252bdab35f54e911b653d6b619fd).
+H2. At G with a clean tree: make holdout-lab-up MANIFEST=..., then make holdout-scan, make holdout-report, make holdout-lab-down.
+H3. Return report-data.json, report.md, the scan and lab logs, git rev-parse HEAD and SHA256SUMS. Do not edit outputs.
+H4. Hark reveals holdout-key.json (sha256 d3d9c9ef449c0df8dbf30f1cda3a946da1343c2076cba544d5adbd982c1b6b28) and runs score_holdout.py. Pass = RESULT PASS on all checks. A fail is reported with the failing lines, not patched and re-run at the same G.
+
+SKEPTIC (answer in the PR body, with file evidence)
+S1. grep -niE for the banned list over evidence/report/*.md: 0 hits, with the output pasted.
+S2. Does any v2 figure (722, 134, 75, 58, 2026-09-11, 2026.10.5) appear in the report with a different value? List each occurrence and its data field.
+S3. Which statements in report.md rest on the local Agent 365 mock rather than published schema? Each must say so in the same sentence.

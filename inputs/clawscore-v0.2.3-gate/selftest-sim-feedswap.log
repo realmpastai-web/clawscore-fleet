@@ -1,0 +1,43 @@
+FAIL	G0.release	release='0.2.1' (want '0.2.3')
+FAIL	G0.base	base=None (want 58d4925)
+PASS	G0.base_checkout	second arg is main @ 58d4925 (release 0.2.1)
+PASS	G1.sha.ghsa-all.json	evidence/landscape/ghsa-all.json c66f072b01ef (want c66f072b01ef)
+PASS	G1.sha.versions.json	evidence/landscape/versions.json 6e2b3ff8619d (want 6e2b3ff8619d)
+PASS	G1.sha.version-vulns.json	evidence/landscape/version-vulns.json 556bd11e0d5f (want 556bd11e0d5f)
+PASS	G1.FEED_NEWEST	versions.py FEED_NEWEST='2026-09-11'
+PASS	G1.no_xx9p_gap	GHSA-xx9p-hc9w-6p5h in pinned feed
+PASS	G1.landscape_sums	sha256sum -c evidence/landscape/SHA256SUMS
+FAIL	G2.landscape_hashes	{'total_advisories': 760, 'with_cve_id': 452, 'without_cve_id': 308, 'without_cve_id_critical_or_high': 110} want {'total_advisories': 894, 'with_cve_id': 459, 'without_cve_id': 435, 'without_cve_id_critical_or_high': 176}
+FAIL	G2.freshness	freshness.feed_newest='2026-07-02'
+FAIL	G3.feed_check_log	comparison='newer' newest_date='2026-09-11' pinned_date='2026-07-02'
+FAIL	G3.feed_check_gate	gates.feed_check_same={}
+PASS	G4.ref_ranges	869 ranges, 190 unique, 264 comparators, unparsed=[]
+PASS	G4.space_and_set	space-AND ranges ['>= 2026.2.26 < 2026.7.1', '>= 2026.3.22 < 2026.4.5', '>= 2026.4.10 < 2026.7.1', '>= 2026.5.1 < 2026.7.1', '>=2026.2.9 <=2026.2.19-2']
+FAIL	G4.hark_key_total	hark_key None: versions ['2026.5.19-alpha.1'] of 278, bounds ['2.0.0-beta3'] of 99
+FAIL	G4.key_order_equals_ref	project hark_key order == regen_v023 key order over 296 versions+bounds
+FAIL	G4.prerelease_order	alpha.1 < beta.2 < release < -1; beta3 == beta.3
+FAIL	G4.in_range_equals_ref	project in_range != reference on 664 of 52820 pairs; first [('2026.1.29', '>= 2.0.0-beta3, < 2026.2.12'), ('2026.1.29', '>= 2.0.0-beta3, <= 2026.2.13'), ('2026.1.29-beta.1', '>= 2.0.0-beta3, < 2026.2.12')]
+FAIL	G5.semver_crosscheck	{'semver': '7.8.5', 'decisions': 39476, 'disagreements': 5267, 'unexplained': 0} want {'semver': '7.8.5', 'decisions': 52820, 'disagreements': 65, 'unexplained': 0}
+FAIL	G5.gate.semver_comma_normalized	gates.semver_comma_normalized.pass=None
+FAIL	G5.gate.prerelease_order	gates.prerelease_order.pass=None
+FAIL	G5.no_grammar_label	'hark-grammar' lines in semver-crosscheck.log: 737
+PASS	G5.npm_xcheck_ref	semver 7.8.5 versions 278 ranges 190 decisions 52820 disagreements 65 post_release_suffix 65 other 0
+FAIL	G5.v022_repro_log	evidence/v0.2.2-repro.log has all 32 frozen sections 1-4 lines; missing ['== 1. v0.2 log re-judged (5,267 DISAGREE lines, commas stripped, includePrerelease=true)', 'agree_after_norm\t5236', 'agree_was_grammar\t719']
+PASS	G6.stable	117 stable releases
+FAIL	G6.cve_map_header	advisory_count=760 with_cve_id=452 feed_newest=2026-07-02
+FAIL	G6.cve_map_versions	13/117 versions == reference; bad [('2026.1.29', 'ghsa_ids', 712, 786), ('2026.1.30', 'ghsa_ids', 711, 785), ('2026.2.1', 'ghsa_ids', 705, 779), ('2026.2.2', 'ghsa_ids', 697, 771)]
+FAIL	G6.v2026_1_29	2026.1.29 {'advisories': 712, 'critical': 23, 'high': 254, 'medium': 363, 'low': 72}
+FAIL	G6.fix_target	fix_target {'min_clearing_version': '2026.5.27', 'focus_version': '2026.4.22', 'advisories': 101, 'critical': 1, 'high': 53, 'medium': 35, 'low': 12}; fixorder.min_clearing_version='2026.5.27'
+PASS	G6.cve_mapping	cve_mapping={'diff_lines': 0, 'pass': True}
+FAIL	G7.vectors	exception AttributeError: module 'clawscore_fleet.export_defender' has no attribute 'escape_cell'
+FAIL	G7.planted_row	planted-row.csv found []; byte-equal to planted-row.expected.csv
+PASS	G7.export_cells	402 text cells: escape(unescape(cell)) == cell and no bare danger start; bad []
+FAIL	G7.export_cs_shared	(cs_fix_target, cs_feed_newest) = {('2026.5.27', '2026-07-02')}
+FAIL	G7.export_ghsa_ref	exact-verdict rows whose cs_ghsa_ids != reference: ['claw-01', 'claw-02', 'claw-03', 'claw-04', 'claw-05'] of 26
+FAIL	G7.gate	gates.csv_escape=None
+PASS	G8.unchanged_gates	14/14 gates identical to main; differ []
+PASS	G8.all_gates_pass	failing gates []
+PASS	G8.v021_schema_checks	27/27 gate_v021 checks PASS; not passing []
+REPORT	G8.v021_feed_driven	{'G0.release': 'PASS', 'G5.landscape_hashes': 'PASS', 'G5.cve_mapping': 'PASS', 'G5.semver_crosscheck': 'PASS', 'G5.freshness': 'PASS', 'G5.fix_target': 'PASS', 'G5.ok': 'PASS', 'G6.readme_lines': 'PASS'}
+REPORT	G8.new_gates	[]
+SUMMARY pass=16 fail=24 report=2 failed=['G0.release', 'G0.base', 'G2.landscape_hashes', 'G2.freshness', 'G3.feed_check_log', 'G3.feed_check_gate', 'G4.hark_key_total', 'G4.key_order_equals_ref', 'G4.prerelease_order', 'G4.in_range_equals_ref', 'G5.semver_crosscheck', 'G5.gate.semver_comma_normalized', 'G5.gate.prerelease_order', 'G5.no_grammar_label', 'G5.v022_repro_log', 'G6.cve_map_header', 'G6.cve_map_versions', 'G6.v2026_1_29', 'G6.fix_target', 'G7.vectors', 'G7.planted_row', 'G7.export_cs_shared', 'G7.export_ghsa_ref', 'G7.gate']

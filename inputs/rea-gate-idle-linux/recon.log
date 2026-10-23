@@ -1,0 +1,14 @@
+# rea-gate-idle-linux recon (Hark, 2026-10-18 IST). Static reads of public npm tarballs. No execution, no secret values.
+# Commands: npm pack openclaw@V; tar xzf; sha256sum; grep/jq over package/dist. Source build-info/systemd evidence: /workspace/hark-tasks/invention/rea-openclaw-2026-10-18 (user REA_BRIEF.md) + this reproduction.
+== openclaw@2026.4.15  tgz sha256 8c95f77538130c77967c970da4744786c4d5b773937b8208f622efb4cf0d2564
+dist/build-info.json: {"version":"2026.4.15","commit":"041266a6699cac3baef8ef39db41fa26f29f9db3","builtAt":"2026-04-17 ..."}
+dist/.buildstamp:     {"builtAt":1776377226517,"head":"041266a6699cac3baef8ef39db41fa26f29f9db3"}
+top-level dist/*.js: 2147   unique GHSA ids in CHANGELOG.md: 30
+systemd unit template file: dist/systemd-D3GGnU7N.js   linger file: dist/systemd-linger-fJExCoUb.js
+service name: GATEWAY_SYSTEMD_SERVICE_NAME = "openclaw-gateway"; unit at $HOME/.config/systemd/user/<name>.service; [Install] WantedBy=default.target
+linger: loginctl enable-linger <user>; status read from /var/lib/systemd/linger ; loginctl show-user <user> -p Linger
+credential path templates (names only): ~/.openclaw/openclaw.json, ~/.openclaw/.env, ~/.openclaw/exec-approvals.json, ~/.openclaw/memory/{agentId}.sqlite, ~/.openclaw/workspace/IDENTITY.md
+== openclaw@2026.4.20  tgz sha256 ba599fa11b7d057a6cf80ffb62b84c9a8b999a7e949764827bd921650a090f3c
+dist/build-info.json: {"version":"2026.4.20","commit":"115f05d5952adeaa8043311c24c4b8a3803481ba",...}
+top-level dist/*.js: 2355   unique GHSA ids in CHANGELOG.md: 30
+dirlist diff: top-level dist/*.js names only in 2026.4.15 and not in 2026.4.20 = 1992

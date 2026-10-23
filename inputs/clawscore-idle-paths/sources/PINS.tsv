@@ -1,0 +1,6 @@
+file	url	note
+openclaw-install-cli.sh.txt	https://openclaw.ai/install-cli.sh	fetched 2026-10-18 ~12:35 IST; static read only, never executed; sha256 5eb3038e...9866
+openclaw-install.sh.txt	https://openclaw.ai/install.sh	fetched 2026-10-18 ~12:35 IST; static read only, never executed; sha256 332cf236...71da
+osquery-5.23.1_npm_packages.cpp	https://raw.githubusercontent.com/osquery/osquery/5.23.1/osquery/tables/system/npm_packages.cpp	copy of inputs/rea-linux-inventory-threat (b0c5903)
+wazuh-v4.14.9_sharedDefs.h	https://raw.githubusercontent.com/wazuh/wazuh/v4.14.9/src/data_provider/src/sharedDefs.h	copy of inputs/rea-linux-inventory-threat (b0c5903)
+wazuh-v4.14.9_packagesNPM.hpp	https://raw.githubusercontent.com/wazuh/wazuh/v4.14.9/src/data_provider/src/packages/packagesNPM.hpp	copy of inputs/rea-linux-inventory-threat (b0c5903)

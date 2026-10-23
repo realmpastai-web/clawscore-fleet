@@ -1,0 +1,11 @@
+{
+  "auto_approve": true,
+  "env_names": [],
+  "extra_files": [],
+  "false_version": null,
+  "id": "claw-01",
+  "openclaw_servers": {},
+  "state_dir": "/srv/agents/claw-01/.openclaw",
+  "stripped": "removed",
+  "work_dir": "/srv/agents/claw-01"
+}

@@ -1,0 +1,114 @@
+{
+ "release": "0.2.3",
+ "base": "58d4925c3f83a0fae5ed947bd285cbc3d32f72f7",
+ "sha256": {
+  "evidence/landscape/ghsa-all.json": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034",
+  "evidence/landscape/versions.json": "6e2b3ff8619dba5c5043dafb3944c270623ac15a3991ad30fb9c07e78a11dfda",
+  "evidence/landscape/version-vulns.json": "556bd11e0d5f9fa49ddf8dc1910f24d6f075073e29eafd0e22cd5437097c732c"
+ },
+ "feed_newest": "2026-09-11",
+ "landscape": {
+  "total_advisories": 894,
+  "with_cve_id": 459,
+  "without_cve_id": 435,
+  "without_cve_id_critical_or_high": 176
+ },
+ "ranges": {
+  "advisories_with_openclaw_range": 869,
+  "unique_ranges": 190,
+  "unique_range_comparators": 264,
+  "space_and_ranges": [
+   ">= 2026.2.26 < 2026.7.1",
+   ">= 2026.3.22 < 2026.4.5",
+   ">= 2026.4.10 < 2026.7.1",
+   ">= 2026.5.1 < 2026.7.1",
+   ">=2026.2.9 <=2026.2.19-2"
+  ]
+ },
+ "semver_crosscheck": {
+  "semver": "7.8.5",
+  "decisions": 52820,
+  "disagreements": 65,
+  "unexplained": 0
+ },
+ "stable_releases": 117,
+ "fix_target": {
+  "min_clearing_version": "2026.8.1",
+  "focus_version": "2026.4.22",
+  "advisories": 181,
+  "critical": 1,
+  "high": 100,
+  "medium": 64,
+  "low": 16
+ },
+ "v2026_1_29": {
+  "advisories": 786,
+  "critical": 23,
+  "high": 295,
+  "medium": 390,
+  "low": 78
+ },
+ "csv_vectors": 30,
+ "unchanged_gates_vs_base": [
+  "matrix_coverage",
+  "matrix_exact",
+  "collisions",
+  "dirlist_metric",
+  "version_accuracy",
+  "reads",
+  "stripped",
+  "old_builds",
+  "range_verdicts",
+  "blast_recall",
+  "v01_regression",
+  "export_header",
+  "export_jsonl_schema",
+  "readme_unprovens"
+ ],
+ "v021_checks_must_pass": [
+  "G0.fileA",
+  "G0.fileB",
+  "G1.encoding",
+  "G1.header",
+  "G1.rows",
+  "G1.join",
+  "G1.types",
+  "G2.rows",
+  "G2.keys_types",
+  "G2.join",
+  "G3.values",
+  "G3.range_pair",
+  "G4.cs_gate_trace",
+  "G5.matrix_coverage",
+  "G5.matrix_exact",
+  "G5.collisions",
+  "G5.dirlist_metric",
+  "G5.v01_regression",
+  "G5.lab.reads",
+  "G5.lab.old_builds",
+  "G5.lab.version_accuracy",
+  "G5.lab.range_verdicts",
+  "G5.lab.stripped",
+  "G5.lab.blast_recall",
+  "G7.no_safe",
+  "G7.no_defender_misses",
+  "G7.no_secret_values"
+ ],
+ "v021_checks_feed_driven_allowed_to_fail": [
+  "G0.release",
+  "G5.landscape_hashes",
+  "G5.cve_mapping",
+  "G5.semver_crosscheck",
+  "G5.freshness",
+  "G5.fix_target",
+  "G5.ok",
+  "G6.readme_lines"
+ ],
+ "v021_checks_not_applicable_base_is_main": [
+  "G5.new.export_header",
+  "G5.new.export_jsonl_schema",
+  "G5.new.export_traceable",
+  "G5.new.readme_unprovens"
+ ],
+ "base_verify_report_sha256": "d6c812475f0745d23b0dfbe903d1c13236363eea5d462db215ff183e0249237c"
+}

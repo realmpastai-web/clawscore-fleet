@@ -1,0 +1,38 @@
+{
+  "families": [
+    {
+      "files": [
+        "dist/abort.runtime.js"
+      ],
+      "name": "runtime",
+      "reads": 1,
+      "unresolved": [
+        [
+          "2026.4.7-1",
+          "2026.4.8"
+        ]
+      ],
+      "versions": 73
+    },
+    {
+      "files": [
+        "dist/.buildstamp"
+      ],
+      "name": "buildstamp",
+      "reads": 1,
+      "unresolved": [],
+      "versions": 6
+    },
+    {
+      "files": [
+        "dist/build-info.json"
+      ],
+      "name": "early",
+      "reads": 1,
+      "unresolved": [],
+      "versions": 39
+    }
+  ],
+  "feed_newest": "2026-09-11",
+  "read_limit": 20
+}

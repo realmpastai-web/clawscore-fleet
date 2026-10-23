@@ -1,0 +1,51 @@
+{
+  "auto_approve": false,
+  "env_names": [],
+  "extra_files": [
+    {
+      "format": "mcpServers",
+      "path": "/workspace/claw-08/.mcp.json",
+      "servers": {
+        "slack": {
+          "args": [
+            "-y",
+            "@modelcontextprotocol/server-slack"
+          ],
+          "command": "npx",
+          "env_names": []
+        }
+      }
+    },
+    {
+      "format": "single",
+      "name": "filesystem",
+      "path": "/workspace/claw-08/.openclaw/mcp/extra.json",
+      "server": {
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-filesystem",
+          "/tmp"
+        ],
+        "command": "npx",
+        "env_names": []
+      }
+    }
+  ],
+  "false_version": null,
+  "id": "claw-08",
+  "openclaw_servers": {
+    "github": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "command": "npx",
+      "env_names": [
+        "STRIPE_SECRET_KEY"
+      ]
+    }
+  },
+  "state_dir": "/workspace/claw-08/.openclaw",
+  "stripped": "none",
+  "work_dir": "/workspace/claw-08"
+}

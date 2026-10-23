@@ -1,0 +1,309 @@
+docker compose down
+ Container claw-02  Stopping
+ Container claw-21  Stopping
+ Container claw-03  Stopping
+ Container claw-11  Stopping
+ Container claw-10  Stopping
+ Container claw-20  Stopping
+ Container claw-08  Stopping
+ Container claw-18  Stopping
+ Container claw-17  Stopping
+ Container claw-09  Stopping
+ Container claw-26  Stopping
+ Container claw-25  Stopping
+ Container claw-24  Stopping
+ Container claw-16  Stopping
+ Container claw-19  Stopping
+ Container claw-05  Stopping
+ Container claw-06  Stopping
+ Container claw-22  Stopping
+ Container claw-23  Stopping
+ Container claw-27  Stopping
+ Container claw-01  Stopping
+ Container claw-04  Stopping
+ Container claw-15  Stopping
+ Container claw-29  Stopping
+ Container claw-14  Stopping
+ Container claw-30  Stopping
+ Container claw-13  Stopping
+ Container claw-12  Stopping
+ Container claw-07  Stopping
+ Container claw-28  Stopping
+ Container claw-19  Stopped
+ Container claw-19  Removing
+ Container claw-19  Removed
+ Container claw-14  Stopped
+ Container claw-14  Removing
+ Container claw-14  Removed
+ Container claw-25  Stopped
+ Container claw-25  Removing
+ Container claw-25  Removed
+ Container claw-17  Stopped
+ Container claw-17  Removing
+ Container claw-17  Removed
+ Container claw-20  Stopped
+ Container claw-20  Removing
+ Container claw-20  Removed
+ Container claw-12  Stopped
+ Container claw-12  Removing
+ Container claw-12  Removed
+ Container claw-10  Stopped
+ Container claw-10  Removing
+ Container claw-10  Removed
+ Container claw-02  Stopped
+ Container claw-02  Removing
+ Container claw-02  Removed
+ Container claw-22  Stopped
+ Container claw-22  Removing
+ Container claw-22  Removed
+ Container claw-01  Stopped
+ Container claw-01  Removing
+ Container claw-01  Removed
+ Container claw-03  Stopped
+ Container claw-03  Removing
+ Container claw-03  Removed
+ Container claw-24  Stopped
+ Container claw-24  Removing
+ Container claw-24  Removed
+ Container claw-30  Stopped
+ Container claw-30  Removing
+ Container claw-30  Removed
+ Container claw-26  Stopped
+ Container claw-26  Removing
+ Container claw-26  Removed
+ Container claw-09  Stopped
+ Container claw-09  Removing
+ Container claw-09  Removed
+ Container claw-05  Stopped
+ Container claw-05  Removing
+ Container claw-05  Removed
+ Container claw-27  Stopped
+ Container claw-27  Removing
+ Container claw-27  Removed
+ Container claw-29  Stopped
+ Container claw-29  Removing
+ Container claw-29  Removed
+ Container claw-23  Stopped
+ Container claw-23  Removing
+ Container claw-23  Removed
+ Container claw-15  Stopped
+ Container claw-15  Removing
+ Container claw-15  Removed
+ Container claw-04  Stopped
+ Container claw-04  Removing
+ Container claw-04  Removed
+ Container claw-18  Stopped
+ Container claw-18  Removing
+ Container claw-18  Removed
+ Container claw-07  Stopped
+ Container claw-07  Removing
+ Container claw-07  Removed
+ Container claw-28  Stopped
+ Container claw-28  Removing
+ Container claw-28  Removed
+ Container claw-06  Stopped
+ Container claw-06  Removing
+ Container claw-06  Removed
+ Container claw-16  Stopped
+ Container claw-16  Removing
+ Container claw-16  Removed
+ Container claw-08  Stopped
+ Container claw-08  Removing
+ Container claw-08  Removed
+ Container claw-21  Stopped
+ Container claw-21  Removing
+ Container claw-13  Stopped
+ Container claw-13  Removing
+ Container claw-13  Removed
+ Container claw-21  Removed
+ Container claw-11  Stopped
+ Container claw-11  Removing
+ Container claw-11  Removed
+ Network clawscore-lab  Removing
+ Network clawscore-lab  Removed
+generate lab
+installs 30
+versions {'2026.1.29': 3, '2026.2.14': 3, '2026.3.28': 3, '2026.4.7-1': 2, '2026.4.8': 2, '2026.4.15': 3, '2026.4.20': 3, '2026.4.21': 3, '2026.4.22': 3, '2026.4.23': 2, '2026.10.4': 3}
+planted_credential_rows 42
+vulnerable 27
+blank 6 stale 6
+old_before_2026.3.31 9 months ['2026-01', '2026-02', '2026-03']
+stripped ['claw-01:removed:2026.1.29', 'claw-04:false-version:2026.2.14', 'claw-07:removed:2026.3.28', 'claw-10:false-version:2026.4.7-1']
+docker build -f /workspace/hark-tasks/clawscore-idle-paths-build/fleet/images/Dockerfile.2026.1.29 -t clawscore-openclaw:2026.1.29
+sha256:bad69d98684fbde15f0d65247b1866043eec5ac3b60e024789b0f6c05d2e7023
+docker build -f /workspace/hark-tasks/clawscore-idle-paths-build/fleet/images/Dockerfile.2026.2.14 -t clawscore-openclaw:2026.2.14
+sha256:0556f249de65536cd9c96ee03f047d0ce18a6743d1fdc7463591ecc8b7f0ace0
+docker build -f /workspace/hark-tasks/clawscore-idle-paths-build/fleet/images/Dockerfile.2026.3.28 -t clawscore-openclaw:2026.3.28
+sha256:66d5e431b6a9bfbec74b369d727144ba17dc0e696ac4c1fad7aab9a149f48c69
+docker build -f /workspace/hark-tasks/clawscore-idle-paths-build/fleet/images/Dockerfile.2026.4.7-1 -t clawscore-openclaw:2026.4.7-1
+sha256:551f623461527116cb5c1998a285a249eea569228b8659601d61d230f6044a71
+docker build -f /workspace/hark-tasks/clawscore-idle-paths-build/fleet/images/Dockerfile.2026.4.8 -t clawscore-openclaw:2026.4.8
+sha256:af9fd3b863b4bb77ef15d59b8f63e283ca365a48ba46d2aeb15c32136239031e
+docker build -f /workspace/hark-tasks/clawscore-idle-paths-build/fleet/images/Dockerfile.2026.4.15 -t clawscore-openclaw:2026.4.15
+sha256:80b33f73a895a5e402b35977cc5b8a772f8b36e105099a98b31cf9e549240709
+docker build -f /workspace/hark-tasks/clawscore-idle-paths-build/fleet/images/Dockerfile.2026.4.20 -t clawscore-openclaw:2026.4.20
+sha256:0818e545cc4509b4ecb971a7432ba586eb91fc08f0f6ce6a6a74339e86c633d6
+docker build -f /workspace/hark-tasks/clawscore-idle-paths-build/fleet/images/Dockerfile.2026.4.21 -t clawscore-openclaw:2026.4.21
+sha256:3fd8c9f57617c43ba74c217c1da17c7bfa5940b4188b0128c8ebf90b4316e158
+docker build -f /workspace/hark-tasks/clawscore-idle-paths-build/fleet/images/Dockerfile.2026.4.22 -t clawscore-openclaw:2026.4.22
+sha256:27ae35fe656408652fd5def7f9eac61c6fea90fe2ec53166123eb0c7675bdb12
+docker build -f /workspace/hark-tasks/clawscore-idle-paths-build/fleet/images/Dockerfile.2026.4.23 -t clawscore-openclaw:2026.4.23
+sha256:2b9b2e965cc4964286b2caee345213300d3f7c3c2b7217c143e2dc81f64bb1c5
+docker build -f /workspace/hark-tasks/clawscore-idle-paths-build/fleet/images/Dockerfile.2026.10.4 -t clawscore-openclaw:2026.10.4
+sha256:ee5d2e3a538a08cdf68d1ce5323a31d5502c6bced3ff84beda6bf9798cf5f028
+docker compose up -d --no-build --force-recreate
+ Network clawscore-lab  Creating
+ Network clawscore-lab  Created
+ Container claw-20  Creating
+ Container claw-12  Creating
+ Container claw-14  Creating
+ Container claw-06  Creating
+ Container claw-25  Creating
+ Container claw-29  Creating
+ Container claw-24  Creating
+ Container claw-28  Creating
+ Container claw-18  Creating
+ Container claw-10  Creating
+ Container claw-05  Creating
+ Container claw-17  Creating
+ Container claw-08  Creating
+ Container claw-04  Creating
+ Container claw-09  Creating
+ Container claw-27  Creating
+ Container claw-07  Creating
+ Container claw-03  Creating
+ Container claw-15  Creating
+ Container claw-16  Creating
+ Container claw-19  Creating
+ Container claw-30  Creating
+ Container claw-21  Creating
+ Container claw-22  Creating
+ Container claw-02  Creating
+ Container claw-11  Creating
+ Container claw-13  Creating
+ Container claw-23  Creating
+ Container claw-26  Creating
+ Container claw-01  Creating
+ Container claw-18  Created
+ Container claw-16  Created
+ Container claw-14  Created
+ Container claw-15  Created
+ Container claw-28  Created
+ Container claw-08  Created
+ Container claw-11  Created
+ Container claw-17  Created
+ Container claw-07  Created
+ Container claw-01  Created
+ Container claw-20  Created
+ Container claw-09  Created
+ Container claw-19  Created
+ Container claw-30  Created
+ Container claw-03  Created
+ Container claw-27  Created
+ Container claw-12  Created
+ Container claw-22  Created
+ Container claw-21  Created
+ Container claw-24  Created
+ Container claw-05  Created
+ Container claw-23  Created
+ Container claw-25  Created
+ Container claw-10  Created
+ Container claw-02  Created
+ Container claw-04  Created
+ Container claw-29  Created
+ Container claw-06  Created
+ Container claw-26  Created
+ Container claw-13  Created
+ Container claw-09  Starting
+ Container claw-18  Starting
+ Container claw-30  Starting
+ Container claw-07  Starting
+ Container claw-15  Starting
+ Container claw-28  Starting
+ Container claw-12  Starting
+ Container claw-03  Starting
+ Container claw-04  Starting
+ Container claw-22  Starting
+ Container claw-20  Starting
+ Container claw-25  Starting
+ Container claw-06  Starting
+ Container claw-14  Starting
+ Container claw-02  Starting
+ Container claw-23  Starting
+ Container claw-27  Starting
+ Container claw-11  Starting
+ Container claw-17  Starting
+ Container claw-19  Starting
+ Container claw-24  Starting
+ Container claw-29  Starting
+ Container claw-26  Starting
+ Container claw-08  Starting
+ Container claw-05  Starting
+ Container claw-13  Starting
+ Container claw-21  Starting
+ Container claw-01  Starting
+ Container claw-16  Starting
+ Container claw-10  Starting
+ Container claw-20  Started
+ Container claw-15  Started
+ Container claw-14  Started
+ Container claw-06  Started
+ Container claw-09  Started
+ Container claw-18  Started
+ Container claw-03  Started
+ Container claw-07  Started
+ Container claw-12  Started
+ Container claw-23  Started
+ Container claw-17  Started
+ Container claw-28  Started
+ Container claw-11  Started
+ Container claw-19  Started
+ Container claw-24  Started
+ Container claw-22  Started
+ Container claw-26  Started
+ Container claw-08  Started
+ Container claw-30  Started
+ Container claw-27  Started
+ Container claw-21  Started
+ Container claw-25  Started
+ Container claw-04  Started
+ Container claw-01  Started
+ Container claw-29  Started
+ Container claw-02  Started
+ Container claw-05  Started
+ Container claw-13  Started
+ Container claw-10  Started
+ Container claw-16  Started
+network clawscore-lab internal=true
+pid 1 env names present on 30 containers
+lab-up ok
+claw-01	Up 6 seconds	
+claw-02	Up 6 seconds	
+claw-03	Up 7 seconds	
+claw-04	Up 6 seconds	
+claw-05	Up 6 seconds	
+claw-06	Up 7 seconds	
+claw-07	Up 7 seconds	
+claw-08	Up 6 seconds	
+claw-09	Up 7 seconds	
+claw-10	Up 6 seconds	
+claw-11	Up 7 seconds	
+claw-12	Up 7 seconds	
+claw-13	Up 6 seconds	
+claw-14	Up 7 seconds	
+claw-15	Up 7 seconds	
+claw-16	Up 6 seconds	
+claw-17	Up 7 seconds	
+claw-18	Up 7 seconds	
+claw-19	Up 7 seconds	
+claw-20	Up 7 seconds	
+claw-21	Up 6 seconds	
+claw-22	Up 6 seconds	
+claw-23	Up 7 seconds	
+claw-24	Up 6 seconds	
+claw-25	Up 6 seconds	
+claw-26	Up 6 seconds	
+claw-27	Up 6 seconds	
+claw-28	Up 7 seconds	
+claw-29	Up 6 seconds	
+claw-30	Up 6 seconds	

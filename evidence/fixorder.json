@@ -1,0 +1,1067 @@
+{
+  "cited": "evidence/landscape/CLAIMS.md",
+  "clears": "critical and high",
+  "feed_newest": "2026-09-11",
+  "focus_advisories": 148,
+  "focus_critical": 1,
+  "focus_high": 84,
+  "focus_version": "2026.4.22",
+  "focus_withdrawn_not_counted": 33,
+  "min_clearing_version": "2026.8.1",
+  "versions": [
+    {
+      "advisories": 627,
+      "clears_critical_and_high": false,
+      "critical": 18,
+      "high": 249,
+      "low": 54,
+      "medium": 306,
+      "version": "2026.1.29"
+    },
+    {
+      "advisories": 626,
+      "clears_critical_and_high": false,
+      "critical": 18,
+      "high": 249,
+      "low": 54,
+      "medium": 305,
+      "version": "2026.1.30"
+    },
+    {
+      "advisories": 620,
+      "clears_critical_and_high": false,
+      "critical": 17,
+      "high": 245,
+      "low": 54,
+      "medium": 304,
+      "version": "2026.2.1"
+    },
+    {
+      "advisories": 612,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 241,
+      "low": 54,
+      "medium": 302,
+      "version": "2026.2.2"
+    },
+    {
+      "advisories": 612,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 241,
+      "low": 54,
+      "medium": 302,
+      "version": "2026.2.2-1"
+    },
+    {
+      "advisories": 612,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 241,
+      "low": 54,
+      "medium": 302,
+      "version": "2026.2.2-2"
+    },
+    {
+      "advisories": 612,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 241,
+      "low": 54,
+      "medium": 302,
+      "version": "2026.2.2-3"
+    },
+    {
+      "advisories": 611,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 241,
+      "low": 53,
+      "medium": 302,
+      "version": "2026.2.3"
+    },
+    {
+      "advisories": 611,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 241,
+      "low": 53,
+      "medium": 302,
+      "version": "2026.2.3-1"
+    },
+    {
+      "advisories": 613,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 242,
+      "low": 53,
+      "medium": 303,
+      "version": "2026.2.6"
+    },
+    {
+      "advisories": 613,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 242,
+      "low": 53,
+      "medium": 303,
+      "version": "2026.2.6-1"
+    },
+    {
+      "advisories": 613,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 242,
+      "low": 53,
+      "medium": 303,
+      "version": "2026.2.6-2"
+    },
+    {
+      "advisories": 613,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 242,
+      "low": 53,
+      "medium": 303,
+      "version": "2026.2.6-3"
+    },
+    {
+      "advisories": 614,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 242,
+      "low": 54,
+      "medium": 303,
+      "version": "2026.2.9"
+    },
+    {
+      "advisories": 608,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 238,
+      "low": 54,
+      "medium": 301,
+      "version": "2026.2.12"
+    },
+    {
+      "advisories": 603,
+      "clears_critical_and_high": false,
+      "critical": 15,
+      "high": 234,
+      "low": 53,
+      "medium": 301,
+      "version": "2026.2.13"
+    },
+    {
+      "advisories": 567,
+      "clears_critical_and_high": false,
+      "critical": 14,
+      "high": 210,
+      "low": 52,
+      "medium": 291,
+      "version": "2026.2.14"
+    },
+    {
+      "advisories": 558,
+      "clears_critical_and_high": false,
+      "critical": 14,
+      "high": 207,
+      "low": 52,
+      "medium": 285,
+      "version": "2026.2.15"
+    },
+    {
+      "advisories": 556,
+      "clears_critical_and_high": false,
+      "critical": 14,
+      "high": 207,
+      "low": 52,
+      "medium": 283,
+      "version": "2026.2.17"
+    },
+    {
+      "advisories": 535,
+      "clears_critical_and_high": false,
+      "critical": 14,
+      "high": 201,
+      "low": 51,
+      "medium": 269,
+      "version": "2026.2.19"
+    },
+    {
+      "advisories": 535,
+      "clears_critical_and_high": false,
+      "critical": 14,
+      "high": 201,
+      "low": 51,
+      "medium": 269,
+      "version": "2026.2.19-1"
+    },
+    {
+      "advisories": 535,
+      "clears_critical_and_high": false,
+      "critical": 14,
+      "high": 201,
+      "low": 51,
+      "medium": 269,
+      "version": "2026.2.19-2"
+    },
+    {
+      "advisories": 513,
+      "clears_critical_and_high": false,
+      "critical": 14,
+      "high": 194,
+      "low": 49,
+      "medium": 256,
+      "version": "2026.2.21"
+    },
+    {
+      "advisories": 513,
+      "clears_critical_and_high": false,
+      "critical": 14,
+      "high": 194,
+      "low": 49,
+      "medium": 256,
+      "version": "2026.2.21-1"
+    },
+    {
+      "advisories": 513,
+      "clears_critical_and_high": false,
+      "critical": 14,
+      "high": 194,
+      "low": 49,
+      "medium": 256,
+      "version": "2026.2.21-2"
+    },
+    {
+      "advisories": 485,
+      "clears_critical_and_high": false,
+      "critical": 14,
+      "high": 184,
+      "low": 45,
+      "medium": 242,
+      "version": "2026.2.22"
+    },
+    {
+      "advisories": 484,
+      "clears_critical_and_high": false,
+      "critical": 14,
+      "high": 184,
+      "low": 45,
+      "medium": 241,
+      "version": "2026.2.22-1"
+    },
+    {
+      "advisories": 484,
+      "clears_critical_and_high": false,
+      "critical": 14,
+      "high": 184,
+      "low": 45,
+      "medium": 241,
+      "version": "2026.2.22-2"
+    },
+    {
+      "advisories": 469,
+      "clears_critical_and_high": false,
+      "critical": 13,
+      "high": 181,
+      "low": 44,
+      "medium": 231,
+      "version": "2026.2.23"
+    },
+    {
+      "advisories": 457,
+      "clears_critical_and_high": false,
+      "critical": 13,
+      "high": 177,
+      "low": 44,
+      "medium": 223,
+      "version": "2026.2.24"
+    },
+    {
+      "advisories": 440,
+      "clears_critical_and_high": false,
+      "critical": 12,
+      "high": 173,
+      "low": 44,
+      "medium": 211,
+      "version": "2026.2.25"
+    },
+    {
+      "advisories": 428,
+      "clears_critical_and_high": false,
+      "critical": 13,
+      "high": 166,
+      "low": 39,
+      "medium": 210,
+      "version": "2026.2.26"
+    },
+    {
+      "advisories": 418,
+      "clears_critical_and_high": false,
+      "critical": 12,
+      "high": 160,
+      "low": 39,
+      "medium": 207,
+      "version": "2026.3.1"
+    },
+    {
+      "advisories": 406,
+      "clears_critical_and_high": false,
+      "critical": 12,
+      "high": 156,
+      "low": 39,
+      "medium": 199,
+      "version": "2026.3.2"
+    },
+    {
+      "advisories": 397,
+      "clears_critical_and_high": false,
+      "critical": 13,
+      "high": 154,
+      "low": 38,
+      "medium": 192,
+      "version": "2026.3.7"
+    },
+    {
+      "advisories": 394,
+      "clears_critical_and_high": false,
+      "critical": 13,
+      "high": 154,
+      "low": 38,
+      "medium": 189,
+      "version": "2026.3.8"
+    },
+    {
+      "advisories": 378,
+      "clears_critical_and_high": false,
+      "critical": 11,
+      "high": 146,
+      "low": 37,
+      "medium": 184,
+      "version": "2026.3.11"
+    },
+    {
+      "advisories": 370,
+      "clears_critical_and_high": false,
+      "critical": 10,
+      "high": 143,
+      "low": 37,
+      "medium": 180,
+      "version": "2026.3.12"
+    },
+    {
+      "advisories": 366,
+      "clears_critical_and_high": false,
+      "critical": 10,
+      "high": 140,
+      "low": 37,
+      "medium": 179,
+      "version": "2026.3.13"
+    },
+    {
+      "advisories": 345,
+      "clears_critical_and_high": false,
+      "critical": 9,
+      "high": 132,
+      "low": 34,
+      "medium": 170,
+      "version": "2026.3.22"
+    },
+    {
+      "advisories": 342,
+      "clears_critical_and_high": false,
+      "critical": 9,
+      "high": 130,
+      "low": 34,
+      "medium": 169,
+      "version": "2026.3.23"
+    },
+    {
+      "advisories": 339,
+      "clears_critical_and_high": false,
+      "critical": 9,
+      "high": 128,
+      "low": 34,
+      "medium": 168,
+      "version": "2026.3.23-1"
+    },
+    {
+      "advisories": 339,
+      "clears_critical_and_high": false,
+      "critical": 9,
+      "high": 128,
+      "low": 34,
+      "medium": 168,
+      "version": "2026.3.23-2"
+    },
+    {
+      "advisories": 331,
+      "clears_critical_and_high": false,
+      "critical": 9,
+      "high": 124,
+      "low": 34,
+      "medium": 164,
+      "version": "2026.3.24"
+    },
+    {
+      "advisories": 288,
+      "clears_critical_and_high": false,
+      "critical": 5,
+      "high": 110,
+      "low": 31,
+      "medium": 142,
+      "version": "2026.3.28"
+    },
+    {
+      "advisories": 236,
+      "clears_critical_and_high": false,
+      "critical": 3,
+      "high": 98,
+      "low": 20,
+      "medium": 115,
+      "version": "2026.3.31"
+    },
+    {
+      "advisories": 236,
+      "clears_critical_and_high": false,
+      "critical": 3,
+      "high": 98,
+      "low": 20,
+      "medium": 115,
+      "version": "2026.4.1"
+    },
+    {
+      "advisories": 220,
+      "clears_critical_and_high": false,
+      "critical": 3,
+      "high": 96,
+      "low": 19,
+      "medium": 102,
+      "version": "2026.4.2"
+    },
+    {
+      "advisories": 219,
+      "clears_critical_and_high": false,
+      "critical": 3,
+      "high": 97,
+      "low": 18,
+      "medium": 101,
+      "version": "2026.4.5"
+    },
+    {
+      "advisories": 222,
+      "clears_critical_and_high": false,
+      "critical": 3,
+      "high": 97,
+      "low": 18,
+      "medium": 104,
+      "version": "2026.4.7"
+    },
+    {
+      "advisories": 222,
+      "clears_critical_and_high": false,
+      "critical": 3,
+      "high": 97,
+      "low": 18,
+      "medium": 104,
+      "version": "2026.4.7-1"
+    },
+    {
+      "advisories": 202,
+      "clears_critical_and_high": false,
+      "critical": 3,
+      "high": 94,
+      "low": 15,
+      "medium": 90,
+      "version": "2026.4.8"
+    },
+    {
+      "advisories": 201,
+      "clears_critical_and_high": false,
+      "critical": 3,
+      "high": 94,
+      "low": 15,
+      "medium": 89,
+      "version": "2026.4.9"
+    },
+    {
+      "advisories": 184,
+      "clears_critical_and_high": false,
+      "critical": 3,
+      "high": 87,
+      "low": 16,
+      "medium": 78,
+      "version": "2026.4.10"
+    },
+    {
+      "advisories": 184,
+      "clears_critical_and_high": false,
+      "critical": 3,
+      "high": 87,
+      "low": 16,
+      "medium": 78,
+      "version": "2026.4.11"
+    },
+    {
+      "advisories": 181,
+      "clears_critical_and_high": false,
+      "critical": 3,
+      "high": 87,
+      "low": 16,
+      "medium": 75,
+      "version": "2026.4.12"
+    },
+    {
+      "advisories": 175,
+      "clears_critical_and_high": false,
+      "critical": 3,
+      "high": 87,
+      "low": 14,
+      "medium": 71,
+      "version": "2026.4.14"
+    },
+    {
+      "advisories": 169,
+      "clears_critical_and_high": false,
+      "critical": 1,
+      "high": 86,
+      "low": 14,
+      "medium": 68,
+      "version": "2026.4.15"
+    },
+    {
+      "advisories": 157,
+      "clears_critical_and_high": false,
+      "critical": 1,
+      "high": 85,
+      "low": 10,
+      "medium": 61,
+      "version": "2026.4.20"
+    },
+    {
+      "advisories": 157,
+      "clears_critical_and_high": false,
+      "critical": 1,
+      "high": 85,
+      "low": 10,
+      "medium": 61,
+      "version": "2026.4.21"
+    },
+    {
+      "advisories": 148,
+      "clears_critical_and_high": false,
+      "critical": 1,
+      "high": 84,
+      "low": 10,
+      "medium": 53,
+      "version": "2026.4.22"
+    },
+    {
+      "advisories": 146,
+      "clears_critical_and_high": false,
+      "critical": 1,
+      "high": 82,
+      "low": 10,
+      "medium": 53,
+      "version": "2026.4.23"
+    },
+    {
+      "advisories": 143,
+      "clears_critical_and_high": false,
+      "critical": 1,
+      "high": 82,
+      "low": 10,
+      "medium": 50,
+      "version": "2026.4.24"
+    },
+    {
+      "advisories": 138,
+      "clears_critical_and_high": false,
+      "critical": 1,
+      "high": 81,
+      "low": 9,
+      "medium": 47,
+      "version": "2026.4.25"
+    },
+    {
+      "advisories": 137,
+      "clears_critical_and_high": false,
+      "critical": 1,
+      "high": 81,
+      "low": 9,
+      "medium": 46,
+      "version": "2026.4.26"
+    },
+    {
+      "advisories": 136,
+      "clears_critical_and_high": false,
+      "critical": 1,
+      "high": 80,
+      "low": 9,
+      "medium": 46,
+      "version": "2026.4.27"
+    },
+    {
+      "advisories": 131,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 78,
+      "low": 9,
+      "medium": 44,
+      "version": "2026.4.29"
+    },
+    {
+      "advisories": 129,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 76,
+      "low": 9,
+      "medium": 44,
+      "version": "2026.5.2"
+    },
+    {
+      "advisories": 128,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 75,
+      "low": 9,
+      "medium": 44,
+      "version": "2026.5.3"
+    },
+    {
+      "advisories": 128,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 75,
+      "low": 9,
+      "medium": 44,
+      "version": "2026.5.3-1"
+    },
+    {
+      "advisories": 126,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 73,
+      "low": 9,
+      "medium": 44,
+      "version": "2026.5.4"
+    },
+    {
+      "advisories": 126,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 73,
+      "low": 9,
+      "medium": 44,
+      "version": "2026.5.5"
+    },
+    {
+      "advisories": 118,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 71,
+      "low": 7,
+      "medium": 40,
+      "version": "2026.5.6"
+    },
+    {
+      "advisories": 114,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 68,
+      "low": 6,
+      "medium": 40,
+      "version": "2026.5.7"
+    },
+    {
+      "advisories": 106,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 64,
+      "low": 5,
+      "medium": 37,
+      "version": "2026.5.12"
+    },
+    {
+      "advisories": 94,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 54,
+      "low": 5,
+      "medium": 35,
+      "version": "2026.5.18"
+    },
+    {
+      "advisories": 92,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 52,
+      "low": 5,
+      "medium": 35,
+      "version": "2026.5.19"
+    },
+    {
+      "advisories": 93,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 53,
+      "low": 5,
+      "medium": 35,
+      "version": "2026.5.20"
+    },
+    {
+      "advisories": 91,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 51,
+      "low": 5,
+      "medium": 35,
+      "version": "2026.5.22"
+    },
+    {
+      "advisories": 83,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 47,
+      "low": 4,
+      "medium": 32,
+      "version": "2026.5.26"
+    },
+    {
+      "advisories": 79,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 44,
+      "low": 4,
+      "medium": 31,
+      "version": "2026.5.27"
+    },
+    {
+      "advisories": 78,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 42,
+      "low": 5,
+      "medium": 31,
+      "version": "2026.5.28"
+    },
+    {
+      "advisories": 77,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 43,
+      "low": 5,
+      "medium": 29,
+      "version": "2026.6.1"
+    },
+    {
+      "advisories": 70,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 36,
+      "low": 5,
+      "medium": 29,
+      "version": "2026.6.5"
+    },
+    {
+      "advisories": 66,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 32,
+      "low": 5,
+      "medium": 29,
+      "version": "2026.6.6"
+    },
+    {
+      "advisories": 61,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 27,
+      "low": 5,
+      "medium": 29,
+      "version": "2026.6.8"
+    },
+    {
+      "advisories": 58,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 24,
+      "low": 5,
+      "medium": 29,
+      "version": "2026.6.9"
+    },
+    {
+      "advisories": 58,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 24,
+      "low": 5,
+      "medium": 29,
+      "version": "2026.6.10"
+    },
+    {
+      "advisories": 58,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 24,
+      "low": 5,
+      "medium": 29,
+      "version": "2026.6.11"
+    },
+    {
+      "advisories": 58,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 24,
+      "low": 5,
+      "medium": 29,
+      "version": "2026.6.33"
+    },
+    {
+      "advisories": 58,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 24,
+      "low": 5,
+      "medium": 29,
+      "version": "2026.6.34"
+    },
+    {
+      "advisories": 58,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 24,
+      "low": 5,
+      "medium": 29,
+      "version": "2026.6.35"
+    },
+    {
+      "advisories": 40,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 13,
+      "low": 5,
+      "medium": 22,
+      "version": "2026.7.1"
+    },
+    {
+      "advisories": 40,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 13,
+      "low": 5,
+      "medium": 22,
+      "version": "2026.7.1-1"
+    },
+    {
+      "advisories": 41,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 13,
+      "low": 5,
+      "medium": 23,
+      "version": "2026.7.1-2"
+    },
+    {
+      "advisories": 41,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 13,
+      "low": 5,
+      "medium": 23,
+      "version": "2026.7.33"
+    },
+    {
+      "advisories": 41,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 13,
+      "low": 5,
+      "medium": 23,
+      "version": "2026.7.34"
+    },
+    {
+      "advisories": 41,
+      "clears_critical_and_high": false,
+      "critical": 0,
+      "high": 13,
+      "low": 5,
+      "medium": 23,
+      "version": "2026.7.35"
+    },
+    {
+      "advisories": 2,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 2,
+      "version": "2026.8.1"
+    },
+    {
+      "advisories": 1,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 1,
+      "version": "2026.8.2"
+    },
+    {
+      "advisories": 1,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 1,
+      "version": "2026.8.33"
+    },
+    {
+      "advisories": 1,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 1,
+      "version": "2026.8.34"
+    },
+    {
+      "advisories": 1,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 1,
+      "version": "2026.8.35"
+    },
+    {
+      "advisories": 1,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 1,
+      "version": "2026.9.1"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.9.2"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.9.3"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.9.4"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.9.5"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.9.6"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.9.7"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.9.8"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.9.9"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.9.33"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.10.1"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.10.2"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.10.3"
+    },
+    {
+      "advisories": 0,
+      "clears_critical_and_high": true,
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0,
+      "version": "2026.10.4"
+    }
+  ],
+  "withdrawn_not_counted_label": "withdrawn (not counted)"
+}

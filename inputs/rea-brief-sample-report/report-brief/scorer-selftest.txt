@@ -1,0 +1,4 @@
+perfect rc 0 RESULT PASS
+dropped-advisory rc 1 ["FAIL hold-01 advisory ids got 235 want 236 extra [] missing ['GHSA-xx9p-hc9w-6p5h']"]
+banned-word rc 1 ["FAIL banned \\bsafe\\b ['safe']"]
+value-leak rc 1 ["FAIL no credential values ['OPENAI_API_KEY']"]

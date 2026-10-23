@@ -1,0 +1,2 @@
+FAIL	Q1.components_list	custom vulnerable-components list (Log4J, Next.js, React Server DOM ...) names neither OpenClaw nor npm
+GATE FAIL ['Q1.components_list']

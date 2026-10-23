@@ -1,0 +1,13 @@
+== G0 real: expect 0
+GATE PASS
+exit=0
+== M1 fabricated Microsoft quote: expect 1
+FAIL	A.Q11.ms_has.chain	Defender maps each OpenClaw build to its GHSA advisories and the secrets the agent can rea
+GATE FAIL ['A.Q11.ms_has.chain']
+exit=1
+== M2 weakened verify-report (stripped 2/4, blast 30/42): expect 1
+FAIL	B1.stripped_package_json	2/4
+FAIL	B3.blast_recall_planted	30/42 planted (lab only)
+GATE FAIL ['B1.stripped_package_json', 'B3.blast_recall_planted']
+exit=1
+CONTROLS OK

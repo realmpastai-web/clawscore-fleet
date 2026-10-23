@@ -1,0 +1,18 @@
+source_field	source_value	label	scope
+data-source-ID	echo-osv	OSV	echo npm::Echo OSV
+data-source-ID	ghsa	GHSA	npm::GitHub Security Advisory npm
+data-source-ID	nodejs-security-wg	UNCLASSIFIED	npm::Node.js Ecosystem Security Working Group
+data-source-ID	seal	UNCLASSIFIED	seal npm::Seal Security Database
+data-source-Name	Echo OSV	OSV	echo npm::Echo OSV
+data-source-Name	GitHub Security Advisory npm	GHSA	npm::GitHub Security Advisory npm
+data-source-Name	Node.js Ecosystem Security Working Group	UNCLASSIFIED	npm::Node.js Ecosystem Security Working Group
+data-source-Name	Seal Security Database	UNCLASSIFIED	seal npm::Seal Security Database
+data-source-URL	http://vulnfeed.sealsecurity.io/v1/osv/renamed/vulnerabilities.zip	OSV	seal npm::Seal Security Database
+data-source-URL	https://advisory.echohq.com/osv/all.zip	OSV	echo npm::Echo OSV
+data-source-URL	https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm	GHSA	npm::GitHub Security Advisory npm
+data-source-URL	https://github.com/nodejs/security-wg	GHSA	npm::Node.js Ecosystem Security Working Group
+data-source-key	echo npm::Echo OSV	OSV	npm-key
+data-source-key	npm::GitHub Security Advisory npm	GHSA	npm-key
+data-source-key	npm::Node.js Ecosystem Security Working Group	UNCLASSIFIED	npm-key
+data-source-key	seal npm::Seal Security Database	UNCLASSIFIED	npm-key
+openclaw-bucket	npm::GitHub Security Advisory npm	GHSA	openclaw

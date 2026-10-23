@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.7.1",
+        "vulnerable_version_range": "< 2026.7.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.7.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.7.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nTalk Voice changes could omit admin authorization. In affected versions, an authorized non-owner external-channel sender could use `/voice set` to persist the Gateway's configured Talk voice.\n\nThis advisory is scoped to the mutating Talk Voice command. Read-only voice status remains available according to normal channel policy, while persistent Gateway configuration changes require owner or administrator authority.\n\n### Impact\n\nA non-owner sender with command access could change the voice used by Talk responses for the configured provider. This affects configuration integrity and future voice output but does not by itself expose credentials or grant additional host capabilities.\n\n### Patched Versions\n\nThe first stable patched version is `2026.7.1`.\n\n### Mitigations\n\nupgrade to `openclaw@2026.7.1` or later. Before upgrading, disable `/voice set` in external channels or limit channel command access to owners.",
+  "id": "GHSA-5j27-v2pw-cj9m",
+  "modified": "2026-09-11T00:57:27Z",
+  "published": "2026-09-11T00:57:27Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-5j27-v2pw-cj9m"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Talk Voice changes could omit admin authorization"
+}

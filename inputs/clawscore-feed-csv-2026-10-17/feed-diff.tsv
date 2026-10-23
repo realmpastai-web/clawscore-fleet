@@ -1,0 +1,135 @@
+ghsa_id	published_at	severity	cve_id	vulnerable_version_range	first_patched_version	summary
+GHSA-xx9p-hc9w-6p5h	2026-09-11T00:58:59Z	medium	None	< 2026.8.1	2026.8.1	Usage CSV export could interpret session labels as formulas
+GHSA-xw9g-7xvv-gcjc	2026-09-11T00:58:58Z	medium	None	< 2026.7.1	2026.7.1	Active Memory global toggles could omit owner checks
+GHSA-xw48-j584-r73h	2026-09-11T00:58:56Z	medium	None	>= 2026.6.6, < 2026.8.1	2026.8.1	Twilio pre-auth limits could lock out valid webhooks
+GHSA-xvwp-wmh2-fq48	2026-09-11T00:58:55Z	medium	None	< 2026.9.3	2026.9.3	Discord asset uploads could skip sender media policy
+GHSA-wwx7-573h-pqwc	2026-09-11T00:58:53Z	high	None	< 2026.7.1	2026.7.1	MCP configuration changes could omit owner authorization
+GHSA-wwcw-jfpp-gpxw	2026-09-11T00:58:52Z	high	None	< 2026.8.1	2026.8.1	Codex native tools could ignore per-chat policy
+GHSA-wjfv-5qch-m5vj	2026-09-11T00:58:50Z	low	None	< 2026.8.1	2026.8.1	Active Memory recall could ignore requester policy
+GHSA-w5x7-c87m-3jpc	2026-09-11T00:58:49Z	medium	None	< 2026.8.1	2026.8.1	Outbound attachments could ignore requester read denials
+GHSA-vhpg-cq3w-v8p9	2026-09-11T00:58:47Z	medium	None	< 2026.8.1	2026.8.1	OpenAI-compatible transport could send provider credentials to the wrong endpoint
+GHSA-v7hh-7676-rg67	2026-09-11T00:58:46Z	medium	None	< 2026.8.1	2026.8.1	Slack file downloads could miss conversation authorization
+GHSA-rx8p-qcpv-c7vr	2026-09-11T00:58:45Z	medium	None	< 2026.9.3	2026.9.3	Prometheus diagnostics could omit operator.read enforcement
+GHSA-rrxp-5mx8-mvhh	2026-09-11T00:58:43Z	high	None	< 2026.8.1	2026.8.1	Inbound voice calls could inherit owner tool authority
+GHSA-rm45-4jx5-2927	2026-09-11T00:58:42Z	medium	None	< 2026.8.1	2026.8.1	QQBot voice filenames could escape the staging directory
+GHSA-rgjw-6v73-php6	2026-09-11T00:58:41Z	medium	None	>= 2026.2.26 < 2026.7.1	2026.7.1	Windows allowlist execution could use workspace shadows
+GHSA-r88x-r7jj-f2cf	2026-09-11T00:58:39Z	high	None	< 2026.7.1	2026.7.1	Signal reactions could bind to the wrong approval
+GHSA-qw7m-h363-33qw	2026-09-11T00:58:38Z	high	None	< 2026.7.1	2026.7.1	chat.send could expose owner-only infrastructure tools
+GHSA-qgj5-6x35-9g6f	2026-09-11T00:58:37Z	high	None	< 2026.8.1	2026.8.1	Config revision hashes could expose password verifiers
+GHSA-q9j5-4xr6-xqqw	2026-09-11T00:58:35Z	medium	None	< 2026.7.1	2026.7.1	Group activation changes could omit owner authorization
+GHSA-pjjr-5qhr-5w6r	2026-09-11T00:58:34Z	high	None	< 2026.7.1	2026.7.1	Codex computer-use install could omit owner authorization
+GHSA-pfrw-r5vr-89hw	2026-09-11T00:58:33Z	medium	None	>= 2026.4.25, < 2026.8.1	2026.8.1	Workspace endpoint override could expose Azure Speech credentials
+GHSA-p5g8-m35v-7m82	2026-09-11T00:58:31Z	high	None	< 2026.7.1	2026.7.1	Claude permission replies could omit owner authorization
+GHSA-p3h6-v2h4-36q2	2026-09-11T00:58:30Z	high	None	>= 2026.4.5, < 2026.8.1	2026.8.1	Browser CDP connections could discard DNS pinning
+GHSA-mm7m-wcgh-8mfq	2026-09-11T00:58:28Z	medium	None	>= 2026.5.2, < 2026.8.1	2026.8.1	WhatsApp session resets could bypass command authorization
+GHSA-m78m-7h3q-q938	2026-09-11T00:58:27Z	medium	None	< 2026.8.2	2026.8.2	Browser relay authentication could exhaust shared pending capacity
+GHSA-jjpc-p3xf-8g7p	2026-09-11T00:58:25Z	high	None	>= 2026.7.1, < 2026.8.11	2026.8.11	iOS Control UI did not enforce saved Gateway TLS pins
+GHSA-jghr-xp78-995p	2026-09-11T00:58:23Z	high	None	< 2026.7.1	2026.7.1	Browser proxy could miss its admin scope
+GHSA-j4mm-p864-vx7f	2026-09-11T00:58:22Z	medium	None	< 2026.8.1	2026.8.1	sessions.create could miss admin scope for keyed reconfiguration
+GHSA-hpg5-cq3m-phqp	2026-09-11T00:58:20Z	high	None	< 2026.8.1	2026.8.1	Agent cron tool could reach operator command jobs
+GHSA-hgv5-f2r3-6v9r	2026-09-11T00:58:19Z	high	None	>= 2026.2.2, < 2026.8.1	2026.8.1	Matrix authorization could conflate case-distinct user IDs
+GHSA-h9jh-75j7-7hhx	2026-09-11T00:58:17Z	medium	None	>= 2026.6.9, < 2026.8.1	2026.8.1	Feishu unpin could miss cross-context policy
+GHSA-h2qg-fxpv-82v6	2026-09-11T00:58:16Z	medium	None	< 2026.8.1	2026.8.1	Feishu tools could use disabled default accounts
+GHSA-ghpx-6xwq-2w4w	2026-09-11T00:58:15Z	high	None	>= 2026.3.22, < 2026.8.1	2026.8.1	Exec wrapper allowlists could trust arbitrary inner commands
+GHSA-gcm4-fmcp-2f9r	2026-09-11T00:58:13Z	medium	None	< 2026.8.11	2026.8.11	iOS Share Extension stored Gateway credentials outside Keychain
+GHSA-g7fw-3gjp-g5hf	2026-09-11T00:58:12Z	medium	None	< 2026.8.1	2026.8.1	Channel read actions could skip target allowlists
+GHSA-g697-vv6h-r8hv	2026-09-11T00:58:10Z	medium	None	>= 2026.5.12, < 2026.8.1	2026.8.1	Revoked Canvas capability could remain active during disconnect
+GHSA-g24w-m94m-59qc	2026-09-11T00:58:09Z	low	None	< 2026.8.1	2026.8.1	Webhook TaskFlow cancellation could target unrelated sessions
+GHSA-fw6q-2frm-jxxr	2026-09-11T00:58:07Z	medium	None	>= 2026.3.25, < 2026.8.1	2026.8.1	Synology pre-auth limits could lock out valid webhooks
+GHSA-fvxr-9g24-x3hf	2026-09-11T00:58:06Z	medium	None	< 2026.8.1	2026.8.1	Video asset downloads could reach private destinations
+GHSA-fphf-69cp-h5xw	2026-09-11T00:58:04Z	medium	None	< 2026.8.1	2026.8.1	Structured attachments could hide unvalidated host paths
+GHSA-fgwg-c3wv-8f45	2026-09-11T00:58:03Z	medium	None	< 2026.8.1	2026.8.1	LINE group allowlist could inherit DM access
+GHSA-crg9-c62w-j2p5	2026-09-11T00:58:01Z	high	None	< 2026.7.1	2026.7.1	OpenShell filesystem mutations could race path validation
+GHSA-chr6-w4m5-57fv	2026-09-11T00:58:00Z	low	None	< 2026.8.1	2026.8.1	Memory tools could retain revoked access
+GHSA-cf95-m4jv-59rc	2026-09-11T00:57:58Z	high	None	>= 2026.7.1, < 2026.8.1	2026.8.1	Synology file delivery could lose DNS pinning
+GHSA-9x88-f7rh-4c83	2026-09-11T00:57:57Z	high	None	< 2026.7.1	2026.7.1	Browser node targets could bypass sandbox host control
+GHSA-9p6m-2872-xm7x	2026-09-11T00:57:55Z	high	None	< 2026.7.1	2026.7.1	Codex bind could omit owner authorization
+GHSA-9m4p-cqp4-jppq	2026-09-11T00:57:53Z	high	None	< 2026.8.1	2026.8.1	WhatsApp login tool could reach non-owner turns
+GHSA-9f86-pvv5-rxfw	2026-09-11T00:57:52Z	high	None	< 2026.8.1	2026.8.1	Escaped newlines could confuse exec allowlist parsing
+GHSA-8xxh-v4vc-qvm4	2026-09-11T00:57:50Z	high	None	< 2026.7.1	2026.7.1	Cron tool could accept mixed-case command payloads
+GHSA-89cw-7452-cfrf	2026-09-11T00:57:49Z	medium	None	< 2026.7.1	2026.7.1	Trajectory export could omit owner authorization
+GHSA-8938-r7c6-54vq	2026-09-11T00:57:47Z	medium	None	< 2026.8.1	2026.8.1	Microsoft Teams access-group failures could admit unlisted senders
+GHSA-7jfq-rmfm-29wp	2026-09-11T00:57:46Z	medium	None	< 2026.8.1	2026.8.1	File-transfer approvals could widen durable authority
+GHSA-7cp7-87pj-p32v	2026-09-11T00:57:44Z	high	None	< 2026.8.1	2026.8.1	Skill tool dispatch could skip owner-only policy
+GHSA-74gc-hg2m-79p9	2026-09-11T00:57:42Z	high	None	< 2026.8.1	2026.8.1	Reusable exec approvals could authorize changed arguments
+GHSA-72p2-79fg-pvph	2026-09-11T00:57:41Z	medium	None	< 2026.8.1	2026.8.1	Trusted-host DNS checks could admit unspecified addresses
+GHSA-6xpv-wwr5-265h	2026-09-11T00:57:39Z	low	None	>= 2026.5.28, < 2026.8.1	2026.8.1	Truncated tar listings could bypass extraction limits
+GHSA-66hm-hxq3-5pfh	2026-09-11T00:57:37Z	medium	None	>= 2026.3.28, < 2026.8.1	2026.8.1	Embedding fallback could forward a provider key across vendors
+GHSA-62qm-6fjj-6g23	2026-09-11T00:57:36Z	high	None	>= 2026.4.5, < 2026.8.1	2026.8.1	Dreaming could widen restricted sender authority
+GHSA-5x6q-wg56-rxg8	2026-09-11T00:57:34Z	medium	None	>= 2026.7.2, < 2026.9.2	2026.9.2	Discord realtime transcripts could inherit another speaker's owner status
+GHSA-5rx7-34fw-64qg	2026-09-11T00:57:33Z	medium	None	< 2026.8.1	2026.8.1	Unicode fallback could escape workspaceOnly roots
+GHSA-5mrc-77hj-xjxv	2026-09-11T00:57:31Z	high	None	>= 2026.3.28, < 2026.8.1	2026.8.1	Workspace Cloud SDK arguments could execute code during Gmail setup
+GHSA-5m4g-88rg-69pj	2026-09-11T00:57:30Z	low	None	< 2026.8.1	2026.8.1	MCP loopback could omit sandbox tool deny policy
+GHSA-5j57-84cx-r295	2026-09-11T00:57:28Z	medium	None	< 2026.8.11	2026.8.11	iOS deep-link logs could expose unattended credentials
+GHSA-5j27-v2pw-cj9m	2026-09-11T00:57:27Z	medium	None	< 2026.7.1	2026.7.1	Talk Voice changes could omit admin authorization
+GHSA-5fwv-rrvp-8xvr	2026-09-11T00:57:25Z	medium	None	< 2026.8.1	2026.8.1	Session filename generation could regain denied tools
+GHSA-58qx-6m8p-wh2j	2026-09-11T00:57:24Z	high	None	< 2026.8.1	2026.8.1	Slack group DMs could skip sender allowlists
+GHSA-4wvr-f35r-f8w4	2026-09-11T00:57:22Z	high	None	< 2026.7.1	2026.7.1	message.action could trust spoofed requester provenance
+GHSA-4r25-35qc-fr6j	2026-09-11T00:57:21Z	high	None	< 2026.8.1	2026.8.1	Gateway upgrade-like requests could retain unauthenticated sockets
+GHSA-4hwv-rj92-h7rp	2026-09-11T00:57:19Z	medium	None	< 2026.7.1	2026.7.1	Diagnostics export could omit owner authorization
+GHSA-4g58-43jr-6738	2026-09-11T00:57:18Z	medium	None	< 2026.8.1	2026.8.1	Browser wait predicates could reach blocked destinations
+GHSA-3mq7-q27j-mq7q	2026-09-11T00:57:16Z	high	None	< 2026.8.1	2026.8.1	Exec approvals could outlive their reviewed working directory
+GHSA-39hf-qg99-f4qv	2026-09-11T00:57:14Z	medium	None	< 2026.8.1	2026.8.1	Google Meet attendance CSV could interpret names as formulas
+GHSA-35wj-hm2r-ghgw	2026-09-11T00:57:13Z	medium	None	< 2026.7.1	2026.7.1	Discord guild reads could skip target allowlists
+GHSA-356g-m7rx-7pm3	2026-09-11T00:57:12Z	medium	None	= 2026.7.1-2	2026.8.1	ACP file URLs could skip out-of-cwd read approval
+GHSA-22v4-33m3-8p7m	2026-09-11T00:57:10Z	medium	None	>= 2026.4.10 < 2026.7.1	2026.7.1	Memory dreaming changes could omit owner checks
+GHSA-224w-vfr9-h35c	2026-09-11T00:56:59Z	high	None	>= 2026.5.1 < 2026.7.1	2026.7.1	Google Meet node commands could skip exec approvals
+GHSA-4pqj-3c56-5fqq	2026-06-30T01:11:32Z	high	None	< 2026.5.28	2026.5.28	Workspace dotenv files could override provider credentials
+GHSA-8f46-3xx3-8c9m	2026-06-30T01:11:26Z	high	None	< 2026.6.5	2026.6.5	Node exec approvals could use different gateway and node environments
+GHSA-vr7j-7684-7gm5	2026-06-30T01:11:21Z	high	None	< 2026.6.5	2026.6.5	HTTP Canvas responses could forge trusted A2UI actions
+GHSA-wxm8-ghhq-q688	2026-06-30T01:11:00Z	high	None	< 2026.5.28	2026.5.28	MS Teams safeFetch could race DNS rebinding checks
+GHSA-j4cx-jvq7-79vm	2026-06-30T01:10:46Z	medium	None	< 2026.6.1	2026.6.1	Trajectory export could skip broad credential redaction
+GHSA-4xwj-mcc7-x7x5	2026-06-30T01:10:40Z	medium	None	< 2026.6.1	2026.6.1	Remote media URLs could slow-read exhaust tool workers
+GHSA-cf2p-f286-mphf	2026-06-30T01:10:36Z	high	None	< 2026.6.5	2026.6.5	Identity-bearing HTTP callers could reach admin-scoped tools
+GHSA-34mr-7r3m-gfg7	2026-06-30T00:41:59Z	high	None	< 2026.5.18	2026.5.18	Exec allowlist glob matching could allow traversal bypasses
+GHSA-2x93-h3hg-2xfp	2026-06-30T00:41:33Z	high	None	>= 2026.4.14, < 2026.5.26	2026.5.26	Browser snapshot routes could miss post-navigation SSRF checks
+GHSA-x863-pqjw-hmgf	2026-06-30T00:41:29Z	high	None	>= 2026.3.28, < 2026.5.19	2026.5.19	Browser act route could miss current-tab URL checks
+GHSA-mhm4-93fw-4qr2	2026-06-30T00:41:26Z	medium	None	< 2026.5.18	2026.5.18	Skill command dispatch could skip effective tool policy
+GHSA-7w4v-g4m6-j88v	2026-06-30T00:41:20Z	medium	None	<= 2026.5.7	2026.5.12	[AgentGG] MS Teams allowFrom could bind to mutable display names
+GHSA-hx85-fgcw-9vrc	2026-06-30T00:41:16Z	high	None	<= 2026.5.12	2026.5.18	Device-pair approval could expose node system.run early
+GHSA-rh6r-vvfc-86jq	2026-06-30T00:41:13Z	high	None	< 2026.5.22	2026.5.22	Setup-mode discovery could load untrusted workspace plugins
+GHSA-fh8v-vgcv-pwh4	2026-06-30T00:41:09Z	medium	None	>= 2026.5.12, < 2026.5.26	2026.5.26	ClickClack allowFrom could allow non-allowlisted commands
+GHSA-5p6w-wmh3-frfr	2026-06-30T00:40:20Z	medium	None	>= 2026.2.25, < 2026.5.26	2026.5.26	WebSocket auth attempts could avoid non-browser rate limits
+GHSA-724r-v4wf-mqc5	2026-06-30T00:40:16Z	high	None	>= 2026.2.12, < 2026.5.26	2026.5.26	Hooks allowedAgentIds could be bypassed with blank agent IDs
+GHSA-8v95-qqcm-qp9h	2026-06-30T00:40:12Z	high	None	>= 2026.1.20, < 2026.5.27	2026.5.27	device.pair.approve could bypass role-management checks
+GHSA-7jx6-764p-fgg9	2026-06-30T00:40:08Z	high	None	>= 2026.5.14-beta.1, < 2026.5.27	2026.5.27	QQBot exec approvals could allow non-allowlisted senders
+GHSA-fwgr-fpv9-vf5x	2026-06-30T00:40:04Z	medium	None	> 2026.4.20, < 2026.5.28	2026.5.28	QQBot media upload could reach untrusted remote URLs
+GHSA-prwc-c6w5-mmgr	2026-06-30T00:40:00Z	medium	None	< 2026.5.28	2026.5.28	Bot Framework serviceUrl validation could leak bot tokens
+GHSA-v54h-q2vx-vgg4	2026-06-30T00:39:55Z	medium	None	< 2026.5.27	2026.5.27	MS Teams outbound requests could leak Bot Framework tokens
+GHSA-wp73-f3gg-w4vr	2026-06-30T00:39:50Z	high	None	>= 2026.5.10-beta.1, < 2026.6.5	2026.6.5	ClickClack agent-mode dispatch could ignore toolsAllow
+GHSA-f6p7-6326-vf7v	2026-06-30T00:39:36Z	high	None	< 2026.6.9	2026.6.9	Discord moderation actions could miss trusted requester checks
+GHSA-p5xh-frrh-cmgj	2026-06-30T00:39:06Z	high	None	>= 2026.4.12-beta.1, < 2026.6.6	2026.6.6	MS Teams message actions could miss requester authorization
+GHSA-575v-8hfq-m3mc	2026-06-30T00:38:59Z	high	None	< 2026.6.6	2026.6.6	Sandbox bind mounts could bypass parent-directory denylist checks
+GHSA-wxh3-g47h-q3mc	2026-06-30T00:38:50Z	high	None	<= 2026.6.2	2026.6.6	Host exec environment filtering could miss rustup startup variables
+GHSA-mm9g-83wh-mhwj	2026-06-30T00:38:45Z	high	None	>= 2026.6.1, < 2026.6.9	2026.6.9	Isolated cron jobs could regain denied exec tools
+GHSA-mgvr-6gvw-3rgr	2026-06-30T00:38:40Z	high	None	< 2026.6.6	2026.6.6	Sandbox exec-server HTTP requests could reach internal networks
+GHSA-9969-8g9h-rxwm	2026-06-30T00:38:34Z	high	None	<= 2026.6.1	2026.6.6	Host exec environment filtering could allow Git ext transport
+GHSA-hjr6-g723-hmfm	2026-06-30T00:38:25Z	high	None	<= 2026.6.1	2026.6.6	Host exec environment filtering could miss interpreter startup variables
+GHSA-v4f6-x5g5-2g4g	2026-06-30T00:38:21Z	medium	None	>= 2026.5.28, < 2026.6.6	2026.6.6	Native web search could ignore OpenClaw tool policy
+GHSA-3x84-qq85-fj65	2026-06-30T00:38:15Z	high	None	< 2026.6.6	2026.6.6	Browser CDP discovery could accept blocked WebSocket URLs
+GHSA-fh38-965w-f6c3	2026-06-30T00:38:06Z	high	None	>= 2026.3.22, < 2026.6.6	2026.6.6	WhatsApp group IDs could satisfy elevated sender allowlists
+GHSA-52xj-c9p8-78cv	2026-06-30T00:37:20Z	high	None	>= 2026.5.20, < 2026.6.6	2026.6.6	MCP loopback could expose owner-only tools to non-owner runs
+GHSA-7vrr-rp4x-4g76	2026-06-30T00:37:13Z	high	None	>= 2026.5.20, < 2026.6.9	2026.6.9	Plugin install commands could allow non-owner persistence
+GHSA-wgq8-x5wm-g4rw	2026-06-30T00:37:07Z	medium	None	>= 2026.6.5, < 2026.6.9	2026.6.9	Plugin install wrappers could skip install policy
+GHSA-3pmr-x9g8-m55r	2026-06-30T00:36:57Z	high	None	= 2026.6.6	2026.6.9	Discord guild actions could skip cross-provider requester authorization
+GHSA-v7hx-r36p-f68m	2026-06-30T00:36:52Z	high	None	= 2026.6.6	2026.6.9	Message mutations could skip requester authorization
+GHSA-3fp5-v549-9v66	2026-06-30T00:36:44Z	high	None	<= 2026.6.6	2026.6.9	flock wrapper could bypass durable exec approval binding
+GHSA-m38g-vpwj-mpg9	2026-06-30T00:36:38Z	high	None	<= 2026.6.6	2026.6.9	OpenShell mirror sync could follow remote symlink parents
+GHSA-w8wf-3qvj-6xqf	2026-06-30T00:36:22Z	high	None	<= 2026.6.6	2026.6.9	Feishu permission tools could ignore per-account disablement
+GHSA-2q7j-2vhx-56g8	2026-06-30T00:36:15Z	high	None	<= 2026.6.6	2026.6.9	Feishu tools could ignore per-account disablement
+GHSA-jhfx-v2j8-x3m6	2026-06-30T00:36:01Z	high	None	<= 2026.6.6	2026.6.8	OpenAI-compatible HTTP model overrides could miss admin authorization
+GHSA-cr8r-7g2h-6wr6	2026-04-16T15:19:20Z	medium	None	>= 2026.3.22 < 2026.4.5	2026.4.5	Remote marketplace repository paths could escape through symlink traversal
+GHSA-2j9j-gf59-p4p5	2026-02-24T05:27:20Z	low	None	<= 2026.2.22-2	2026.2.23	iOS deep link (openclaw://agent) can trigger gateway agent requests without local confirmation
+GHSA-8j9w-9pm5-pv8m	2026-02-24T05:27:13Z	medium	None	<= 2026.2.22-2	2026.2.23	DUPLICATE of GHSA-3c6h-g97w-fg78: safeBins denied flags can be bypassed via GNU long-option abbreviations
+GHSA-x2g4-7mj7-2hhj	2026-02-21T18:16:15Z	low	CVE-2026-27164	>=2026.2.9 <=2026.2.19-2	2026.2.21	OC-65: overflow compaction retry counter reset after truncation amplifies bounded retry/cost cycles
+GHSA-74xj-763f-264w	2026-02-21T18:16:14Z	medium	CVE-2026-27165	<=2026.2.19-2	2026.2.21	ACP resource_link metadata prompt interpolation allowed prompt-injection content via title/URI fields
+GHSA-xwcr-v472-8hhr	2026-02-21T18:16:13Z	medium	CVE-2026-27159	<=2026.2.19-2	2026.2.21	TTS model directives allowed provider switching by default
+GHSA-2prf-9cw7-fq62	2026-02-21T18:16:11Z	medium	CVE-2026-27158	<= 2026.2.19-2	2026.2.21	OC-91: WhatsApp reaction action bypasses JID authorization for allowFrom-restricted targets
+GHSA-65rx-fvh6-r4h2	2026-02-21T18:16:10Z	high	CVE-2026-27209	<= 2026.2.19-2	2026.2.21	Shell command injection in exec allowlist mode via unquoted heredoc expansion
+GHSA-mmpf-jwf4-h3qv	2026-02-18T03:39:01Z	low	None	<=2026.2.14	2026.2.15	Option injection in pre-commit hook can stage ignored files
+GHSA-qpjj-47vm-64pj	2026-02-16T00:31:46Z	high	None	>= 2026.1.5, <= 2026.2.9	2026.2.12	missing authentication for local browser-control endpoints
+GHSA-r5h9-vjqc-hq3r	2026-02-14T21:22:04Z	high	None	<=2026.2.2	2026.2.6	Nextcloud Talk allowlist bypass via actor.name display name spoofing
+GHSA-3m3q-x3gj-f79x	2026-02-14T20:27:08Z	medium	None	< 2026.2.3	2026.2.3	Optional voice-call plugin: webhook verification may be bypassed behind certain proxy configurations
+GHSA-q284-4pvr-m585	2026-01-31T20:03:22Z	high	CVE-2026-25157	<v2026.1.29	2026.1.29	OS Command Injection via Project Root Path in sshNodeCommand
+GHSA-g8p2-7wf7-98mq	2026-01-31T10:04:35Z	high	None	<=v2026.1.28	2026.1.29	1-Click RCE via Authentication Token Exfiltration From gatewayUrl
+GHSA-mc68-q9jw-2h3v	2026-01-31T08:52:50Z	high	CVE-2026-24763	<= 2026.1.24	2026.1.29	Command Injection in Clawdbot Docker Execution via PATH Environment Variable

@@ -1,0 +1,15 @@
+{
+  "offline_failures": [],
+  "gates": {
+    "landscape_hashes": true,
+    "matrix_coverage": true,
+    "matrix_exact": true,
+    "collisions": true,
+    "dirlist_metric": true,
+    "cve_mapping": true,
+    "semver_crosscheck": true,
+    "freshness": true,
+    "fix_target": true,
+    "v01_regression": true
+  }
+}

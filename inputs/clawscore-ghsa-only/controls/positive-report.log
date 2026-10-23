@@ -1,0 +1,15 @@
+PASS	snapshot.sha256	OSV snapshot 2026-10-18 ~14:00 IST sha256 6e6c1c1279c2b9f6…
+PASS	expected.59	59 OSV advisories without a CVE alias = expected-ghsa-only.json
+PASS	landscape.has_all	all 59 are in the fleet's landscape feed @bdd8c9b, live, with cve_id null
+PASS	expected.recomputed	per-host expected sets recompute from OSV + landscape
+PASS	expected.cover_all	fixture versions ['2026.2.1', '2026.3.1', '2026.4.7', '2026.4.15', '2026.10.4'] cover all 59 ids
+PASS	expected.gap_window	possibly_affected cases: [('2026.4.7', 'GHSA-gfmx-pph7-g46x'), ('2026.4.7', 'GHSA-jf56-mccx-5f3f')]
+PASS	source.GHSA-gfmx-pph7-g46x	github/advisory-database: fixed 2026.4.8 but last_known_affected <= 2026.4.2 (the GitHub API range shows only the latter)
+PASS	source.GHSA-jf56-mccx-5f3f	github/advisory-database: fixed 2026.4.8 but last_known_affected <= 2026.4.2 (the GitHub API range shows only the latter)
+PASS	wazuh.candidate_keyed_cveId	vulnerabilityCandidate.fbs: a detection candidate carries cveId
+PASS	wazuh.feed_is_cve5	cve5.fbs: the feed is CVE JSON 5 records
+PASS	wazuh.enumeration_CVE	alert builders hard-code vulnerability.enumeration = "CVE": ['eventPackageAlertDetailsBuilder.hpp', 'eventDetailsBuilder.hpp']
+PASS	wazuh.cti	CTI serves OpenClaw CVEs; GHSA-only ids 404 like a nonexistent CVE
+VERDICT wazuh: PROVEN at schema level for 4.14.9 - its feed is CVE5 records keyed by cveId and every package alert says enumeration=CVE, so a no-CVE GHSA advisory has no record to match. Residual (not testable from public artifacts): CTI's private build pipeline; Wazuh 5.x/main not covered.
+PASS	report.ghsa_only	fleet report lists every expected no-CVE id per fixture host with the right status
+GATE PASS

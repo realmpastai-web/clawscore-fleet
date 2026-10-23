@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.7.1",
+        "vulnerable_version_range": "< 2026.7.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.7.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.7.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nCron tool could accept mixed-case command payloads. In affected versions, a mixed-case payload kind could pass the agent-facing shell-execution guard and later normalize into a command job.\n\nThis advisory is scoped to cron jobs created or edited through the model-facing `cron` tool. Direct CLI and authorized Gateway scheduling surfaces remain trusted operator controls.\n\n### Impact\n\nAn actor able to steer a tool-enabled agent could create a persistent cron job that executed attacker-selected commands with the OpenClaw process user's privileges. Practical impact includes access to host files, credentials, and scheduled service availability.\n\n### Patched Versions\n\nThe first stable patched version is `2026.7.1`.\n\n### Mitigations\n\nupgrade to `openclaw@2026.7.1` or later. Before upgrading, remove the `cron` tool from agents exposed to lower-trust content and inspect scheduled jobs for command payloads.",
+  "id": "GHSA-8xxh-v4vc-qvm4",
+  "modified": "2026-09-11T00:57:50Z",
+  "published": "2026-09-11T00:57:50Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-8xxh-v4vc-qvm4"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Cron tool could accept mixed-case command payloads"
+}

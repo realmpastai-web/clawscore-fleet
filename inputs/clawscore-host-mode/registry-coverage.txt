@@ -1,0 +1,6 @@
+registry versions 278
+db versions (main 026f719) 117
+db not in registry []
+registry not in db 161 of which prerelease 160 other ['0.0.1']
+dist-tags {"beta": "2026.10.10-beta.1", "extended-stable": "2026.9.33", "latest": "2026.10.4"}
+dist-tag in db {'beta': False, 'extended-stable': True, 'latest': True}

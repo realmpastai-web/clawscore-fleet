@@ -1,0 +1,4 @@
+step2 identify against fingerprints/db.json on main d733a8c (unchanged)
+2026.10.5 paths=['dist/cli.runtime.js', 'dist/abort.runtime.js', 'dist/build-info.json'] verdict=unknown version=None candidates=[] reads=1 family=runtime
+2026.10.4 paths=['dist/cli.runtime.js', 'dist/abort.runtime.js', 'dist/build-info.json'] verdict=exact version=2026.10.4 candidates=['2026.10.4'] reads=1 family=runtime
+2026.10.10-beta.2 paths=['dist/cli.runtime.js', 'dist/abort.runtime.js', 'dist/build-info.json'] verdict=unknown version=None candidates=[] reads=1 family=runtime

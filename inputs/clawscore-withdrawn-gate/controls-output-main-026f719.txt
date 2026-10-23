@@ -1,0 +1,27 @@
+$ git rev-parse HEAD
+026f719561bff84d49a155fbe72a0a8468a18e92
+$ bash inputs/clawscore-withdrawn-gate/run_controls.sh
+== C0 main as-is (counts withdrawn): expect exit 1
+GATE FAIL (3 checks)
+G2.rows version-vulns == recompute excluding withdrawn
+G4.code clawscore_fleet.cves 2026.4.22 ids == tsv
+G4.code no withdrawn id under any version
+exit=1
+== C1 scratch fix (skip withdrawn in build_index, regenerate rows): expect exit 0
+GATE PASS
+exit=0
+== M1 mutant: fixed code, version-vulns.json still counts withdrawn (main rows): expect exit 1
+GATE FAIL (1 checks)
+G2.rows version-vulns == recompute excluding withdrawn
+exit=1
+== M2 mutant: fixed rows, code counts withdrawn again (cves.py reverted): expect exit 1
+GATE FAIL (2 checks)
+G4.code clawscore_fleet.cves 2026.4.22 ids == tsv
+G4.code no withdrawn id under any version
+exit=1
+== M3 mutant: fixed, one 2026.4.22 high bumped (+1): expect exit 1
+GATE FAIL (1 checks)
+G2.rows version-vulns == recompute excluding withdrawn
+exit=1
+CONTROLS OK
+exit=0

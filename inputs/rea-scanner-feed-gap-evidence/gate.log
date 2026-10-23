@@ -1,0 +1,12 @@
+PASS	G1	SHA256SUMS
+PASS	G1	pins
+PASS	G2	held-id TSVs match the frozen DB files
+PASS	G3	wrote SCORE.log
+P1 HOLD
+P2 HOLD
+trivy DB digest sha256:bc1ab2ce4f54245efb7861f81993c8abf4ae95aca67d00dce37c60dc59e7d415 lists 0; the maker's repository lists 58 (feed newest 2026-09-11)
+trivy DB digest sha256:bc1ab2ce4f54245efb7861f81993c8abf4ae95aca67d00dce37c60dc59e7d415 lists 68; the maker's repository lists 148 (feed newest 2026-09-11)
+grype DB digest fe51ed05fd0bf2e0642a362b75b245caf0da0eabb92b26a543e061f9873ec2ba lists 0; the maker's repository lists 58 (feed newest 2026-09-11)
+grype DB digest fe51ed05fd0bf2e0642a362b75b245caf0da0eabb92b26a543e061f9873ec2ba lists 68; the maker's repository lists 148 (feed newest 2026-09-11)
+gap_ids 87
+PASS	gap-ids	87

@@ -1,0 +1,149 @@
+ghsa_id	severity	in_global_db	in_repo_published	cve_id	summary
+GHSA-22v4-33m3-8p7m	medium	no	yes	-	Memory dreaming changes could omit owner checks
+GHSA-24vr-rprv-67rf	high	yes	yes	CVE-2026-53846	OpenClaw: Workspace .env npm_execpath could influence bundled runtime dependency install
+GHSA-2hfg-4fh4-qp7f	medium	yes	yes	CVE-2026-53812	OpenClaw's browser act interactions could bypass private-network navigation checks
+GHSA-2j8v-hwgc-x698	high	yes	yes	-	OpenClaw: Shell wrapper argv could change between approval and execution
+GHSA-2x93-h3hg-2xfp	high	no	yes	-	Browser snapshot routes could miss post-navigation SSRF checks
+GHSA-34mr-7r3m-gfg7	high	no	yes	-	Exec allowlist glob matching could allow traversal bypasses
+GHSA-39hf-qg99-f4qv	medium	no	yes	-	Google Meet attendance CSV could interpret names as formulas
+GHSA-3c6j-hq33-3jv4	high	yes	yes	CVE-2026-53816	OpenClaw: Paired nodes could forge exec lifecycle events without system.run provenance
+GHSA-3fp5-v549-9v66	high	no	yes	-	flock wrapper could bypass durable exec approval binding
+GHSA-3mq7-q27j-mq7q	high	no	yes	-	Exec approvals could outlive their reviewed working directory
+GHSA-3wqp-prf6-2m72	low	yes	yes	-	OpenClaw: Feishu dynamic-agent bindings could miss configWrites enforcement
+GHSA-3x84-qq85-fj65	high	no	yes	-	Browser CDP discovery could accept blocked WebSocket URLs
+GHSA-4g58-43jr-6738	medium	no	yes	-	Browser wait predicates could reach blocked destinations
+GHSA-4hpg-mp64-x7xq	medium	yes	yes	CVE-2026-53854	OpenClaw: Internal/webchat command auth could inherit ownerAllowFrom wildcard state
+GHSA-4hwv-rj92-h7rp	medium	no	yes	-	Diagnostics export could omit owner authorization
+GHSA-4m3v-q747-pc6h	medium	yes	yes	-	OpenClaw: Mattermost slash token revocation could lag until monitor refresh
+GHSA-4pqj-3c56-5fqq	high	no	yes	-	Workspace dotenv files could override provider credentials
+GHSA-4r25-35qc-fr6j	high	no	yes	-	Gateway upgrade-like requests could retain unauthenticated sockets
+GHSA-4wvr-f35r-f8w4	high	no	yes	-	message.action could trust spoofed requester provenance
+GHSA-4xwj-mcc7-x7x5	medium	no	yes	-	Remote media URLs could slow-read exhaust tool workers
+GHSA-575v-8hfq-m3mc	high	no	yes	-	Sandbox bind mounts could bypass parent-directory denylist checks
+GHSA-5fwv-rrvp-8xvr	medium	no	yes	-	Session filename generation could regain denied tools
+GHSA-5j27-v2pw-cj9m	medium	no	yes	-	Talk Voice changes could omit admin authorization
+GHSA-5m4g-88rg-69pj	low	no	yes	-	MCP loopback could omit sandbox tool deny policy
+GHSA-5mrc-77hj-xjxv	high	no	yes	-	Workspace Cloud SDK arguments could execute code during Gmail setup
+GHSA-5p6w-wmh3-frfr	medium	no	yes	-	WebSocket auth attempts could avoid non-browser rate limits
+GHSA-5rx7-34fw-64qg	medium	no	yes	-	Unicode fallback could escape workspaceOnly roots
+GHSA-62qm-6fjj-6g23	high	no	yes	-	Dreaming could widen restricted sender authority
+GHSA-66hm-hxq3-5pfh	medium	no	yes	-	Embedding fallback could forward a provider key across vendors
+GHSA-68xw-r643-9p5w	low	yes	yes	CVE-2026-53845	OpenClaw: Skill-command dispatch could skip before-tool-call hooks
+GHSA-6c4r-g249-wv3c	medium	yes	yes	-	OpenClaw: Sandboxed session spawn could expose the real workspace path to child prompts
+GHSA-6fvr-66p3-3qj4	high	yes	yes	CVE-2026-53814	OpenClaw: Hook-triggered CLI runs could receive owner MCP tool authority
+GHSA-724r-v4wf-mqc5	high	no	yes	-	Hooks allowedAgentIds could be bypassed with blank agent IDs
+GHSA-72fw-cqh5-f324	medium	yes	yes	CVE-2026-53844	OpenClaw: memory-wiki shared search could miss session visibility checks
+GHSA-72p2-79fg-pvph	medium	no	yes	-	Trusted-host DNS checks could admit unspecified addresses
+GHSA-74gc-hg2m-79p9	high	no	yes	-	Reusable exec approvals could authorize changed arguments
+GHSA-77pv-3w4q-vrj5	high	yes	yes	CVE-2026-53834	OpenClaw: QQBot pre-dispatch slash commands could skip allowFrom checks
+GHSA-77q5-rr5v-x43q	high	yes	no	-	OpenClaw: Trusted retry endpoint checks could match hostname prefixes
+GHSA-7cp7-87pj-p32v	high	no	yes	-	Skill tool dispatch could skip owner-only policy
+GHSA-7hxm-f538-3xp6	high	yes	yes	CVE-2026-53811	OpenClaw: Matrix allowFrom could bind to mutable display names
+GHSA-7jfq-rmfm-29wp	medium	no	yes	-	File-transfer approvals could widen durable authority
+GHSA-83w9-h5wv-j9xm	medium	yes	yes	CVE-2026-53838	OpenClaw: Node pairing reconnection could confuse approval scope state
+GHSA-8938-r7c6-54vq	medium	no	yes	-	Microsoft Teams access-group failures could admit unlisted senders
+GHSA-89cw-7452-cfrf	medium	no	yes	-	Trajectory export could omit owner authorization
+GHSA-8c59-hr4w-qg69	high	yes	yes	CVE-2026-53857	OpenClaw: Zalo allowFrom could bind to mutable display names
+GHSA-8f46-3xx3-8c9m	high	no	yes	-	Node exec approvals could use different gateway and node environments
+GHSA-8j37-5w68-wj2g	low	yes	yes	CVE-2026-53860	OpenClaw: BlueBubbles sender policy could match mutable conversation identifiers
+GHSA-8mg9-j9cf-54cj	low	yes	yes	CVE-2026-53852	OpenClaw: Empty-scope device re-pairing could confuse caller scope containment
+GHSA-8v95-qqcm-qp9h	high	no	yes	-	device.pair.approve could bypass role-management checks
+GHSA-8wg3-5mcm-fjq8	high	yes	yes	CVE-2026-53819	OpenClaw: Workspace .env could override Homebrew executable selection for skill install flows
+GHSA-8xxh-v4vc-qvm4	high	no	yes	-	Cron tool could accept mixed-case command payloads
+GHSA-985f-72mj-8gf7	medium	yes	yes	CVE-2026-53863	OpenClaw: Tool group policy callers could accept unvalidated group IDs
+GHSA-9969-8g9h-rxwm	high	no	yes	-	Host exec environment filtering could allow Git ext transport
+GHSA-9c3v-684m-579c	medium	yes	yes	-	OpenClaw MCP SSE redirects could forward Authorization headers
+GHSA-9f86-pvv5-rxfw	high	no	yes	-	Escaped newlines could confuse exec allowlist parsing
+GHSA-9p6m-2872-xm7x	high	no	yes	-	Codex bind could omit owner authorization
+GHSA-9v8j-9c9g-w66c	low	yes	yes	CVE-2026-53862	OpenClaw: Bootstrap token replay could widen pending pairing scopes
+GHSA-9x88-f7rh-4c83	high	no	yes	-	Browser node targets could bypass sandbox host control
+GHSA-c226-q6fx-6j6c	medium	yes	yes	CVE-2026-53861	OpenClaw: macOS Swift exec allowlist missed combined POSIX inline flags
+GHSA-c29c-2q9c-pc86	high	yes	yes	-	OpenClaw: Slack allowFrom could bind to mutable display names
+GHSA-ccwh-wwpp-6wg5	high	yes	yes	CVE-2026-53864	OpenClaw: Host environment sanitizer missed two Node.js control variables
+GHSA-cf2p-f286-mphf	high	no	yes	-	Identity-bearing HTTP callers could reach admin-scoped tools
+GHSA-chr6-w4m5-57fv	low	no	yes	-	Memory tools could retain revoked access
+GHSA-chr9-m4q2-76hw	high	yes	yes	CVE-2026-53817	OpenClaw: Control UI locality spoofing could mint a durable admin device token
+GHSA-cqwv-9qjx-vxw2	medium	yes	yes	-	OpenClaw: Skill Workshop apply flow could override pending approval
+GHSA-crg9-c62w-j2p5	high	no	yes	-	OpenShell filesystem mutations could race path validation
+GHSA-cw4q-gqg5-g38h	high	yes	yes	CVE-2026-53849	OpenClaw: Discord allowFrom could bind to mutable display names
+GHSA-cwj3-vqpp-pmxr	high	yes	yes	-	OpenClaw's gateway config mutation guard allowed unsafe model-driven config writes
+GHSA-cwpp-5962-q4f6	low	yes	yes	CVE-2026-53848	OpenClaw: Exec allowlist could miss side effects from transparent command wrappers
+GHSA-f397-5vjw-v2c2	high	yes	yes	CVE-2026-53866	OpenClaw: Shell inline-command parsing could miss an allowlist check
+GHSA-f6p7-6326-vf7v	high	no	yes	-	Discord moderation actions could miss trusted requester checks
+GHSA-fcvx-5cxc-v5p8	medium	yes	yes	CVE-2026-53851	OpenClaw: Slack reaction events could ignore reaction notification settings
+GHSA-fh38-965w-f6c3	high	no	yes	-	WhatsApp group IDs could satisfy elevated sender allowlists
+GHSA-fphf-69cp-h5xw	medium	no	yes	-	Structured attachments could hide unvalidated host paths
+GHSA-fq9j-vw4w-fr6v	high	yes	yes	CVE-2026-53842	OpenClaw: Workspace .env CLOUDSDK_PYTHON could influence Gmail setup gcloud execution
+GHSA-fvxr-9g24-x3hf	medium	no	yes	-	Video asset downloads could reach private destinations
+GHSA-fw6q-2frm-jxxr	medium	no	yes	-	Synology pre-auth limits could lock out valid webhooks
+GHSA-fwgr-fpv9-vf5x	medium	no	yes	-	QQBot media upload could reach untrusted remote URLs
+GHSA-g24w-m94m-59qc	low	no	yes	-	Webhook TaskFlow cancellation could target unrelated sessions
+GHSA-ghpx-6xwq-2w4w	high	no	yes	-	Exec wrapper allowlists could trust arbitrary inner commands
+GHSA-gp79-m99v-gjmh	medium	yes	yes	CVE-2026-53837	OpenClaw: Mattermost handlers could fall open when channel type was missing
+GHSA-grc3-2j34-p6gm	medium	yes	yes	-	OpenClaw: message.action forwarding could send Gateway credentials to model-supplied loopback URLs
+GHSA-gxg4-2rrr-jhc7	medium	yes	yes	CVE-2026-53859	OpenClaw: Hostname checks could treat trailing-dot hosts inconsistently
+GHSA-hcm3-8f6r-6xwg	medium	yes	yes	-	OpenClaw: Browser debug/export routes could reuse already-open blocked tabs
+GHSA-hjr6-g723-hmfm	high	no	yes	-	Host exec environment filtering could miss interpreter startup variables
+GHSA-hpg5-cq3m-phqp	high	no	yes	-	Agent cron tool could reach operator command jobs
+GHSA-hw9r-h9mr-4jff	high	yes	yes	-	OpenClaw: Scoped chat.send route inheritance could bypass admin command scope gates
+GHSA-hx85-fgcw-9vrc	high	no	yes	-	Device-pair approval could expose node system.run early
+GHSA-j472-gf56-x589	high	yes	yes	CVE-2026-53836	OpenClaw: PowerShell encoded-command aliases could miss exec allowlist checks
+GHSA-j4cx-jvq7-79vm	medium	no	yes	-	Trajectory export could skip broad credential redaction
+GHSA-j4mm-p864-vx7f	medium	no	yes	-	sessions.create could miss admin scope for keyed reconfiguration
+GHSA-jghr-xp78-995p	high	no	yes	-	Browser proxy could miss its admin scope
+GHSA-jhfx-v2j8-x3m6	high	no	yes	-	OpenAI-compatible HTTP model overrides could miss admin authorization
+GHSA-jvm4-4j77-39p6	high	yes	no	CVE-2026-53833	OpenClaw: QQBot streaming command could mutate config without explicit allowFrom
+GHSA-m38g-vpwj-mpg9	high	no	yes	-	OpenShell mirror sync could follow remote symlink parents
+GHSA-m78m-7h3q-q938	medium	no	yes	-	Browser relay authentication could exhaust shared pending capacity
+GHSA-mgq6-vr84-7m2j	high	yes	yes	CVE-2026-35630	OpenClaw: QQBot native approval buttons did not enforce configured approver identity
+GHSA-mgvr-6gvw-3rgr	high	no	yes	-	Sandbox exec-server HTTP requests could reach internal networks
+GHSA-mhm4-93fw-4qr2	medium	no	yes	-	Skill command dispatch could skip effective tool policy
+GHSA-mhq8-78pj-5j79	high	yes	yes	CVE-2026-53831	OpenClaw's POSIX node system.run safe-bin allowlist could be widened by shell expansion
+GHSA-mpc8-jxjh-qpgh	medium	yes	yes	CVE-2026-53850	OpenClaw: Focus command could miss controlScope enforcement
+GHSA-p2fh-f5fc-44hr	medium	yes	yes	-	OpenClaw: memory-wiki ingest could read local files with operator.write scope
+GHSA-p39j-x9h5-q66m	medium	yes	yes	CVE-2026-53809	OpenClaw: Embedded runner policy could be confused by provider aliases
+GHSA-p3h6-v2h4-36q2	high	no	yes	-	Browser CDP connections could discard DNS pinning
+GHSA-p5g8-m35v-7m82	high	no	yes	-	Claude permission replies could omit owner authorization
+GHSA-p5xh-frrh-cmgj	high	no	yes	-	MS Teams message actions could miss requester authorization
+GHSA-p73f-w79w-jqr5	high	yes	yes	-	OpenClaw: Native command authorization could skip owner-command enforcement
+GHSA-pjjr-5qhr-5w6r	high	no	yes	-	Codex computer-use install could omit owner authorization
+GHSA-q7q8-3mgw-q67r	high	yes	yes	CVE-2026-53815	OpenClaw: Message read actions could skip channel allowlist checks
+GHSA-q8ff-7ffm-m3r9	medium	yes	yes	CVE-2026-45005	OpenClaw's Webhooks SecretRef route secret remains valid after rotation/reload
+GHSA-q99w-vh6v-q3v7	high	yes	yes	CVE-2026-53843	OpenClaw: Pairing-scoped device session could restore revoked node token authority
+GHSA-q9j5-4xr6-xqqw	medium	no	yes	-	Group activation changes could omit owner authorization
+GHSA-qgj5-6x35-9g6f	high	no	yes	-	Config revision hashes could expose password verifiers
+GHSA-qh2f-99mv-mrcf	medium	yes	yes	-	OpenClaw: Bundle MCP loopback could miss its exec denylist on session spawn
+GHSA-qjpc-qf9m-xwmr	high	yes	yes	-	OpenClaw: Trusted-proxy Control UI WebSocket accepted client-declared scopes before pairing
+GHSA-qw7m-h363-33qw	high	no	yes	-	chat.send could expose owner-only infrastructure tools
+GHSA-r39h-4c2p-3jxp	high	yes	yes	CVE-2026-45004	OpenClaw vulnerable to arbitrary code execution via attacker-controlled setup-api.js loaded from cwd during env-key resolution
+GHSA-r88x-r7jj-f2cf	high	no	yes	-	Signal reactions could bind to the wrong approval
+GHSA-rggc-m335-3wvj	high	yes	yes	CVE-2026-53832	OpenClaw: Same-host trusted-proxy deployments could accept local forged identity headers
+GHSA-rgjw-6v73-php6	medium	no	yes	-	Windows allowlist execution could use workspace shadows
+GHSA-rh6r-vvfc-86jq	high	no	yes	-	Setup-mode discovery could load untrusted workspace plugins
+GHSA-rj6p-xmxr-qj4h	medium	yes	yes	CVE-2026-53818	OpenClaw: MCP loopback could skip owner-only tool policy for non-owner callers
+GHSA-rjxq-qqhf-8hwh	high	yes	yes	CVE-2026-53840	OpenClaw: MCP Streamable HTTP redirects could forward configured custom headers to another origin
+GHSA-rm45-4jx5-2927	medium	no	yes	-	QQBot voice filenames could escape the staging directory
+GHSA-rx78-29qr-5hq8	high	yes	yes	CVE-2026-53865	OpenClaw: Workspace-derived service PATH could influence trash command selection
+GHSA-v2ww-5rh7-2h5v	high	yes	yes	CVE-2026-53853	OpenClaw: Linux and macOS exec allowlists skipped configured argument patterns
+GHSA-v6r2-jh58-xx6w	high	yes	yes	CVE-2026-53810	OpenClaw's marketplace runtime extension metadata could point at unscanned payloads
+GHSA-v8cx-933x-r976	high	yes	yes	CVE-2026-53813	OpenClaw: Fake package roots could influence memory-core artifact loading
+GHSA-vhpg-cq3w-v8p9	medium	no	yes	-	OpenAI-compatible transport could send provider credentials to the wrong endpoint
+GHSA-vr7j-7684-7gm5	high	no	yes	-	HTTP Canvas responses could forge trusted A2UI actions
+GHSA-vxx3-6hc9-7cc3	high	yes	yes	CVE-2026-53806	OpenClaw: Combined POSIX shell options could confuse exec revalidation
+GHSA-w4v6-g3wm-w36c	critical	yes	yes	-	OpenClaw: QQBot admin commands could skip DM-only and allowFrom policy
+GHSA-w5ww-7chg-mxcq	high	yes	yes	-	OpenClaw: Telegram interactive callbacks could skip commands.allowFrom
+GHSA-w5x7-c87m-3jpc	medium	no	yes	-	Outbound attachments could ignore requester read denials
+GHSA-w9hf-3pp7-pvxv	medium	yes	yes	CVE-2026-53841	OpenClaw: Exported session HTML could keep unsafe markdown links
+GHSA-wc84-j36w-pw4x	high	yes	yes	CVE-2026-53858	OpenClaw: Workspace .env STATE_DIRECTORY could influence bundled runtime dependency roots
+GHSA-wjfv-5qch-m5vj	low	no	yes	-	Active Memory recall could ignore requester policy
+GHSA-wv26-j37q-2g7p	medium	yes	yes	-	OpenClaw's Slack plugin approvals used the exec approver gate for plugin actions
+GHSA-wwcw-jfpp-gpxw	high	no	yes	-	Codex native tools could ignore per-chat policy
+GHSA-wwx7-573h-pqwc	high	no	yes	-	MCP configuration changes could omit owner authorization
+GHSA-wxh3-g47h-q3mc	high	no	yes	-	Host exec environment filtering could miss rustup startup variables
+GHSA-wxm8-ghhq-q688	high	no	yes	-	MS Teams safeFetch could race DNS rebinding checks
+GHSA-x629-46cc-7xgw	medium	yes	yes	CVE-2026-53847	OpenClaw: Active Memory write scope could mutate global config
+GHSA-x863-pqjw-hmgf	high	no	yes	-	Browser act route could miss current-tab URL checks
+GHSA-xr4f-mjxj-w6w5	high	yes	yes	-	OpenClaw: Non-owner chat senders could issue device-pairing bootstrap codes
+GHSA-xw9g-7xvv-gcjc	medium	no	yes	-	Active Memory global toggles could omit owner checks
+GHSA-xww8-gqvh-92x9	high	yes	yes	-	OpenClaw: Exec approval display truncation could hide the command being approved
+GHSA-xx9p-hc9w-6p5h	medium	no	yes	-	Usage CSV export could interpret session labels as formulas

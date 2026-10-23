@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nA webhook TaskFlow route could accept and store an arbitrary child session key, then use that key during cancellation without confirming that the child belonged to the route's configured parent session.\n\n### Impact\n\nA holder of one webhook route secret who knew another live child session key could stop unrelated ACP or subagent work outside that route's authority. The demonstrated effect was session cancellation and associated task-state change; it did not grant access to the cancelled session's content.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade `openclaw` to `2026.8.1` or later. Until upgraded, disable webhook TaskFlow cancellation on routes available to lower-trust callers, rotate exposed route secrets, and avoid accepting remote child-session identifiers unless their ownership is independently verified.",
+  "id": "GHSA-g24w-m94m-59qc",
+  "modified": "2026-09-11T00:58:09Z",
+  "published": "2026-09-11T00:58:09Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-g24w-m94m-59qc"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Webhook TaskFlow cancellation could target unrelated sessions"
+}

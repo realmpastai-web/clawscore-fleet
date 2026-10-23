@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.8.1",
+        "vulnerable_version_range": "< 2026.8.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.8.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.8.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nGateway upgrade-like requests could retain unauthenticated sockets. In affected versions, an HTTP request carrying a WebSocket upgrade header without the matching connection semantics was routed to the ordinary handler, which returned without ending the response.\n\nThis advisory is scoped to the named Gateway listener. It does not change OpenClaw's trusted-operator model or recommend exposing the Gateway publicly; the issue affected any lower-trust client that could reach the configured listener.\n\n### Impact\n\nAn unauthenticated client could hold response sockets and associated request state open without consuming the WebSocket pre-auth connection budget. Repeated requests could exhaust listener resources. Confidentiality and integrity were not affected, and practical impact depended on listener reachability and host limits.\n\n### Patched Versions\n\nThe first stable patched version is `2026.8.1`.\n\n### Mitigations\n\nUpgrade to `openclaw@2026.8.1` or later. Before upgrading, keep the Gateway loopback-only or behind a proxy that rejects malformed upgrade requests and enforces connection limits.",
+  "id": "GHSA-4r25-35qc-fr6j",
+  "modified": "2026-09-11T00:57:21Z",
+  "published": "2026-09-11T00:57:21Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-4r25-35qc-fr6j"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Gateway upgrade-like requests could retain unauthenticated sockets"
+}

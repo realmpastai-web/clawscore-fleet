@@ -1,0 +1,11 @@
+{
+ "endpoint": "https://registry.npmjs.org/-/npm/v1/security/advisories/bulk",
+ "fetched_utc": "2026-10-21T05:21:54+00:00",
+ "method": "POST",
+ "request_sha256": "5bed60bd7d25825ee57588041a3b7f0cbc311dba3f37c9dbda207d0ade119a14",
+ "response_bytes": 38694,
+ "response_sha256": "16bd98d487df6fb1e92b546aa1106964ebe1424b7470711c96fa8d296b1763a3",
+ "server_date": "Wed, 21 Oct 2026 05:21:54 GMT",
+ "status": 200,
+ "version": "2026.4.8"
+}

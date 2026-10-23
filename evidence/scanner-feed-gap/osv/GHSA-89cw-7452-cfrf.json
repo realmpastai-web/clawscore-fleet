@@ -1,0 +1,52 @@
+{
+  "affected": [
+    {
+      "database_specific": {
+        "first_patched_version": "2026.7.1",
+        "vulnerable_version_range": "< 2026.7.1"
+      },
+      "package": {
+        "ecosystem": "npm",
+        "name": "openclaw"
+      },
+      "ranges": [
+        {
+          "database_specific": {
+            "vulnerable_version_range": "< 2026.7.1"
+          },
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2026.7.1"
+            }
+          ],
+          "type": "ECOSYSTEM"
+        }
+      ]
+    }
+  ],
+  "database_specific": {
+    "clawscore_feed_newest": "2026-09-11",
+    "source_sha256": "27b020df70c9896d7b94280ad0646dc69ef4d27e504d81bc6719dedcb6446034"
+  },
+  "details": "### Summary\n\nTrajectory export could omit owner authorization. In affected versions, an authorized non-owner sender in a direct conversation could request, approve, and receive an owner-only trajectory bundle.\n\nThis advisory is scoped to `/export-trajectory`, which is documented as an owner command. It does not change the intentionally broader authorization contract of `/export-session` or create per-user isolation within a shared Gateway.\n\n### Impact\n\nA non-owner sender could receive prompts, model messages, tool schemas and results, runtime events, and local path metadata from the affected session. Practical impact depends on the contents recorded in that trajectory.\n\n### Patched Versions\n\nThe first stable patched version is `2026.7.1`.\n\n### Mitigations\n\nupgrade to `openclaw@2026.7.1` or later. Before upgrading, disable trajectory export commands in channels with non-owner participants and remove unexpected exported bundles.",
+  "id": "GHSA-89cw-7452-cfrf",
+  "modified": "2026-09-11T00:57:49Z",
+  "published": "2026-09-11T00:57:49Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-89cw-7452-cfrf"
+    }
+  ],
+  "schema_version": "1.6.0",
+  "severity": [
+    {
+      "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "type": "CVSS_V3"
+    }
+  ],
+  "summary": "Trajectory export could omit owner authorization"
+}

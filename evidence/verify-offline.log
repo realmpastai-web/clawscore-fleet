@@ -1,0 +1,28 @@
+{
+  "offline_failures": [],
+  "gates": {
+    "landscape_hashes": true,
+    "matrix_coverage": true,
+    "matrix_exact": true,
+    "collisions": true,
+    "dirlist_metric": true,
+    "cve_mapping": true,
+    "semver_crosscheck": true,
+    "freshness": true,
+    "fix_target": true,
+    "v01_regression": true,
+    "semver_comma_normalized": true,
+    "prerelease_order": true,
+    "glued_bound_effect": true,
+    "feed_pinned": true,
+    "landscape_constants": true,
+    "feed_check_same": true,
+    "semver_crosscheck_894": true,
+    "idle_linux_discovered": true,
+    "idle_linux_version_recovered": true,
+    "changelog_ghsa_30": true,
+    "agent365_published_schema": true,
+    "changelog_not_in_feed": true,
+    "readme_matches_report": true
+  }
+}

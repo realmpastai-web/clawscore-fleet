@@ -1,0 +1,48 @@
+diff --git a/README.md b/README.md
+index 6754ccb..cca849f 100644
+--- a/README.md
++++ b/README.md
+@@ -22,6 +22,12 @@ Defender agent inventory: https://learn.microsoft.com/en-us/defender-xdr/securit
+ 
+ This repo does not call Microsoft. The mock is a local FastAPI service.
+ 
++## What Defender / Agent 365 already do, and what we add
++
++Defender and Agent 365 show each OpenClaw agent's version and map OpenClaw CVEs through Defender Vulnerability Management. ClawScore Fleet adds, per install: the build read from the shipped files (even when package.json is stripped, and on idle Linux hosts), the maker's full advisory list including repo-only advisories, the credential names that install can read, and a patch-then-rotate order with the minimum release that clears every critical and high advisory (2026.8.1 on the 2026-09-11 feed). Credential reach is lab-tested only.
++
++Source: [inputs/rea-narrower-gap/CLAIMS.md](inputs/rea-narrower-gap/CLAIMS.md)
++
+ ## Lab
+ 
+ Each image runs `npm install` for one pinned OpenClaw release. Compose starts the fleet on an internal Docker network and publishes no ports. 4 installs are stripped: package.json is removed, or rewritten so its version string is a lie. The fingerprint does not read package.json. Shared fingerprints return a range instead of picking one release. The scanner does not open the answer key. File reads per install stay within the limit (20).
+@@ -42,7 +48,7 @@ Published schema gate: verdict A, idle host not exposed, is PROVEN (published do
+ 
+ Generated from evidence/verify-report.json by make verify. Do not edit this section by hand.
+ 
+-registry sees 30 / 14 with no usable version / 27 vulnerable / rotate these 8 tokens first
++lab mock registry lists 30 / 14 with a blank or stale mock version / 27 vulnerable / rotate these 8 tokens first
+ 
+ - Stable releases with a tarball and listing: 117 of 117.
+ - Exact classification on non-colliding releases: 115 of 115 (100.0%).
+diff --git a/evidence/verify-report.json b/evidence/verify-report.json
+index c7e285d..f37ec5b 100644
+--- a/evidence/verify-report.json
++++ b/evidence/verify-report.json
+@@ -747,7 +747,7 @@
+   "patch_released": "2026-04-23",
+   "previous_feed_newest": "2026-07-02",
+   "python_requirement": "3.11",
+-  "release": "0.2.3",
++  "release": "0.3.0",
+   "spec_unprovens": [
+     "GLOBAL UNPROVENS (Learn doesn't document them)",
+     "- Export file format (CSV or XLSX), header spelling in the file, column order, date format, encoding. Learn says only \"select Export to download the list\" (C09).",
+@@ -854,7 +854,7 @@
+       }
+     ],
+     "rotate_tokens": 8,
+-    "sentence": "registry sees 30 / 14 with no usable version / 27 vulnerable / rotate these 8 tokens first",
++    "sentence": "lab mock registry lists 30 / 14 with a blank or stale mock version / 27 vulnerable / rotate these 8 tokens first",
+     "vulnerable": 27
+   },
+   "xdr_url": "https://learn.microsoft.com/en-us/defender-xdr/security-for-ai/ai-agent-inventory"

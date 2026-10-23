@@ -1,0 +1,139 @@
+npm_semver 7.8.5
+versions 278
+ranges 190
+decisions 52820
+comma_ranges_sent 0
+disagreements 65
+default_call_disagreements 8819
+unexplained 0
+
+DISAGREE	2026.2.2-1	< 2026.2.2	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.2-1	>= 2026.1.14-1, < 2026.2.2	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.2-2	< 2026.2.2	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.2-2	>= 2026.1.14-1, < 2026.2.2	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.2-3	< 2026.2.2	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.2-3	>= 2026.1.14-1, < 2026.2.2	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.3-1	< 2026.2.3	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.6-1	>= 2026.2.6, <= 2026.3.24	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.6-2	>= 2026.2.6, <= 2026.3.24	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.6-3	>= 2026.2.6, <= 2026.3.24	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.19	<= 2026.2.19-2	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.19	>=2026.2.9 <=2026.2.19-2	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.19	<=2026.2.19-2	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.19-1	>= 2026.2.19, < 2026.3.31	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.19-1	< 2026.2.19	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.19-1	>= 2026.1.20, < 2026.2.19	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.19-1	>= 2026.1.21, < 2026.2.19	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.19-2	>= 2026.2.19, < 2026.3.31	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.19-2	< 2026.2.19	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.19-2	>= 2026.1.20, < 2026.2.19	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.19-2	>= 2026.1.21, < 2026.2.19	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.21	<= 2026.2.21-2	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.21-1	>= 2026.2.21, < 2026.4.10	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.21-1	< 2026.2.21	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.21-2	>= 2026.2.21, < 2026.4.10	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.21-2	< 2026.2.21	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22	<= 2026.2.22-2	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22-1	>= 2026.2.22, < 2026.4.12	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22-1	<= 2026.2.22	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22-1	< 2026.2.22	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22-1	>= 2026.2.22, <= 2026.2.23	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22-1	>= 2026.2.22, <= 2026.2.24	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22-1	>= 2026.2.22, < 2026.2.23	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22-2	>= 2026.2.22, < 2026.4.12	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22-2	<= 2026.2.22	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22-2	< 2026.2.22	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22-2	>= 2026.2.22, <= 2026.2.23	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22-2	>= 2026.2.22, <= 2026.2.24	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.2.22-2	>= 2026.2.22, < 2026.2.23	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.3.13-beta.1	<= 2026.3.13-1	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.3.13	<= 2026.3.13-1	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.3.23-beta.1	<= 2026.3.23-2	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.3.23	<= 2026.3.23-2	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.3.23-1	< 2026.3.23	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.3.23-1	<= 2026.3.23	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.3.23-2	< 2026.3.23	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.3.23-2	<= 2026.3.23	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.4.7-1	>= 2026.4.7, < 2026.4.15	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.4.7-1	>= 2026.4.7, < 2026.4.10	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.4.7-1	>= 2026.4.7, < 2026.4.14	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.5.3-beta.1	<= 2026.5.3-1	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.5.3-beta.2	<= 2026.5.3-1	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.5.3-beta.3	<= 2026.5.3-1	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.5.3-beta.4	<= 2026.5.3-1	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.5.3	<= 2026.5.3-1	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.7.1-1	< 2026.7.1	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.7.1-1	>= 2026.2.26 < 2026.7.1	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.7.1-1	>= 2026.7.1, < 2026.8.1	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.7.1-1	>= 2026.4.10 < 2026.7.1	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.7.1-1	>= 2026.5.1 < 2026.7.1	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.7.1-2	< 2026.7.1	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.7.1-2	>= 2026.2.26 < 2026.7.1	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.7.1-2	>= 2026.7.1, < 2026.8.1	hark=1	npm=0	includePrerelease=0
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.7.1-2	>= 2026.4.10 < 2026.7.1	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.
+DISAGREE	2026.7.1-2	>= 2026.5.1 < 2026.7.1	hark=0	npm=0	includePrerelease=1
+  explanation: post-release-suffix: this parser sorts a numeric -N suffix after the base release; npm semver sorts -N as a prerelease before the base release, and a prerelease does not satisfy a range that does not name that prerelease.

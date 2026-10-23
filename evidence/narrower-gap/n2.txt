@@ -1,0 +1,40 @@
+PASS	S0.sha256sums	files=17 bad=[]
+PASS	S1.eight_snapshots	8
+PASS	A.Q1.ms_has.L1_build	Agent name, Version The discovered agent, and the version installed.
+PASS	A.Q2.ms_has.L2_advisories	Added Microsoft Defender Vulnerability Management support for openclaw
+PASS	A.Q3.ms_has.L3_reach	This query ranks the identities that use local AI agents by how many critical or sensitive
+PASS	A.Q4.ms_has.L4_fix_order	Cybersecurity weaknesses identified in your organization are mapped to actionable security
+PASS	A.Q5.ms_has.L4_fix_order	Security recommendations identify actionable changes that can reduce an agent's exposure o
+PASS	A.Q6.ms_has.L2_advisories	Running on a device with vulnerabilities: Indicates that the agent is running on a device 
+PASS	A.Q7.ms_limit.scope	Your organization has a Microsoft Defender for Endpoint Plan 2 license.
+PASS	A.Q8.ms_limit.L1_build	An installed agent might not appear until Defender observes agent activity.
+PASS	A.Q9.ms_limit.L2_advisories	On Linux, Defender Vulnerability Management only lists software installed using native pac
+PASS	A.Q10.ms_limit.scope	WSL support doesn't indicate support for native Linux endpoints.
+PASS	A.absent_all_pages.secret	0 in 8 pages
+PASS	A.absent_all_pages.credential	0 in 8 pages
+PASS	A.absent_all_pages.ghsa	0 in 8 pages
+PASS	A.absent_all_pages.package.json	0 in 8 pages
+PASS	A.localAgentMetadata_props_no_secret_field	['aadDeviceId', 'accountDomain', 'accountName', 'accountSid', 'autoApprove', 'deviceName', 'localMcps', 'relatedProcess', 'trustedProcess', 'vendor']
+PASS	A.no_target_version_phrase.defender-vulnerability-management_tvm-
+PASS	A.no_target_version_phrase.defender-vulnerability-management_tvm-
+PASS	A.no_target_version_phrase.defender-xdr_security-for-ai_ai-agent-
+PASS	B0.verify_report_ok	ok=True failures=[] gates=36
+PASS	B1.matrix_exact	115/115 non-colliding of 117
+PASS	B1.stripped_package_json	4/4
+PASS	B1.collision_range	4/4 pair=['2026.4.7-1', '2026.4.8']
+PASS	B1.idle_linux_version_recovered
+PASS	B2.cve_mapping_diff_0	0
+PASS	B2.ghsa_only_gate
+PASS	B2.repo_only_advisories_in_readme
+PASS	B3.blast_recall_planted	42/42 planted (lab only)
+PASS	B3.credentials_names_only	installs=30 with_credentials=22
+PASS	B4.min_clearing_version	min=2026.8.1 2026.4.22=148
+PASS	B4.patch_then_rotate_by_reach	patch=27 rotate=8
+FINDING	README mock-derived line (Agent 365 exposes Version; never quote it outside):	none
+VERDICT	L1_build	HOLDS-NARROWED: build read from shipped bytes when package.json is stripped or lies, and on idle Linux; Defender DOES show Version (Q1)
+VERDICT	L2_advisories	HOLDS-NARROWED: Linux npm installs (Q9) and repo-only advisories; MDVM maps OpenClaw CVEs (Q2)
+VERDICT	L3_reach	HOLDS-NARROWED: credential NAMES readable by the install (lab-planted only); Microsoft ranks identity reach (Q3)
+VERDICT	L4_fix_order	HOLDS-NARROWED: minimum clearing version + patch-then-rotate by credential reach; Microsoft prioritizes recommendations by impact (Q4, Q5)
+VERDICT	chain	HOLDS (published docs only): no page links build -> advisory list -> readable credential names -> ordered patch/rotate per install
+GATE PASS
+exit=0

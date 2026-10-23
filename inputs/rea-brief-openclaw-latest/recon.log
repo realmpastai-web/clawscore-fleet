@@ -1,0 +1,56 @@
+REA recon 2026-10-20 IST. Commands run from /workspace/hark-tasks/clawscore-latest-1052.
+No npm install. No openclaw file was executed. Tarballs were extracted with tar only.
+
+registry:
+curl -fsSL https://registry.npmjs.org/openclaw | jq '."dist-tags", .time["2026.10.5"], .versions["2026.10.5"].dist, .versions["2026.10.10-beta.2"].dist, .versions["2026.10.4"].dist'
+dist-tags latest=2026.10.5 extended-stable=2026.9.33 beta=2026.10.10-beta.2
+time["2026.10.5"]=2026-10-18T21:16:43.569Z
+Saved as inputs/rea-brief-openclaw-latest/registry.json.
+npm stable count 118. Only stable absent from evidence/landscape/versions.json: 2026.10.5.
+Saved as stable-versions.tsv.
+
+npm pack openclaw@2026.10.5 openclaw@2026.10.4 openclaw@2026.10.10-beta.2 --pack-destination inputs/rea-openclaw-latest-evidence/
+NPM_PACK_START 2026-10-20 18:57:56 IST
+NPM_PACK_END 2026-10-20 18:58:02 IST
+openclaw-2026.10.5.tgz bytes=103343430
+openclaw-2026.10.4.tgz bytes=102973323
+openclaw-2026.10.10-beta.2.tgz bytes=111710242
+Tarballs are not committed: each is over GitHub's 100MB file limit.
+
+sha512 of each tarball against registry.json dist.integrity:
+2026.10.5 openclaw-2026.10.5.tgz bytes=103343430 integrity=sha512-9rCuXMweqVKZIK3KBtGcLzesz9G6+FmQ30lvwomRhmcNWDcOtlBoqdLbPditoJMuTP55jPqXpt1AA0L8tSzFHg== registry=sha512-9rCuXMweqVKZIK3KBtGcLzesz9G6+FmQ30lvwomRhmcNWDcOtlBoqdLbPditoJMuTP55jPqXpt1AA0L8tSzFHg== check=OK
+2026.10.4 openclaw-2026.10.4.tgz bytes=102973323 integrity=sha512-+FH0StZF1tlTazM7JJGY6JePeJmhFNSRByi2Q3jXPRiLO7o4dJh2xa9Vy4Dk8Cd2ic8B7Zkf5NfEaCCWUkgqnQ== registry=sha512-+FH0StZF1tlTazM7JJGY6JePeJmhFNSRByi2Q3jXPRiLO7o4dJh2xa9Vy4Dk8Cd2ic8B7Zkf5NfEaCCWUkgqnQ== check=OK
+2026.10.10-beta.2 openclaw-2026.10.10-beta.2.tgz bytes=111710242 integrity=sha512-Kbs8X970M+kouV52kMSaF0zpxf62vink1OqpEMCcc60O7uQx6VELzcpHT5bO6KuPFeKNNSzZ40mvWwebiTKuIQ== registry=sha512-Kbs8X970M+kouV52kMSaF0zpxf62vink1OqpEMCcc60O7uQx6VELzcpHT5bO6KuPFeKNNSzZ40mvWwebiTKuIQ== check=OK
+
+extract (tar only):
+tar -xzf inputs/rea-openclaw-latest-evidence/openclaw-2026.10.5.tgz -C .cache/rea-openclaw-extract --one-top-level=2026.10.5
+tar -xzf inputs/rea-openclaw-latest-evidence/openclaw-2026.10.4.tgz -C .cache/rea-openclaw-extract --one-top-level=2026.10.4
+tar -xzf inputs/rea-openclaw-latest-evidence/openclaw-2026.10.10-beta.2.tgz -C .cache/rea-openclaw-extract --one-top-level=2026.10.10-beta.2
+EXTRACT_DONE
+
+advisory fetch:
+FETCH_START 2026-10-20 18:57:58 IST
+gh api --paginate /advisories?ecosystem=npm&affects=openclaw&per_page=100 -> gh-global-openclaw.json GLOBAL_BYTES 2923521
+gh api --paginate /repos/openclaw/openclaw/security-advisories?state=published&per_page=100 -> gh-repo-openclaw-published.json REPO_BYTES 3377904
+FETCH_GH_END 2026-10-20 18:58:20 IST
+OSV_START 2026-10-20 19:01:22 IST
+POST https://api.osv.dev/v1/query package openclaw npm
+page 1 got 590 total 590 more False
+OSV_N 590
+OSV_END 2026-10-20 19:01:24 IST
+
+Q4 published after 2026-09-11: github_advisory_db=0 repo_security_advisories=0 osv=0
+See q4-and-counts.json.
+
+Q2 identify on unchanged fingerprints/db.json:
+2026.10.5 verdict=unknown
+2026.10.4 verdict=exact version=2026.10.4
+2026.10.10-beta.2 verdict=unknown
+Full lines: q2-identify-main.txt.
+
+REA:
+npx -y rea-agents@6.7.0 --help -> rea-help.log (exit 0)
+npx -y rea-agents@6.7.0 analyze-javascript-application <extracted 2026.10.5 package> --json
+REA_EXIT:1 code=resource_constraint
+Q5 UNPROVEN. Summary: rea-2026.10.5.summary.json. Stderr: rea-2026.10.5.stderr.log.
+Full JSON 368089909 bytes not committed.

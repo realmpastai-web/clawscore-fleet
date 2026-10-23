@@ -1,0 +1,6 @@
+FAIL	R1.system_install_root_unit	want idle_ok=True markers=['root']	got idle_ok=False idle={"enabled_symlink": false, "linger_markers": [], "running_process_evidence": 0, "user_unit": false}
+FAIL	R2.root_home_install	want idle_ok=True markers=['root']	got idle_ok=False idle={"enabled_symlink": false, "linger_markers": [], "running_process_evidence": 0, "user_unit": false}
+PASS	C1.root_unit_no_linger	want idle_ok=False markers=[]	got idle_ok=False idle={"enabled_symlink": false, "linger_markers": [], "running_process_evidence": 0, "user_unit": false}
+PASS	C2.root_unit_other_path	want idle_ok=False markers=[]	got idle_ok=False idle={"enabled_symlink": false, "linger_markers": [], "running_process_evidence": 0, "user_unit": false}
+SUMMARY pass=2 fail=2 ['R1.system_install_root_unit', 'R2.root_home_install']
+exit 1

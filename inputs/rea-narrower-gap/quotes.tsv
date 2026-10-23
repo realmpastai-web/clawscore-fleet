@@ -1,0 +1,11 @@
+id	side	link	page	quote
+Q1	ms_has	L1_build	defender-endpoint_discover-local-ai-agents.html	Agent name, Version The discovered agent, and the version installed.
+Q2	ms_has	L2_advisories	defender-vulnerability-management_fixed-reported-inaccuracies.html	Added Microsoft Defender Vulnerability Management support for openclaw
+Q3	ms_has	L3_reach	defender-endpoint_discover-local-ai-agents.html	This query ranks the identities that use local AI agents by how many critical or sensitive resources they can reach, so you can prioritize the users with the widest blast radius.
+Q4	ms_has	L4_fix_order	defender-vulnerability-management_tvm-security-recommendation.html	Cybersecurity weaknesses identified in your organization are mapped to actionable security recommendations and prioritized by their impact.
+Q5	ms_has	L4_fix_order	defender-xdr_security-for-ai_ai-agent-risk-assessment.html	Security recommendations identify actionable changes that can reduce an agent's exposure or address an unsafe configuration.
+Q6	ms_has	L2_advisories	defender-xdr_security-for-ai_ai-agent-risk-assessment.html	Running on a device with vulnerabilities: Indicates that the agent is running on a device with vulnerabilities.
+Q7	ms_limit	scope	defender-endpoint_discover-local-ai-agents.html	Your organization has a Microsoft Defender for Endpoint Plan 2 license.
+Q8	ms_limit	L1_build	defender-endpoint_discover-local-ai-agents.html	An installed agent might not appear until Defender observes agent activity.
+Q9	ms_limit	L2_advisories	defender-vulnerability-management_tvm-software-inventory.html	On Linux, Defender Vulnerability Management only lists software installed using native package managers such as rpm, dnf, and yum.
+Q10	ms_limit	scope	defender-endpoint_ai-agent-support-matrix.html	WSL support doesn't indicate support for native Linux endpoints.

@@ -1,0 +1,72 @@
+===== (a) a tampered raw response byte -> test_offline_refuses_tampered_response =====
+exit 1
+F
+======================================================================
+FAIL: test_offline_refuses_tampered_response (tests.test_npm_audit.NpmAuditTests.test_offline_refuses_tampered_response)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/hark-tasks/clawscore-npmaudit-1022/tests/test_npm_audit.py", line 137, in test_offline_refuses_tampered_response
+    with self.assertRaises(SystemExit) as caught:
+AssertionError: SystemExit not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.149s
+
+FAILED (failures=1)
+===== (b) the sentence reworded to "npm audit misses" -> test_npm_section_banned_words =====
+exit 1
+F
+======================================================================
+FAIL: test_npm_section_banned_words (tests.test_npm_audit.NpmAuditTests.test_npm_section_banned_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/hark-tasks/clawscore-npmaudit-1022/tests/test_npm_audit.py", line 156, in test_npm_section_banned_words
+    self.assertEqual(section_banned(text), [])
+AssertionError: Lists differ: ['misses', 'misses', 'misses'] != []
+
+First list contains 3 additional elements.
+First extra element 0:
+'misses'
+
+- ['misses', 'misses', 'misses']
++ []
+
+----------------------------------------------------------------------
+Ran 1 test in 0.058s
+
+FAILED (failures=1)
+===== (c) repo_only computed as S - npm -> test_m3_parts_sum =====
+exit 1
+E
+======================================================================
+ERROR: setUpClass (tests.test_npm_audit.NpmAuditTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/hark-tasks/clawscore-npmaudit-1022/tests/test_npm_audit.py", line 77, in setUpClass
+    cls.scored, cls.source_log = score_versions(RAW, BRIEF_VERSIONS)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hark-tasks/clawscore-npmaudit-1022/clawscore_fleet/npm_audit.py", line 201, in score_versions
+    assert_disjoint(overlap, db_not_npm, repo_only, len(ids))
+  File "/workspace/hark-tasks/clawscore-npmaudit-1022/clawscore_fleet/npm_audit.py", line 97, in assert_disjoint
+    raise AssertionError(
+AssertionError: overlap + db_not_npm + repo_only != clawscore (67 + 1 + 81 != 148)
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.050s
+
+FAILED (errors=1)
+===== (d) the fetched date dropped from the sentence -> test_sentence_has_fetched_date =====
+exit 1
+F
+======================================================================
+FAIL: test_sentence_has_fetched_date (tests.test_npm_audit.NpmAuditTests.test_sentence_has_fetched_date)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/hark-tasks/clawscore-npmaudit-1022/tests/test_npm_audit.py", line 145, in test_sentence_has_fetched_date
+    self.assertIsNotNone(SENTENCE_RE.fullmatch(sentence), sentence)
+AssertionError: unexpectedly None : npm audit returned 67 advisories for openclaw@2026.4.22; the maker's repository lists 148 (feed newest 2026-09-11).
+
+----------------------------------------------------------------------
+Ran 1 test in 0.059s
+
+FAILED (failures=1)

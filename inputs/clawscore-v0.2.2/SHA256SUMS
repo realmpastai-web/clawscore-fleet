@@ -1,0 +1,12 @@
+52f8ced07ec233a6862b03c47fda87e2c52ec73179bbc25294ee9de34bbd4683  ./CURSOR_TASK_clawscore-v0.2.2.md
+9f6e8c84ee35d7faf561f0977314a730b12326be32713cb5de2e8eb92625b7ad  ./landscape-v0.2.2/CLAIMS.md
+429e1b6567bba2bc89f0e3cba536d1472233ac05072642d03716f2582e46601e  ./landscape-v0.2.2/FINDINGS.md
+18456f608decfc1311fdf99181b37d3f7d1d20980f280a303fa25c4b01bcccc9  ./landscape-v0.2.2/SHA256SUMS
+771f969e194861e21c0d44260570831a4f32c638bd48957aec59a47ffdc32a80  ./landscape-v0.2.2/recompute.py
+c8b9b34f9ede4ef54d77bbc80ec4782a73a3525e50e21c64e79e7bae05fd10f8  ./landscape-v0.2.2/version-vulns.json
+41042722602a2490aec99ad512b1b20f617df816d8449ea316e70316aab51131  ./repro/recompute-v0.2.2.out
+9c68cc1b19355b798ad62dca20953f704f2aeb6b111801ebfd7dc675310fb9f0  ./repro/regen_version_vulns.py
+5cd6322704e3b6d8323ade9ad10317aff8f498c9ead3ea116ea723ef9f7997f3  ./repro/repro.log
+408d01c36e185a0f0b6adbda11bed0027ffb1591394c98fa987df9acc9c2d4e2  ./repro/repro_crosscheck.py
+a4f57b2c2a2130656cf93c60d6138994ee2bfac26376b965664445dd411629a2  ./repro/repro_full.py
+812e5cb29a04c3eb166f609a425e4d6aaf87d8cd82018c4215fb9f6c2ab262ea  ./repro/run_repro.sh
